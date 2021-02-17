@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\begin{document}
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{article1}{article}{
+	author = {Lastname, Firstname},
+	title = {Article Title},
+	journal = {Journal (use abbreviations if appropriate},
+	volume = {vol},
+	number = {num},
+	pages = {num--num},
+	year = {1776},
+}
+
+\bib{book1}{book}{
+	title = {Book Title},
+	author = {Author, First},
+	author = {Author, Second},
+	year = {1900},
+	publisher = {publisher},
+	address = {address}
+}
+
+% Other fields exist. See
+%
+% https://ctan.org/tex-archive/macros/latex/contrib/amsrefs
+%
+% for details.
+
+\end{biblist}
+\end{bibdiv}
+\end{document}
