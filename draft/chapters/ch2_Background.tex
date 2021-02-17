@@ -4,17 +4,15 @@
 \section{Skein Theory}
 
 \subsection{Foundations and General Notions}
-In this work, we will be forced to discuss a couple different variants of skein modules. For this reason, it will be useful to first describe some general framework of skein theory so that each of these variants will be a special case. Unless otherwise stated, we will assume $M$ is an \AP{ oriented } $3$-manifold with boundary $\partial M$ (possibly empty), $\Sigma$ is an \AP{ oriented } surface, $I$ is the real interval $[0,1]$, $R$ is a commutative and unital ring.
-
-\AP{Is it necessary that $M$ is oriented? I forget why we had this assumption.}
+In this work, we will be forced to discuss a few different variants of skein modules. For this reason, it will be useful to first describe some general framework of skein theory so that each of these variants will be a special case. Unless otherwise stated, we will assume $M$ is an oriented $3$-manifold with boundary $\partial M$ (possibly empty), $\Sigma$ is an oriented surface, $I$ is the real interval $[0,1]$, $R$ is a commutative and unital ring. 
 
 \begin{definition}
-    Let $T_1, T_2: X \to M$ be smooth embeddings of a smooth manifold $X$ into $M$. A \textbf{smooth ambient isotopy} $H: T_1 \Rightarrow T_2$ is a smooth homotopy of diffeomorphisms $H_t$ such that $H_0=\id_M$ and $H_1 \circ T_1 = T_2$. Furthermore, we demand that the boundary $\partial M$ be fixed by the homotopy. 
+    Let $T_1, T_2: X \to M$ be smooth embeddings of a smooth manifold $X$ into $M$. A \textbf{smooth ambient isotopy} $H: T_1 \Rightarrow T_2$ is a smooth homotopy of diffeomorphisms $H_t$ such that $H_0=\id_M$ and $H_1 \circ T_1 = T_2$. Furthermore, we demand that the boundary $\partial M$ is fixed by the homotopy. 
 \end{definition}
 
 The relation 
 \[
-T_1 \sim T_2 \textrm{ if and only if there is a smooth ambient isotopy } H: T_1 \Rightarrow T_2
+T_1 \sim T_2 \textrm{ if and only if there exists a smooth ambient isotopy } H: T_1 \Rightarrow T_2
 \]
 is an equivalence relation. The smoothness requirement is important when considering knots. Without it, all knots would fall into the same equivalence class.
 
@@ -25,22 +23,23 @@ T: \underbrace{\underset{j \in J}{\bigsqcup}\, S^1}_{:=L} \sqcup \underbrace{\un
 \]
 for some finite sets $J$ and $K$ such that
 \begin{enumerate}
-\item the image of $L$ lies in the interior of $M$, \\
-\item the image of the interior of $B$ lies in the interior of $M$, \\
+\item the image of $L$ lies in the interior of $M$,
+\item the image of the interior of $B$ lies in the interior of $M$,
 \item the image of the boundary of $B$ equals $N$.
 \end{enumerate}
-\AP{Fix spacing of enumerations.}
 If $B$ is empty, then the result is called a \textbf{link} in $M$. Similarly, if $L$ is empty, then it's called a \textbf{braid} in $M$. 
 
-One may also consider \textit{oriented} or \textit{framed} tangles by choosing an orientation or framing for each point in $N$ and for each connected component of $L$ and $B$ such that the choices are compatible with each other with respect to the smooth embedding. For our purposes, the difference between framed and unframed tangles will be a matter of convention; we choose to work with framed tangles as is standard in the literature. If $M = \Sigma \times I$, then we will assume that the points in $N$ are contained in $\Sigma \times \{ \frac{1}{2} \}$ and that their framings are thought to be parallel to $\Sigma$. 
+One may also consider \textit{oriented} or \textit{framed} tangles by choosing an orientation or framing for each point in $N$ and for each connected component of $L$ and $B$ such that the choices are compatible with each other with respect to the smooth embedding.
+%For our purposes, the difference between framed and unframed tangles will be a matter of convention; we choose to work with framed tangles as is standard in the literature. 
+If $M = \Sigma \times I$, then we will assume that the points in $N$ are contained in $\Sigma \times \{ \frac{1}{2} \}$ and that their framings are thought to be embedded orthogonally to $\Sigma \times \{ \ast \}$. 
 \end{definition}
 
-We say a framed tangle in $\Sigma \times I$ has \textbf{blackboard framing} if the framing is perpendicular to $\Sigma$. Every framed link in $\Sigma \times I$ is isotopic to one with a blackboard framing by turning each twist into a loop with a local blackboard framing:
+We say a framed tangle in $\Sigma \times I$ has \textbf{blackboard framing} if the entire framing is embedded orthogonally to $\Sigma$. Every framed link in $\Sigma \times I$ is isotopic to one with a blackboard framing by turning each twist into a loop with a local blackboard framing:
 
 \[
     \vcenter{\hbox{\includegraphics[height=3cm]{twist.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{invvh2.eps}}}.
 \]
-This suggests that we may represent framed links in $\Sigma \times I$ as link diagrams on $\Sigma$ fairly easily. Indeed, ambient isotopy is captured by the Reidemeister moves 2, 3, and a modified Reidemeister move 1:
+This suggests that we may represent framed links in $\Sigma \times I$ as link diagrams on $\Sigma$. Indeed, equivalence under ambient isotopy is captured by the Reidemeister moves 2, 3, and a modified Reidemeister move 1:
 
 \[
     \vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1resolution.eps}}}.
@@ -53,26 +52,24 @@ Below are some examples of framed tangle diagrams.
     \vcenter{\hbox{\includegraphics[height=3cm]{Ntangles.eps}}}
 \]
 
-\AP{Fix spacing in image.}
+Define the \textbf{writhe} of a tangle diagram is the number of positive crossings minus the number of negative crossings. It is easy to see that the Reidemeister moves above preserve the writhe of a diagram, so the concept is well defined. Writhe should be thought of as a grading on the free $R$-module on the set of tangles in a given space, which provides a good reason to work with framed links over ordinary links. Such a module is a main ingredient of this theory, so let's honor it with a proper discussion.
 
 \begin{definition}
 Let $\ct(M, N)$ be the free $R$-module generated by the set of framed $N$-tangles in $M$. Analagously, we can define $\ct^{or}(M,N)$ to be the free $R$-module generated by the set of oriented framed $N$-tangles in $M$. All definitions which are to follow in this subsection have an analagous definition using oriented tangles. Also, we will formally define $\cs_R(\varnothing, \varnothing) := R$. 
 \end{definition}
 
-\AP{Is it true that $\ct(M, N)$ can be constructed as a quotient of $\ct^{or}(M,N)$ by the relation that all possible orientations of a given link are equal? If so, there should be a natural transformation of functors $\ct^{or} \Rightarrow \ct$. Check if this would descend to a natural transformation $\ch \Rightarrow \cd$, although I think I checked before that it doesn't.}
-
-The construction $\ct( -, -)$ is actually a symmetric monoidal functor $\ct: \sfc \to R\textrm{-Mod}$ for a careful choice of category $\sfc$ which we now describe. The objects of $\sfc$ are pairs $(M, N)$ of the same type as before. A morphism $(f, W): (M', N') \to (M, N)$ and is given by a smooth embedding $f: M' \to M$ such that $M - f(M')$ is either a smooth 3-manifold or the empty set, and $W \in \ct\big( M-f(M'), N \sqcup f(N') \big)$ (unless $M - f(M')$ is empty, in which case $W$ is a formal symbol for the "empty link" in the empty set). Composition is given by $(g, W') \circ (f, W) = (g \circ f, W' \cup W)$, which is associative since $\circ$ and $\cup$ are associative.
+The construction $\ct( -, -)$ is actually a symmetric monoidal functor $\ct: \sfc \to R\textsf{-Mod}$ for a careful choice of category $\sfc$ which we now describe. The objects of $\sfc$ are pairs $(M, N)$ of the same type as discussed previously. A morphism $(f, W): (M', N') \to (M, N)$ is a pair of a smooth, orientation-preserving embedding $f: M' \to M$ such that $M - f(M')$, which is either a smooth 3-manifold or the empty set, and choice of $W \in \ct\big( M-f(M'), N \sqcup f(N') \big)$ (unless $M - f(M')$ is empty, in which case $W$ is a formal symbol for the "empty link" in the empty set). Composition is given by $(g, W') \circ (f, W) = (g \circ f, W' \cup W)$, which is associative since $\circ$ and $\cup$ are associative.
 
 \AP{Give a picture of composition in $\sfc$.}
 
-It is clear that $\ct$ preserves composition and identity morphisms, and so $\ct$ is functorial. The induced map denoted $W: \ct(M', N') \to \ct(M, N)$ is a linear map defined by $W(T) = W \cup T$, and we will refer to such a linear map $W$ as a \textbf{wiring}. We are abusing notation by denoting this linear map by $W$, but it should be clear from the context what $f$ is since it is technically encoded in the data of the element $W \in \ct\big( M-f(M'), N \sqcup f(N') \big)$. Now, $\sfc$ can be equipped with a symmetric monoidal structure via disjoint union. It should be clear that 
+The induced map denoted $W: \ct(M', N') \to \ct(M, N)$ is a linear map defined by $W(T) = W \cup T$, and we will refer to such a linear map $W$ as a \textbf{wiring}. We are abusing notation by denoting this linear map by $W$, but it should be clear from the context what $f$ is since it is technically encoded in the data of the element $W \in \ct\big( M-f(M'), N \sqcup f(N') \big)$. It is a stimulating exercise in verifying definitions to check that $\ct$ preserves composition and identity morphisms, making and so $\ct$ is functorial. $\sfc$ can now be equipped with a symmetric monoidal structure via disjoint union. It is clear that 
 \[\cs_R(M \sqcup M', N \sqcup N') \cong \cs_R(M, N) \underset{R}{\otimes} \cs_R(M', N')\]
-for any sets of framed points $N \subset \partial M$ and $N' \subset \partial M'$. The unit is given by the object $(\varnothing, \varnothing)$ in $\sfc$. 
+for any sets of framed points $N \subset \partial M$ and $N' \subset \partial M'$. The unit is given by the object $(\varnothing, \varnothing) \in \sfc$ and define $\ct(\varnothing, \varnothing) := R$, which makes $\ct$ a symmetric monoidal functor. 
 
 \begin{definition}
-Let $B$ be the smooth closed $3$-ball, and let $X \subset \bigsqcup_{N_B} \ct(B, N_B)$ be some set (usually finite), which we will call a set of \textbf{skein relations}. Now, given any tangle module $\ct(M, N_M)$, there exists a submodule $\ci(X)$ generated by the set 
+Let $B$ be the smooth closed $3$-ball, $N_B$ be some boundary points of $B$, and let $X \subset \ct(B, N_B)$ be some (typically finite) set, which we will call a set of \textbf{skein relations}. Given any tangle module $\ct(M, N_M)$, there exists a submodule $\ci(X)$ generated by the set 
 \[\{ W(x) \mid x \in X \text{ and } W:\ct(B, N_B) \to \ct(M, N_M) \text{ is a wiring diagram} \}.\] 
-A quotient of the form $\cs_X(M, N) := \ct(M, N) / \ci(X)$ is called a \textbf{skein module} of $M$ relative to $N$. If $N = \varnothing$ is the empty set, we may use the notation $\cs_X(M) := \cs_X(M, \varnothing)$. Similar definitions may be given using oriented tangles instead. 
+A quotient of the form $\cs_X(M, N) := \ct(M, N) / \ci(X)$ is called a \textbf{skein module} of $M$ relative to $N$. If $N = \varnothing$ is the empty set, we may use the notation $\cs_X(M) := \cs_X(M, \varnothing)$. Similar definitions may be given using oriented and/or unframed tangles instead. 
 \end{definition}
 The construction $\cs_X(-, -)$ is a functor in the same way that $\ct(-, -)$ is; a smooth embedding $f: M \to M'$ and an element $W \in \cs_X\big( M-f(M'), N \sqcup f(N') \big)$ defines a linear map $W: \cs_X(M, N) \to \cs_X(M', N')$. In fact, the quotient maps $\alpha_{(M, N)}: \ct(M, N) \to \cs_X(M, N)$ yield a natural transformation. In other words, given a morphism $(M, N) \to (M', N')$ in $\sfc$, the diagram
 \begin{center}
@@ -84,13 +81,13 @@ The construction $\cs_X(-, -)$ is a functor in the same way that $\ct(-, -)$ is;
 \end{center}
 commutes.
 
-For any $\Sigma$, we can define a category $\sfskein_X(\Sigma)$. The objects of this category are finite sets of framed points $N$ in $\Sigma$, and the morphisms $N \to N'$ are elements of $\cs_X\big(\Sigma \times I, (N \times \{0\}) \sqcup (N' \times \{1\})\big)$, so the category is $R$-linear. Write composition of morphisms by concatenation. If $y:N \to N'$ and $z:N' \to N''$ are morphisms, then their composite $yz:N \to N''$ is constucted by gluing $z$ on $y$ through $N'$ and rescaling the interval coordinate appropriately.
+For any oriented surface $\Sigma$, we can define a category $\sfskein_X(\Sigma)$. The objects of this category are finite sets of framed points $N$ in $\Sigma$, and the morphisms $N \to N'$ are elements of $\cs_X\big(\Sigma \times I, (N \times \{0\}) \sqcup (N' \times \{1\})\big)$, so the category is $R$-linear. Write composition of morphisms by concatenation. If $y:N \to N'$ and $z:N' \to N''$ are morphisms, then their composite $yz:N \to N''$ is constucted by gluing $z$ on $y$ through $N'$ and rescaling the interval coordinate appropriately.
 
 \AP{Picture of composition in $\sfskein_X(\Sigma)$.}
 
 The endomorphism algebras in this category are called \textbf{skein algebras} and are denoted by $\cs_X(\Sigma, N) := \cs_X(\Sigma \times I, (N \times \{0\}) \sqcup (N \times \{1\}) \big)$. If $N$ is the empty set, then we reduce the notation to simply $\cs_X(\Sigma)$.
 
-If $f: \Sigma \to \Sigma'$ is a smooth, \AP{ orientation preserving } embedding of surfaces, then there is an induced functor 
+If $f: \Sigma \to \Sigma'$ is a smooth, orientation-preserving embedding of surfaces, then there is an induced functor 
 \[
 f_*: \sfskein_X(\Sigma') \to \sfskein_X(\Sigma)
 \]
@@ -105,7 +102,7 @@ It is clear that $f_*$ preserves composition. In particular, $f_*$ defines algeb
 
 \AP{We use this type of algebra homomorphism when we embed the annulus into the torus.}
 
-The above homomorphisms are a special case of a more general type of map. If $N$ is a set of framed points on $\Sigma$, then a smooth embedding $f: \Sigma \to \partial M$ induces a $\cs_X(\Sigma, N)$-module structure on $\cs_X\big(M, N'\big)$ for any $N'$ with $f(N) \subseteq N'$. The action is given by ``pushing tangles in through the boundary". In other words, the pre-composition of an embedding of a collar neighborhood $g: \partial M \times I \to M$ with the embedding $f \times \id_I: \Sigma\times I \to \partial M \times I$ induces a bilinear map
+The above homomorphisms are a special case of a more general type of map. If $N$ is a set of framed points on $\Sigma$, then a smooth embedding $f: \Sigma \to \partial M$ induces a $\cs_X(\Sigma, N)$-module structure on $\cs_X\big(M, N'\big)$ for any $N'$ with $f(N) \subseteq N'$. The action is given by ``pushing tangles in through the boundary". In other words, the pre-composition of a smooth embedding of a collar neighborhood $g: \partial M \times I \to M$ with $f \times \id_I: \Sigma\times I \to \partial M \times I$ induces a bilinear map
 \[
 \cs_X(\Sigma, N) \times \cs_X(M, N') \to \cs_X(M, N')
 \]
