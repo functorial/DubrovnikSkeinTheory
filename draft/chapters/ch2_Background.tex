@@ -71,7 +71,7 @@ Let $B$ be the smooth closed $3$-ball, $N_i$ be some collection of $2i$ boundary
 \[\{ W(x) \mid x \in X \text{ and } W:\ct(B, N_B) \to \ct(M, N_M) \text{ is a wiring diagram} \}.\] 
 A quotient of the form $\cs_X(M, N) := \ct(M, N) / \ci(X)$ is called a \textbf{skein module} of $M$ relative to $N$. If $N = \varnothing$ is the empty set, we may use the notation $\cs_X(M) := \cs_X(M, \varnothing)$. Similar definitions may be given using oriented and/or unframed tangles instead. 
 \end{definition}
-The construction $\cs_X(-, -)$ is a functor in the same way that $\ct(-, -)$ is; a smooth embedding $f: M \to M'$ and an element $W \in \cs_X\big( M-f(M'), N \sqcup f(N') \big)$ defines a linear map $W: \cs_X(M, N) \to \cs_X(M', N')$. In fact, the quotient maps $\alpha_{(M, N)}: \ct(M, N) \to \cs_X(M, N)$ yield a natural transformation. In other words, given a morphism $(M, N) \to (M', N')$ in $\sfc$, the diagram
+The construction $\cs_X(-, -)$ is a functor in the same way that $\ct(-, -)$ is; a smooth, orientation-preserving embedding $f: M \to M'$ and an element $W \in \cs_X\big( M-f(M'), N \sqcup f(N') \big)$ defines a linear map $W: \cs_X(M, N) \to \cs_X(M', N')$. In fact, the quotient maps $\alpha_{(M, N)}: \ct(M, N) \to \cs_X(M, N)$ yield a natural transformation. In other words, given a morphism $(M, N) \to (M', N')$ in $\sfc$, the diagram
 \begin{center}
 \begin{tikzcd}
 	\ct(M, N) \arrow[d,"\alpha_{(M, N)}"] \arrow[r, "W"] 
@@ -81,25 +81,28 @@ The construction $\cs_X(-, -)$ is a functor in the same way that $\ct(-, -)$ is;
 \end{center}
 commutes. Such a functor will be called a $\textbf{skein theory}$. 
 
-For any oriented surface $\Sigma$, we can define a category $\sfskein_X(\Sigma)$. The objects of this category are finite sets of framed points $N$ in $\Sigma$, and the morphisms $N \to N'$ are elements of $\cs_X\big(\Sigma \times I, (N \times \{0\}) \sqcup (N' \times \{1\})\big)$, so the category is $R$-linear. Write composition of morphisms by concatenation. If $y:N \to N'$ and $z:N' \to N''$ are morphisms, then their composite $yz:N \to N''$ is constucted by gluing $z$ on $y$ through $N'$ and rescaling the interval coordinate appropriately.
+For any oriented surface $\Sigma$, we can define a category $\sfskein_X(\Sigma)$ which we will call a $\textbf{skein category}$. The objects of this category are finite sets of framed points $N$ in $\Sigma$, and the morphisms $N \to N'$ are elements of $\cs_X\big(\Sigma \times I, (N \times \{0\}) \sqcup (N' \times \{1\})\big)$, so the category is $R$-linear. Write composition of morphisms by concatenation. If $y:N \to N'$ and $z:N' \to N''$ are morphisms, then their composite $yz:N \to N''$ is constucted by gluing $z$ on $y$ through $N'$ and rescaling the interval coordinate appropriately.
 
 \AP{Picture of composition in $\sfskein_X(\Sigma)$.}
 
 The endomorphism algebras in this category are called \textbf{skein algebras} and are denoted by $\cs_X(\Sigma, N) := \cs_X(\Sigma \times I, (N \times \{0\}) \sqcup (N \times \{1\}) \big)$. If $N$ is the empty set, then we reduce the notation to simply $\cs_X(\Sigma)$.
 
-If $f: \Sigma \to \Sigma'$ is a smooth, orientation-preserving embedding of surfaces, then there is an induced functor 
+If $f: \Sigma \to \Sigma'$ is a smooth embedding of surfaces, then there is an induced functor 
 \[
-f_*: \sfskein_X(\Sigma') \to \sfskein_X(\Sigma)
+\sfskein_X(f): \sfskein_X(\Sigma') \to \sfskein_X(\Sigma)
 \]
-defined on objects by $f_*(N) = f(N)$ and on morphisms in the following way. First, extend $f$ trivially to $f \times \id_I: \Sigma \times I \to \Sigma' \times I$. Then, in the skein algebra of the complement of the image of $f \times \id_I$, choose the multiplicative identity element $e \in \cs_X\big( \Sigma' - \im(f) \big)$ which is the empty tangle. The pair $(f \times \id_I, e)$ is an object in the category $\sfc$, which gives rise to a wiring
+defined on objects by $\sfskein_X(f)(N) = f(N)$ and on morphisms in the following way. First, extend $f$ trivially to $f \times \id_I: \Sigma \times I \to \Sigma' \times I$. Then, in the skein algebra of the complement of the image of $f \times \id_I$, choose the multiplicative identity element $e \in \cs_X\big( \Sigma' - \im(f) \big)$ which is the empty tangle. The pair $(f \times \id_I, e)$ is an object in the category $\sfc$, which gives rise to a wiring
 \[e: \cs_X\Big(\Sigma \times I, \big(N \times \{0\}\big) \sqcup \big(N' \times \{1\}\big) \Big) \to \cs_X\Big(\Sigma' \times I, \big(f(N) \times \{0\}\big) \sqcup \big( f(N') \times \{1\} \big) \Big)\]
-via the functor $\cs_X$. Now we may define what $f_*$ does to morphisms: $f_*(y) = e(y)$ for any $y \in \cs_X\Big(\Sigma \times I, (N \times \{0\}) \sqcup (N' \times \{1\}) \Big)$.
+via the functor $\cs_X$. Now we may define what $\sfskein_X(f)$ does to morphisms: $\sfskein_X(f)(y) = e(y)$ for any $y \in \cs_X\Big(\Sigma \times I, (N \times \{0\}) \sqcup (N' \times \{1\}) \Big)$.
 
-\AP{Picture of how $f_*$ works on morphisms.}
+\AP{Picture of how $\sfskein_X(f)$ works on morphisms.}
 
-It is clear that $f_*$ preserves composition. In particular, $f_*$ defines algebra homomorphisms on the skein algebras
+It is clear that $\sfskein_X(f)$ preserves composition and identity morphisms. Therefore, if we let $\mathsf{Surf}$ be the category of smooth embeddings between smooth oriented surfaces, we can summarize our last few points by saying we have a functor
+\[
+\sfskein_X: \mathsf{Surf} \to \mathsf{Cat}.
+\]
+In particular, $\sfskein_X(f)$ defines algebra homomorphisms on the skein algebras
 \[e: \cs_X\big(\Sigma, N\big) \to \cs_X\big(\Sigma', f(N)\big).\]
-
 \AP{We use this type of algebra homomorphism when we embed the annulus into the torus.}
 
 The above homomorphisms are a special case of a more general type of map. If $N$ is a set of framed points on $\Sigma$, then a smooth embedding $f: \Sigma \to \partial M$ induces a $\cs_X(\Sigma, N)$-module structure on $\cs_X\big(M, N'\big)$ for any $N'$ with $f(N) \subseteq N'$. The action is given by ``pushing tangles in through the boundary". In other words, the pre-composition of a smooth embedding of a collar neighborhood $g: \partial M \times I \to M$ with $f \times \id_I: \Sigma\times I \to \partial M \times I$ induces a bilinear map
@@ -112,33 +115,57 @@ because $M$ minus a collar neighborhood is diffeomorphic to itself. Alternativel
 
 \subsection{Examples of Skein Theories}
 
-The last subsection leaves us with an important and unanswered question. Which sets of skein relations $X$ produce interesting skein theories? One class of examples is found by examing sets of relations satisfied by morphisms in a linear ribbon category. Ribbon categories are braided monoidal categories which are rigid and equipped with a twist morphism for every object, satisfying some compatibility conditions. The axioms are such that the morphisms may be interpreted as framed braid diagrams. In particular, the morphisms satisfy the Reidemeister moves shown previously. We will discuss three examples of skein theories whose relations are meant to emulate linear relations satisfied by the braid and twist morphisms in certain ribbon categories coming from the representation theory of quantum groups. 
+The last subsection leaves us with an important and unanswered question. Which sets of skein relations $X$ produce interesting skein theories? One class of examples is found by examing sets of relations satisfied by morphisms in a linear ribbon category. Ribbon categories are braided monoidal categories which are rigid and equipped with a twist morphism for every object, satisfying some compatibility conditions. The axioms are such that the morphisms may be interpreted as framed braid diagrams. In particular, the morphisms satisfy the Reidemeister moves shown previously. We will discuss three examples of skein theories derived from skein relations which are meant to emulate linear relations satisfied by the braid and twist morphisms in certain ribbon categories coming from the representation theory of quantum groups, a topic which has generated a lot of interest from mathematicians since the 1980s. Quantum groups provided a class of non-commutative and non-cocommutative Hopf algebras which are not constructed in a trivial way (such as taking a tensor product of one non-commutative and one non-cocommutative Hopf algebra). Furthermore, the categories of representations of quantum groups are braided monoidal categories with non-involutive braidings. The skein relations below capture how far off the braidings are from being involutive.  
 
-Here, we are forced to fix a base ring. For our purposes, we choose our base ring to be $R := \Q(s, v)$, rational functions in two indeterminates over the rational numbers. This ring is quite large, and some of the analysis of the skein theories remain true under choices of smaller base rings, but we make this choice for simplicity. In particular, the theorem \AP{*Cite BB} is stated over this ring. \\
-\textbf{Kauffman (Dubrovnik) Skein Relations}
+Here, we are forced to fix a base ring. For our purposes, we choose our base ring to be $R := \Q(s, v)$, rational functions in two indeterminates over the rational numbers. This ring is quite large, and some of the analysis of the skein theories remain true under choices of smaller base rings, but we make this choice for simplicity. In particular, the theorem \AP{Cite BB} is stated over this ring, a result we will depend heavily on later on. \\
 
+\begin{example}[\textit{Kauffman (Dubrovnik) Skein Relations}]
 Let $X_1$ denote the set of two unoriented skein relations
 \begin{flalign*}
     \vcenter{\hbox{\includegraphics{poscross.eps}}} &= \vcenter{\hbox{\includegraphics{negcross.eps}}} + (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{idresolution.eps}}} - (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{capcupresolution.eps}}} \\ \\
-    \vcenter{\hbox{\includegraphics{invvh.eps}}} &= v^{-1} \,\, \vcenter{\hbox{\includegraphics{frameresolution.eps}}}.
+    \vcenter{\hbox{\includegraphics{vh.eps}}} &= v \,\, \vcenter{\hbox{\includegraphics{frameresolution.eps}}}.
 \end{flalign*}
-The functor $\cd(-,-) := \cs_{X_1}(-,-)$ is the Dubrovnik Skein Theory (sometimes just called the Kauffman Skein Theory). Using the Dubrovnik variant is important for us (see \AP{universal enveloping algebra result}). This theory is related to Dubrovnik polynomials in that the Dubrovnik polynomial of a link is a normalized value of the link in $\cd(S^3)$. The normalization is often so that the Dubrovnik polynomial of the unknot is $1$, whereas the value of the unknot in $\cd(S^3)$ is $\delta_\cd := 1 - \frac{v-v^{-1}}{s-s^{-1}}$, which can be deduced from the skein relations.\\
-\textbf{HOMFLYPT Skein Relations}
+The functor $\cd(-,-) := \cs_{X_1}(-,-)$ is the Dubrovnik skein theory (sometimes just called the Kauffman skein theory). We will use the notation $\mathsf{D} := \sfskein_{X_1}$ for the Dubrovnik skein categories. Using the Dubrovnik variant is important for us (see \AP{universal enveloping algebra result}). This theory is related to Dubrovnik polynomials in that the Dubrovnik polynomial of a link is a normalized value of the link in $\cd(S^3)$. The normalization is often so that the Dubrovnik polynomial of the unknot is $1$, whereas the value of the unknot in $\cd(S^3)$ is $\delta_\cd := 1 - \frac{v-v^{-1}}{s-s^{-1}}$, which can be deduced from the skein relations.
+\end{example}
 
+\begin{example}[\textit{HOMFLYPT Skein Relations}]
 Next, let $X_2$ denote the set of two oriented skein relations
 \begin{flalign*}
     \vcenter{\hbox{\includegraphics{poscrossor.eps}}} &= \vcenter{\hbox{\includegraphics{negcrossor.eps}}} + (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{idresolutionor.eps}}} \\ \\
-    \vcenter{\hbox{\includegraphics{invvhor.eps}}} &= v^{-1} \,\, \vcenter{\hbox{\includegraphics{frameresolutionor.eps}}}
+    \vcenter{\hbox{\includegraphics{vhor.eps}}} &= v \,\, \vcenter{\hbox{\includegraphics{frameresolutionor.eps}}}
 \end{flalign*}
-The functor $\ch(-,-) := \cs_{X_2}(-,-)$ is the HOMFLYPT Skein Theory. As in the Dubrovnik case, this theory is related to HOMFLYPT polynomials so that the HOMFLYPT polynomial of a link is a normalized value of the link in $\ch(S^3)$. Again, some often make the choice to normalize this polynomial so that the value of the unknot is $1$, but the value of the unknot in $\ch(S^3)$ is $\delta_\ch := -\frac{v-v^{-1}}{s-s^{-1}}$.\\ \\
-\textbf{Kauffman Bracket Skein Relations}
+The functor $\ch(-,-) := \cs_{X_2}(-,-)$ is the HOMFLYPT skein theory and we use the notation $\mathsf{H} := \sfskein_{X_2}$ for the HOMFLYPT skein categories. As in the Dubrovnik case, this theory is related to HOMFLYPT polynomials so that the HOMFLYPT polynomial of a link is a normalized value of the link in $\ch(S^3)$. Again, some often make the choice to normalize this polynomial so that the value of the unknot is $1$, but the value of the unknot in $\ch(S^3)$ is $\delta_\ch := -\frac{v-v^{-1}}{s-s^{-1}}$.
+\end{example}
 
+\begin{example}[\textit{Kauffman Bracket Skein Relations}]
 As a final example, let $X_3$ denote the set of two unoriented skein relations
 \begin{flalign*}
-    \vcenter{\hbox{\includegraphics{poscross.eps}}} &= \vcenter{\hbox{\includegraphics{negcross.eps}}} + (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{idresolution.eps}}} - (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{capcupresolution.eps}}} \\ \\
-    \vcenter{\hbox{\includegraphics{invvh.eps}}} &= v^{-1} \,\, \vcenter{\hbox{\includegraphics{frameresolution.eps}}}
+    \vcenter{\hbox{\includegraphics{poscross.eps}}} &= s \,\, \vcenter{\hbox{\includegraphics{idresolution.eps}}} + s^{-1} \,\, \vcenter{\hbox{\includegraphics{capcupresolution.eps}}} \\ \\
+    \vcenter{\hbox{\includegraphics{vh.eps}}} &= -s^{-3} \,\, \vcenter{\hbox{\includegraphics{frameresolution.eps}}}
 \end{flalign*}
-The functor $\ck(-,-) := \cs_{X_3}(-,-)$ is the Kauffman Bracket Skein Theory (not be confused with the Kauffman Skein Theory). The value of a link in $\ck(S^3)$ is equal to its bracket polynomial, which may be normalized as above to obtain its Jones polynomial. 
+The functor $\ck(-,-) := \cs_{X_3}(-,-)$ is the Kauffman bracket skein theory (not be confused with the Kauffman skein theory) and we use $\mathsf{K} := \sfskein_{X_3}$ to notate the Kauffman bracket skein categories. The value of a link in $\ck(S^3)$ is equal to its bracket polynomial, which may be normalized as above to obtain its Jones polynomial. 
+\end{example}
+
+\begin{remark}
+Any linear combination of tangles which satisfy the Dubrovnik skein relations will also satisfy the Kauffman bracket skein relations after making the specialization $v=-s^{-3}$. Therefore, there is a natural transformation of skein theories $\cd(-,-) \to \ck(-,-)$ induced by the intentity map on link diagrams. 
+\end{remark}
+
+In this work, we will focus more on the Dubrovnik and the HOMFLYPT skein theories, but will make a few mentions regarding the Kauffman bracket skein theory when it is valuable for us to do so. It is worth mentioning that many of the theorems and proofs relating to the Dubrovnik and HOMFLYPT skein theories have been insipired by analagous work about the Kauffman bracket skein theory. 
+
+\subsection{Skein algebras of tangles in a cube}
+
+In the case where $\Sigma = I \times I$, the endomorphism objects of $\mathsf{D}(\Sigma), \mathsf{H}(\Sigma)$, and $\mathsf{K}(\Sigma)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $[n]$ be a set of $n$ points in $\Sigma$, chosen to be evenly spaced along the line segment $\frac{1}{2} \times I$. Then the endomorphism algebras 
+\[
+BMW_n := \End_\mathsf{D}(\Sigma)([n]), \qquad H_n := \End_\mathsf{H}(\Sigma)([n]), \qquad TL_n := \End_\mathsf{K}(\Sigma)([n])
+\]
+are known to be isomorphic to the Birman-Murakami-Wenzl, (Type A) Hecke, and Temperley-Lieb algebras, respectively (\AP{*Add citations}). 
+
+Let $q \in \C$ be not a root of unity, $U_q(\mathfrak{gl}_N)$ be the Drinfeld-Jimbo quantum group associated to the Lie algebra $\mathfrak{gl}_N$, and $V$ be the natural representation of $U_q(\mathfrak{gl}_N)$ (\AP{cite CP}). Then $H_n$ acts on the $n$-fold tensor product $V^{\otimes n}$ by $U_q(\mathfrak{gl}_N)$-linear endomorphisms, and this action generates $\End_{U_q(\mathfrak{gl}_N)}(V^{\otimes n})$. This is actually part of the statement of quantum Frobenius-Schur-Weyl duality: $V^{\otimes n}$ is a $U_q(\mathfrak{gl}_N)$-$H_n$-bimodule, and the action of one algebra generates the linear endomorphisms with respect to the other. So a representation of one algebra determines a representation of the other via tensor product with $V^{\otimes n}$. The Birman-Murakami-Wenzl algebra plays the role of the Hecke algebra for $U_q(\mathfrak{g}_N)$ in the case where $\mathfrak{g}$ is one of the orthogonal or symplectic Lie algebras. For this reason, from a Lie theoretic point of view, the HOMFLYPT skein theory is thought of as a ``type A" theory, while the Dubrovnik skein theory is a ``types B, C, D" skein theory.
+
+As for the Temperley-Lieb algebra $TL_n$, it acts on the $n$-fold tensor power $V^{\otimes n}$ of the natural representation of $U_q(\mathfrak{gl}_2)$. Actually, there is a surjective algebra homomorphism $H_n \to TL_n$ and the action $H_n \to \End_{U_q(\mathfrak{gl}_2)}(V^{\otimes n})$ factors through this homomorphism. One can conclude that the action of $H_n$ on $V^{\otimes n}$ is not faithful, at least in the case when $N=2$ and $n \geq 1$.
+
+
+\subsection{Skein algebras of the annulus}
 
 \subsection{HOMFLYPT and Kauffman Skein Modules}
 
