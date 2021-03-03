@@ -162,7 +162,7 @@ are known to be isomorphic to the Birman-Murakami-Wenzl, (Type A) Hecke, and Tem
 
 Let $q \in \C$ be not a root of unity, $U_q(\mathfrak{gl}_N)$ be the Drinfeld-Jimbo quantum group associated to the Lie algebra $\mathfrak{gl}_N$, and $V$ be the natural representation of $U_q(\mathfrak{gl}_N)$ (\AP{cite CP}). Then $H_n$ acts on the $n$-fold tensor product $V^{\otimes n}$ by $U_q(\mathfrak{gl}_N)$-linear endomorphisms, and this action generates $\End_{U_q(\mathfrak{gl}_N)}(V^{\otimes n})$. This is actually part of the statement of quantum Frobenius-Schur-Weyl duality: $V^{\otimes n}$ is a $U_q(\mathfrak{gl}_N)$-$H_n$-bimodule, and the action of one algebra generates the linear endomorphisms with respect to the other. So a representation of one algebra determines a representation of the other via tensor product with $V^{\otimes n}$. The Birman-Murakami-Wenzl algebra plays the role of the Hecke algebra for $U_q(\mathfrak{g}_N)$ in the case where $\mathfrak{g}$ is one of the orthogonal or symplectic Lie algebras. For this reason, from a Lie theoretic point of view, the HOMFLYPT skein theory is thought of as a ``type A" theory, while the Dubrovnik skein theory is a ``types B, C, D" skein theory.
 
-As for the Temperley-Lieb algebra $TL_n$, it acts on the $n$-fold tensor power $V^{\otimes n}$ of the natural representation of $U_q(\mathfrak{gl}_2)$. Actually, there is a surjective algebra homomorphism $\pi_{TL}: H_n \to TL_n$ and the action $H_n \to \End_{U_q(\mathfrak{gl}_2)}(V^{\otimes n})$ factors through this homomorphism (see \AP{cite Jimbo}). One can conclude that the action of $H_n$ on $V^{\otimes n}$ is not faithful, at least in the case when $N=2$ and $n \geq 1$. \AP{sl2 vs gl2?}
+As for the Temperley-Lieb algebra $TL_n$, it acts on the $n$-fold tensor power $V^{\otimes n}$ of the natural representation of $U_q(\mathfrak{gl}_2)$. Actually, there is a surjective algebra homomorphism $\pi_{TL}: H_n \to TL_n$ and the action $H_n \to \End_{U_q(\mathfrak{gl}_2)}(V^{\otimes n})$ factors through this homomorphism (see \AP{cite Jimbo}). One can conclude that the action of $H_n$ on $V^{\otimes n}$ is not faithful, at least in the case when $N=2$ and $n \geq 2$. \AP{sl2 vs gl2?}
 
 Much is known about these algebras and some of the results surrounding them are very useful in our context. One of the main ideas is that each of the algebras discussed above has a family of idempotents which provide algebraically nice closures to links in the skein algebra of an annulus. Let's first describe the Hecke algebra in more detail before focusing on the BMW algebra. 
 
@@ -180,27 +180,49 @@ which is a section of the natural projection $BMW_n \to H_n$ such that
 \begin{equation} \label{eq:bbsectionproperty}
 \Gamma_n(x)y = 0 = y \Gamma_n(x) \quad \textrm{for } x \in H_n, y \in I_n.
 \end{equation}
-Using this section, one can transport the minimal idempotents $y_\lambda \in H_n$ to minimal idempotents $\tilde{y}_\lambda := \Gamma_n(y_\lambda) \in BMW_n$. The elements $\tilde{h}_n := \tilde{y}_{(n)}$ are called the \textbf{(BMW) symmetrizers} and are the unique idempotent elements of $BMW_n$ satisfying the properties of the Hecke symmetrizers and property \eqref{eq:bbsectionproperty}. 
+Using this section, one can transport the minimal idempotents $y_\lambda \in H_n$ to minimal idempotents $\tilde{y}_\lambda := \Gamma_n(y_\lambda) \in BMW_n$. The elements $\tilde{y}_n := \tilde{y}_{(n)}$ are called the \textbf{(BMW) symmetrizers} and are the unique idempotent elements of $BMW_n$ satisfying the properties of the Hecke symmetrizers and property \eqref{eq:bbsectionproperty}. By \AP{cite Shelly}, these symmetrizers satisfy a very useful recurrence relation
+\AP{Change $f_n$ to $\tilde{y}_n$ in symmetrizer pictures.}
+%\[
+%[n+1] \vcenter{\hbox{\includegraphics[width=2.9cm]{f_nplus1.eps}}} = [n]s^{-1} \vcenter{\hbox{\includegraphics[width=2.9cm]{f_notimes11otimesf_n.eps}}} + \vcenter{\hbox{\includegraphics[width=2.9cm]{sigma_ndotssigma_11otimesf_n.eps}}} + [n]s^{-1} \beta_n \vcenter{\hbox{\includegraphics[width=2.9cm]{f_notimes1H1otimesf_n.eps}}}.
+%\]
+For what it's worth, this relation descends to something analagous for the $y_n \in H_n$ via the projection map described above ($\tilde{y}_n$ gets sent to $y_n$ and the last diagram on the right-hand side gets sent to $0$). 
 
 \AP{Come back and add braiding/twist identities from BB if we need them.}
 
-
-\AP{This diagram actually doesn't commute... $\pi_H(c_i)=0, but \eta_{\dots}(c_i) = c_i.}
+\AP{This next diagram actually doesn't commute... $\pi_H(c_i)=0$, but $\eta_{\dots}(c_i) = c_i$. What does this mean for images of BMW symmetrizers in $TL_n$? Discuss Jones-Wenzl projectors once this is figured out since they are needed for compatibility result.}
 \begin{center}
 \begin{tikzcd}
-	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_(I^3, 2n)}", two heads] \\
+	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_{(I^3, 2n)}}", two heads] \\
 H_n \arrow[dr, "{\pi_{TL}}", two heads] \arrow[ur, "\Gamma", bend left, hook] & \\
 	& TL_n
 \end{tikzcd}
 \end{center}
 
-\subsection{Skein algebras of the annulus}
-
-
-
-\subsection{HOMFLYPT and Kauffman Skein Modules}
-
 \subsection{Skein Algebras of the Annulus}
+
+Let's use the notation $A := S^1 \times [0,1]$ for the annulus. The thickened annulus represents perhaps the simplest space with non-trivial topology that can harbor links. There are often many different smooth embeddings of the thickened annulus into a given 3-manifold $M$ (one for every element of $\pi_1(M)$, at the very least)\AP{threading a knot}. Keep in mind that if we have a smooth embedding $f: A \times I \hookrightarrow M$, then we have an induced linear map between skein modules $\cs_X(f): \cs_X (A) \to \cs_X (M)$, allowing us to prod for information about $\cs_X(M)$. 
+
+As a starting point, it is immediate that any skein algebra $\cs_X(A)$ is commutative since the algebra of links in $A \times I$ is a commutative algebra. To see this, consider the product of two links $L_1$ and $L_2$ in the link algebra and start by stretching $L_2$ towards the outer boundary past $L_1$, followed by moving it down below the furthest point of $L_1$, and finally contracting $L_2$ can to its original radial position. 
+
+We'll tackle describing the structure of $\ck(A)$ before the others since it is the easiest. The Kauffman bracket skein relation allows one to resolve all crossings in any diagram on any surface $\Sigma$. It is a theorem of Pzytycki that the set of non-trivial mutli-curves (non-trivial meaning that no curve bounds a disk), together with the empty link in $A \times \{ \ast \}$ forms a basis of $\ck(A)$ (actually, the theorem is stated for any skein algebra, see \AP{cite}). There is only one non-trivial curve $z$ and powers of it in $\ck(A)$ generate all non-trivial multicurves. Therefore, $\ck(A)$ is a polynomial algebra $R[z]$. 
+
+The HOMFLYPT and Dubrovnik cases are more complicated because the skein relations do not allow one to resolve all the crossings in a diagram. However, they do allow one to change a diagram with a negative crossing into a diagram with a positive crossing, plus diagrams with a lesser number of crossings. It follows that the skein algebras $\ch(A)$ and $\cd(A)$ are generated by knots with only positive crossings. Let $z_i$ be a knot in $A$ with winding number $i$ around the annulus. Turaev shows in \AP{cite} that the $z_i$ are algebraically independent by showing their HOMFLYPT and Dubrovnik polynomials are algebraically independent. Therefore, $\ch(A)$ is a polynomial algebra $R[z_i, i \in \Z_{\neq 0}]$. $\cd(A)$ has half as many generators since the $z_i$ in that setting are unoriented, but $\cd(A)$ is a polynomial algebra $R[z_i, i \in \Z_{> 0}]$ by the same arguments. 
+
+\AP{Picture of $z_i$}
+
+The skein algebras of tangles in a cube relate to the skein algebras of the annulus via a map $\cl(-)$, depicted as a wiring diagram below. 
+
+\AP{Picture of closure}
+
+Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda)$. Zhong and Lu show in \AP{cite} that the set $\{ \widetilde{Q}_\lambda \}$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map
+\AP{picture of meridian map.}
+where the eigenvalue of $Q_\lambda$ is 
+\[
+c_\lambda = \delta_\cd + (s - s^{-1}) \sum_{\square \in \lambda} v^{-1} s^{2 \textrm{cn}(\square)} - v s^{-2 \textrm{cn}(\square)}
+\]
+and where $\textrm{cn}(\square)$ is the \textit{content} of the box $\square$ in the Ferrer's diagram of the partition $\lambda$. \AP{maybe define $\textrm{cn}(\square)$ more precisely?} Two distinct partitions $\lambda$ and $\lambda '$ give rise to distinct values of $c_\lambda$ and $c_\lambda'$. Therefore, each of the eigenspaces is $1$-dimensional. 
+
+The behavior of $\widetilde{Q}_\lambda$ mimicks that of the $Q_\lambda := \cl^+(y_\lambda) \in \ch(A)$ where $\cl^+(-)$ is defined by orienting the strands in wiring digram of $\cl(-)$ counter-clockwise, as we now describe. Using the description $\ch(A) = R[z_i, i \in \Z_{\neq 0}]$, consider the subalgebras $\ch(A)^+ := R[z_i, i \in \Z_{> 0}]$ and $\ch(A)^- := R[z_i, i \in \Z_{< 0}]$. Then the two subalgebras are isomorphic via the linear involution defined by $z_i \mapsto z_{-i}$ (which may be realized topologically, as we describe in a later chapter \AP{reference?}) and $\ch(A) \cong \ch(A)^+ \otimes \ch(A)^-$. 
 
 \subsection{A Relative Skein Algebra of the Annulus}
 
