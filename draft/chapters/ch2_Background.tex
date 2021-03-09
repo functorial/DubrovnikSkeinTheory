@@ -116,7 +116,7 @@ because $M$ minus a collar neighborhood is diffeomorphic to itself. Alternativel
 
 \subsection{Examples of Skein Theories}
 
-The last subsection leaves us with an important and unanswered question. Which sets of skein relations $X$ produce interesting skein theories? One class of examples is found by examing sets of relations satisfied by morphisms in a linear ribbon category. Ribbon categories are braided monoidal categories which are rigid and equipped with a twist morphism for every object, satisfying some compatibility conditions. The axioms are such that the morphisms may be interpreted as framed braid diagrams. In particular, the morphisms satisfy the Reidemeister moves shown previously. We will discuss three examples of skein theories derived from skein relations which are meant to emulate linear relations satisfied by the braid and twist morphisms in certain ribbon categories coming from the representation theory of quantum groups, a topic which has generated a lot of interest from mathematicians since the 1980s. Quantum groups provided a class of non-commutative and non-cocommutative Hopf algebras which are not constructed in a trivial way (such as taking a tensor product of one non-commutative and one non-cocommutative Hopf algebra). Furthermore, the categories of representations of quantum groups are braided monoidal categories with non-involutive braidings. The skein relations below capture how far off the braidings are from being involutive.  
+The last subsection leaves us with an important and unanswered question. Which sets of skein relations $X$ produce interesting skein theories? One class of examples is found by importing sets of relations satisfied by morphisms in a linear ribbon category as skein relations. Ribbon categories are braided monoidal categories which are rigid and equipped with a twist morphism for every object, satisfying some compatibility conditions. The axioms are such that the morphisms may be interpreted as framed braid diagrams. In particular, the morphisms satisfy the Reidemeister moves shown previously. We will discuss three examples of skein theories derived from skein relations which are meant to emulate linear relations satisfied by the braid and twist morphisms in certain ribbon categories coming from the representation theory of quantum groups, a topic which has generated a lot of interest from mathematicians since the 1980s. The categories of representations of quantum groups are ribbon categories with non-involutive braidings and the skein relations below capture how far off the braidings are from being involutive.  
 
 Here, we are forced to fix a base ring. For our purposes, $R$ must be a commutative ring containing invertible elements $s$ and $v$. Typical choices of $R$ are $\Z[s^{\pm 1}, v^{\pm 1}], \Q(s, v)$, or some other ring in between these.  In particular, the theorem \AP{Cite BB} is stated over this ring, a result we will depend heavily on later on. \\
 
@@ -201,11 +201,11 @@ H_n \arrow[dr, "{\pi_{TL}}", two heads] \arrow[ur, "\Gamma", bend left, hook] & 
 
 \subsection{Skein Algebras of the Annulus}
 
-Let's use the notation $A := S^1 \times [0,1]$ for the annulus. The thickened annulus represents perhaps the simplest space with non-trivial topology that can harbor links. There are often many different smooth embeddings of the thickened annulus into a given 3-manifold $M$ (one for every element of $\pi_1(M)$, at the very least)\AP{threading a knot}. Keep in mind that if we have a smooth embedding $f: A \times I \hookrightarrow M$, then we have an induced linear map between skein modules $\cs_X(f): \cs_X (A) \to \cs_X (M)$, allowing us to prod for information about $\cs_X(M)$. 
+Let's use the notation $A := S^1 \times [0,1]$ for the annulus. The thickened annulus represents perhaps the simplest space with non-trivial topology that can harbor links. There are often many different smooth embeddings of the thickened annulus into a given 3-manifold $M$ (one for every element of $\pi_1(M)$, at the very least). Keep in mind that if we have a smooth embedding $f: A \times I \hookrightarrow M$, then we have an induced linear map between skein modules $\cs_X(f): \cs_X (A) \to \cs_X (M)$, allowing us to prod for information about $\cs_X(M)$. One common type of embedding is into a tubular neighborhood of a knot, an idea which we will explore later. \AP{expand?}
 
 As a starting point, it is immediate that any skein algebra $\cs_X(A)$ is commutative since the algebra of links in $A \times I$ is a commutative algebra. To see this, consider the product of two links $L_1$ and $L_2$ in the link algebra and start by stretching $L_2$ towards the outer boundary past $L_1$, followed by moving it down below the furthest point of $L_1$, and finally contracting $L_2$ can to its original radial position. 
 
-We'll tackle describing the structure of $\ck(A)$ before the others since it is the easiest. The Kauffman bracket skein relation allows one to resolve all crossings in any diagram on any surface $\Sigma$. It is a theorem of Pzytycki that the set of non-trivial mutli-curves (non-trivial meaning that no curve bounds a disk), together with the empty link in $A \times \{ \ast \}$ forms a basis of $\ck(A)$ (actually, the theorem is stated for any skein algebra, see \AP{cite}). There is only one non-trivial curve $z$ and powers of it in $\ck(A)$ generate all non-trivial multicurves. Therefore, $\ck(A)$ is a polynomial algebra $R[z]$. 
+We'll tackle describing the structure of $\ck(A)$ before the others since it is the easiest. The Kauffman bracket skein relation allows one to resolve all crossings in any diagram on any surface $\Sigma$. It is a theorem of Pzytycki that the set of non-trivial mutli-curves (non-trivial meaning that no curve bounds a disk), together with the empty link in $A \times \{ \ast \}$ forms a basis of $\ck(A)$ (actually, the theorem is stated for any skein algebra, see \AP{cite}). There is only one non-trivial curve $z$ and the set $\{ z^k \}_{k \in \N}$ exhaust all of the multicurves. Therefore, $\ck(A)$ is a polynomial algebra $R[z]$. 
 
 The HOMFLYPT and Dubrovnik cases are more complicated because the skein relations do not allow one to resolve all the crossings in a diagram. However, they do allow one to change a diagram with a negative crossing into a diagram with a positive crossing, plus diagrams with a lesser number of crossings. It follows that the skein algebras $\ch(A)$ and $\cd(A)$ are generated by knots with only positive crossings. Let $z_i$ be a knot in $A$ with winding number $i$ around the annulus. Turaev shows in \AP{cite} that the $z_i$ are algebraically independent by showing their HOMFLYPT and Dubrovnik polynomials are algebraically independent. Therefore, $\ch(A)$ is a polynomial algebra $R[z_i, i \in \Z_{\neq 0}]$. $\cd(A)$ has half as many generators since the $z_i$ in that setting are unoriented, but $\cd(A)$ is a polynomial algebra $R[z_i, i \in \Z_{> 0}]$ by the same arguments. 
 
@@ -215,19 +215,56 @@ The skein algebras of tangles in a cube relate to the skein algebras of the annu
 
 \AP{Picture of closure}
 
-Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda)$. Zhong and Lu show in \AP{cite} that the set $\{ \widetilde{Q}_\lambda \}$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map
+Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda)$. Zhong and Lu show in \AP{cite} that the set $\{ \widetilde{Q}_\lambda \}_\lambda$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map
 \AP{picture of meridian map.}
 where the eigenvalue of $Q_\lambda$ is 
 \[
-c_\lambda = \delta_\cd + (s - s^{-1}) \sum_{\square \in \lambda} v^{-1} s^{2 \textrm{cn}(\square)} - v s^{-2 \textrm{cn}(\square)}
+c_\lambda = \delta_\cd + ( s - s^{-1} ) \sum_{\square \in \lambda} v^{-1} s^{2 \textrm{cn}(\square)} - v s^{-2 \textrm{cn}(\square)}
 \]
-and where $\textrm{cn}(\square)$ is the \textit{content} of the box $\square$ in the Ferrer's diagram of the partition $\lambda$. \AP{maybe define $\textrm{cn}(\square)$ more precisely?} Two distinct partitions $\lambda$ and $\lambda '$ give rise to distinct values of $c_\lambda$ and $c_\lambda'$. Therefore, each of the eigenspaces is $1$-dimensional. 
+and where $\textrm{cn}(\square) := j - i$ is the \textit{content} of the box in the $\square$ in $i^\textrm{th}$ row and $j^\textrm{th}$ column of the Ferrer's diagram of the partition $\lambda$. \AP{maybe define $\textrm{cn}(\square)$ more precisely?} Two distinct partitions $\lambda$ and $\lambda '$ give rise to distinct values of $c_\lambda$ and $c_\lambda'$. Therefore, each of the eigenspaces is $1$-dimensional. 
 
-The behavior of $\widetilde{Q}_\lambda$ mimicks that of the $Q_\lambda := \cl^+(y_\lambda) \in \ch(A)$ where $\cl^+(-)$ is defined by orienting the strands in wiring digram of $\cl(-)$ counter-clockwise, as we now describe. Using the description $\ch(A) = R[z_i, i \in \Z_{\neq 0}]$, consider the subalgebras $\ch(A)^+ := R[z_i, i \in \Z_{> 0}]$ and $\ch(A)^- := R[z_i, i \in \Z_{< 0}]$. Then the two subalgebras are isomorphic via the linear involution defined by $z_i \mapsto z_{-i}$ (which may be realized topologically, as we describe in a later chapter \AP{reference?}) and $\ch(A) \cong \ch(A)^+ \otimes \ch(A)^-$. 
+The behavior of $\widetilde{Q}_\lambda$ is similar to that of the $Q_\lambda := \cl^+(y_\lambda) \in \ch(A)$ where $\cl^+(-)$ is defined by orienting the strands in wiring digram of $\cl(-)$ counter-clockwise, as we now describe. Using the description $\ch(A) = R[z_i, i \in \Z_{\neq 0}]$, consider the subalgebras $\ch(A)^+ := R[z_i, i \in \Z_{> 0}]$ and $\ch(A)^- := R[z_i, i \in \Z_{< 0}]$. Then the two subalgebras are isomorphic via the linear involution defined by $z_i \mapsto z_{-i}$ and $\ch(A) \cong \ch(A)^+ \otimes \ch(A)^-$. As a remark, note that this linear involution may be realized topologically by rotating the thickened annulus $\pi$ radians around an appropriately centered axis parallel to $A$ and taking the induced skein map. We will call this map the \textit{flip map}.
+
+In \AP{cite Lukac}, Lukac shows how to interpret $\ch(A)^+$ as the ring of symmetric functions $\Lambda$. There is an injective algebra homomorphism $\Lambda \to \ch(A)^+$ which sends the complete homogeneous symmetric function $h_n$ to $Q_{n}$ (such a map exists because $\Lambda$ is a free commutative $\Z$-algebra over the set $\{ h_n \}_{n \geq 1}$, see \AP{cite Macdonald}). Under this homomorphism, the Schur function $s_\lambda$ is sent to $Q_\lambda$. This theorem has plenty of implications. For example, the structure constants of $\Lambda$ in the basis $\{ s_\lambda \}_\lambda$ are the Littlewood-Richardson coefficients, which are then sent to structure constants of $\ch(A)^+$ in the basis $\{ Q_\lambda \}_\lambda$. In Chapter \AP{reference}, we discuss partial results surrounding the Dubrovnik analogue of this homomorphism. See Section \AP{reference} for a summary about the ring $\Lambda$.
+
+Another application of the interpretation of $\ch(A)^+$ as $\Lambda$ is the definition of new special elements in the skein algebra. There is a family of elements known as the power-sum symmetric functions, whose counterparts in $\ch(A)^+$ we will denote by $P_n$. These elements are algebraically independent in $\Q \otimes \Lambda$. Therefore, monomials in the $P_n$ form a basis of $\ch(A)^+$.
+
+
+\subsection{Skein Algebras of the Torus}
+
+The power-sum elements $P_n \in \ch(A)$ described above are known to behave wonderfully in skein theoretic computations. This allows for a simple description of the HOMFLYPT skein algebra of the torus $\ch(T^2)$ in terms of generators and relations. First, let's define the generators. For any rational number $r$ there is a smooth embedding 
+\[
+\iota_{r}: A \to T^2
+\]
+of the annulus into a tubular neighborhood of the line of rational slope $r$ in the torus. Consider the embeddings $\iota_{r}$ and $\iota_{-r}$ to be the same embedding with opposite orientations. These induce an algebra homomorphisms
+\[
+\ch(\iota_r): \ch(A) \to \ch(T^2)
+\]
+on the level of skein algebras. The $\iota_r$ are distinct isotopically (even homotopically) and are exhaustive in the sense that any knot in the thickened torus is may be represented as being contained in the image of an $\iota_q$. Therefore, any basis of $\ch(A)^+$ defines a basis of $\ch(T^2)$. Let's consider this with respect to the the power-sum monomial basis of $\ch(A)$. More precisely, for any pair of integers $\xx = (a, b)$ where $k = \gcd(\xx)$, define 
+\[
+P_\xx := \ch(\iota_{a/b})(P_k).
+\]
+
+In \AP{cite MS}, Morton and Samuelson prove that the skein algebra $\ch(T^2)$ admits a presentation with generators the elements of $\{ P_\xx \mid \xx \in \Z^2 \}$, subject to the relations 
+\[
+[P_\xx, P_\yy] = \big( s^{\det(\xx,\yy)} - s^{-\det(\xx,\yy)} \big) P_{\xx + \yy}.
+\]
+This presentation exhibits a relationship to the elliptic Hall algebra, a 2-parameter family of algebras obtained via Hall algebra decategorification of categories of coherent sheaves over certain elliptic curves (see \AP{Burban-Schiffman}). Along the diagonal of the parameter space, the Burban-Schiffman presentation of the elliptic Hall algebra matches the Morton-Samuelson presentation of the skein algebra of the torus. At the very least, this highlights two things. Firstly, the skein algebra of the torus admits a known deformation. Secondly, skein algebras are connected to surprising areas of mathematics and hence deserve our attention. \AP{Is this paragraph correct?}
+
+What we describe next is the Kauffman bracket skein algebra of the torus, although the order of exposition is opposite to the historical order of discovery. The story is actually quite similar to the HOMFLYPT case. Recall that $\ck(A)$ is a polynomial algebra $R[z]$ where $z$ is the simple closed curve around the hole of the annulus with winding number $1$. There exist polynomials known as \textit{Chebyshev polynomials} $T_k \in R[z]$ for all integer $k \geq 1$ which form a basis of $\ck(A)$. For any pair of integers $\xx = (a, b) \in \Z^2$, define elements $e_\xx \in \ck(T^2)$ as 
+\[
+T_\xx := \ck(\iota_{a/b})(T_k).
+\]
+Note that $e_\xx = e_{-\xx}$ because the $T_k$ are fixed under the flip map, which is possible since the Kauffman bracket skein theory is an unoriented skein theory. With this in mind, we may pass to the smaller indexing set $Z^2 / \langle \xx = -\xx \rangle$. Using these elements, Frohman and Gelca \AP{cite} prove that the skein algebra $\ck(T^2)$ admits a presentation with generators $e_\xx$ subject to the relations
+\[
+T_\xx T_\yy = s^{\det(\xx, \yy)} T_{\xx + \yy} + s^{-\det(\xx, \yy)} T_{\xx - \yy}
+\]
+which the authors call the ``product-to-sum" formulas. There is an algebra called the \textit{noncommutative torus}, which is a one-parameter deformation of the algebra of continuous functions on the torus. The Frohman-Gelca presentation of $\ck(T^2)$ matches a presentation of the invariant subalgebra of the noncommutative torus with respect to a certain involutive action, as shown in \AP{cite FG}. 
+
+For a Dubrovnik analogue of these presentations, see Chapter \AP{reference}.
+
 
 \subsection{A Relative Skein Algebra of the Annulus}
-
-\subsection{The HOMFLYPT Skein Algebra of the Torus}
 
 
 
