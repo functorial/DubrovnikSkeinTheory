@@ -1,11 +1,77 @@
 \chapter{The Kauffman Skein Algebra of the Torus}
 
-\section{Power Sum Type Elements}
+\AP{Add some introduction and remark about collaboration.}
+
+
+\section{Power Sum Elements}
+
+Recall that there is a injective algebra homomorphism $\Lambda \to \ch(A)^+$ which sends the Schur function $s_\lambda$ to the minimal idempotent closure $Q_\lambda$. Use $h_n := Q_{(n)}$ to denote the image of the $n^\textrm{th}$ complete homogeneous symmetric function under this homomorphism. In \AP{MS} the authors import power sum elements from $\Lambda$ to $P_k \in \ch(A)$. The power sum elements have a concrete definition in $\Lambda$, but alternatively they may be defined using an equation of formal power series in the ring $\ch(A)[[t]]$ as
+\begin{equation}
+\sum_{k=1}^\infty \frac{P_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty h_n t^n \Bigg)
+\end{equation}
+which writes each $P_k$ in terms of the generators $h_n$. 
+
+Using the Beliakova-Blanchet section $\Gamma: H_n \to BMW_n$, we may emulate this definition to define ``power sum" elements $\tilde{P}_k \in \cd(A)$ by the formal power series equation
+\begin{equation}
+\sum_{k=1}^\infty \frac{\tilde{P}_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty \tilde{h}_n t^n \Bigg)
+\end{equation}
+where $\tilde{h}_n := \tilde{Q}_{(n)}$ is the annular closure of the BMW symmetrizers $\tilde{y}_n = \Gamma(y_n)$.
+
+
+\subsection{Commutation Relations} \label{sec:commurationrelations}
+
+Here we will continue our discussion of Section \ref{sec:relativeannulus}. In particular, we will prove the following Theorem.
+
+\begin{theorem} \label{thm:powersumcommutator}
+For any $k \geq 1$, the relation
+\[
+e \cdot \tilde{P}_k - \tilde{P}_k \cdot e = (s^k - s^{-k}) (a^k - a^{-k})
+\]
+\end{theorem}
+
+We will split the proof of this theorem into two technical lemmas.
+
+\begin{lemma}
+The relations of Theorem \ref{thm:powersumcommutator} hold if and only if 
+\begin{equation}
+e \cdot (\tilde{h}_{n+2} + \tilde{h}_n) - (\tilde{h}_{n+2} + \tilde{h}_n) \cdot e = (sa + s^{-1}a^{-1}) (e \cdot \tilde{h}_{n+1}) - (s^{-1}a + sa^{-1}) (\tilde{h}_{n+1} \cdot e)
+\end{equation}
+for all $n \geq -1$ where $\tilde{h}_0 := 1$ and $\tilde{h}_{-1} := 0$. 
+\end{lemma}
+\begin{proof}
+The relations of Theorem \ref{thm:powersumcommutator} may be organized into a single power series equation
+\begin{equation}
+\sum_{k=1}^\infty \frac{e \cdot \tilde{P}_k - \tilde{P}_k \cdot e}{k} t^k = \sum_{k=1}^{\infty} \frac {(s^k - s^{-k}) (a^k - a^{-k})}{k} t^k
+\end{equation}
+in $\ca_\cd [[t]]$. Rewrite this equation as
+\begin{equation*}
+e \cdot \Bigg( \sum_{k=1}^\infty \tilde{P}_k \Bigg) - \Bigg( \sum_{k=1}^\infty \tilde{P}_k \Bigg) \cdot e = \sum_{k=1}^{\infty} \frac {(sat)^k}{k} + \sum_{k=1}^{\infty} \frac {(s^{-1}a^{-1}t)^k}{k} - \sum_{k=1}^{\infty} \frac {(s^{-1}at)^k}{k} - \sum_{k=1}^{\infty} \frac {(sa^{-1}t)^k}{k}
+\end{equation*}
+For shorthand, define 
+\[
+H(t) := 1 + \sum_{n=1}^\infty \tilde{h}_n t^n
+\]
+and recall the Taylor series expansion
+\[
+-\ln(1-x) = \sum_{k=1}^\infty \frac{x^k}{k}
+\]
+which is a variation of the Newton-Mercator series. 
+\end{proof}
+
 
 \section{All Relations}
 
+
+
+
 \section{Perpendicular Relations}
 
+
+
+
 \section{Main Theorem}
+
+
+
 
 \section{Compatibility With the Kauffman Bracket Skein Algebra of the Torus}
