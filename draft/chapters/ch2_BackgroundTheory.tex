@@ -208,6 +208,8 @@ H_n \arrow[dr, "{\pi_{TL}}", two heads] \arrow[ur, "\Gamma", bend left, hook] & 
 \end{tikzcd}
 \end{center}
 
+\AP{Would it be wise to include the BB matrix algebra description of $BMW_n$? Might be useful to point out the central idempotents $z_\lambda$, which are distinct from the $y_\lambda$, even though I don't think I use them anywhere. Maybe a quick remark would suffice. Note that the annular closure of the $y_\lambda$ is equal to the annular closure of $z_\lambda$.}
+
 \subsection{Skein Algebras of the Annulus} \label{sub:annulus}
 
 Let's use the notation $A := S^1 \times [0,1]$ for the annulus. The thickened annulus represents perhaps the simplest space with non-trivial topology that can harbor links. There are often many different smooth embeddings of the thickened annulus into a given 3-manifold $M$ (one for every element of $\pi_1(M)$, at the very least). Keep in mind that if we have a smooth embedding $f: A \times I \hookrightarrow M$, then we have an induced linear map between skein modules $\cs_X(f): \cs_X (A) \to \cs_X (M)$, allowing us to prod for information about $\cs_X(M)$. One useful type of embedding of $A$ is into a tubular neighborhood of a knot, which is often called \textit{decorating} or \textit{threading} a knot.
@@ -321,15 +323,11 @@ which are linear and anti-linear involutions, respectively. We will also call th
 	\overline{W \left( x \right)} &= W \left( \overline{x} \right), & \overline{(y \cdot e)} &= e \cdot \overline{y}
 \end{align*}
 for any $x \in BMW_n$ or $y \in \cc_\cd$. Apply the flip, the mirror, and the composite of the two separately to Equation \eqref{eq:recursionina1} to obtain alternate versions of the original recurrence relation:
-\begin{equation} \label{eq:recursionina2}
-\quad [n+1] W^*_n = \tilde{h}_n \cdot e + [n] s^{-1} a W^*_{n-1} + [n] s^{-1} \beta_n a W_{n-1}, 
-\end{equation}
-\begin{equation} \label{eq:recursionina3}
-[n+1] W_n = \tilde{h}_n \cdot e + [n] s a W_{n-1} + [n] s \bar{\beta}_n a^{-1} W^*_{n-1},
-\end{equation}
-\begin{equation} \label{eq:recursionina4}
-\quad [n+1] W^*_n = e \cdot \tilde{h}_n + [n] s a^{-1} W^*_{n-1} + [n] s^{-1} \bar{\beta}_n a W_{n-1}.
-\end{equation}
+\begin{align} 
+[n+1] W^*_n = \tilde{h}_n \cdot e + [n] s^{-1} a W^*_{n-1} + [n] s^{-1} \beta_n a W_{n-1} \label{eq:recursionina2}, \\
+[n+1] W_n = \tilde{h}_n \cdot e + [n] s a W_{n-1} + [n] s \bar{\beta}_n a^{-1} W^*_{n-1} \label{eq:recursionina3}, \\
+\quad [n+1] W^*_n = e \cdot \tilde{h}_n + [n] s a^{-1} W^*_{n-1} + [n] s^{-1} \bar{\beta}_n a W_{n-1}. \label{eq:recursionina4}
+\end{align}
 
 Rearranging the difference of Equations \eqref{eq:recursionina1} and \eqref{eq:recursionina2} gives a relation
 \begin{equation}
