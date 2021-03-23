@@ -33,7 +33,7 @@ We will split the proof of this theorem into two technical lemmas.
 
 \begin{lemma} \label{lem:powersumcommutator1}
 The relations of Theorem \ref{thm:powersumcommutator} hold if and only if 
-\begin{equation} 
+\begin{equation} \label{eq:powersumcommutator1}
 e \cdot (\tilde{h}_{n+2} + \tilde{h}_n) - (\tilde{h}_{n+2} + \tilde{h}_n) \cdot e = (sa + s^{-1}a^{-1}) (e \cdot \tilde{h}_{n+1}) - (s^{-1}a + sa^{-1}) (\tilde{h}_{n+1} \cdot e)
 \end{equation}
 for all $n \geq -1$ where $\tilde{h}_0 := 1$ and $\tilde{h}_{i} := 0$ for any $i \leq -1$. 
@@ -77,7 +77,13 @@ Exponentiating both sides and equating coefficients gives the system of equation
 The relations of Lemma \ref{lem:powersumcommutator1} hold.
 \end{lemma}
 \begin{proof}
-The proof is a technical computation using repeated applications of the recursive formula for the $\tilde{h}_n$. Since we will need them here, let's recall the formulas given in Section \ref{sec:relativeannulus}. There were recursive formulas
+If $n=-1$, the relation we would like to show becomes 
+\begin{equation*}
+e \cdot \tilde{h}_1 - \tilde{h}_1 \cdot e = \{1\} \left( a - a^{-1} \right)
+\end{equation*}
+which is just the Dubrovnik skein relation. 
+
+For general values of $n$, the proof is a technical computation using repeated applications of the recursive formula for the $\tilde{h}_n$. Since we will need them here, let's recall the formulas given in Section \ref{sec:relativeannulus}. There are recursive formulas
 \begin{align}
 [n+1] W_n &= e \cdot \tilde{h}_n + [n] s^{-1} a W_{n-1} + [n] s^{-1} \beta_n a^{-1} W^*_{n-1}, \label{eq:r1} \\
 [n+1] W^*_n &= \tilde{h}_n \cdot e + [n] s^{-1} a W^*_{n-1} + [n] s^{-1} \beta_n a W_{n-1}, \label{eq:r2} \\
@@ -86,80 +92,70 @@ The proof is a technical computation using repeated applications of the recursiv
 \end{align}
 and the ``fundamental relation"
 \begin{equation}
-\tilde{h}_n \cdot e - e \cdot \tilde{h}_n = \{n\} (a^{-1} W^*_{n-1} - a W_{n-1}).
+\tilde{h}_n \cdot e - e \cdot \tilde{h}_n = \{n\} (a^{-1} W^*_{n-1} - a W_{n-1}). \label{eq:f}
 \end{equation}
 
-\AP{Check the computation below carefully since we changed notation.}
-
-If $n=-1$, the relation we want to show becomes 
-\begin{equation*}
-e \cdot \tilde{h}_1 - \tilde{h}_1 \cdot e = \{1\} \left( a - a^{-1} \right).
-\end{equation*}
-which is just the Dubrovnik skein relation. 
-%For equation (\ref{eq_perprel2}), we have use directly that $f_2 = \frac{1}{s[2]!}\left( 1 + s\sigma_1 + \frac{1-s^2}{vs-1}h_1 \right)$.
-%\begin{align*}
-%l_2 - r_2 =& \{2\}\left( aW_1 - a^{-1}W^*_1 \right) \\
-%=&\{2\}\left(  a\frac{1}{s[2]!}\left( W_1\left(1\right) + sW_1\left(\sigma_1\right) + \frac{1-s^2}{vs-1}W_1\left(h_1\right)\right) - a^{-1}\frac{1}{s[2]!}\left( W^*_1\left(1\right) + sW^*_1\left(\sigma_1\right) + \frac{1-s^2}{vs-1}W^*_1\left(h_1\right)\right)\right) \\
-%=& \{2\}\left( \frac{1}{s[2]!}\left( a^2 + sal_1 + \frac{1-s^2}{vs-1}\right) - \frac{1}{s[2]!}\left( a^{-2} + sa^{-1}r_1 + \frac{1-s^2}{vs-1}\right)\right) \\
-%=& \left(1-s^{-2}\right) \left(a^2 - a^{-2} + sal_1 - sa^{-1}r_1 \right) \\
-%=& \left( sal_1 - sa^{-1}r_1 \right) + \left(1-s^{-2}\right)\left(a^2-a^{-2}\right) + s^{-1}a^{-1}r_1 - s^{-1}al_1
-%\end{align*}
-%We are done if we can show $\left(1-s^{-2}\right)\left(a^2-a^{-2}\right) + s^{-1}a^{-1}r_1 - s^{-1}al_1 = s^{-1}a^{-1}l_1 - s^{-1}ar_1$. This can be done by applying (\ref{eq_perprel1}):
-%\begin{align*}
-%& s^{-1}a^{-1}l_1 - s^{-1}ar_1 \\
-%=& s^{-1}a^{-1}\left( r_1 + (sa + s^{-1}a^{-1}) - (sa^{-1} +s^{-1}a) \right)  - s^{-1}a\left( l_1 - (sa + s^{-1}a^{-1}) + (sa^{-1} +s^{-1}a) \right) \\
-%=& \left( s^{-1}a^{-1}r_1 + 1 + s^{-2}a^{-2} - a^{-2} - s^{-2} \right) - \left( s^{-1}al_1 - a^2 - s^{-2} + 1 + s^{-2}a^2 \right) \\
-%=& s^{-1}a^{-1}r_1 - s^{-1}al_1 +\left(1-s^{-1}\right)\left(a^2 - a^{-1}\right)
-%\end{align*}
-By Lemma \ref{lemma:annfund}, the relation \eqref{eq:perprel3} is equivalent to:
-\begin{equation}\label{eq_perprel4}
-\{n+2\} \left( aW_{n+1} - a^{-1}W^*_{n+1} \right) = \left( sa+s^{-1}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) - \left( sa^{-1}+s^{-1}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \{n\}\left( aW_{n-1}-a^{-1}W^*_{n-1} \right).
-\end{equation}
-
-We will show that the left hand side of the equation above may be reduced to the right hand side by a series of applications of Lemma \ref{lemma:recursionina}. %\PS{I haven't read the computations below yet.}
-\begin{align*}
-& \{n+2\} \left( aW_{n+1} - a^{-1}W^*_{n+1} \right) \\
-\overset{4.5}{=}& \{n+2\} \left( \frac{a}{[n+2]} \left( \left( e \cdot \tilde{h}_{n+1} \right) + [n+1]s^{-1}aW_n + [n+1]s^{-1}\beta_{n+1}a^{-1}W^*_n \right) \right.- \\
-&\left.\qquad\qquad\frac{a^{-1}}{[n+2]} \left( \left( \tilde{h}_{n+1} \cdot e \right) + [n+1]s^{-1}a^{-1}W^*_n + [n+1]s^{-1}\beta_{n+1}aW_n \right) \right)  \\
-=& \left( s - s^{-1} \right) \left( \left( a\left( e \cdot \tilde{h}_{n+1} \right) + [n+1]s^{-1}a^2W_n + [n+1]s^{-1}\beta_{n+1}W^*_n \right)- \right. \\
-&\qquad\qquad\,\,\,\,\left.\left( a^{-1}\left( \tilde{h}_{n+1} \cdot e \right) + [n+1]s^{-1}a^{-2}W^*_n + [n+1]s^{-1}\beta_{n+1}W_n \right)\right) \\
-\overset{4.5}{=}&\left( s-s^{-1} \right) \left( \left( a\left( e \cdot \tilde{h}_{n+1} \right) + s^{-2}a \left( [n+2]W_{n+1} -\left( \tilde{h}_{n+1} \cdot e \right) - [n+1]s\bar{\beta}_{n+1}a^{-1}W^*_n \right) + [n+1]s^{-1}\beta_{n+1}W^*_n \right)- \right.  \\
-&\qquad\qquad\,\,\,\, \left. \left( a^{-1}\left( \tilde{h}_{n+1} \cdot e \right) + s^{-2}a^{-1}\left( [n+2]W^*_{n+1} - \left( e \cdot \tilde{h}_{n+1} \right) - [n+1]s\bar{\beta}_{n+1}aW_n \right) + [n+1]s^{-1}\beta_{n+1}W_n \right) \right) \\
-=&\left( \left( sa + s^{-1}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) - \left( sa^{-1} + s^{-1}a \right) \left( \tilde{h}_{n+1} \cdot e \right) \right) + \left( s^{-1}a^{-1} + s^{-3}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \left( s^{-1}a + s^{-3}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) + \\
-&\qquad\qquad\,\,\, \{n+2\}s^{-2}\left( aW_{n+1} - a^{-1} W^*_{n+1} \right) + \{n+1\}s^{-1}\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right).
-\end{align*}
-
-We break the computation here to note that the first two terms in the last line also appear on the right hand side of (\ref{eq_perprel4}). Thus, we would like to prove the following equality:
-\begin{align}\label{newgoal}
+Start by applying Equation \eqref{eq:f} to the relation of Lemma \ref{lem:powersumcommutator1} to obtain an equivalent relation
+\begin{align}\label{eq_perprel4}
 \begin{split}
-&-\{n\} \left( aW_{n-1} - a^{-1}W^*_{n-1} \right) = \left( s^{-1}a^{-1} + s^{-3}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \left( s^{-1}a + s^{-3}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) + \\
-&\qquad\qquad\qquad\qquad\qquad\qquad\quad \{n+2\}s^{-2}\left( aW_{n+1} - a^{-1} W^*_{n+1} \right) - \{n+1\}s^{-1}\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right).
+\{n+2\} \left( aW_{n+1} - a^{-1}W^*_{n+1} \right) =& \left( sa+s^{-1}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) - \left( sa^{-1}+s^{-1}a \right) \left( \tilde{h}_{n+1} \cdot e \right) \\
+ & \qquad\qquad\qquad\qquad\qquad\qquad - \{n\}\left( aW_{n-1}-a^{-1}W^*_{n-1} \right).
 \end{split}
 \end{align}
+We will show that the left-hand side of this equation may be reduced to the right-hand side by a series of applications of the recursive formulas, which we will signify with an asterisk $\ast$. 
+\begin{eqnarray*}
+&& \{n+2\} \left( aW_{n+1} - a^{-1}W^*_{n+1} \right) \\
+\overset{\ast}{=}&& \{n+2\} \left( \frac{a}{[n+2]} \left( e \cdot \tilde{h}_{n+1} + [n+1]s^{-1}aW_n + [n+1]s^{-1}\beta_{n+1}a^{-1}W^*_n \right) \right.- \\
+&&\left.\qquad\qquad\frac{a^{-1}}{[n+2]} \left( \tilde{h}_{n+1} \cdot e + [n+1]s^{-1}a^{-1}W^*_n + [n+1]s^{-1}\beta_{n+1}aW_n \right) \right)  \\
+=&& \left( s - s^{-1} \right) \left( \left( a \cdot \tilde{h}_{n+1} + [n+1]s^{-1}a^2W_n + [n+1]s^{-1}\beta_{n+1}W^*_n \right) \right. \\
+&&\qquad\qquad\,\,\,\,\,\left.-\left( \tilde{h}_{n+1} \cdot a^{-1} + [n+1]s^{-1}a^{-2}W^*_n + [n+1]s^{-1}\beta_{n+1}W_n \right)\right) \\
+\overset{\ast}{=}&&\left( s-s^{-1} \right) \left( \left( a \cdot \tilde{h}_{n+1} + s^{-2}a \left( [n+2]W_{n+1} - \tilde{h}_{n+1} \cdot e - [n+1]s\bar{\beta}_{n+1}a^{-1}W^*_n \right) \right. \right. \\
+&&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad
++ [n+1]s^{-1}\beta_{n+1}W^*_n \Big)  \\
+&&\qquad\qquad\,\,\,\, \left. - \left( \tilde{h}_{n+1} \cdot a^{-1} + s^{-2}a^{-1}\left( [n+2]W^*_{n+1} - e \cdot \tilde{h}_{n+1} - [n+1]s\bar{\beta}_{n+1}aW_n \right) \right. \right. \\
+&&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad\quad
++ [n+1]s^{-1}\beta_{n+1}W_n \Big) \Big) \\
+=&&\left( sa + s^{-1}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) - \left( sa^{-1} + s^{-1}a \right) \left( \tilde{h}_{n+1} \cdot e \right) \\
+&+& \left( s^{-1}a^{-1} + s^{-3}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \left( s^{-1}a + s^{-3}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) \\
+&+& \{n+2\}s^{-2}\left( aW_{n+1} - a^{-1} W^*_{n+1} \right) + \{n+1\}s^{-1}\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right).
+\end{eqnarray*}
 
-We will show this by using the identities from Lemma \ref{lemma:recursionina} on the right hand side of \ref{newgoal}. A large number of terms cancel and what remains is the desired identity.
+We break the computation here to note that the first two terms in the last line also appear on the right hand side of \eqref{eq_perprel4}. Thus, we would like to prove the following equality:
+\begin{eqnarray*}
+&-&\{n\} \left( aW_{n-1} - a^{-1}W^*_{n-1} \right) \\
+=&& \left( s^{-1}a^{-1} + s^{-3}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \left( s^{-1}a + s^{-3}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) \\
+&+&\{n+2\}s^{-2}\left( aW_{n+1} - a^{-1} W^*_{n+1} \right) - \{n+1\}s^{-1}\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right).
+\end{eqnarray*}
+We will work the right-hand side of this above equation down to the left-hand side by continuing to apply the same identities. A large number of terms cancel and what remains is the desired relation.
 %\pagebreak
-\begin{align*}
-& \left( s^{-1}a^{-1} + s^{-3}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \left( s^{-1}a + s^{-3}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) + \{n+2\}s^{-2}\left( aW_{n+1} - a^{-1} W^*_{n+1} \right) - \\
-&\qquad\qquad \{n+1\}s^{-1}\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right) \\
-=& \left( s^{-1}a^{-1} + s^{-3}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \left( s^{-1}a+s^{-3}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) + [n+2]\left( s^{-1}-s^{-3} \right) \left(aW_{n+1} - a^{-1}W^*_{n+1} \right) + \\
-&\qquad\qquad [n+1]\left( 1-s^{-2} \right) \left( \bar{\beta}_{n+1}-\beta_{n+1} \right) \left(W_n - W^*_n \right) \\
-=& s^{-1}a\left( [n+2]W_{n+1} - \left( e \cdot \tilde{h}_{n+1} \right) \right) + s^{-3}a^{-1}\left( [n+2]W^*_{n+1} - \left( e \cdot \tilde{h}_{n+1} \right) \right) - s^{-3}a\left( [n+2]W_{n+1} - \left( \tilde{h}_{n+1} \cdot e \right) \right) - \\
-&\qquad\qquad s^{-1}a^{-1}\left( [n+2]W^*_{n+1} - \left( \tilde{h}_{n+1} \cdot e \right) \right) + [n+1]\left( 1-s^{-2} \right) \left( \bar{\beta}_{n+1} -\beta_{n+1} \right) \left( W_n - W^*_n \right) \\
-\overset{4.5}{=}& s^{-1}a\left( [n+1]s^{-1}aW_n + [n+1]s^{-1}\beta_{n+1}a^{-1}W^*_n \right) + s^{-3}a^{-1}\left( [n+1]sa^{-1}W^*_n + [n+1]s\bar{\beta}_{n+1}aW_n \right) - \\
-&s^{-3}a\left( [n+1]saW_n + [n+1]s\bar{\beta}_{n+1}a^{-1}W^*_n \right) - s^{-1}a^{-1}\left( [n+1]s^{-1}a^{-1}W^*_n + [n+1]s^{-1}\beta_{n+1}aW_n \right) + \\
-& [n+1]\left(1-s^{-2} \right) \left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right)\\
-=& [n+1]\left( s^{-2}a^2W_n + s^{-2}\beta_{n+1}W^*_n + s^{-2}a^{-2}W^*_n + s^{-2}\bar{\beta}_{n+1}W_n - s^{-2}a^{2}W_n - s^{-2}\bar{\beta}_{n+1}W^*_n - \right. \\
-&\qquad\quad \,\, \left. s^{-2}a^{-2}W^*_n - s^{-2}\beta_{n+1}W_n + \bar{\beta}_{n+1}W_n - \bar{\beta}_{n+1}W^*_n - \beta_{n+1}W_n + \beta_{n+1}W^*_n - \right. \\
-&\qquad\quad\,\, \left. s^{-2}\bar{\beta}_{n+1}W_n + s^{-2}\bar{\beta}_{n+1}W^*_n + s^{-2}\beta_{n+1}W_n - s^{-2}\beta_{n+1}W^*_n \right) \\
-=& [n+1]\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right) \\
-=& \left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( \left( [n+1]W_n \right) - \left( [n+1]W^*_n \right) \right) \\
-\overset{4.5}{=}& \left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( \left( \left( e \cdot \tilde{h}_{n} \right) + [n]s^{-1}aW_{n-1} + [n]s^{-1}\beta_{n}a^{-1}W^*_{n-1} \right) - \left( \left( e \cdot \tilde{h}_{n} \right) + [n]sa^{-1}W^*_{n-1} + [n]s\bar{\beta}_{n}aW_{n-1} \right) \right) \\
-=& \left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( [n]\left( s^{-1} - s\bar{\beta}_{n} \right) aW_{n-1} - [n]\left( s-s^{-1}\beta_{n} \right) a^{-1}W^*_{n-1} \right) \\
-=& [n]\left(\bar{\beta}_{n+1} - \beta_{n+1} \right) \left( s - s^{-1}\beta_{n} \right) \left( aW_{n-1} - a^{-1}W^*_{n-1} \right) \\
-=& - \{n\}\left( aW_{n-1} - a^{-1}W^*_{n-1} \right).
-\end{align*}
-Where the last equality follows from some simple algebra. This completes the proof.
+\begin{eqnarray*}
+&& \left( s^{-1}a^{-1} + s^{-3}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \left( s^{-1}a + s^{-3}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) \\
+&+& \{n+2\}s^{-2}\left( aW_{n+1} - a^{-1} W^*_{n+1} \right) - \{n+1\}s^{-1}\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right) \\
+=&& \left( s^{-1}a^{-1} + s^{-3}a \right) \left( \tilde{h}_{n+1} \cdot e \right) - \left( s^{-1}a+s^{-3}a^{-1} \right) \left( e \cdot \tilde{h}_{n+1} \right) \\
+&+& [n+2]\left( s^{-1}-s^{-3} \right) \left(aW_{n+1} - a^{-1}W^*_{n+1} \right) \\
+&+& [n+1]\left( 1-s^{-2} \right) \left( \bar{\beta}_{n+1}-\beta_{n+1} \right) \left(W_n - W^*_n \right) \\
+=&& s^{-1}a\left( [n+2]W_{n+1} - e \cdot \tilde{h}_{n+1} \right) \\
+&+& s^{-3}a^{-1}\left( [n+2]W^*_{n+1} - e \cdot \tilde{h}_{n+1} \right) \\
+&-& s^{-3}a\left( [n+2]W_{n+1} - \tilde{h}_{n+1} \cdot e \right) \\
+&-& s^{-1}a^{-1}\left( [n+2]W^*_{n+1} - \tilde{h}_{n+1} \cdot e \right) \\
+&+& [n+1]\left( 1-s^{-2} \right) \left( \bar{\beta}_{n+1} -\beta_{n+1} \right) \left( W_n - W^*_n \right) \\
+\overset{\ast}{=}&& s^{-1}a\left( [n+1]s^{-1}aW_n + [n+1]s^{-1}\beta_{n+1}a^{-1}W^*_n \right) \\
+&+& s^{-3}a^{-1}\left( [n+1]sa^{-1}W^*_n + [n+1]s\bar{\beta}_{n+1}aW_n \right) \\
+&-&s^{-3}a\left( [n+1]saW_n + [n+1]s\bar{\beta}_{n+1}a^{-1}W^*_n \right) \\
+&-& s^{-1}a^{-1}\left( [n+1]s^{-1}a^{-1}W^*_n + [n+1]s^{-1}\beta_{n+1}aW_n \right) \\
+&+& [n+1]\left(1-s^{-2} \right) \left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right)\\
+=&& [n+1]\left( s^{-2}a^2W_n + s^{-2}\beta_{n+1}W^*_n + s^{-2}a^{-2}W^*_n + s^{-2}\bar{\beta}_{n+1}W_n - s^{-2}a^{2}W_n \right. \\
+&&\qquad\quad \left. - s^{-2}\bar{\beta}_{n+1}W^*_n - s^{-2}a^{-2}W^*_n - s^{-2}\beta_{n+1}W_n + \bar{\beta}_{n+1}W_n - \bar{\beta}_{n+1}W^*_n - \beta_{n+1}W_n \right. \\
+&&\qquad\quad \left. + \beta_{n+1}W^*_n - s^{-2}\bar{\beta}_{n+1}W_n + s^{-2}\bar{\beta}_{n+1}W^*_n + s^{-2}\beta_{n+1}W_n - s^{-2}\beta_{n+1}W^*_n \right) \\
+=&& [n+1]\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( W_n - W^*_n \right) \\
+=&& \left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( \left( [n+1]W_n \right) - \left( [n+1]W^*_n \right) \right) \\
+\overset{\ast}{=}&& \left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( \left( e \cdot \tilde{h}_{n} + [n]s^{-1}aW_{n-1} + [n]s^{-1}\beta_{n}a^{-1}W^*_{n-1} \right) \right. \\
+&& \qquad\qquad\qquad\qquad \left. -\left( e \cdot \tilde{h}_{n} + [n]sa^{-1}W^*_{n-1} + [n]s\bar{\beta}_{n}aW_{n-1} \right) \right) \\
+=&& \left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( [n]\left( s^{-1} - s\bar{\beta}_{n} \right) aW_{n-1} - [n]\left( s-s^{-1}\beta_{n} \right) a^{-1}W^*_{n-1} \right) \\
+=&& [n]\left(\bar{\beta}_{n+1} - \beta_{n+1} \right) \left( s - s^{-1}\beta_{n} \right) \left( aW_{n-1} - a^{-1}W^*_{n-1} \right) \\
+=&-& \{n\}\left( aW_{n-1} - a^{-1}W^*_{n-1} \right).
+\end{eqnarray*}
+Where the last equality follows from a quick computation in the base ring. This completes the proof.
 \end{proof}
 
 
