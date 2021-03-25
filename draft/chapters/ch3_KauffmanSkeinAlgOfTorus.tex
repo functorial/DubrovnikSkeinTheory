@@ -27,20 +27,24 @@ For any $k \geq 1$, the relation
 \[
 e \cdot \tilde{P}_k - \tilde{P}_k \cdot e = (s^k - s^{-k}) (a^k - a^{-k})
 \]
+holds. Equivalently,
+\[
+a^i \cdot \tilde{P}_k - \tilde{P}_k \cdot a^i = (s^k - s^{-k}) (a^{k+i} - a^{-k+i})
+\]
 \end{theorem}
 
 We will split the proof of this theorem into two technical lemmas.
 
 \begin{lemma} \label{lem:powersumcommutator1}
 The relations of Theorem \ref{thm:powersumcommutator} hold if and only if 
-\begin{equation} \label{eq:powersumcommutator1}
+\begin{equation} \label{eq:skewcommutator}
 e \cdot (\tilde{h}_{n+2} + \tilde{h}_n) - (\tilde{h}_{n+2} + \tilde{h}_n) \cdot e = (sa + s^{-1}a^{-1}) (e \cdot \tilde{h}_{n+1}) - (s^{-1}a + sa^{-1}) (\tilde{h}_{n+1} \cdot e)
 \end{equation}
 for all $n \geq -1$ where $\tilde{h}_0 := 1$ and $\tilde{h}_{i} := 0$ for any $i \leq -1$. 
 \end{lemma}
 \begin{proof}
 The relations of Theorem \ref{thm:powersumcommutator} may be organized into a single power series equation
-\begin{equation} \label{eq:powersumcommutator1}
+\begin{equation} \label{eq:skewcommutator}
 \sum_{k=1}^\infty \frac{e \cdot \tilde{P}_k - \tilde{P}_k \cdot e}{k} t^k = \sum_{k=1}^{\infty} \frac {(s^k - s^{-k}) (a^k - a^{-k})}{k} t^k
 \end{equation}
 in $\ca_\cd [[t]]$. Rewrite this equation as
@@ -62,7 +66,7 @@ and recall the Taylor series expansion
 \[
 -\ln(1-x) = \sum_{k=1}^\infty \frac{x^k}{k}
 \]
-which is a variation of the Newton-Mercator series. Then the Equation \eqref{eq:powersumcommutator1} becomes
+which is a variation of the Newton-Mercator series. Then the Equation \eqref{eq:skewcommutator} becomes
 \begin{equation} \label{eq:powersumcommutator3} 
 e \cdot \Big( \ln\big(H(t)\big) \Big) - \big( \ln \big(H(t)\big) \Big) \cdot e = - \ln(1 - sat) - \ln(1 - s^{-1}a^{-1}t) + \ln(1 - s^{-1}at) + \ln(1 - sa^{-1}t).
 \end{equation}
@@ -158,6 +162,138 @@ We will work the right-hand side of this above equation down to the left-hand si
 Where the last equality follows from a quick computation in the base ring. This completes the proof.
 \end{proof}
 
+This next theorem follows directly from Equation \eqref{eq:skewcommutator}, which makes it equivalent to Theorem \ref{thm:powersumcommutator} in some sense. This expresses the left $\cd(A)$-action on $\ca_\cd$ in terms of the right action, and vice versa. This implies a commutation relation for the closures of the BMW symmetrizers. 
+
+\begin{theorem} \label{prop:hncommutator}
+For any $n \geq 1$, the relations
+\begin{equation}
+\tilde{h}_n \cdot e = \sum_{i=0}^n d_i (e \cdot \tilde{h}_{n-i})
+\end{equation}
+and
+\begin{equation}
+e \cdot \tilde{h}_n = \sum_{i=0}^n \bar{d}_i (\tilde{h}_{n-i} \cdot e)
+\end{equation}
+hold in $\ca_\cd$, where
+\begin{align*}
+d_0 & = 1, \\
+d_i & = \sum_{l=0}^{i-1} (1 - s^2) s^{2l-i} a^{i-2l} + (1 - s^{-2}) s^{i-2l} a^{2l-i} \qquad \forall i \geq 1, \\
+\bar{d}_i & = \sum_{l=0}^{i-1} (1 - s^{-2}) s^{i-2l} a^{i-2l} + (1 - s^{2}) s^{2l-i} a^{2l-i} \qquad \forall i \geq 1.
+\end{align*}
+This implies the commutation relations
+\begin{equation}
+e \cdot \tilde{h}_n - \tilde{h}_n \cdot e = \sum_{i=1}^n \bar{d}_i (\tilde{h}_{n-i} \cdot e)
+\end{equation}
+or 
+\begin{equation}
+e \cdot \tilde{h}_n - \tilde{h}_n \cdot e = \sum_{i=1}^n - d_i (e \cdot \tilde{h}_{n-i}).
+\end{equation}
+\end{theorem}
+\begin{proof}
+The formula for the $d_i$ were discovered experimentally by coding a solver using the SymPy package in Python. The second equation is just the mirror map applied to the first equation, so we will just prove the first equation.
+
+The idea of the proof depends on a reformulation of Equation \eqref{eq:skewcommutator} as
+\[
+\tilde{h}_n \cdot e = e \cdot \tilde{h}_n - ( s a + s^{-1} a^{-1} ) ( e \cdot \tilde{h}_{n-1} ) + e \cdot \tilde{h}_{n-2} + ( s^{-1} a + s a^{-1} ) \tilde{h}_{n-1} \cdot e - \tilde{h}_{n-2} \cdot e
+\]
+and a recursive application of this formula to its last two terms on the right-hand side of the equation. 
+
+The case of $n=0$ is trivial. For $n=1$, just apply the Kauffman skein relation. Now assume the induction hypothesis, that the formula in the statement is true for all $k \leq n-1$. Then apply this assumption to Equation \eqref{eq:skewcommutator}:
+\begin{align*}
+\tilde{h}_n \cdot e &= e \cdot \tilde{h}_n - ( s a + s^{-1} a^{-1} ) ( e \cdot \tilde{h}_{n-1} ) + e \cdot \tilde{h}_{n-2} + ( s^{-1} a + s a^{-1} ) ( \tilde{h}_{n-1} \cdot e ) - \tilde{h}_{n-2} \cdot e \\
+&= e \cdot \tilde{h}_n - ( s a + s^{-1} a^{-1} ) ( e \cdot \tilde{h}_{n-1} ) + e \cdot \tilde{h}_{n-2} + ( s^{-1} a + s a^{-1} ) \sum_{i=0}^{n-1} d_i (e \cdot \tilde{h}_{n-1-i}) \\
+&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad - \sum_{i=0}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
+&= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) \sum_{i=1}^{n-1} d_i (e \cdot \tilde{h}_{n-1-i}) - \sum_{i=1}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
+&= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) \sum_{i=0}^{n-2} d_{i+1} (e \cdot \tilde{h}_{n-2-i}) - \sum_{i=1}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
+&= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) d_1 ( e \cdot \tilde{h}_{n-2} ) \\
+&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad\quad+ \sum_{i=1}^{n-2} \big( ( s^{-1} a + s a^{-1} ) d_{i+1} - d_i \big) (e \cdot \tilde{h}_{n-2-i}). \\
+\end{align*}
+It is a straightforward computation to show that $( s^{-1} a + s a^{-1} ) d_1 = d_2$:
+\begin{align*}
+( s^{-1} a + s a^{-1} ) d_1 &= ( s^{-1} a + s a^{-1} ) \big( ( 1 - s^2 ) s^{-1} a + ( 1 + s^{-2} ) s a^{-1} \big) \\
+&= ( 1 - s^2 ) s^{-2} a^2 + (1 - s^{-2} ) s^0 a^0 + ( 1 - s^2 ) s^0 a^0 + ( 1 - s^{-2} ) s^2 a^{-2} \\
+&= d_2.
+\end{align*}
+It's slightly more tedious to show that $( s^{-1} a + s a^{-1} ) d_{i+1} - d_i = d_{i+2}$ for all $i \geq 1$:
+\begin{eqnarray*}
+&&( s^{-1} a + s a^{-1} ) d_{i+1} - d_i \\
+=&& ( s^{-1} a + s a^{-1} ) \sum_{l=0}^{i} (1 - s^2) s^{2l-i} a^{i-2l} + (1 - s^{-2}) s^{i-2l} a^{2l-i} \\
+&-& \sum_{l=0}^{i-1} (1 - s^2) s^{2l-(i-1)} a^{(i-1)-2l} + (1 - s^{-2}) s^{(i-1)-2l} a^{2l-(i-1)} \\
+=&& \sum_{l=0}^{i} (1 - s^2) s^{2l-(i+1)} a^{(i+1)-2l} + (1 - s^{-2}) s^{(i+1)-2l} a^{2l-(i+1)} \\
+&+& \sum_{l=0}^{i} (1 - s^2) s^{2l-(i-1)} a^{(i-1)-2l} + (1 - s^{-2}) s^{(i-1)-2l} a^{2l-(i-1)} \\
+&-& \sum_{l=0}^{i-1} (1 - s^2) s^{2l-(i-1)} a^{(i-1)-2l} + (1 - s^{-2}) s^{(i-1)-2l} a^{2l-(i-1)} \\
+=&& \sum_{l=0}^{i} (1 - s^2) s^{2l-(i+1)} a^{(i+1)-2l} + (1 - s^{-2}) s^{(i+1)-2l} a^{2l-(i+1)} \\
+&+& (1 - s^2) s^{i+1} a^{-1-i} + (1 - s^{-2}) s^{-1-i} a^{i+1} \\
+=&& d_{i+2}.
+\end{eqnarray*}
+This completes the proof of the statement. 
+\end{proof}
+
+\begin{remark}
+There exists an algebra homomorphism from $\cd(A)$ to the ring of symmetric functions $\Lambda_R$ (see \AP{chapter whatever}). Conjecturally, this map is an isomorphism, which would imply that the sets $\{ \tilde{h}_\lambda \cdot a^i \}_{\lambda, i}$ and $\{ a^i \cdot \tilde{h}_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $\tilde{h}_\lambda := \tilde{h}_{\lambda_1} \cdots \tilde{h}_{\lambda_r}$, form bases of $\ca_\cd = \cd(A)[a, a^{-1}]$ \AP{or is this already known separately somehow?}. If so, then Theorem \ref{prop:hncommutator} provides transition formulas between these two bases. 
+\end{remark}
+
+As an aside, one might expect similar formulas to hold in the HOMFLYPT case. To our knowledge, there is no HOMFLYPT analogue of Theorem \ref{prop:hncommutator} written down in the literature. Let's do that here. 
+
+\begin{lemma} \label{lem:homfly1}
+For all integers $n$, the following relation holds in $\ca_\ch$
+\begin{equation}
+e \cdot h_n - h_n \cdot e = s a \cdot h_{n-1} - h_{n-1} \cdot  s^{-1} a
+\end{equation}
+where we use the convention $h_0 = 1$ and $h_n = 0$ if $n < 0$. 
+\end{lemma}
+\begin{proof}
+Recall the power sum elements $P_k$ satisfy the power series equation
+\begin{equation} \label{def:Pk}
+\sum_{k=1}^\infty \frac{P_k}{k} x^k = \ln \Big( \sum_{n=0}^\infty h_n x^n \Big)
+\end{equation}
+By \cite[Theorem 4.2]{Mor02b}\AP{fix}, the power sum elements satisfy a commutation relation in $\ca_\ch$
+\begin{equation}
+e \cdot P_k - P_k \cdot e = (s^{k} - s^{-k}) a^k
+\end{equation} 
+which may be rephrased as a power series equation 
+\[
+e \cdot \Big( \sum_{k=1}^\infty P_k x^k \Big) - \Big( \sum_{k=1}^\infty P_k x^k \Big) \cdot e = \sum_{k=1}^\infty s^k a^k - \sum_{k=1}^\infty s^{-k} a^k.
+\]
+On the left-hand side, use the defining equation \eqref{def:Pk}. Use the power series formulation of natual log on the right-hand side. So we have
+\[
+\ln \Bigg( e \cdot \Big( \sum_{k=0}^\infty h_k x^k \Big) \Bigg) - \ln \Bigg( \Big( \sum_{k=0}^\infty h_k x^k \Big) \cdot e \Bigg) = \ln ( 1 - s a x ) - \ln ( 1 - s^{-1} a x ).
+\]
+After moving terms around, using properties of natural log, and exponentiating both sides, we arrive at the equation
+\[
+\Big( \sum_{n=0}^\infty (h_n \cdot e ) x^n \Big) ( 1 - s a x ) = \Big( \sum_{n=0}^\infty ( e \cdot h_n ) x^k \Big) ( 1 - s^{-1} a x )
+\]
+which implies the statement of the lemma.
+\end{proof}
+
+Recall that the algebra $\ca_\ch$ is equal to the Laurent polynomial ring $\ch(A)^+[a, a^{-1}]$. Under the isomorphism between $\ch(A)^+$ and the ring of symmetric functions $\Lambda_R$, the $h_n$ identify with the complete homogeneous symmetric functions. It is well-known that ordered monomials in the complete homogeneous symmetric functions form a basis of $\Lambda$, hence the sets $\{h_\lambda \cdot a^i \}_{\lambda, i}$ and $\{a^i \cdot h_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $h_\lambda := h_{\lambda_1} \cdots h_{\lambda_r}$, form bases of $\ca_\ch$. The following theorem gives transition formulas between these two bases. 
+
+\begin{theorem} \label{prop:homfly2}
+The symmetrizer elements $h_n$ satisfy the equations
+\[
+h_n \cdot e = e \cdot h_n + ( 1 - s^2 ) \sum_{l=1}^{n} s^{-l} ( a^l \cdot h_{n-l} )
+\]
+and
+\[
+e \cdot h_n = h_n \cdot e + (1 - s^{-2} ) \sum_{l=1}^{n} s^l ( h_{n-l} \cdot a^l ).
+\]
+\end{theorem}
+\begin{proof}
+We will prove the first equality. The second is completely analagous. Proceed by induction. When $n=1$, the statement follows from the HOMFLY skein relation. 
+
+We can rearrange the terms of Lemma \ref{lem:homfly1} to get
+\begin{equation} \label{eq:homfly1b}
+h_n \cdot e = e \cdot h_n + s^{-1} a ( h_{n-1} \cdot e ) - s a ( e \cdot h_{n-1} ).
+\end{equation}
+By the induction hypothesis,
+\begin{align*}
+h_n \cdot e & = e \cdot h_n + s^{-1} a ( h_{n-1} \cdot e ) - s a ( e \cdot h_{n-1} ) \\
+& = e \cdot h_n + s^{-1} a \Big( e \cdot h_{n-1} + ( 1 - s^2 ) \sum_{j=1}^{n-1} s^{-j} a^j ( e \cdot h_{n-1-j} ) \Big) - s a ( e \cdot h_{n-1} ) \\
+& = e \cdot h_n + ( s^{-1} - s ) a ( e \cdot h_{n-1} ) + ( 1 - s^2 ) \sum_{j=1}^{n-1} s^{-j-1} a^{j+1} ( e \cdot h_{n-1-j} ) \\ 
+& = e \cdot h_n + ( 1 - s^2 ) s^{-1} a ( e \cdot h_{n-1} ) + ( 1 - s^2 ) \sum_{j=1}^{n-1} s^{-(j+1)} a^{j+1} ( e \cdot h_{n-(j+1)} ) \\
+&= e \cdot h_n + ( 1 - s^2 ) \sum_{l=1}^{n} s^{-l} a^{l} ( e \cdot h_{n-l} )
+\end{align*}
+where the last equality follows from the substitution $j=l+1$. 
+\end{proof}
 
 \section{All Relations}
 
