@@ -21,7 +21,7 @@ Let's now continue our discussion of Section \ref{sec:relativeannulus} with the 
 
 \begin{theorem} \label{thm:powersumcommutator}
 For any $k \geq 1$, the relation
-\begin{equation}
+\begin{equation} \label{eq:powersumcommutator}
 e \cdot \tilde{P}_k - \tilde{P}_k \cdot e = (s^k - s^{-k}) (a^k - a^{-k})
 \end{equation}
 holds. Equivalently,
@@ -296,8 +296,52 @@ where the last equality follows from the substitution $j=l+1$.
 
 \section{A Presentation of $\cd(T^2)$}
 
-In this section we will demonstrate the value of the elements $\tilde{P}_k$  by showing that the skein algebra $\cd(T^2)$ admits a very simple presentation. 
+In this section we will demonstrate the value of the elements $\tilde{P}_k$  by showing that the skein algebra $\cd(T^2)$ admits a very simple presentation. First things first, let's define the generators. Recall that given an extended rational number $r$, there is a (homotopically) distinct oriented simple closed curve on the flat torus $T^2$ with rational slope $r$, and hence a smooth embedding of the annulus 
+\[
+\iota_r: A \to T^2
+\]
+into tubular neighborhood of the curve. This induces an algebra homomorphism
+\[
+\cd(\iota_r): \cd(A) \to \cd(T^2)
+\]
+on the level of skein algebras. Any knot in $\cd(T^2)$ is contained in the image of some $\cd(\iota_r)$. Since $\cd$ is an unoriented skein theory, let's only consider $r \geq 0$ to avoid redundancy due to the choice of orientations. Given any equivalence class $\xx = (a, b)$ in $\Z^2 / \langle \xx = - \xx \rangle$ with $k := \gcd(a, b)$, define the element
+\[
+\tilde{P}_\xx := \cd\big(\iota_{|a/b|}\big)(\tilde{P}_k)
+\]
+to be the embedding of the ``power sum" element $\tilde{P}_k$ into this tubular neighborhood. Let's state the main theorem of the paper.
 
+\begin{theorem}
+The skein algebra $\cd(T^2)$ is presented by generators 
+\[
+\{ \tilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = - \xx \rangle \}
+\]
+and relations
+\begin{equation} \label{eq:mainrelations}
+[\tilde{P}_\xx, \tilde{P}_\yy] = (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) (\tilde{P}_{\xx + \yy} - \tilde{P}_{\xx - \yy}).
+\end{equation}
+\end{theorem}
+
+\begin{corollary}
+The linear span of the set $\{ \tilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = - \xx \rangle \}$ is a Lie algebra, and  $\cd(T^2)$ is its universal enveloping algebra. 
+\end{corollary}
+
+The full proof of this theorem may be found in the collaboration \AP{MPS}. Here, we will be focused on showing that the generators satisfy the relations given in the presentation. We formulate this as a proposition.
+\begin{proposition}
+The following special cases of Equation \eqref{eq:mainrelations} hold
+\begin{align}
+[\tilde{P}_{1, 0}, \tilde{P}_{0, n}] &= (s^n - s^{-n}) (\tilde{P}_{1, n} - \tilde{P}_{1, -n}) \label{eq:perprelations} \\
+[\tilde{P}_{1, 0}, \tilde{P}_{1, n}] &= (s^n - s^{-n}) (\tilde{P}_{2, n} - \tilde{P}_{0, n}) \label{eq:angledrelations}
+\end{align}
+for any $n \geq 1$. Furthermore, these relations generate all of the relations defined by Equation \eqref{eq:mainrelations}.
+\end{proposition}
+
+Equation \eqref{eq:perprelations} is the image of Equation \eqref{eq:powersumcommutator} under the wiring of $\ca_\cd$ into $\cd(T^2)$ depicted below.
+
+\AP{Picture of wiring.}
+
+We will not give the proof of Equation \eqref{eq:angledrelations} here, but it may be found in \AP{MPS}. The idea given there is similar to the idea for the proof of Equation \eqref{eq:perprelations}: first show a similar relation holds in the skein algebra of the annulus relative to two points $\cd(A, [2])$ via a brute force computation, and then Equation \eqref{eq:angledrelations} is the image of this relation under a simple wiring into $\cd(T^2)$. 
+
+What's left for us to show here is the second statement of the proposition, that Equations \eqref{eq:perprelations} and \eqref{eq:angledrelations} imply Equation \eqref{eq:mainrelations}. 
 
 
 \section{Compatibility With the Kauffman Bracket Skein Algebra of the Torus}

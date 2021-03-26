@@ -245,11 +245,11 @@ Another application of the interpretation of $\ch(A)^+$ as $\Lambda$ is the defi
 
 \subsection{Skein Algebras of the Torus}
 
-The power-sum elements $P_k$ described above are known to behave wonderfully in skein theoretic computations. This allows for a simple description of the HOMFLYPT skein algebra of the torus $\ch(T^2)$ in terms of generators and relations. First, let's define the generators. For any rational number $r$ there is a smooth embedding 
+The power-sum elements $P_k$ described above are known to behave wonderfully in skein theoretic computations. This allows for a simple description of the HOMFLYPT skein algebra of the torus $\ch(T^2)$ in terms of generators and relations. First, let's define the generators. Given an $r$ which is either a rational number, or $\pm \infty$, there is an oriented smooth embedding 
 \[
 \iota_{r}: A \to T^2
 \]
-of the annulus into a tubular neighborhood of the line of rational slope $r$ in the torus. Consider the embeddings $\iota_{r}$ and $\iota_{-r}$ to be the same embedding with opposite orientations. These induce an algebra homomorphisms
+of the annulus into a tubular neighborhood of the line of slope $r$ in the flat torus. Consider the embeddings $\iota_{r}$ and $\iota_{-r}$ to be the same embedding with opposite orientations. These induce an algebra homomorphisms
 \[
 \ch(\iota_r): \ch(A) \to \ch(T^2)
 \]
@@ -258,13 +258,13 @@ on the level of skein algebras. The $\iota_r$ are distinct isotopically (even ho
 P_\xx := \ch(\iota_{a/b})(P_k).
 \]
 
-In \AP{cite MS}, Morton and Samuelson prove that the skein algebra $\ch(T^2)$ admits a presentation with generators the elements of $\{ P_\xx \mid \xx \in \Z^2 \}$, subject to the relations 
+In \AP{cite MS}, Morton and Samuelson prove that the skein algebra $\ch(T^2)$ admits a presentation with generators the elements of $\{ P_\xx \mid \xx \in \Z^2 \}$, subject to the single family of relations 
 \[
 [P_\xx, P_\yy] = \big( s^{\det(\xx,\yy)} - s^{-\det(\xx,\yy)} \big) P_{\xx + \yy}.
 \]
-This presentation exhibits a relationship to the elliptic Hall algebra, a 2-parameter family of algebras obtained via Hall algebra decategorification of categories of coherent sheaves over certain elliptic curves (see \AP{Burban-Schiffman}). Along the diagonal of the parameter space, the Burban-Schiffman presentation of the elliptic Hall algebra matches the Morton-Samuelson presentation of the skein algebra of the torus. At the very least, this highlights two things. Firstly, the skein algebra of the torus admits a known deformation. Secondly, skein algebras are connected to surprising areas of mathematics and hence deserve our attention. \AP{Is this paragraph correct?}
+This presentation exhibits a relationship to the elliptic Hall algebra: a 2-parameter family of algebras obtained via Hall algebra decategorification of categories of coherent sheaves over certain elliptic curves (see \AP{Burban-Schiffman}). Along the diagonal of the parameter space, the Burban-Schiffman presentation of the elliptic Hall algebra matches the Morton-Samuelson presentation of the skein algebra of the torus. At the very least, this highlights two things. Firstly, the skein algebra of the torus admits a known deformation. Secondly, skein algebras are connected to surprising areas of mathematics and hence deserve our attention. \AP{Is this paragraph correct?}
 
-What we describe next is the Kauffman bracket skein algebra of the torus, although the order of exposition is opposite to the historical order of discovery. The story is actually quite similar to the HOMFLYPT case. Recall that $\ck(A)$ is a polynomial algebra $R[z]$ where $z$ is the simple closed curve around the hole of the annulus with winding number $1$. There exist polynomials known as \textit{Chebyshev polynomials} $T_k \in R[z]$ for all integer $k \geq 1$ which form a basis of $\ck(A)$. For any pair of integers $\xx = (a, b) \in \Z^2$, define elements $e_\xx \in \ck(T^2)$ as 
+Next we describe the Kauffman bracket skein algebra of the torus, although the order of exposition is opposite to the historical order of discovery. The story is actually quite similar to the HOMFLYPT case. Recall that $\ck(A)$ is a polynomial algebra $R[z]$ where $z$ is the simple closed curve around the hole of the annulus with winding number $1$. There exist polynomials known as \textit{Chebyshev polynomials} $T_k \in R[z]$ for all integer $k \geq 1$ which form a basis of $\ck(A)$. For any pair of integers $\xx = (a, b) \in \Z^2$, define elements $e_\xx \in \ck(T^2)$ as 
 \[
 T_\xx := \ck(\iota_{a/b})(T_k).
 \]
