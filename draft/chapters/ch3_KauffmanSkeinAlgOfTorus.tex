@@ -1,4 +1,4 @@
-\chapter{The Kauffman Skein Algebra of the Torus}
+\chapter{``Miraculous Canellations" and the Skein Algebra of the Torus}
 
 \AP{Add some introduction and remark about collaboration.}
 
@@ -17,20 +17,18 @@ Using the Beliakova-Blanchet section $\Gamma: H_n \to BMW_n$, we may emulate thi
 \end{equation}
 where $\tilde{h}_n := \tilde{Q}_{(n)}$ is the annular closure of the BMW symmetrizers $\tilde{y}_n = \Gamma(y_n)$.
 
-
-\subsection{Commutation Relations} \label{sec:commurationrelations}
-
-Here we will continue our discussion of Section \ref{sec:relativeannulus}. In particular, we will prove the following Theorem.
+Let's now continue our discussion of Section \ref{sec:relativeannulus} with the following theorem.
 
 \begin{theorem} \label{thm:powersumcommutator}
 For any $k \geq 1$, the relation
-\[
+\begin{equation}
 e \cdot \tilde{P}_k - \tilde{P}_k \cdot e = (s^k - s^{-k}) (a^k - a^{-k})
-\]
+\end{equation}
 holds. Equivalently,
-\[
+\begin{equation}
 a^i \cdot \tilde{P}_k - \tilde{P}_k \cdot a^i = (s^k - s^{-k}) (a^{k+i} - a^{-k+i})
-\]
+\end{equation}
+for any integer $i$.
 \end{theorem}
 
 We will split the proof of this theorem into two technical lemmas.
@@ -40,7 +38,7 @@ The relations of Theorem \ref{thm:powersumcommutator} hold if and only if
 \begin{equation} \label{eq:skewcommutator}
 e \cdot (\tilde{h}_{n+2} + \tilde{h}_n) - (\tilde{h}_{n+2} + \tilde{h}_n) \cdot e = (sa + s^{-1}a^{-1}) (e \cdot \tilde{h}_{n+1}) - (s^{-1}a + sa^{-1}) (\tilde{h}_{n+1} \cdot e)
 \end{equation}
-for all $n \geq -1$ where $\tilde{h}_0 := 1$ and $\tilde{h}_{i} := 0$ for any $i \leq -1$. 
+for all integers $n \geq -1$, where $\tilde{h}_0 := 1$ and $\tilde{h}_{-1} := 0$.
 \end{lemma}
 \begin{proof}
 The relations of Theorem \ref{thm:powersumcommutator} may be organized into a single power series equation
@@ -51,7 +49,7 @@ in $\ca_\cd [[t]]$. Rewrite this equation as
 \begin{equation} \label{eq:powersumcommutator2} 
 e \cdot \Bigg( \sum_{k=1}^\infty \tilde{P}_k \Bigg) - \Bigg( \sum_{k=1}^\infty \tilde{P}_k \Bigg) \cdot e = \sum_{k=1}^{\infty} \frac {(sat)^k}{k} + \sum_{k=1}^{\infty} \frac {(s^{-1}a^{-1}t)^k}{k} - \sum_{k=1}^{\infty} \frac {(s^{-1}at)^k}{k} - \sum_{k=1}^{\infty} \frac {(sa^{-1}t)^k}{k}
 \end{equation}
-We can make sense of the left-hand side by extending the algebra homomorphism $x \mapsto e \cdot (-)$ to an algebra homomorphism of rings of formal power series
+We can make sense of the left-hand side by extending the algebra homomorphism $x \mapsto e \cdot (x)$ to an algebra homomorphism of rings of formal power series
 \begin{center}
 \begin{tikzcd}
 \cd(A) \arrow[r, "e \cdot (-)"] \arrow[d, hook] & \ca_\cd \arrow[d, hook] \\
@@ -68,7 +66,7 @@ and recall the Taylor series expansion
 \]
 which is a variation of the Newton-Mercator series. Then the Equation \eqref{eq:skewcommutator} becomes
 \begin{equation} \label{eq:powersumcommutator3} 
-e \cdot \Big( \ln\big(H(t)\big) \Big) - \big( \ln \big(H(t)\big) \Big) \cdot e = - \ln(1 - sat) - \ln(1 - s^{-1}a^{-1}t) + \ln(1 - s^{-1}at) + \ln(1 - sa^{-1}t).
+e \cdot \Big( \ln\big(H(t)\big) \Big) - \Big( \ln \big(H(t)\big) \Big) \cdot e = - \ln(1 - sat) - \ln(1 - s^{-1}a^{-1}t) + \ln(1 - s^{-1}at) + \ln(1 - sa^{-1}t).
 \end{equation}
 The maps $e \cdot (-)$ and $(-) \cdot e$ commute with the natural logarithm. Use this and other natural log properties to write
 \begin{equation}
@@ -96,7 +94,7 @@ For general values of $n$, the proof is a technical computation using repeated a
 \end{align}
 and the ``fundamental relation"
 \begin{equation}
-\tilde{h}_n \cdot e - e \cdot \tilde{h}_n = \{n\} (a^{-1} W^*_{n-1} - a W_{n-1}). \label{eq:f}
+e \cdot \tilde{h}_n - \tilde{h}_n \cdot e = \{n\} (a W_{n-1} - a^{-1} W^*_{n-1}). \label{eq:f}
 \end{equation}
 
 Start by applying Equation \eqref{eq:f} to the relation of Lemma \ref{lem:powersumcommutator1} to obtain an equivalent relation
@@ -162,7 +160,7 @@ We will work the right-hand side of this above equation down to the left-hand si
 Where the last equality follows from a quick computation in the base ring. This completes the proof.
 \end{proof}
 
-This next theorem follows directly from Equation \eqref{eq:skewcommutator}, which makes it equivalent to Theorem \ref{thm:powersumcommutator} in some sense. This expresses the left $\cd(A)$-action on $\ca_\cd$ in terms of the right action, and vice versa. This implies a commutation relation for the closures of the BMW symmetrizers. 
+This next theorem follows directly from Equation \eqref{eq:skewcommutator}, which makes it equivalent to Theorem \ref{thm:powersumcommutator} in some sense. This expresses the left $\cd(A)$-action on $\ca_\cd$ in terms of the right action, and vice versa. This implies a commutation relation for the closures of the BMW symmetrizers in terms of either the elements of the set $\{\tilde{h}_j \cdot a^i \}_{j, i}$ or $\{ a^i \cdot \tilde{h}_j \}_{j, i \geq 0}$ which are subsets of the bases $\{ Q_\lambda \cdot a^i \}_{i \geq 0, \lambda}$ and $\{ a^i \cdot Q_\lambda \}_{i \geq 0, \lambda}$ of $\ca_\cd$, respectively. These supersets are bases since $\ca_\cd = \cd(A)[a, a^{-1}]$ as algebras in the category of left $\cd(A)$-modules and because the map defined by $Q_\lambda \cdot a^i \mapsto a^i \cdot Q_\lambda$ is an invertible algebra homomorphism. 
 
 \begin{theorem} \label{prop:hncommutator}
 For any $n \geq 1$, the relations
@@ -179,13 +177,13 @@ d_0 & = 1, \\
 d_i & = \sum_{l=0}^{i-1} (1 - s^2) s^{2l-i} a^{i-2l} + (1 - s^{-2}) s^{i-2l} a^{2l-i} \qquad \forall i \geq 1, \\
 \bar{d}_i & = \sum_{l=0}^{i-1} (1 - s^{-2}) s^{i-2l} a^{i-2l} + (1 - s^{2}) s^{2l-i} a^{2l-i} \qquad \forall i \geq 1.
 \end{align*}
-This implies the commutation relations
+Equivalently,
 \begin{equation}
 e \cdot \tilde{h}_n - \tilde{h}_n \cdot e = \sum_{i=1}^n \bar{d}_i (\tilde{h}_{n-i} \cdot e)
 \end{equation}
 or 
 \begin{equation}
-e \cdot \tilde{h}_n - \tilde{h}_n \cdot e = \sum_{i=1}^n - d_i (e \cdot \tilde{h}_{n-i}).
+\tilde{h}_n \cdot e - e \cdot \tilde{h}_n = \sum_{i=1}^n d_i (e \cdot \tilde{h}_{n-i}).
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -229,7 +227,7 @@ This completes the proof of the statement.
 \end{proof}
 
 \begin{remark}
-There exists an algebra homomorphism from $\cd(A)$ to the ring of symmetric functions $\Lambda_R$ (see \AP{chapter whatever}). Conjecturally, this map is an isomorphism, which would imply that the sets $\{ \tilde{h}_\lambda \cdot a^i \}_{\lambda, i}$ and $\{ a^i \cdot \tilde{h}_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $\tilde{h}_\lambda := \tilde{h}_{\lambda_1} \cdots \tilde{h}_{\lambda_r}$, form bases of $\ca_\cd = \cd(A)[a, a^{-1}]$ \AP{or is this already known separately somehow?}. If so, then Theorem \ref{prop:hncommutator} provides transition formulas between these two bases. 
+There exists an algebra homomorphism from $\cd(A)$ to the ring of symmetric functions $\Lambda_R$ (see \AP{chapter whatever}). Conjecturally, this map is an isomorphism, which would imply that the sets $\{ \tilde{h}_\lambda \cdot a^i \}_{\lambda, i}$ and $\{ a^i \cdot \tilde{h}_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $\tilde{h}_\lambda := \tilde{h}_{\lambda_1} \cdots \tilde{h}_{\lambda_r}$, form bases of $\ca_\cd = \cd(A)[a, a^{-1}]$ \AP{or is this already known separately somehow?}. If so, then Theorem \ref{prop:hncommutator} provides transition formulas between these two bases, and therefore giving a full description of $\ca_\cd$ as a $\cd(A)$-$\cd(A)$-bimodule. 
 \end{remark}
 
 As an aside, one might expect similar formulas to hold in the HOMFLYPT case. To our knowledge, there is no HOMFLYPT analogue of Theorem \ref{prop:hncommutator} written down in the literature. Let's do that here. 
@@ -268,7 +266,7 @@ which implies the statement of the lemma.
 Recall that the algebra $\ca_\ch$ is equal to the Laurent polynomial ring $\ch(A)^+[a, a^{-1}]$. Under the isomorphism between $\ch(A)^+$ and the ring of symmetric functions $\Lambda_R$, the $h_n$ identify with the complete homogeneous symmetric functions. It is well-known that ordered monomials in the complete homogeneous symmetric functions form a basis of $\Lambda$, hence the sets $\{h_\lambda \cdot a^i \}_{\lambda, i}$ and $\{a^i \cdot h_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $h_\lambda := h_{\lambda_1} \cdots h_{\lambda_r}$, form bases of $\ca_\ch$. The following theorem gives transition formulas between these two bases. 
 
 \begin{theorem} \label{prop:homfly2}
-The symmetrizer elements $h_n$ satisfy the equations
+The Hecke symmetrizers $h_n$ satisfy the equations
 \[
 h_n \cdot e = e \cdot h_n + ( 1 - s^2 ) \sum_{l=1}^{n} s^{-l} ( a^l \cdot h_{n-l} )
 \]
@@ -295,19 +293,14 @@ h_n \cdot e & = e \cdot h_n + s^{-1} a ( h_{n-1} \cdot e ) - s a ( e \cdot h_{n-
 where the last equality follows from the substitution $j=l+1$. 
 \end{proof}
 
-\section{All Relations}
 
+\section{A Presentation of $\cd(T^2)$}
 
-
-
-\section{Perpendicular Relations}
-
-
-
-
-\section{Main Theorem}
-
+In this section we will demonstrate the value of the elements $\tilde{P}_k$  by showing that the skein algebra $\cd(T^2)$ admits a very simple presentation. 
 
 
 
 \section{Compatibility With the Kauffman Bracket Skein Algebra of the Torus}
+
+
+

@@ -158,6 +158,8 @@ In this work, we will be focused on generalizing existing results from the HOMFL
 
 \AP{Maybe add a remark about Turaev's work on deformations of the Goldman Lie algebras? Could potentially say a lot to motivate the topic, but I'm not super familiar with a lot of it.}
 
+\AP{Add comments about the Dubrovnik and HOMFLYPT skein algebras being graded by ther fundamental group of the surface.}
+
 \subsection{Skein Algebras of Tangles in a Cube}
 
 In the case where $\Sigma = I \times I$, the endomorphism objects of $\mathsf{D}(\Sigma), \mathsf{H}(\Sigma)$, and $\mathsf{K}(\Sigma)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $[n]$ be a set of $n$ points in $\Sigma$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose all points share the same orientation in the context of an oriented skein theory). Then the endomorphism algebras 
@@ -226,7 +228,7 @@ The skein algebras of tangles in a cube relate to the skein algebras of the annu
 
 \AP{Picture of closure}
 
-Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda)$. Zhong and Lu show in \AP{cite} that the set $\{ \widetilde{Q}_\lambda \}_\lambda$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map
+Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda) \in \cd(A)$. Zhong and Lu show in \AP{cite} that the set $\{ \widetilde{Q}_\lambda \}_\lambda$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map
 \AP{picture of meridian map.}
 where the eigenvalue of $Q_\lambda$ is 
 \[
@@ -234,16 +236,16 @@ c_\lambda = \delta_\cd + ( s - s^{-1} ) \sum_{\square \in \lambda} v^{-1} s^{2 \
 \]
 and where $\textrm{cn}(\square) := j - i$ is the \textit{content} of the box in the $\square$ in $i^\textrm{th}$ row and $j^\textrm{th}$ column of the Ferrer's diagram of the partition $\lambda$. Two distinct partitions $\lambda$ and $\lambda '$ give rise to distinct values of $c_\lambda$ and $c_\lambda'$. Therefore, each of the eigenspaces is $1$-dimensional. 
 
-The behavior of $\widetilde{Q}_\lambda$ is similar to that of the $Q_\lambda := \cl^+(y_\lambda) \in \ch(A)$ where $\cl^+(-)$ is defined by orienting the strands in wiring digram of $\cl(-)$ counter-clockwise, as we now describe. Using the description $\ch(A) = R[z_i, i \in \Z_{\neq 0}]$, consider the subalgebras $\ch(A)^+ := R[z_i, i \in \Z_{> 0}]$ and $\ch(A)^- := R[z_i, i \in \Z_{< 0}]$. Then the two subalgebras are isomorphic via the linear involution defined by $z_i \mapsto z_{-i}$ and $\ch(A) \cong \ch(A)^+ \otimes \ch(A)^-$. The $\{ Q_\lambda \}_\lambda$ forms an eigenbasis of $\ch(A)^+$ with resepect to the meridian map and the eigenspaces are $1$-dimensional. As a side remark, the linear involution $z_i \mapsto z_{-i}$ may be realized topologically by rotating the thickened annulus $\pi$ radians around an appropriately centered axis parallel to $A$ and taking the induced skein map. We will call this map the \textit{flip map}.
+The behavior of $\widetilde{Q}_\lambda$ is similar to that of the $Q_\lambda := \cl^+(y_\lambda) \in \ch(A)$ where $\cl^+(-)$ is defined by orienting the strands in wiring digram of $\cl(-)$ counter-clockwise. Using the description $\ch(A) = R[z_i, i \in \Z_{\neq 0}]$, consider the subalgebras $\ch(A)^+ := R[z_i, i \in \Z_{> 0}]$ and $\ch(A)^- := R[z_i, i \in \Z_{< 0}]$. Then the two subalgebras are isomorphic via the linear involution defined by $z_i \mapsto z_{-i}$ and $\ch(A) \cong \ch(A)^+ \otimes \ch(A)^-$. The $\{ Q_\lambda \}_\lambda$ forms an eigenbasis of $\ch(A)^+$ with resepect to the meridian map and the eigenspaces are $1$-dimensional. As a side remark, the linear involution $z_i \mapsto z_{-i}$ may be realized topologically by rotating the thickened annulus $\pi$ radians around an appropriately centered axis parallel to $A$ and taking the induced skein map. We will call this map the \textit{flip map}.
 
 In \AP{cite Lukac}, it's shown how to interpret $\ch(A)^+$ as the ring of symmetric functions $\Lambda$ (also see \AP{cite Morton Murphy Operators}). There is an injective algebra homomorphism $\Lambda \to \ch(A)^+$ which sends the Schur function $s_\lambda$ to the minimal idempotent closure $Q_\lambda$. This theorem has plenty of implications. For example, the structure constants of $\Lambda$ in the basis $\{ s_\lambda \}_\lambda$ are the Littlewood-Richardson coefficients, which are then sent to structure constants of $\ch(A)^+$ in the basis $\{ Q_\lambda \}_\lambda$. In Chapter \AP{reference}, we discuss partial results surrounding the Dubrovnik analogue of this homomorphism. See Section \AP{reference} for a summary about the ring $\Lambda$.
 
-Another application of the interpretation of $\ch(A)^+$ as $\Lambda$ is the definition of new special links in the skein algebra. There is a family of elements known as the power-sum symmetric functions, whose counterparts in $\ch(A)^+$ we will denote by $P_n$. These elements are algebraically independent in $\Q \otimes \Lambda$. Therefore, monomials in the $P_n$ form a basis of $\ch(A)^+$.
+Another application of the interpretation of $\ch(A)^+$ as $\Lambda$ is the definition of new special links in the skein algebra. There is a family of elements in $\Lambda$ known as the power sum symmetric functions, whose counterparts in $\ch(A)^+$ we will denote by $P_k$ for integers $k \geq 1$. These elements are algebraically independent in $\Lambda_\Q := \Q \otimes \Lambda$. Therefore, ordered monomials in the $P_k$ form a basis of $\ch(A)^+$.
 
 
 \subsection{Skein Algebras of the Torus}
 
-The power-sum elements $P_n \in \ch(A)$ described above are known to behave wonderfully in skein theoretic computations. This allows for a simple description of the HOMFLYPT skein algebra of the torus $\ch(T^2)$ in terms of generators and relations. First, let's define the generators. For any rational number $r$ there is a smooth embedding 
+The power-sum elements $P_k$ described above are known to behave wonderfully in skein theoretic computations. This allows for a simple description of the HOMFLYPT skein algebra of the torus $\ch(T^2)$ in terms of generators and relations. First, let's define the generators. For any rational number $r$ there is a smooth embedding 
 \[
 \iota_{r}: A \to T^2
 \]
@@ -285,7 +287,7 @@ The product in the algebra in this digrammatic notation is given by nesting annu
 
 Let $\cc_\ch := \ch(A)$. Then, $\cc_\ch$ admits both a left $\cc_\ch$-action by pushing links infront of tangles in $\ca_\ch$.
 \AP{Picture of left action.}
-It is known that there is an equality of algebras between $\ca_\ch$ and the Laurent polynomial algebra $\cc_\ch[a^{\pm 1}]$. In particular, $\ca_\ch$ is commutative and the left action is determined by how it acts on $e$.  
+It is known that there is an equality of algebras between $\ca_\ch$ and the Laurent polynomial algebra $\cc_\ch[a, a^{-1}]$. In particular, $\ca_\ch$ is commutative and the left action is determined by how it acts on $e$.
 
 Analagously, there is a right $\cc_\ch$-action by pulling links in behind tangles in $\ca_\ch$. 
 \AP{picture of right action.}
@@ -296,7 +298,7 @@ e \cdot P_k - P_k \cdot e = (s^k - s^{-k}) a^k.
 \AP{Make sure this order is correct.}
 The proof involves the definition of a certain wiring diagram, defining a linear map $H_n \to \ca_\ch$. The idempotents $y_{n}$ satisfy a certain recurrence relation, and the commutator relation above follows from writing $P_k$ in terms of the $y_n$ and calculations involving the image of this recurrence relation.
 
-Eventually we would like to prove a Dubrovnik analogue of Equation \eqref{eq:pkcommutator} (see Section \ref{sec:commurationrelations}), but we still haven't defined any Dubrovnik analogue of the $P_k$ (see \AP{ref}). Nevertheless, we can discuss some of what was previously known about the algebra $\ca_\cd := \cd(A, [1])$ (see \AP{Shelly} for more details). 
+Eventually we would like to prove a Dubrovnik analogue of Equation \eqref{eq:pkcommutator} (see Section \ref{sec:commurationrelations}), but we still haven't defined any Dubrovnik analogue of the $P_k$ (see \AP{ref}). Nevertheless, we can discuss some of what was previously known about the algebra $\ca_\cd := \cd(A, [1])$ (see \AP{Shelly} for more details).
 
 Let $\cc_\cd := \cd(A)$ and let $a, e \in \ca_\cd$ be the unoriented versions of the elements of the same name above. As in the HOMFLYPT case, there is a left-$\cc_\cd$ action on $\ca_\cd$ and the algebra $\ca_\cd$ is equal to the Laurent polynomial algebra $\cc_\cd[a^{\pm 1}]$. There is also a right-$\cc_\cd$ action on $\ca_\cd$, endowing $\ca_\cd$ with a bimodule structure. 
 
