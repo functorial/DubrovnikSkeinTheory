@@ -1,4 +1,4 @@
-\chapter{``Miraculous Canellations" and the Skein Algebra of the Torus}
+\chapter{The Skein Algebra of the Torus}
 
 \AP{Add some introduction and remark about collaboration.}
 
@@ -339,9 +339,270 @@ Equation \eqref{eq:perprelations} is the image of Equation \eqref{eq:powersumcom
 
 \AP{Picture of wiring.}
 
-We will not give the proof of Equation \eqref{eq:angledrelations} here, but it may be found in \AP{MPS}. The idea given there is similar to the idea for the proof of Equation \eqref{eq:perprelations}: first show a similar relation holds in the skein algebra of the annulus relative to two points $\cd(A, [2])$ via a brute force computation, and then Equation \eqref{eq:angledrelations} is the image of this relation under a simple wiring into $\cd(T^2)$. 
+We will not give the proof of Equation \eqref{eq:angledrelations} here \AP{This part of the proof was finished before I started working on the project}, but it may be found in \AP{MPS}. The idea given there is similar to the idea for the proof of Equation \eqref{eq:perprelations}: first show a similar relation holds in the skein algebra of the annulus relative to two points $\cd(A, [2])$ via a brute force computation, and then Equation \eqref{eq:angledrelations} is the image of this relation under a simple wiring into $\cd(T^2)$. 
 
-What's left for us to show here is the second statement of the proposition, that Equations \eqref{eq:perprelations} and \eqref{eq:angledrelations} imply Equation \eqref{eq:mainrelations}. 
+What's left for us to show here is the second statement of the proposition, that Equations \eqref{eq:perprelations} and \eqref{eq:angledrelations} imply Equation \eqref{eq:mainrelations}. We will devote the rest of this section to doing so.
+
+
+\AP{Below is copied from the paper}
+
+\begin{remark}
+	Suppose we picked some other generators $D'_\xx$, and we required the $D'_\xx$ to be equivariant with respect to the $SL_2(\Z)$ action, and we choose $D'_{1,0}$ to be a simple closed curve. Then equation \eqref{eq:rel2} determines the $D'_{n,0}$ uniquely, and it can be shown that equation \eqref{eq:rel1} determines $D'_{n,0}$ up to addition of a scalar. This means the choice of generators is essentially uniquely determined by either special case of our desired relations. The key point is that the $D'_{n,0}$ are \emph{simultaneous} solutions to these two equations.
+\end{remark}
+
+Below we will show that the relations of Proposition \ref{prop:specialcases} imply the relations \eqref{eq:allrelations} desired in the main Theorem, after we prove some preparatory lemmas. We will write 
+\begin{align*} 
+d(\xx, \yy) &:= \det\left[\xx\,\, \yy\right] \quad \quad \,\,  \textrm{for } \xx, \yy \in \Z^2, \\
+d(\xx) &:= gcd(m,n) \quad \quad \textrm{when } \xx = (m,n).
+\end{align*} 
+We will also use the following terminology: 
+\[
+(\xx,\yy) \in \Z \times \Z \textrm{ is \emph{good} if  } [D_\xx,D_\yy] = \{d(\xx,\yy)\} \left( D_{\xx+\yy}-D_{\xx-\yy} \right).
+\]
+
+\begin{remark}\label{remark_goodsymmetry}
+Note that because $D_{\xx}=D_{-\xx}$, if $(\xx, \yy)$ is good, then the pairs $(\pm\xx, \pm\yy)$ are good as well. 
+\end{remark}
+
+The idea of the proof is to induct on the absolute value of the determinant of the matrix with columns $\xx$ and $\yy$. To induct, we write $\xx = \aab + \bb$ for carefully chosen vectors $\aab, \bb$ and then use the following lemma. 
+%We have indicated an example choice of the vectors $\xx$, $\yy$, $\aab$ and $\bb$ in Figure \ref{fig_vectors}. 
+%\AP{Did we want to include a figure?} \PS{We only included it because the referee asked for it, so let's ignore it for now.}\\
+%It is easy to see that Lemma \ref{lemma_trueforab} applies to the vectors in this example.
+
+\begin{lemma}\label{lemma_trueforab}
+	Assume $\aab + \bb = \xx$ and that $(\aab,\bb)$ is good. Further assume that the five pairs of vectors $(\yy, \aab)$, $(\yy, \bb)$, $(\yy+\aab,\bb)$, $(\yy+\bb,\aab)$, and $(\aab-\bb, \yy)$, are good. Then the pair $(\xx,\yy)$ is good.
+\end{lemma}
+\begin{proof}
+We  use the Jacobi identity and the assumptions to compute
+	\begin{eqnarray*}
+&-&\{d(\aab, \bb)\} [D_{\aab+\bb}, D_y] + \{d(\aab, \bb)\} [D_{\aab-\bb}, D_y] \\
+=&-&[[D_{\aab}, D_{\bb}], D_{\yy}] \\
+=&&[[D_{\yy}, D_{\aab}], D_{\bb}] + [[D_{\bb}, D_y], D_{\aab}] \\
+=&&\{d(\yy, \aab)\} [D_{\yy+\aab} - D_{\yy-\aab}, D_{\bb}] + \{d(b,y)\} [D_{\bb+\yy} - D_{\bb-\yy}], D_{\aab}] \\
+=&&\{d(\yy,\aab)\} \left( \{d(\yy+\aab, \bb)\} \left( D_{\yy+\aab+\bb} - D_{\yy+\aab-\bb} \right) \right. \\
+&& \left. \qquad\qquad -\{d(\yy-\aab,\bb)\} \left( D_{\yy-\aab+\bb} - D_{\yy-\aab-\bb} \right) \right) \\
+&+&\{d(\bb,\yy)\} \left( \{d(\bb+\yy, \aab)\} \left( D_{\bb+\yy+\aab} - D_{\bb+\yy-\aab} \right) \right. \\
+&& \left. \qquad\qquad -\{d(\bb-\yy, \aab)\} \left( D_{\bb-\yy+\aab} - D_{\bb-\yy-\aab} \right) \right) \\
+=&& \left( \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \right) D_{\aab+\bb+\yy} \\
+&+& \left( \{d(\yy,\aab)\} \{d(\yy-\aab,\bb)\} - \{d(\bb,\yy)\} \{d(\bb-\yy,\aab)\} \right) D_{\aab+\bb-\yy} \\
+&-& \left( \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} - \{d(\bb,\yy)\} \{d(\bb-\yy,\aab)\} \right) D_{\aab-\bb+\yy} \\
+&-& \left( \{d(\yy,\aab)\} \{d(\yy-\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \right) D_{\aab-\bb-\yy} \\
+=:&& c_1 D_{\aab+\bb+\yy} + c_2 D_{\aab+\bb-\yy} - c_3 D_{\aab-\bb+\yy} - c_4 D_{\aab-\bb-\yy}.
+	\end{eqnarray*}
+Using some simple algebra, we can show
+	\begin{eqnarray*}
+c_1 \,\,\, =& &  \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \\
+=&& \{d(\yy,\aab)+d(\yy+\aab,\bb)\}^+ - \{d(\yy,\aab)-d(\yy+\aab,\bb)\}^+ \\
+&+& \{d(\bb,\yy)+d(\bb+\yy,\aab)\}^+ - \{d(\bb,\yy)-d(\bb+\yy,\aab)\}^+  \\
+=&& \{d(\yy,\aab+\bb)+d(\aab,\bb)\}^+ - \{d(\yy,\aab-\bb)-d(\aab,\bb)\}^+ \\
+&+& \{d(\yy,\aab-\bb)-d(\aab,\bb)\}^+ - \{d(\aab,\bb)-d(\yy,\aab+\bb)\}^+ \\
+=&& \{d(\aab,\bb)+d(\yy,\aab+\bb)\}^+ - \{d(\aab,\bb)-d(\yy,\aab+\bb)\}^+ \\
+=&& \{d(\aab,\bb)\} \{d(\yy,\aab+\bb)\} \\
+=&& - \{d(\aab,\bb)\} \{d(\xx,\yy)\}.
+	\end{eqnarray*}
+Similar computations for the other $c_i$ show that 
+	\begin{align}
+\frac{-1}{\{d(\aab,\bb)\}}[[D_\aab,D_\bb],D_\yy] &=  \frac{1}{\{d(\aab,\bb)\}} \left( c_1 D_{\aab+\bb+\yy} + c_2 D_{\aab+\bb-\yy} - c_3 D_{\aab-\bb+\yy} - c_4 D_{\aab-\bb-\yy}\right) \notag\\ 
+&=  -\{d(\xx,\yy)\} \left( D_{\xx+\yy} - D_{\xx-\yy} \right) 
++\{d(\aab-\bb,\yy)\} \left( D_{\aab-\bb+\yy} - D_{\aab-\bb-\yy} \right)\notag \\
+&= -\{d(\xx,\yy)\} \left( D_{\xx+\yy} - D_{\xx-\yy} \right) 
++ [D_{\aab-\bb},D_\yy]. \label{eq:astep}
+	\end{align}
+	By the assumption that $(\aab,\bb)$ is good, we have 
+\begin{equation}\label{eq:added}
+[D_{\aab}, D_{\bb}] = \{d(\aab, \bb )\} \big( D_{\xx} - D_{\aab-\bb} \big).
+\end{equation}
+Finally, combining equations \eqref{eq:added} and \eqref{eq:astep} shows that the pair $(\xx,\yy)$ is good.
+\end{proof}
+
+We next prove the following elementary lemma (which is a slight modification of \cite[Lemma 1]{FG00}). This lemma is used to make a careful choice of vectors $\aab, \bb$ so that the previous lemma can be applied. 
+
+\begin{lemma}\label{lemma_diophantine}
+	Suppose $p,q \in \Z$ are relatively prime with $0 < q < p$ and $p > 1$. Then there exist $u,v,w,z \in \Z$ such that the following conditions hold:
+	\begin{eqnarray}
+	u + w &=& p,\quad v + z = q \notag \\
+	0 < u, w &<& p\label{equation_conditionsonuvwz} \\
+	uz - wv &=& 1. \notag
+	\end{eqnarray}
+\end{lemma}
+\begin{proof}
+	Since $p$ and $q$ are relatively prime, there exist $a,b \in \Z$ with $ bq - ap = 1$. This solution can be modified to give another solution $a' = a + q$ and $b' = b + p$, so we may assume $0 \leq b < p$. We then define 
+	\[
+	u=b,\quad v=a,\quad w=p-b,\quad z=q-a.
+	\]
+	By definition, $u,v,w,z$ satisfy the first condition of \eqref{equation_conditionsonuvwz}, and the inequalities $0 \leq b < p$ and $p > 1$ imply the second condition. To finish the proof, we compute
+	\[
+	uz - wv = b(q-a) - a(p-b) = bq - ap = 1.
+	\]
+\end{proof}
+
+It might be helpful to point out that the numbers in the previous lemma satisfy
+\[
+\left[ \begin{array}{cc} u&w\\v&z\end{array}\right]\left[\begin{array}{c}1\\1\end{array}\right] = \left[ \begin{array}{c}p\\q\end{array}\right].
+\]
+
+
+\begin{remark}\label{remark_gl2z}
+	There is a natural $R$-linear anti-automorphism $\tau:\cd(T^2) \to \cd(T^2)$ which ``flips $T^2 \times [0,1]$ across the $y$-axis and inverts $[0,1]$.'' In terms of the elements $D_{a,b}$, we have $\tau(D_{a,b}) = D_{a,-b}$. We therefore have an \emph{a priori} action of $\mathrm{GL}_2(\Z)$ on $\cd(T^2)$, where elements of determinant $1$ act by algebra automorphisms, and elements of determinant $-1$ act by algebra anti-automorphisms. It will be important that the orbits of this action on the $D_{\xx}$ are the fibers of the assignment $D_{\xx} \mapsto d(\xx)$ (which is essentially the statement of Lemma \ref{lemma_diophantine}). In other words, up to the action of $GL_2(\mathbb Z)$, vectors in $\Z^2$ are classified by the GCD of their entries.
+\end{remark}
+
+\begin{proposition}\label{lemma_allfromsome}
+	Suppose $A$ is an algebra with elements $D_\xx$ for $\xx \in \Z^2/\langle -\xx = \xx \rangle$ that satisfy equations \eqref{eq:rel1} and \eqref{eq:rel2}. Furthermore, suppose that there is a $\GL_2(\Z)$ action by (anti-)automorphisms on $A$ as in Remark \ref{remark_gl2z}, and that the action of $\GL_2(\Z)$ is given by $\gamma(D_\xx) = D_{\gamma(\xx)}$  for $\gamma \in \GL_2(\Z)$.  Then the $D_\xx$ satisfy the equations 
+	\begin{equation*}
+		[D_\xx, D_\yy] = (s^d - s^{-d})\left( D_{\xx+\yy} - D_{\xx-\yy}\right).
+	\end{equation*}
+\end{proposition}
+\begin{proof}
+	The proof proceeds by induction on $\lvert d(\xx,\yy)\rvert $, and the base case $\lvert d(\xx,\yy)\rvert = 1$ is immediate from Remark \ref{remark_gl2z} and the assumption \eqref{eq:rel1} for $\xx = (1,0)$ and $\yy = (0,1)$. We now make the following inductive assumption:
+	\begin{equation}\label{assumption1} 
+	\textrm{For all } \xx',\yy' \in \Z^2\textrm{ with } \lvert d(\xx',\yy')\rvert < \lvert d(\xx,\yy) \rvert, \textrm{ the pair } (\xx',\yy') \textrm{ is good.}
+	\end{equation}
+	We would like to show that $[D_{\xx},D_{\yy}] = \{d(\xx,\yy)\} \big( D_{\xx + \yy} - D_{\xx-\yy} \big)$. By Remark \ref{remark_gl2z}, we may assume
+	\[
+	\yy = \begin{pmatrix}0\\r\end{pmatrix},\quad \xx = \begin{pmatrix}p\\q\end{pmatrix},\quad d(\xx) \leq d(\yy),\quad 0 \leq q < p.
+	\]
+	
+	If $p=1$, then this equation follows from \eqref{eq:rel2}, so we may also assume $p > 1$. Furthermore, we may assume that $r>0$ by Remark \ref{remark_goodsymmetry}. 
+
+	We will now show that if either $d(\xx)=1$ or $d(\yy)=1$, then $(\xx,\yy)$ is good. By symmetry of the above construction of $\xx$ and $\yy$, we may assume $d(\xx)=1$, which immediately implies $q>0$. Furthermore, we may now assume that $r>1$ by the relation \eqref{eq:rel2}. We apply Lemma \ref{lemma_diophantine} to $p, q$ to obtain  $u,v,w,z \in \Z$ satisfying 
+	\begin{equation}\label{assumption1.49}
+	uz - vw = 1,\quad uq - vp = 1,\quad u + w = p,\quad v + z = q,\quad 0 < u,w < p.
+	\end{equation}
+	We then define vectors $\aab$ and $\bb$ as follows:
+	\begin{equation}\label{assumption1.9}
+	\aab := \begin{pmatrix}  u\\ v\end{pmatrix},\quad 
+	\bb := \begin{pmatrix} w\\ z\end{pmatrix},
+	\quad \aab + \bb = \xx,\quad d(\aab, \bb) = 1. %,\quad 0 < d(\xx)u,d(\xx)w < p
+	\end{equation}
+
+	Using Lemma \ref{lemma_trueforab} and Assumption (\ref{assumption1}), it is sufficient to show that each of $\lvert d(\aab, \bb) \rvert$, $\lvert d(\yy,\bb) \rvert$, $ \lvert d(\yy,\aab) \rvert$, $\lvert d(\yy+\aab,\bb) \rvert$, $\lvert d(\yy+\bb,\aab) \rvert$, and $\lvert d(\aab-\bb,\yy) \rvert$ are strictly less than $pr = \lvert d(\xx,\yy) \rvert$. First, $ \lvert d(\aab,\bb) \rvert = 1$ is strictly less than $pr$ since $p>1$ and $r>0$. Second, $ \lvert d(\yy,\aab) \rvert = ur $ and $ \lvert d(\yy,\bb) \rvert = wr $ are strictly less than $pr$ by the inequalities in (\ref{assumption1.49}). Third, we compute
+	\begin{eqnarray*}
+		\vert d(\yy+\aab, \bb) \rvert &=&\vert - d(\yy+\aab, \bb) \rvert \\
+		&=& \lvert - d(\yy,\bb) - d(\aab, \bb) \rvert \\
+		&=& \lvert wr - 1 \rvert \\
+		&=& wr-1 \\
+		&<& wr \\
+		&<& pr.
+	\end{eqnarray*}
+
+	Fourth, we compute
+	\begin{eqnarray*}
+		\lvert -d(\yy+\bb, \aab) \rvert &=& \lvert -d(\yy+\bb, \aab) \rvert \\
+		&=& \lvert -d(\yy,\aab) - d(\bb, \aab) \rvert \\
+		&=& \lvert ur + 1 \rvert \\
+		&=& ur+1 \\
+		&\leq& (p-1)r+1 \\
+		&=& pr-r+1 \\
+		&<& pr.
+	\end{eqnarray*}
+
+	Finally, we compute
+	\begin{eqnarray*}
+		\lvert d(\aab-\bb,\yy) \rvert &=& \lvert d(\aab,\yy) - d(\bb,\yy) \rvert \\
+		&=& \lvert d(\yy,\aab) - d(\yy,\bb) \rvert \\
+		&=& \lvert ur - wr \rvert \\
+		&=& \lvert u-w \rvert r \\
+		&<& \lvert u+w \rvert r \\
+		&=& pr.	
+	\end{eqnarray*}
+	
+	So we have shown that $(\xx,\yy)$ is good if $d(\xx)=1$ or $d(\yy)=1$. Let us now turn our attention to the more general case. We will immediately split this into cases depending on $q$.
+	
+	\noindent \emph{Case 1:} Assume $0 < q$. 
+	
+	Let $p' = p / d(\xx)$ and $q' = q / d(\xx)$. By the assumption $0 < q$, we see that $d(\xx) < p$, so $p' > 1$. We can therefore apply Lemma \ref{lemma_diophantine} to $p',q'$ to obtain $u,v,w,z \in \Z$ satisfying 
+	\begin{equation}\label{assumption1.5}
+	uz - vw = 1,\quad uq' - vp' = 1,\quad u + w = p',\quad v + z = q',\quad 0 < u,w < p'.
+	\end{equation}
+	In a way similar to the above, we may pick vectors $\aab$ and $\bb$ as follows: %(the properties listed follow from (\ref{assumption1.5})):
+	\begin{equation}\label{assumption2}
+	\aab := \begin{pmatrix}  d(\xx)u\\ d(\xx)v\end{pmatrix},\quad 
+	\bb := \begin{pmatrix} d(\xx)w\\ d(\xx)z\end{pmatrix},
+	\quad \aab + \bb = \xx,\quad d(\aab, \bb) = d(\xx)^2. %,\quad 0 < d(\xx)u,d(\xx)w < p
+	\end{equation}
+	
+	As before, it is sufficient to show that each of $\lvert d(\aab, \bb) \rvert$, $\lvert d(\yy,\bb) \rvert$, $\lvert d(\yy,\aab) \rvert$, $\lvert d(\yy+\aab,\bb) \rvert$, $\lvert d(\yy+\bb,\aab) \rvert$, and $\lvert d(\aab-\bb,\yy) \rvert$ are strictly less than $pr  = \lvert d(\xx,\yy) \rvert$. First,
+	\[
+	\lvert d(\aab,\bb) \rvert = d(\xx)^2 \leq d(\xx)d(\yy) = d(\xx)r < pr
+	\]
+	where the last inequality follows from the assumption $0 < q < p$. Second, we can compute $\lvert d(\yy,\bb) \rvert = d(\xx)w r $ and $ \lvert d(\yy,\aab) \rvert =  d(\xx)u r $ are strictly less than $pr$ by the inequalities in (\ref{assumption1.5}). Third, we compute
+	\begin{eqnarray*}
+		\lvert d(\yy+\aab, \bb) \rvert &=& \lvert -d(\yy+\aab, \bb) \rvert \\
+		&=& \lvert -d(\yy,\bb) - d(\aab, \bb) \rvert\\
+		&=& \lvert d(\xx)wr - d(\xx)^2 \rvert \\
+		&=& d(\xx)wr - d(\xx)^2 \\ %Since d(\xx)wr =w d(\xx)d(\yy) \geq wd(\xx)^2 > d(\xx)^2
+		% &=& d(\xx)(wr - d(\xx))\\
+		&<& d(\xx)wr\\
+		&\leq& pr.
+	\end{eqnarray*}
+	Finally, we compute
+	\begin{eqnarray*}
+		\lvert d(\yy+\bb, \aab) \rvert &=& \lvert -d(\yy+\bb, \aab) \rvert \\
+		&=& \lvert -d(\yy,\aab) - d(\bb, \aab) \rvert \\
+		&=& d(\xx)ur + d(\xx)^2 \\
+		&\leq& \left(d(\xx)u + d(\xx)\right)d(\yy)\\
+		&=& (u+1)d(\xx)r.
+	\end{eqnarray*}
+	
+	Therefore, we will be finished once we show that $(u+1)d(\xx)$ is strictly less than $p$. We now split into subcases:\\[2mm]
+	
+	\noindent\emph{Subcase 1a:} If $u + 1 < p'$, then $(u+1)d(\xx)r < p'd(\xx)r = pr$, and we are done. 
+	
+	\noindent \emph{Subcase 1b:} Assume $u + 1 = p'$. By equation (\ref{assumption1.5}), we have 
+	\[
+	1 = uq' - vp' = (p'-1)q' - vp'  \implies p'(q'-v) = 1 + q' < 1 + p'.
+	\]
+	Since $p' > 1$, the last inequality implies $q' - v = 1$, which implies $v = q'-1$ and $z = 1$. Since $uz-vw = 1$, this implies $(p'-1)-(q'-1) = 1$, which implies $q' = p'-1$. If we write $g = d(\xx)$, we then have
+	\[
+	\lvert d(\yy + \bb, \aab) \rvert = \lvert -d(\yy + \bb, \aab) \rvert = \Bigg| -\det\left[ \begin{array}{cc}g&p -g\\g + r&p-2g\end{array}\right] \Bigg| =  \lvert rp + g(g-r) \rvert = rp + d(\xx)(d(\xx)-r) \leq rp
+	\]
+	where the last inequality comes from the assumption $d(\xx) \leq r$. If this inequality is strict, then we are done. Otherwise, we move onto the next subcase.
+	
+	\noindent\emph{Subcase 1c:} In this subcase, we are reduced to showing the following pair of vectors is good: 
+	\[
+	\yy = (0,r),\quad \quad \xx = (rp', rp'-r).
+	\]
+	If $r=1$, then $d(\yy)=1$, which makes $(\xx,\yy)$ good. Thus, we may assume that $r>1$. 
+	
+	We must replace our previous choice of $\aab$ and $\bb$ with a choice which is better adapted to this particular subcase. We define
+	% \[
+	%  \aab := \left(\begin{array}{c} 0\\-1 \end{array}\right),\quad \bb := \left(\begin{array}{c} rp'\\rp' - r + 1 \end{array}\right)
+	% \]
+	\[
+	\aab := \begin{pmatrix} 1\\-1 \end{pmatrix},\quad \bb := \begin{pmatrix} rp'-1\\rp' - r + 1 \end{pmatrix}.
+	\]
+
+	We know that the pairs $(\aab, \bb), (\yy, \aab), (\yy+\bb,\aab)$ are good since $d(\aab)=1$. Since $r > 1$ and $p'>1$, we can compute that the determinants of the pairs $(\yy,\bb), (\yy+\aab,\bb), (\aab-\bb,\yy)$ are strictly less than $r^2p' = \lvert d(\xx,\yy) \rvert$ as follows:
+	\begin{eqnarray*}
+		\lvert d(\aab-\bb,\yy)\rvert &=&  \lvert r^2p' - 2r \rvert \\
+		&=& r^2p' - 2r \\
+		&<& r^2p'
+	\end{eqnarray*}
+
+	\begin{eqnarray*}
+		\lvert d(\yy,\bb)\rvert &=&  \lvert r^2p' - r \rvert \\
+		&=& r^2p' - r \\
+		&<& r^2p'
+	\end{eqnarray*}
+
+	\begin{eqnarray*}
+		\lvert d(\yy+\aab, \bb)\rvert &=&  \lvert r^2p' - (rp'+r-1) \rvert \\
+		&=&  r^2p' - (rp'+r-1) \\
+		&<& r^2p'.
+	\end{eqnarray*}
+
+This together with Assumption (\ref{assumption1}) and Lemma \ref{lemma_trueforab} shows that $(\xx,\yy)$ is good, which finishes the proof of this subcase and finishes the proof of Case 1. \\[2mm]
+	
+	\noindent \emph{Case 2:} In this case we assume $q=0$. We define $\aab, \bb$ similarly to Subcase 1c, so we have
+	% \[
+	%  \yy = \left(\begin{array}{c} 0\\r\end{array}\right),\quad \xx = \left(\begin{array}{c} p\\0\end{array}\right),\quad \aab := \left(\begin{array}{c} 0\\-1 \end{array}\right),\quad \bb := \left(\begin{array}{c} p\\ 1 \end{array}\right)
+	% \]
+	\[
+	\yy = \begin{pmatrix} 0\\r\end{pmatrix},\quad \xx = \begin{pmatrix} p\\0\end{pmatrix},\quad \aab := \begin{pmatrix} 1\\-1 \end{pmatrix},\quad \bb := \begin{pmatrix} p-1\\ 1 \end{pmatrix}.
+	\]
+
+	Since $d(\aab) = d(\bb) = 1$, the pairs $(\aab,\bb), (\yy,\aab), (\yy,\bb), (\yy+\aab,\bb), (\yy+\bb,\aab)$ are all good. We must check that $\lvert d(\aab-\bb,\yy) \rvert < pr = \lvert d(\xx,\yy) \rvert$. If $r=1$, then the relation \eqref{eq:rel1} implies that the pair $(\xx,\yy)$ is good. Thus, we may assume that $r>1$. We may also assume that $p>1$. Finally, we check $\lvert d(\aab-\bb,\yy) \rvert = \lvert rp-2r \rvert = rp-2r < rp$. By using Assumption (\ref{assumption1}) and Lemma \ref{lemma_trueforab}, this completes Case 2 which completes the proof. 
+\end{proof}
 
 
 \section{Compatibility With the Kauffman Bracket Skein Algebra of the Torus}
