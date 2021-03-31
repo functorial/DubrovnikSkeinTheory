@@ -589,6 +589,96 @@ This together with Assumption (\ref{assumption1}) and Lemma \ref{lemma_trueforab
 \end{proof}
 
 
-\section{Compatibility With the Kauffman Bracket Skein Algebra of the Torus}
+\section{Relationships With $\ck(T^2)$ and $\ch(T^2)$}
 
+\subsection{The Kauffman Bracket Case}
+
+It was mentioned in Section \ref{sec:skeintheories} that \textit{Chebyshev polynomials} are imporant elements of the skein algebra $\ck(A) = R[z]$. Let's now elaborate what that means. The \textbf{Chebyshev polynomials of the first kind} $C^T_n = C^T_n(z)$ are defined recursively as
+\begin{align*}
+C^T_0 = 1, & C^T_1 = z, & C^T_n = C^T_{n-1} C^T_1 - C^T_{n-2}
+\end{align*}
+and have many amazing properties, most of which we won't discuss here. We will need slightly modified versions of these, $T_n(z) := 2C^T_n(z/2)$.  
+
+Recall that the Dubrovnik skein relations satisfy the Kauffman Bracket skein relations, and hence there is a natural transformation of functors
+\[
+\eta: \cd \to \ck
+\]
+whose components are essentially the identity map (more details are given in Section \ref{sec:skeintheories}).
+
+\begin{proposition}
+Under the algebra homomorphism
+\[
+\eta_A: \cd(A) \to \ck(A)
+\]
+the image $\eta_A(\tilde{P}_k) = $
+\end{proposition}
+
+\AP{Copied this section from the paper, check carefully for notation.}
+
+Here we show that our presentation of the Kauffman skein algebra of the torus is compatible with Frohman and Gelca's presentation of the Kauffman bracket skein algebra of the torus, which we recall below. This algebra is defined in the same way as the Kauffman skein algebra, but using the Kauffman bracket skein relations:
+\begin{align}\label{eq:kb}
+\vcenter{\hbox{\includegraphics[height=2cm]{poscross.eps}}}  \quad &= \quad  s \,\,\vcenter{\hbox{\includegraphics[height=2cm]{idresolution.eps}}}  + s^{-1} \,\, \vcenter{\hbox{\includegraphics[height=2cm]{capcupresolution.eps}}}\\
+\vcenter{\hbox{\includegraphics[height=2cm, keepaspectratio]{invvh.eps}}} \quad &= \quad -s^{3}\,\, \vcenter{\hbox{\includegraphics[height=2cm, keepaspectratio]{frameresolution.eps}}}. \notag
+\end{align}
+
+Given any 3-manifold, there is a natural map $\sk_s(M) \to K_s(M)$, which follows from the fact that the Kauffman bracket skein relations imply the Kauffman skein relations. If $M = F \times [0,1]$ for some surface $F$, then this is an algebra map.
+
+%\PS{include Kauffman bracket skein relations}
+
+The Frohman and Gelca presentation of the Kauffman bracket skein algebra uses the Chebyshev polynomials $T_n(x)$, which are uniquely characterized by the property $T_n(X+X^{-1}) = X^n + X^{-n}$. If $\xx \in \Z^2$ with $d(\xx) = k$, they defined an element $e_\xx \in K_s(T^2)$ by 
+\[
+e_\xx := T_k(\alpha_{\xx / k})
+\]
+where $\alpha_\xx$ is the simple closed curve of slope $\xx$.
+
+\begin{lemma}
+	The algebra map $\sk_s(T^2\times [0,1]) \to K_s(T^2\times [0,1])$ takes the generator $D_\xx$ to  $e_\xx$.
+\end{lemma}
+\begin{proof}
+The closure of the symmetrizer $f_n$ in the annulus gets sent to the (closure of the) Jones-Wenzl idempotent in the Kauffman bracket skein algebra of the annulus, because both symmetrizers are uniquely determined by the way they absorb crossings and caps. Under the identification $K_s(S^1\times D^2) = \C[x]$, the closure of the Jones-Wenzl idempotent is sent to $S_n(x)$, the other version of the Chebyshev polynomial, which is defined by 
+\[S_n(X+X^{-1}) = \frac{X^{n+1}-X^{-n-1}}{X-X^{-1}}.\]
+All that is left to show is that the $S_n(x)$ and $T_n(x)$ satisfy the power series identity in Definition \ref{def:dk}, which we write as
+\begin{equation*}
+\sum_{k=1}^\infty \frac{T_k(x)}{k} t^k =\ln\left(1 + \sum_{j \geq 1} S_j(x) t^j\right).
+\end{equation*}	
+% \PS{add proof of this identity (later)} \AP{added a sketch}
+Define different variants of  Chebyshev polynomials via $C_n^S(x/2):=S(x)$ and $2C_n^T(x/2):=T(x)$. The following two identities are well known (see, e.g. any book on special functions, or Wikipedia):
+\begin{align*}
+	\sum_{n \geq 0} C_n^S(x)t^n &= \frac{1}{1-2tx+t^2} \\
+	\sum_{n \geq 1} C_n^T(x)\frac{t^n}{n} &= \ln \left( \frac{1}{\sqrt{1-2tx+t^2}} \right).
+\end{align*}
+The first identity implies 
+\[
+	1+\sum_{n \geq 1} S_n(x)t^n = \frac{1}{1-tx+t^2}.
+\]
+This implies the follow identities:
+\begin{equation*}
+	1+\sum_{n \geq 1} S_n(x)t^n  = \frac{1}{1-tx+t^2} = \left( \exp \left( \sum_{n \geq 1} C_n^T(x/2)\frac{t^n}{n} \right) \right)^2
+	= \exp \left( \sum_{n \geq 1} 2 C_n^T(x/2)\frac{t^n}{n} \right).
+\end{equation*}
+This leads to the following, which completes the proof:
+\begin{equation*}
+\ln \left( 1+\sum_{n \geq 1} S_n(x)t^n \right) = \sum_{n \geq 1} 2 C_n^T(x/2)\frac{t^n}{n} = \sum_{n \geq 1} \frac{T_n(x)}{n} t^n.
+\end{equation*} 
+\end{proof}
+
+Now let us recall the description of the Kauffman bracket skein algebra of the torus given by Frohman and Gelca.
+\begin{theorem}[{\cite{FG00}}]\label{thm:fg}
+	The Kauffman bracket skein algebra $K_s(T^2)$ has a presentation with generators $e_\xx$ and relations
+	\begin{align}
+	e_\xx e_\yy &= s^d e_{\xx + \yy} + s^{-d} e_{\xx-\yy}\label{eq:fgrel}\\
+	e_{\xx} &= e_{-\xx}\notag
+	\end{align}
+	where $d = \det[\xx\,\yy]$.
+\end{theorem}
+
+A short computation using this presentation shows  the commutator identity
+\begin{equation}\label{eq:fg}
+[e_\xx, e_\yy] = (s^d-s^{-d}) (e_{\xx+\yy} - e_{\xx-\yy}).
+\end{equation}
+In other words, the relations we show for $D_\xx \in \sk(T^2)$ get sent to the relations in \eqref{eq:fg}, and the relations Frohman and Gelca showed in Theorem \ref{thm:fg} for the $e_\xx \in K_s(T^2)$ imply the relations in \eqref{eq:fg}. This shows our results are compatible with those of Frohman and Gelca.
+
+\begin{remark}\label{rmk:sobig}
+We emphasize that the algebra we describe is much bigger -- $\sk(T^2)$ has a linear basis given by unordered words in the $D_\xx$, while the Kauffman bracket skein algebra $K_s(T^2)$ has a linear basis given by the $e_\xx$ themselves. This happens because the Kauffman bracket skein relations allow all crossings to be removed from a diagram, so the algebra is spanned (over $R$) by curves without crossings. However, the more general Kauffman relations only allow crossings to be flipped, and not removed, which means the algebra is spanned (over $R$) by products of knots (which may have self-crossings). In particular, the relations \eqref{eq:fgrel} do not hold in the Kauffman skein algebra $\cd$.
+\end{remark}
 

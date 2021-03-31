@@ -117,7 +117,7 @@ because $M$ minus a collar neighborhood is diffeomorphic to itself. Alternativel
 \end{remark}
 
 
-\subsection{Examples of Skein Theories}
+\subsection{Examples of Skein Theories} \label{sec:skeintheories}
 
 The last subsection leaves us with an important and unanswered question. Which sets of skein relations $X$ produce interesting skein theories? One class of examples is found by importing sets of relations satisfied by morphisms in a linear ribbon category as skein relations. Ribbon categories are braided monoidal categories which are rigid and equipped with a twist morphism for every object, satisfying some compatibility conditions. The axioms are such that the morphisms may be interpreted as framed braid diagrams. In particular, the morphisms satisfy the Reidemeister moves shown previously. We will discuss three examples of skein theories derived from skein relations which are meant to emulate linear relations satisfied by the braid and twist morphisms in certain ribbon categories coming from the representation theory of quantum groups, a topic which has generated a lot of interest from mathematicians since the 1980s. The categories of representations of quantum groups are ribbon categories with non-involutive braidings and the skein relations below capture how far off the braidings are from being involutive.  
 
@@ -147,11 +147,31 @@ As a final example, let $X'''$ be the set of two unoriented skein relations
     (1) \quad \vcenter{\hbox{\includegraphics{poscross.eps}}} &= s \,\, \vcenter{\hbox{\includegraphics{idresolution.eps}}} + s^{-1} \,\, \vcenter{\hbox{\includegraphics{capcupresolution.eps}}} \\ \\
     (2) \quad \vcenter{\hbox{\includegraphics{vh.eps}}} &= -s^{-3} \,\, \vcenter{\hbox{\includegraphics{frameresolution.eps}}}.
 \end{flalign*}
-The functor $\ck(-,-) := \cs_{X'''}(-,-)$ is the Kauffman bracket skein theory (not be confused with the Kauffman skein theory) and we use $\mathsf{K}(-) := \sfskein_{X'''}(-)$ to notate the Kauffman bracket skein categories. The value of a link in $\ck(S^3)$ is equal to its bracket polynomial, which may be normalized as above to obtain its Jones polynomial. 
+The functor $\ck(-,-) := \cs_{X'''}(-,-)$ is the Kauffman bracket skein theory (not be confused with the Kauffman skein theory) and we use $\mathsf{K}(-) := \sfskein_{X'''}(-)$ to notate the Kauffman bracket skein categories. The value of a link in $\ck(S^3)$ is equal to its bracket polynomial, which may be normalized as above to obtain its Jones polynomial. One could choose the framing parameter to be $v$ instead of $-s^{-3}$ like we did before without any obvious consequences, but it is standard in the literature to make the choice we present here.  
 \end{example}
 
 \begin{remark}
-Any linear combination of tangles which satisfy the Dubrovnik skein relations will also satisfy the Kauffman bracket skein relations after making the specialization $v=-s^{-3}$. Therefore, there is a natural transformation of skein theories $\eta: \cd(-,-) \to \ck(-,-)$ induced by the intentity map on link diagrams. 
+Any linear combination of tangles which satisfy the Dubrovnik skein relations will also satisfy the Kauffman bracket skein relations after making the specialization $v=-s^{-3}$. This can be seen by performing the calculation in the relative skein algebra of the ball with $4$ points. Let $\sigma^\pm$ be the diagrams of positive and negative crossings, $e$ the planar diagram with two vertical strands, and $c$ the planar diagram with two horizontal strands. Then the Dubrovnik skein relation is
+\[
+\sigma^+_\cd - \sigma^-_\cd - (s-s^{-1})e_\cd + (s-s^{-1})c_\cd = 0
+\]
+and the Kauffman bracket skein relation implies
+\begin{align*}
+\sigma^+_\ck &= se_\ck + s^{-1}c_\ck \\
+\sigma^-_\ck &= sc_\ck + s^{-1}e_\ck
+\end{align*}
+where the subscript indicates which skein module the diagrams are in. Consider the assignment $d_\cd \mapsto d_\ch$ for any tangle $d$ in the ball relative to those $4$ points. Then observe:
+\begin{eqnarray*}
+& &\sigma^+_\ck - \sigma^-_\ck - (s-s^{-1})e_\ck + (s-s^{-1})c_\ck \\
+=& &(se_\ck + s^{-1}c_\ck) - (sc_\ck + s^{-1}e_\ck) - (s-s^{-1})e_\ck + (s-s^{-1})c_\ck \\
+=& &0
+\end{eqnarray*}
+
+Therefore, there is a natural transformation of skein theories 
+\[
+\eta: \cd(-,-) \to \ck(-,-)
+\] 
+whose components are essentially the identity map, using the same type of assignment as we did above. Note that the components of $\eta$ corresponding to skein algebras are algebra homomorphisms since the map preserves the (topological) product structure of the manifold.
 \end{remark}
 
 In this work, we will be focused on generalizing existing results from the HOMFLYPT and Kauffman bracket skein theories to the Dubrovnik skein theory, but we will state a few facts regarding the HOMFLYPT and Kauffman bracket skein theories when it is valuable for us to do so. 
@@ -162,7 +182,7 @@ In this work, we will be focused on generalizing existing results from the HOMFL
 
 \subsection{Skein Algebras of Tangles in a Cube}
 
-In the case where $\Sigma = I \times I$, the endomorphism objects of $\mathsf{D}(\Sigma), \mathsf{H}(\Sigma)$, and $\mathsf{K}(\Sigma)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $[n]$ be a set of $n$ points in $\Sigma$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose all points share the same orientation in the context of an oriented skein theory). Then the endomorphism algebras 
+In the case where $\Sigma = I \times I$, the endomorphism objects of $\mathsf{D}(\Sigma), \mathsf{H}(\Sigma)$, and $\mathsf{K}(\Sigma)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $[n]$ be a set of $n$ points in $I \times I$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose so that all points share the same orientation if in the context of an oriented skein theory). Then the endomorphism algebras 
 \[
 BMW_n := \End_\mathsf{D}(\Sigma)([n]), \qquad H_n := \End_\mathsf{H}(\Sigma)([n]), \qquad TL_n := \End_\mathsf{K}(\Sigma)([n])
 \]
