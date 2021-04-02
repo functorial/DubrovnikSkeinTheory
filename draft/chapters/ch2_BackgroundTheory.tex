@@ -171,7 +171,7 @@ Therefore, there is a natural transformation of skein theories
 \[
 \eta: \cd(-,-) \to \ck(-,-)
 \] 
-whose components are essentially the identity map, using the same type of assignment as we did above. Note that the components of $\eta$ corresponding to skein algebras are algebra homomorphisms since the map preserves the (topological) product structure of the manifold.
+whose components are essentially the identity map, using the same type of assignment as we did above. Note that any component of $\eta$ corresponding to a skein algebra is an algebra homomorphism since the map preserves the (topological) product structure of the manifold.
 \end{remark}
 
 In this work, we will be focused on generalizing existing results from the HOMFLYPT and Kauffman bracket skein theories to the Dubrovnik skein theory, but we will state a few facts regarding the HOMFLYPT and Kauffman bracket skein theories when it is valuable for us to do so. 
@@ -182,9 +182,9 @@ In this work, we will be focused on generalizing existing results from the HOMFL
 
 \subsection{Skein Algebras of Tangles in a Cube}
 
-In the case where $\Sigma = I \times I$, the endomorphism objects of $\mathsf{D}(\Sigma), \mathsf{H}(\Sigma)$, and $\mathsf{K}(\Sigma)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $[n]$ be a set of $n$ points in $I \times I$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose so that all points share the same orientation if in the context of an oriented skein theory). Then the endomorphism algebras 
+In the case where $\Sigma = I \times I$, the endomorphism objects of $\mathsf{D}(I \times I), \mathsf{H}(I \times I)$, and $\mathsf{K}(I \times I)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $[n]$ be a set of $n$ points in $I \times I$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose so that all points share the same orientation if in the context of an oriented skein theory). Then the endomorphism algebras 
 \[
-BMW_n := \End_\mathsf{D}(\Sigma)([n]), \qquad H_n := \End_\mathsf{H}(\Sigma)([n]), \qquad TL_n := \End_\mathsf{K}(\Sigma)([n])
+BMW_n := \End_\mathsf{D}(I \times I)([n]), \qquad H_n := \End_\mathsf{H}(I \times I)([n]), \qquad TL_n := \End_\mathsf{K}(I \times I)([n])
 \]
 are known to be isomorphic to the Birman-Murakami-Wenzl, (Type A) Hecke, and Temperley-Lieb algebras, respectively (\AP{*Add citations}). 
 
@@ -217,14 +217,14 @@ Using this section, one can transport the minimal idempotents $y_\lambda \in H_n
 %\[
 %[n+1] \vcenter{\hbox{\includegraphics[width=2.9cm]{f_nplus1.eps}}} = [n]s^{-1} \vcenter{\hbox{\includegraphics[width=2.9cm]{f_notimes11otimesf_n.eps}}} + \vcenter{\hbox{\includegraphics[width=2.9cm]{sigma_ndotssigma_11otimesf_n.eps}}} + [n]s^{-1} \beta_n \vcenter{\hbox{\includegraphics[width=2.9cm]{f_notimes1H1otimesf_n.eps}}}.
 %\]
-For what it's worth, this relation descends to a recurrence relation for the $y_n \in H_n$ via the projection map described above ($\tilde{y}_n$ gets sent to $y_n$ and the last diagram on the right-hand side gets sent to $0$). 
+For what it's worth, this relation descends to a well-known recurrence relation for the $y_n \in H_n$ via the projection map described above ($\tilde{y}_n$ gets sent to $y_n$ and the last diagram on the right-hand side gets sent to $0$). 
 
 \AP{Come back and add braiding/twist identities from BB if we need them.}
 
 \AP{This next diagram actually doesn't commute... $\pi_H(c_i)=0$, but $\eta_{\dots}(c_i) = c_i$. What does this mean for images of BMW symmetrizers in $TL_n$? Discuss Jones-Wenzl projectors once this is figured out since they are needed for compatibility result.}
 \begin{center}
 \begin{tikzcd}
-	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_{(I^3, 2n)}}", two heads] \\
+	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_{(I \times I, [n])}}", two heads] \\
 H_n \arrow[dr, "{\pi_{TL}}", two heads] \arrow[ur, "\Gamma", bend left, hook] & \\
 	& TL_n
 \end{tikzcd}
@@ -267,7 +267,7 @@ Another application of the interpretation of $\ch(A)^+$ as $\Lambda$ is the defi
 
 The power sum elements $P_k$ described above are known to behave wonderfully in skein theoretic computations. This allows for a simple description of the HOMFLYPT skein algebra of the torus $\ch(T^2)$ in terms of generators and relations. First, let's define the generators. Given an $r$ which is either a rational number, or $\pm \infty$, there is an oriented smooth embedding 
 \[
-\iota_{r}: A \to T^2
+\iota_{r}: A \hookrightarrow T^2
 \]
 of the annulus into a tubular neighborhood of the line of slope $r$ in the flat torus. Consider the embeddings $\iota_{r}$ and $\iota_{-r}$ to be the same embedding with opposite orientations. Now $\iota_r$ induces an algebra homomorphism
 \[
@@ -284,11 +284,11 @@ In \AP{cite MS}, Morton and Samuelson prove that the skein algebra $\ch(T^2)$ ad
 \]
 This presentation exhibits a relationship to the elliptic Hall algebra: a 2-parameter family of algebras obtained via Hall algebra decategorification of categories of coherent sheaves over certain elliptic curves (see \AP{Burban-Schiffman}). Along the diagonal of the parameter space, the Burban-Schiffman presentation of the elliptic Hall algebra matches the Morton-Samuelson presentation of the skein algebra of the torus. At the very least, this highlights two things. Firstly, the skein algebra of the torus admits a known deformation. Secondly, skein algebras are connected to surprising areas of mathematics and hence deserve our attention. \AP{Is this paragraph correct?}
 
-Next we describe the Kauffman bracket skein algebra of the torus, although the order of exposition is opposite to the historical order of discovery. The story is actually quite similar to the HOMFLYPT case. Recall that $\ck(A)$ is a polynomial algebra $R[z]$ where $z$ is the simple closed curve around the hole of the annulus with winding number $1$. There exist polynomials known as \textit{Chebyshev polynomials} $T_k \in R[z]$ for all integer $k \geq 1$ which form a basis of $\ck(A)$. For any pair of integers $\xx = (a, b) \in \Z^2$, define elements $e_\xx \in \ck(T^2)$ as 
+Next we describe the Kauffman bracket skein algebra of the torus, although the order of exposition is opposite to the historical order of discovery. The story is actually quite similar to the HOMFLYPT case. Recall that $\ck(A)$ is a polynomial algebra $R[z]$ where $z$ is the simple closed curve around the hole of the annulus with winding number $1$. There exist polynomials known as \textit{Chebyshev polynomials} $T_k \in R[z]$ for all integer $k \geq 1$ which form a basis of $\ck(A)$. For any pair of integers $\xx = (a, b) \in \Z^2$, define elements $T_\xx \in \ck(T^2)$ as 
 \[
 T_\xx := \ck(\iota_{a/b})(T_k).
 \]
-Note that $e_\xx = e_{-\xx}$ because the $T_k$ are fixed under the flip map, which is possible since the Kauffman bracket skein theory is an unoriented skein theory. With this in mind, we may pass to the smaller indexing set $Z^2 / \langle \xx = -\xx \rangle$. Using these elements, Frohman and Gelca \AP{cite} prove that the skein algebra $\ck(T^2)$ admits a presentation with generators $T_\xx$ subject to the relations
+Note that $T_\xx = T_{-\xx}$ because the $T_k$ are fixed under the flip map, which is possible since the Kauffman bracket skein theory is an unoriented skein theory. With this in mind, we may pass to the smaller indexing set $Z^2 / \langle \xx = -\xx \rangle$. Using these elements, Frohman and Gelca \AP{cite} prove that the skein algebra $\ck(T^2)$ admits a presentation with generators $T_\xx$ subject to the relations
 \[
 T_\xx T_\yy = s^{\det(\xx, \yy)} T_{\xx + \yy} + s^{-\det(\xx, \yy)} T_{\xx - \yy}
 \]

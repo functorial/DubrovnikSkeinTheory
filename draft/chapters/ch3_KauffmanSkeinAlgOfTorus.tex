@@ -298,7 +298,7 @@ where the last equality follows from the substitution $j=l+1$.
 
 In this section we will demonstrate the value of the elements $\tilde{P}_k$  by showing that the skein algebra $\cd(T^2)$ admits a very simple presentation. First things first, let's define the generators. Recall that given an extended rational number $r$, there is a (homotopically) distinct oriented simple closed curve on the flat torus $T^2$ with rational slope $r$, and hence a smooth embedding of the annulus 
 \[
-\iota_r: A \to T^2
+\iota_r: A \hookrightarrow T^2
 \]
 into tubular neighborhood of the curve. This induces an algebra homomorphism
 \[
@@ -306,11 +306,11 @@ into tubular neighborhood of the curve. This induces an algebra homomorphism
 \]
 on the level of skein algebras. Any knot in $\cd(T^2)$ is contained in the image of some $\cd(\iota_r)$. Since $\cd$ is an unoriented skein theory, let's only consider $r \geq 0$ to avoid redundancy due to the choice of orientations. Given any equivalence class $\xx = (a, b)$ in $\Z^2 / \langle \xx = - \xx \rangle$ with $k := \gcd(a, b)$, define the element
 \[
-\tilde{P}_\xx := \cd\big(\iota_{|a/b|}\big)(\tilde{P}_k)
+\tilde{P}_\xx := \cd\big(\iota_{a/b}\big)(\tilde{P}_k)
 \]
 to be the embedding of the ``power sum" element $\tilde{P}_k$ into this tubular neighborhood. Let's state the main theorem of the paper.
 
-\begin{theorem}
+\begin{theorem} \label{thm:toruspresentation}
 The skein algebra $\cd(T^2)$ is presented by generators 
 \[
 \{ \tilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = - \xx \rangle \}
@@ -593,92 +593,115 @@ This together with Assumption (\ref{assumption1}) and Lemma \ref{lemma_trueforab
 
 \subsection{The Kauffman Bracket Case}
 
-It was mentioned in Section \ref{sec:skeintheories} that \textit{Chebyshev polynomials} are imporant elements of the skein algebra $\ck(A) = R[z]$. Let's now elaborate what that means. The \textbf{Chebyshev polynomials of the first kind} $C^T_n = C^T_n(z)$ are defined recursively as
-\begin{align*}
-C^T_0 = 1, & C^T_1 = z, & C^T_n = C^T_{n-1} C^T_1 - C^T_{n-2}
-\end{align*}
-and have many amazing properties, most of which we won't discuss here. We will need slightly modified versions of these, $T_n(z) := 2C^T_n(z/2)$.  
-
 Recall that the Dubrovnik skein relations satisfy the Kauffman Bracket skein relations, and hence there is a natural transformation of functors
 \[
 \eta: \cd \to \ck
 \]
-whose components are essentially the identity map (more details are given in Section \ref{sec:skeintheories}).
+whose components are essentially the identity map (more details are given in Section \ref{sec:skeintheories}). In particular, there is an algebra homomorphism from the Birman-Murakami-Wenzl algebra to the Temperley-Lieb algebra.
+
+\begin{lemma}
+Under the algebra homomorphism
+\[
+\eta_{(I \times I, [n])}: BMW_n \to TL_n
+\]
+the BMW symmetrizer $\tilde{y}_n$ is sent to the Jones-Wenzl idempotent $JW_n$.
+\end{lemma}
+\begin{proof}
+The element $JW_n$ is the unique element of $TL_n$ satisfying the properties
+\begin{enumerate}
+\item $JW_n \neq 0$,
+\item $JW_n^2 = JW_n$,
+\item $JW_n c_i = c_i JW_n = 0$ for all cap-cup generators $c_i$. 
+\end{enumerate}
+Since $\eta_{(I \times I, [n])}$ is an algebra map, we just need to show that $\eta_{(I \times I, [n])}(\tilde{y}_n)$ is non-zero. If $n=1$, then the statement is true since $\tilde{y}_1$ and $JW_1$ are the simply the identity, a single strand. \AP{Induction with recurrence relation? or...}
+ 
+\end{proof}
+
+It was mentioned in Section \ref{sec:skeintheories} that \textit{Chebyshev polynomials} are imporant elements of the skein algebra $\ck(A) = R[z]$. Let's now elaborate what that means. The 
+\textbf{Chebyshev polynomials of the second kind} $C^S_n = C^S_n(z)$ are defined recursively as
+\[
+C^U_0 = 1, \qquad \qquad C^U_1 = 2z, \qquad \qquad C^U_n = 2 z C^U_{n-1} - C^U_{n-2}.
+\]
+Let's consider slightly modified versions $U_n := C_n^U(z/2)$. These polynomials have amazing properties, most of which we won't discuss here. One such fact is that the annular closure of the Jones-Wenzl idempotent $JW_n$ is equal to $U_n(z)$ \AP{reference??}. 
+
+There are also \textbf{Chebyshev polynomials of the first kind} $C^T_k = C^T_k(z)$ which are defined recursively as
+\[
+C^T_0 = 1, \qquad \qquad C^T_1 = z, \qquad \qquad C^T_k = 2 z C^T_{k-1} - C^T_{k-2}.
+\]
+Again, we will need slightly modified versions of these, $T_k := 2C^T_k(z/2)$.  
 
 \begin{proposition}
 Under the algebra homomorphism
 \[
 \eta_A: \cd(A) \to \ck(A)
 \]
-the image $\eta_A(\tilde{P}_k) = $
+the image of the special element $\tilde{P}_k$ is equal to the Chebyshev polynomial $T_k$.
 \end{proposition}
-
-\AP{Copied this section from the paper, check carefully for notation.}
-
-Here we show that our presentation of the Kauffman skein algebra of the torus is compatible with Frohman and Gelca's presentation of the Kauffman bracket skein algebra of the torus, which we recall below. This algebra is defined in the same way as the Kauffman skein algebra, but using the Kauffman bracket skein relations:
-\begin{align}\label{eq:kb}
-\vcenter{\hbox{\includegraphics[height=2cm]{poscross.eps}}}  \quad &= \quad  s \,\,\vcenter{\hbox{\includegraphics[height=2cm]{idresolution.eps}}}  + s^{-1} \,\, \vcenter{\hbox{\includegraphics[height=2cm]{capcupresolution.eps}}}\\
-\vcenter{\hbox{\includegraphics[height=2cm, keepaspectratio]{invvh.eps}}} \quad &= \quad -s^{3}\,\, \vcenter{\hbox{\includegraphics[height=2cm, keepaspectratio]{frameresolution.eps}}}. \notag
-\end{align}
-
-Given any 3-manifold, there is a natural map $\sk_s(M) \to K_s(M)$, which follows from the fact that the Kauffman bracket skein relations imply the Kauffman skein relations. If $M = F \times [0,1]$ for some surface $F$, then this is an algebra map.
-
-%\PS{include Kauffman bracket skein relations}
-
-The Frohman and Gelca presentation of the Kauffman bracket skein algebra uses the Chebyshev polynomials $T_n(x)$, which are uniquely characterized by the property $T_n(X+X^{-1}) = X^n + X^{-n}$. If $\xx \in \Z^2$ with $d(\xx) = k$, they defined an element $e_\xx \in K_s(T^2)$ by 
-\[
-e_\xx := T_k(\alpha_{\xx / k})
-\]
-where $\alpha_\xx$ is the simple closed curve of slope $\xx$.
-
-\begin{lemma}
-	The algebra map $\sk_s(T^2\times [0,1]) \to K_s(T^2\times [0,1])$ takes the generator $D_\xx$ to  $e_\xx$.
-\end{lemma}
 \begin{proof}
-The closure of the symmetrizer $f_n$ in the annulus gets sent to the (closure of the) Jones-Wenzl idempotent in the Kauffman bracket skein algebra of the annulus, because both symmetrizers are uniquely determined by the way they absorb crossings and caps. Under the identification $K_s(S^1\times D^2) = \C[x]$, the closure of the Jones-Wenzl idempotent is sent to $S_n(x)$, the other version of the Chebyshev polynomial, which is defined by 
-\[S_n(X+X^{-1}) = \frac{X^{n+1}-X^{-n-1}}{X-X^{-1}}.\]
-All that is left to show is that the $S_n(x)$ and $T_n(x)$ satisfy the power series identity in Definition \ref{def:dk}, which we write as
-\begin{equation*}
-\sum_{k=1}^\infty \frac{T_k(x)}{k} t^k =\ln\left(1 + \sum_{j \geq 1} S_j(x) t^j\right).
-\end{equation*}	
-% \PS{add proof of this identity (later)} \AP{added a sketch}
-Define different variants of  Chebyshev polynomials via $C_n^S(x/2):=S(x)$ and $2C_n^T(x/2):=T(x)$. The following two identities are well known (see, e.g. any book on special functions, or Wikipedia):
-\begin{align*}
-	\sum_{n \geq 0} C_n^S(x)t^n &= \frac{1}{1-2tx+t^2} \\
-	\sum_{n \geq 1} C_n^T(x)\frac{t^n}{n} &= \ln \left( \frac{1}{\sqrt{1-2tx+t^2}} \right).
-\end{align*}
-The first identity implies 
+Since $\eta$ is natural, the closure into the annulus induces a commuting square
+\begin{center}
+\begin{tikzcd}
+BMW_n \arrow[r, "\cl"] \arrow[d, "\eta"] & \cd(A) \arrow[d, "\eta"] \\
+TL_n \arrow[r, "\cl"] & \ck(A)
+\end{tikzcd}
+\end{center}
+Recall the $\tilde{P}_k$ are uniquely determined by the power series equation
 \[
-	1+\sum_{n \geq 1} S_n(x)t^n = \frac{1}{1-tx+t^2}.
+\sum_{k=1}^\infty \frac{\tilde{P}_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty \tilde{h}_n t^n \Bigg).
 \]
-This implies the follow identities:
-\begin{equation*}
-	1+\sum_{n \geq 1} S_n(x)t^n  = \frac{1}{1-tx+t^2} = \left( \exp \left( \sum_{n \geq 1} C_n^T(x/2)\frac{t^n}{n} \right) \right)^2
-	= \exp \left( \sum_{n \geq 1} 2 C_n^T(x/2)\frac{t^n}{n} \right).
-\end{equation*}
-This leads to the following, which completes the proof:
-\begin{equation*}
-\ln \left( 1+\sum_{n \geq 1} S_n(x)t^n \right) = \sum_{n \geq 1} 2 C_n^T(x/2)\frac{t^n}{n} = \sum_{n \geq 1} \frac{T_n(x)}{n} t^n.
-\end{equation*} 
+If we show that the following equality holds
+\[
+\sum_{k=1}^\infty \frac{T_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty U_n t^n \Bigg)
+\]
+then the proof is complete since $\eta_A(\tilde{h}_n)=U_n$. The Chebyshev polynomials admit well-known generating functions (see Wikipedia)
+\begin{align*}
+\sum_{n \geq 0} C_n^U(z)t^n &= \frac{1}{1-2tz+t^2} \\
+\sum_{k \geq 1} C_k^T(z)\frac{t^k}{k} &= \ln \left( \frac{1}{\sqrt{1-2tz+t^2}} \right).
+\end{align*}
+These imply
+\begin{align*}
+\sum_{n \geq 0} C_n^U(z/2)t^n &= \frac{1}{1-tz+t^2} \\
+\sum_{k \geq 1} C_k^T(z/2)\frac{t^k}{k} &= \ln \left( \frac{1}{\sqrt{1-tz+t^2}} \right).
+\end{align*}
+Multiply the second equation by 2 to get
+\[
+\sum_{k \geq 1} 2C_k^T(z/2)\frac{t^k}{k} = \ln \left( \frac{1}{1-tz+t^2} \right)
+\]
+which implies the desired equation since $T_k = 2C_k^T(z/2)$ and $U_n := C_n^U(z/2)$.
 \end{proof}
 
-Now let us recall the description of the Kauffman bracket skein algebra of the torus given by Frohman and Gelca.
-\begin{theorem}[{\cite{FG00}}]\label{thm:fg}
-	The Kauffman bracket skein algebra $K_s(T^2)$ has a presentation with generators $e_\xx$ and relations
-	\begin{align}
-	e_\xx e_\yy &= s^d e_{\xx + \yy} + s^{-d} e_{\xx-\yy}\label{eq:fgrel}\\
-	e_{\xx} &= e_{-\xx}\notag
-	\end{align}
-	where $d = \det[\xx\,\yy]$.
-\end{theorem}
+Recall once more the embedding of the annulus
+\[
+\iota_r: A \hookrightarrow T^2
+\]
+into a tubular neighborhood of the simple closed curve of rational slope $r=a/b$ for $(a, b)$ considered as an element of $\Z^2 / \langle \xx = - \xx \rangle$. These embeddings induce naturality squares
+\begin{center}
+\begin{tikzcd}
+\cd(A) \arrow[r, "\cd(\iota_r)"] \arrow[d, "\eta"] & \cd(T^2) \arrow[d, "\eta"] \\
+\ck(A) \arrow[r, "\ck(\iota_r)"] & \ck(T^2)
+\end{tikzcd}
+\end{center}
+which imply that $\eta_{T^2}(\tilde{P}_\xx) = T_\xx$ for any $\xx$ where the $T_\xx$ are the generators in the Frohman-Gelca presentation of $\ck(T^2)$. Indeed, one can check that the $T_k$ satisfy the relations Theorem \ref{thm:toruspresentation}:
+\begin{align*}
+[T_\xx, T_\yy] &= T_\xx T_\yy - T_\yy T_\xx \\
+&= (s^{\det(\xx, \yy)} T_{\xx + \yy} + s^{-\det(\xx, \yy)} T_{\xx - \yy}) - (s^{\det(\yy, \xx)} T_{\yy + \xx} + s^{-\det(\yy, \xx)} T_{\yy - \xx}) \\
+&= (s^{\det(\xx, \yy)} T_{\xx + \yy} + s^{-\det(\xx, \yy)} T_{\xx - \yy}) - (s^{-\det(\xx, \yy)} T_{\xx + \yy} + s^{\det(\xx, \yy)} T_{\xx - \yy}) \\
+&= (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) (T_{\xx + \yy} - T_{\xx - \yy})
+\end{align*}
+Let's summarize this discussion with a corollary.
+\begin{corollary}
+The presentation of $\cd(T^2)$ is compatible with the Frohman-Gelca presentation of $\ck(T^2)$ under the algebra homomorphism
+\[
+\eta_{T^2}: \cd(T^2) \to \ck(T^2).
+\]
+\end{corollary}
 
-A short computation using this presentation shows  the commutator identity
-\begin{equation}\label{eq:fg}
-[e_\xx, e_\yy] = (s^d-s^{-d}) (e_{\xx+\yy} - e_{\xx-\yy}).
-\end{equation}
-In other words, the relations we show for $D_\xx \in \sk(T^2)$ get sent to the relations in \eqref{eq:fg}, and the relations Frohman and Gelca showed in Theorem \ref{thm:fg} for the $e_\xx \in K_s(T^2)$ imply the relations in \eqref{eq:fg}. This shows our results are compatible with those of Frohman and Gelca.
+It should probably be emphasized that this homomorphism is defined topologically on the level of diagrams, and not simply via an abstract assignment of generators. This is important because skein theoretic methods will translate through these types of homomorphisms. 
 
-\begin{remark}\label{rmk:sobig}
-We emphasize that the algebra we describe is much bigger -- $\sk(T^2)$ has a linear basis given by unordered words in the $D_\xx$, while the Kauffman bracket skein algebra $K_s(T^2)$ has a linear basis given by the $e_\xx$ themselves. This happens because the Kauffman bracket skein relations allow all crossings to be removed from a diagram, so the algebra is spanned (over $R$) by curves without crossings. However, the more general Kauffman relations only allow crossings to be flipped, and not removed, which means the algebra is spanned (over $R$) by products of knots (which may have self-crossings). In particular, the relations \eqref{eq:fgrel} do not hold in the Kauffman skein algebra $\cd$.
-\end{remark}
+
+\subsection{The HOMFLYPT Case}
+
+
+
+
 
