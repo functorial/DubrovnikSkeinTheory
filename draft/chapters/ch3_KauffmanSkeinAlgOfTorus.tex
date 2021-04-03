@@ -3,6 +3,8 @@
 \AP{Add some introduction and remark about collaboration.}
 
 
+
+
 \section{Power Sum Elements}
 
 Recall that there is a injective algebra homomorphism $\Lambda \to \ch(A)^+$ which sends the Schur function $s_\lambda$ to the minimal idempotent closure $Q_\lambda$. Use $h_n := Q_{(n)}$ to denote the image of the $n^\textrm{th}$ complete homogeneous symmetric function under this homomorphism. In \AP{MS} the authors import power sum elements from $\Lambda$ to $P_k \in \ch(A)$. The power sum elements have a concrete definition in $\Lambda$, but alternatively they may be defined using an equation of formal power series in the ring $\ch(A)[[t]]$ as
@@ -599,13 +601,13 @@ Recall that the Dubrovnik skein relations satisfy the Kauffman Bracket skein rel
 \]
 whose components are essentially the identity map (more details are given in Section \ref{sec:skeintheories}). In particular, there is an algebra homomorphism from the Birman-Murakami-Wenzl algebra to the Temperley-Lieb algebra.
 
-\begin{lemma}
+\begin{proposition} \label{prop:symmtoJW}
 Under the algebra homomorphism
 \[
 \eta_{(I \times I, [n])}: BMW_n \to TL_n
 \]
 the BMW symmetrizer $\tilde{y}_n$ is sent to the Jones-Wenzl idempotent $JW_n$.
-\end{lemma}
+\end{proposition}
 \begin{proof}
 The element $JW_n$ is the unique element of $TL_n$ satisfying the properties
 \begin{enumerate}
@@ -616,6 +618,18 @@ The element $JW_n$ is the unique element of $TL_n$ satisfying the properties
 Since $\eta_{(I \times I, [n])}$ is an algebra map, we just need to show that $\eta_{(I \times I, [n])}(\tilde{y}_n)$ is non-zero. If $n=1$, then the statement is true since $\tilde{y}_1$ and $JW_1$ are the simply the identity, a single strand. \AP{Induction with recurrence relation? or...}
  
 \end{proof}
+
+\begin{remark}
+In \AP{Shelly}, it is pointed out that, under the composition of algebra maps $BMW_n \to H_n \to TL_n$ (see Section \ref{sec:cube}), the BMW symmetrizer $\tilde{y}_n$ is sent to the Jones-Wenzl idempotent $JW_n$. However, these maps are defined abstractly on generators, and so \textit{a priori} they are not induced by any natural transformations of skein theories. Furthermore, the diagram
+\begin{center}
+\begin{tikzcd}
+	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_{(I \times I, [n])}}", two heads] \\
+H_n \arrow[dr, "{\pi_{TL}}", two heads] & \\
+	& TL_n
+\end{tikzcd}
+\end{center}
+\textbf{does not commute} since $\pi_H(c_i)=0$. However, Proposition \ref{prop:symmtoJW} shows that restricting the maps of the diagram on the relevant idempotents \textit{does} commute.
+\end{remark}
 
 It was mentioned in Section \ref{sec:skeintheories} that \textit{Chebyshev polynomials} are imporant elements of the skein algebra $\ck(A) = R[z]$. Let's now elaborate what that means. The 
 \textbf{Chebyshev polynomials of the second kind} $C^S_n = C^S_n(z)$ are defined recursively as
@@ -630,13 +644,13 @@ C^T_0 = 1, \qquad \qquad C^T_1 = z, \qquad \qquad C^T_k = 2 z C^T_{k-1} - C^T_{k
 \]
 Again, we will need slightly modified versions of these, $T_k := 2C^T_k(z/2)$.  
 
-\begin{proposition}
+\begin{corollary}
 Under the algebra homomorphism
 \[
 \eta_A: \cd(A) \to \ck(A)
 \]
 the image of the special element $\tilde{P}_k$ is equal to the Chebyshev polynomial $T_k$.
-\end{proposition}
+\end{corollary}
 \begin{proof}
 Since $\eta$ is natural, the closure into the annulus induces a commuting square
 \begin{center}
@@ -689,7 +703,7 @@ which imply that $\eta_{T^2}(\tilde{P}_\xx) = T_\xx$ for any $\xx$ where the $T_
 &= (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) (T_{\xx + \yy} - T_{\xx - \yy})
 \end{align*}
 Let's summarize this discussion with a corollary.
-\begin{corollary}
+\begin{corollary} \label{cor:frohmangelcacompatibility}
 The presentation of $\cd(T^2)$ is compatible with the Frohman-Gelca presentation of $\ck(T^2)$ under the algebra homomorphism
 \[
 \eta_{T^2}: \cd(T^2) \to \ck(T^2).
@@ -717,12 +731,36 @@ This implies that the span of the generators is a Lie algebra and $\ch(T^2)$ is 
 \begin{proposition}
 There is an injective Lie algebra homomorphism 
 \[
-\phi: \mathfrak{g}_\cd \to \mathfrak{g}_\ch 
+\varphi: \mathfrak{g}_\cd \to \mathfrak{g}_\ch 
 \]
+defined by $\varphi(\tilde{P}_\xx) = P_\xx + P_{-\xx}$. This induces an algebra homomorphism
+\[
+U(\varphi): \cd(T^2) \to \ch(T^2)
+\]
+where $U(-)$ is the universal enveloping algebra functor. Furthermore, the restrition of this homomorphism to an annulus provides an identification for $\cd(A)$ as a subalgebra of $\ch(A)$.
 \end{proposition}
-whose 
+\begin{proof}
+The assignment is linear since it's defined on basis elements. Let's check that
+\[
+\varphi\big( [\tilde{P}_\xx, \tilde{P}_\yy] \big) = [\varphi(\tilde{P}_\xx), \varphi(\tilde{P}_\yy)]
+\]
+for any $\xx$ and $\yy$. The left-hand side is
+\begin{eqnarray*}
+&&\varphi\big( [\tilde{P}_\xx, \tilde{P}_\yy] \big) \\
+=&& \varphi\big( (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)})(\tilde{P}_{\xx+\yy} - \tilde{P}_{\xx-\yy}) \big) \\
+=&& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) \big( \varphi(\tilde{P}_{\xx+\yy}) - \varphi(\tilde{P}_{\xx-\yy}) \big) \\
+=&& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) \big( P_{\xx+\yy} + P_{-\xx-\yy} - P_{\xx-\yy} - P_{-\xx+\yy} \big) \\
+=&& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{\xx+\yy} + (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{-\xx-\yy} \\
+&-& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{\xx-\yy} - (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{-\xx+\yy} \\
+=&& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{\xx+\yy} + (s^{\det(-\xx, -\yy)} - s^{-\det(-\xx, -\yy)}) P_{-\xx-\yy} \\
+&-& (s^{-\det(\xx, -\yy)} - s^{\det(\xx, -\yy)}) P_{\xx-\yy} - (s^{-\det(-\xx, \yy)} - s^{\det(-\xx, \yy)}) P_{-\xx+\yy} \\
+=&& [P_\xx, P_\yy] + [P_{-\xx}, P_{-\yy}] + [P_{\xx}, P_{-\yy}] + [P_{-\xx}, P_{\yy}] \\
+=&& [P_{\xx} + P_{-\xx}, P_{\yy} + P_{-\yy}] \\
+=&& [\varphi(\tilde{P}_\xx), \varphi(\tilde{P}_\yy)].
+\end{eqnarray*}
+Note that $\varphi(\tilde{P}_\xx) = \varphi(\tilde{P}_{-\xx})$, so the map is well-defined. This completes the proof.
+\end{proof}
 
-\begin{proposition}
-There is a
-\end{proposition}
-
+\begin{remark}
+It's worth pointing out that this homomorphism is defined abstractly on generators. It is not clear whether or not this map is induced by something topological in nature, as was the case for the map $\eta_{T^2}: \cd(T^2) \to \ck(T^2)$. After all, we are relating an unoriented skein theory with an oriented one. If this map were to arise from topology, it would have to involve a choice of orientations for each component of each link. All attempts to find such a choice has been unsuccessful.
+\end{remark}

@@ -124,30 +124,30 @@ The last subsection leaves us with an important and unanswered question. Which s
 Here, we are forced to fix a base ring. For our purposes, $R$ must be a commutative ring containing invertible elements $s$ and $v$. Typical choices of $R$ are $\Z[s^{\pm 1}, v^{\pm 1}], \Q(s, v)$, or some other ring in between these.  In particular, the theorem \AP{Cite BB} is stated over this ring, a result we will depend heavily on later on. \\
 
 \begin{example}[\textit{Kauffman (Dubrovnik) Skein Relations}]
-Let $X'$ be the set of two unoriented skein relations
+Let $X_1$ be the set of two unoriented skein relations
 \begin{flalign*}
     (1) \quad \vcenter{\hbox{\includegraphics{poscross.eps}}} &= \vcenter{\hbox{\includegraphics{negcross.eps}}} + (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{idresolution.eps}}} - (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{capcupresolution.eps}}} \\ \\
     (2) \quad \vcenter{\hbox{\includegraphics{vh.eps}}} &= v \,\, \vcenter{\hbox{\includegraphics{frameresolution.eps}}}.
 \end{flalign*}
-The functor $\cd(-,-) := \cs_{X'}(-,-)$ is the Dubrovnik skein theory (sometimes just called the Kauffman skein theory). We will use the notation $\mathsf{D}(-) := \sfskein_{X'}(-)$ for the Dubrovnik skein categories. Using the Dubrovnik variant is important for us (see \AP{universal enveloping algebra result}). This theory is related to Dubrovnik polynomials in that the Dubrovnik polynomial of a link is a normalized value of the link in $\cd(S^3)$. The normalization is often so that the Dubrovnik polynomial of the unknot is $1$, whereas the value of the unknot in $\cd(S^3)$ is $\delta_\cd := 1 - \frac{v-v^{-1}}{s-s^{-1}}$, which can be deduced from the skein relations.
+The functor $\cd(-,-) := \cs_{X_1}(-,-)$ is the Dubrovnik skein theory (sometimes just called the Kauffman skein theory). We will use the notation $\mathsf{D}(-) := \sfskein_{X_1}(-)$ for the Dubrovnik skein categories. Using the Dubrovnik variant is important for us (see \AP{universal enveloping algebra result}). This theory is related to Dubrovnik polynomials in that the Dubrovnik polynomial of a link is a normalized value of the link in $\cd(S^3)$. The normalization is often so that the Dubrovnik polynomial of the unknot is $1$, whereas the value of the unknot in $\cd(S^3)$ is $\delta_\cd := 1 - \frac{v-v^{-1}}{s-s^{-1}}$, which can be deduced from the skein relations.
 \end{example}
 
 \begin{example}[\textit{HOMFLYPT Skein Relations}]
-Next, let $X''$ be the set of two oriented skein relations
+Next, let $X_2$ be the set of two oriented skein relations
 \begin{flalign*}
     (1) \quad \vcenter{\hbox{\includegraphics{poscrossor.eps}}} &= \vcenter{\hbox{\includegraphics{negcrossor.eps}}} + (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{idresolutionor.eps}}} \\ \\
     (2) \quad \vcenter{\hbox{\includegraphics{vhor.eps}}} &= v \,\, \vcenter{\hbox{\includegraphics{frameresolutionor.eps}}}.
 \end{flalign*}
-The functor $\ch(-,-) := \cs_{X''}(-,-)$ is the HOMFLYPT skein theory and we use the notation $\mathsf{H}(-) := \sfskein_{X''}(-)$ for the HOMFLYPT skein categories. As in the Dubrovnik case, this theory is related to HOMFLYPT polynomials so that the HOMFLYPT polynomial of a link is a normalized value of the link in $\ch(S^3)$. Again, some often make the choice to normalize this polynomial so that the value of the unknot is $1$, but the value of the unknot in $\ch(S^3)$ is $\delta_\ch := -\frac{v-v^{-1}}{s-s^{-1}}$.
+The functor $\ch(-,-) := \cs_{X_2}(-,-)$ is the HOMFLYPT skein theory and we use the notation $\mathsf{H}(-) := \sfskein_{X_2}(-)$ for the HOMFLYPT skein categories. As in the Dubrovnik case, this theory is related to HOMFLYPT polynomials so that the HOMFLYPT polynomial of a link is a normalized value of the link in $\ch(S^3)$. Again, some often make the choice to normalize this polynomial so that the value of the unknot is $1$, but the value of the unknot in $\ch(S^3)$ is $\delta_\ch := -\frac{v-v^{-1}}{s-s^{-1}}$.
 \end{example}
 
 \begin{example}[\textit{Kauffman Bracket Skein Relations}]
-As a final example, let $X'''$ be the set of two unoriented skein relations
+As a final example, let $X_3$ be the set of two unoriented skein relations
 \begin{flalign*}
     (1) \quad \vcenter{\hbox{\includegraphics{poscross.eps}}} &= s \,\, \vcenter{\hbox{\includegraphics{idresolution.eps}}} + s^{-1} \,\, \vcenter{\hbox{\includegraphics{capcupresolution.eps}}} \\ \\
     (2) \quad \vcenter{\hbox{\includegraphics{vh.eps}}} &= -s^{-3} \,\, \vcenter{\hbox{\includegraphics{frameresolution.eps}}}.
 \end{flalign*}
-The functor $\ck(-,-) := \cs_{X'''}(-,-)$ is the Kauffman bracket skein theory (not be confused with the Kauffman skein theory) and we use $\mathsf{K}(-) := \sfskein_{X'''}(-)$ to notate the Kauffman bracket skein categories. The value of a link in $\ck(S^3)$ is equal to its bracket polynomial, which may be normalized as above to obtain its Jones polynomial. One could choose the framing parameter to be $v$ instead of $-s^{-3}$ like we did before without any obvious consequences, but it is standard in the literature to make the choice we present here.  
+The functor $\ck(-,-) := \cs_{X_3}(-,-)$ is the Kauffman bracket skein theory (not be confused with the Kauffman skein theory) and we use $\mathsf{K}(-) := \sfskein_{X_3}(-)$ to notate the Kauffman bracket skein categories. The value of a link in $\ck(S^3)$ is equal to its bracket polynomial, which may be normalized as above to obtain its Jones polynomial. One could choose the framing parameter to be $v$ instead of $-s^{-3}$ like we did before without any obvious consequences, but it is standard in the literature to make the choice we present here.  
 \end{example}
 
 \begin{remark}
@@ -180,7 +180,7 @@ In this work, we will be focused on generalizing existing results from the HOMFL
 
 \AP{Add comments about the Dubrovnik and HOMFLYPT skein algebras being graded by ther fundamental group of the surface.}
 
-\subsection{Skein Algebras of Tangles in a Cube}
+\subsection{Skein Algebras of Tangles in a Cube} \label{sec:cube}
 
 In the case where $\Sigma = I \times I$, the endomorphism objects of $\mathsf{D}(I \times I), \mathsf{H}(I \times I)$, and $\mathsf{K}(I \times I)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $[n]$ be a set of $n$ points in $I \times I$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose so that all points share the same orientation if in the context of an oriented skein theory). Then the endomorphism algebras 
 \[
@@ -220,15 +220,6 @@ Using this section, one can transport the minimal idempotents $y_\lambda \in H_n
 For what it's worth, this relation descends to a well-known recurrence relation for the $y_n \in H_n$ via the projection map described above ($\tilde{y}_n$ gets sent to $y_n$ and the last diagram on the right-hand side gets sent to $0$). 
 
 \AP{Come back and add braiding/twist identities from BB if we need them.}
-
-\AP{This next diagram actually doesn't commute... $\pi_H(c_i)=0$, but $\eta_{\dots}(c_i) = c_i$. What does this mean for images of BMW symmetrizers in $TL_n$? Discuss Jones-Wenzl projectors once this is figured out since they are needed for compatibility result.}
-\begin{center}
-\begin{tikzcd}
-	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_{(I \times I, [n])}}", two heads] \\
-H_n \arrow[dr, "{\pi_{TL}}", two heads] \arrow[ur, "\Gamma", bend left, hook] & \\
-	& TL_n
-\end{tikzcd}
-\end{center}
 
 \AP{Would it be wise to include the BB matrix algebra description of $BMW_n$? Might be useful to point out the central idempotents $z_\lambda$, which are distinct from the $y_\lambda$, even though I don't think I use them anywhere. Maybe a quick remark would suffice. Note that the annular closure of the $y_\lambda$ is equal to the annular closure of $z_\lambda$.}
 
