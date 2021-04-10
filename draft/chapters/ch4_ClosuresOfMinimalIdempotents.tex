@@ -612,7 +612,7 @@ Let
 \] 
 Then, 
 \[
-\textrm{cl}_\ca (t_n) = \alpha_n \tilde{h}_n
+\textrm{cl}_\ca \left( \frac{1}{2} t(n,0) \right) = \textrm{cl}_\ca (t_n) = \alpha_n \tilde{h}_n
 \]
 and hence 
 \[
@@ -629,16 +629,17 @@ Apply the closure to both sides. Apply the framing relation to the diagrams on t
 
 \begin{lemma} \label{lemma:skewclosures}
 Define the constants
+\AP{Double check the $\upsilon_\bullet^\pm$. Should they both be negative?}
 \begin{align*}
 \omega_{n}^+ &:= - \{n\} s^{1-n} v, \\
-\upsilon_{n}^+ &:= - s^{n} [n+1] (\bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big), \\
-\omega_{n}^- &:= -\{n\} s^{n-1} v^{-1}, \\
-\upsilon_{n}^- &:= - s^{-n} [n+1] ( \bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big).
+\upsilon_{n}^+ &:= s^{n} [n+1] (\bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big), \\
+\omega_{n}^- &:= \{n\} s^{n-1} v^{-1}, \\
+\upsilon_{n}^- &:= -s^{-n} [n+1] ( \bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big).
 \end{align*}
 Then the following identities hold in $\cc$ for all $n \geq 0$ 
 \begin{align*}
-\textrm{cl}_\ca \big( s^{-1} \tilde{h}_n \cdot a - s a \cdot \tilde{h}_n \big) &= \omega_{n+1}^+ \tilde{h}_{n+1} + \upsilon_{n-1}^+ \tilde{h}_{n-1}, \\
-\textrm{cl}_\ca \big( s^{-1} \tilde{h}_n \cdot a^{-1} - s a^{-1} \cdot \tilde{h}_n \big) &= \omega_{n+1}^- \tilde{h}_{n+1} + \upsilon_{n-1}^- \tilde{h}_{n-1}
+\textrm{cl}_\ca \left( \frac{1}{2} \varsigma^+(n,0) \right) &= \quad \textrm{cl}_\ca \big( s^{-1} \tilde{h}_n \cdot a - s a \cdot \tilde{h}_n \big) \quad = \omega_{n+1}^+ \tilde{h}_{n+1} + \upsilon_{n-1}^+ \tilde{h}_{n-1}, \\
+\textrm{cl}_\ca \left( \frac{1}{2} \varsigma^-(n,0) \right) &=\textrm{cl}_\ca \big( s \tilde{h}_n \cdot a^{-1} - s^{-1} a^{-1} \cdot \tilde{h}_n \big) = \omega_{n+1}^- \tilde{h}_{n+1} + \upsilon_{n-1}^- \tilde{h}_{n-1}
 \end{align*}
 which implies that
 \begin{align*}
@@ -650,8 +651,8 @@ which implies that
 Apply Equations \eqref{eq:r3} and \eqref{eq:r1} :
 \begin{align*}
 & \quad \, ( s^{-1} \tilde{h}_n \cdot e - s e \cdot \tilde{h}_n ) a \\
-&=  s^{-1} \big( [n+1] W_n - [n] s a W_{n-1} - [n] s \bar{\beta}_n a^{-1} W^*_{n-1} \big) a \\
-&\quad \, - s \big( [n+1] W_n - [n] s^{-1} a W_{n-1} - [n] s^{-1} \beta_n a^{-1} W^*_{n-1} \big) a \\
+&=  \Big( s^{-1} \big( [n+1] W_n - [n] s a W_{n-1} - [n] s \bar{\beta}_n a^{-1} W^*_{n-1} \big) \\
+&\quad \, - s \big( [n+1] W_n - [n] s^{-1} a W_{n-1} - [n] s^{-1} \beta_n a^{-1} W^*_{n-1} \big) \Big) a \\
 &= - \{n+1\} a W_n - ( \bar{\beta}_n - \beta_n ) [n] W^*_{n-1}.
 \end{align*}
 %\AP{There is an endomorphism on the BMW algebra which reflects the square along a vertical line through the middle of the square. Are the symmetrizers fixed by this map? I think you can use the uniqueness of the symmetrizers to prove this since they are idempotent and absorb scalars.} \PS{I agree, they should be fixed}
@@ -659,7 +660,7 @@ The identities below hold in $\cc$. Use \cite[Lemma 21]{She16} for the second tw
 \begin{align*}
 \textrm{cl}_\ca ( a W_n ) &= s^{-n} v \tilde{h}_{n+1} \\
 \textrm{cl}_\ca ( a^{-1} W^*_n ) &= s^n v^{-1} \tilde{h}_{n+1} \\
-\textrm{cl}_\ca ( W_n ) &= s^{-n} \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n \\
+\textrm{cl}_\ca ( W_n ) &= -s^{-n} \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n \\
 &= [n+1]^{-1} \big( \delta + [n]s^{-1} ( s^{-(n-1)} v - \beta_n s^{n-1} v^{-1} ) \big) \tilde{h}_n \\
 \textrm{cl}_\ca ( W^*_n ) &= s^n \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n
 \end{align*}
@@ -668,44 +669,26 @@ Then applying $\textrm{cl}_\ca$ to the above gives
 & \textrm{cl}_\ca \big( s^{-1} \tilde{h}_n \cdot a - s a \cdot \tilde{h}_n \big) \\
 =& - \{n+1\} \textrm{cl}_\ca ( a W_n ) - ( \bar{\beta}_n - \beta_n ) [n] \textrm{cl}_\ca ( W^*_{n-1} ) \\
 = & - \{n+1\} s^{-n} v \tilde{h}_{n+1} - ( \bar{\beta}_n - \beta_n ) [n] s^{n-1} \big( \delta + s^{n-2} [n-1] ( s v^{-1} \beta_{n-1} ) \big) \tilde{h}_{n-1} \\
-= & \omega_n^+ \tilde{h}_{n+1} + \upsilon_n^+ \tilde{h}_{n-1}.
+= & \omega_{n+1}^+ \tilde{h}_{n+1} + \upsilon_{n-1}^+ \tilde{h}_{n-1}.
 \end{align*}
 The proof of the other statement is similar. 
 \end{proof}
 
 \begin{remark}
-As a quick corollary of this lemma, apply the closure $\textrm{cl}_\ca$ to Lemma \ref{lemma:skewcommutatordecomp} with $k=0$ 
+As a quick corollary of this lemma, apply $\textrm{cl}_\ca$ to Equation \eqref{eq:skewcommutator4} with $k=0$, so
 \[
-\alpha_{n+1} \tilde{h}_{n+1} + \alpha_{n-1} \tilde{h}_{n-1} = ( \omega^+_{n+1} + \omega^-_{n+1} ) \tilde{h}_{n+1} + ( \upsilon^+_{n-1} + \upsilon^-_{n-1} ) \tilde{h}_{n-1}
+\textrm{cl}_\ca \big( 2 t(n, 1) \big) = \textrm{cl}_\ca \big( \varsigma^+ (n, 0) + \varsigma^- (n, 0) \big)
 \]
-and use that the $\tilde{h}_n$ are linearly independent to get that 
+and apply the previous two Lemmas and divide by $2$ to get
 \[
+\alpha_{n+1} \tilde{h}_{n+1} + \alpha_{n-1} \tilde{h}_{n-1} = (\omega^+_{n+1} + \omega^-_{n+1}) \tilde{h}_{n+1} + (\upsilon^+_{n-1} + \upsilon^-_{n-1}) \tilde{h}_{n-1}.
+\]
+Since the $\tilde{h}_n$ are linearly independent, it's true that 
+\begin{equation}
 \alpha_n = \omega_n^+ + \omega_n^- = \upsilon_n^+ + \upsilon_n^-
-\]
+\end{equation}
 for any $n$. 
 \end{remark}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-It might be a good time to recall the identities
-\begin{gather*}
-s - s^{-1}\beta_n = s^{-1} - s\bar{\beta}_n \\
-\left( \bar{\beta}_{n+1} - \beta_{n+1} \right) \left( s-s^{-1}\beta_n \right) = - \{1\}
-\end{gather*}
-which also hold for any $n$.
 
 Next we state the main proposition of this section.
 \begin{proposition} \label{prop:schureigenvalues}
@@ -717,7 +700,7 @@ where
 \begin{equation}
 c_\lambda = \delta + ( s - s^{-1} ) \Big( v^{-1} \sum_{x \in \lambda} s^{2 \textrm{cn}(x)} - v \sum_{x \in \lambda} s^{-2 \textrm{cn}(x)} \Big)
 \end{equation}
-and where $\textrm{cn}(x)$ is the content of the cell $x$ of the Ferrers diagram of $\lambda$ in the $(i,j)^{\textrm{th}}$ position, defined by $\textrm{cn}(x) := j-i$.
+and where $\textrm{cn}(x)$ is the content of the cell $x$ of the Young diagram of $\lambda$ in the $(i,j)^{\textrm{th}}$ position, defined by $\textrm{cn}(x) := j-i$.
 \end{proposition}
 \begin{proof}
 Let $\lambda=(\lambda_0, \lambda_1, \dots, \lambda_{r-1})$ be a partition of length $r$. For brevity, define the elements
@@ -773,147 +756,163 @@ e \cdot \tilde{h}_\lambda(i_2, j-1-l) & (s^2 - 1) \varsigma_\lambda^+ (i_2, j-1-
 Now we can rebuild the determinants.
 \end{proof}
 
-
-
-
-
-
-\subsection{Examples}
-This section is basically a sandbox for playing with the determinant formulas. In particular, we partially work through examples where $r=2$ and $r=3$. 
-%\AP{9/13: Added partial example below.}
-\begin{example}
-Let's run through the argument for $\lambda = (2, 1)$. Apply Equation \eqref{eq:bcddetformula}.
+\begin{proposition}
+The conjecture holds when $\lambda$ has length at most $2$.
+\end{proposition}
+The statement is trivial if $\lambda$ has length $1$ by definition of the map. Assume $\lambda = (a, b)$. Apply Equation \eqref{eq:bcddetformula}.
 \[
 S_\lambda = 
 \begin{vmatrix}
-\tilde{h}_2 & \tilde{h}_3 + \tilde{h}_1 \\
-\tilde{h}_0 & \tilde{h}_1 + \tilde{h}_{-1}
+\frac{1}{2}\tilde{h}_\lambda(0,0) & \tilde{h}_\lambda(0,1) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) & \tilde{h}_\lambda(1,1)
 \end{vmatrix}
 \]
 Use multilinearity of the determinant as we did above to decompose the commutator $S_\lambda \cdot e - e \cdot S_\lambda$.
 \begin{equation*}
 S_\lambda \cdot e - e \cdot S_\lambda = 
 \begin{vmatrix}
-t_2 & e \cdot ( \tilde{h}_3 + \tilde{h}_1 ) \\
-t_0 & e \cdot ( \tilde{h}_1 + \tilde{h}_{-1} )
+\frac{1}{2} t_\lambda(0,0) & e \cdot \tilde{h}_\lambda(0,1) \\
+\frac{1}{2} t_\lambda(1,0) & e \cdot \tilde{h}_\lambda(1,1)
 \end{vmatrix}
 +
 \begin{vmatrix}
-\tilde{h}_2 \cdot e & t_3 + t_1 \\
-\tilde{h}_0 \cdot e & (t_1 + t_{-1} )
+\frac{1}{2}\tilde{h}_\lambda(0,0) \cdot e & t_\lambda(0,1) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) \cdot e & t_\lambda(1,1)
 \end{vmatrix} \\
 \end{equation*}
-The entries in the second column of the second determinant need to be split using Equation \eqref{eq:bcddetformula} into a form which is compatible with Lemma \ref{lemma:detgymnastics3}.
+The entries in the second column of the second determinant need to be split using Equation \eqref{eq:skewcommutator2} into a form which is compatible with Lemma \ref{lemma:detgymnastics3}. The right-hand side becomes
 \[
 \begin{vmatrix}
-t_2 & e \cdot ( \tilde{h}_3 + \tilde{h}_1 ) \\
-t_0 & 1 \cdot ( \tilde{h}_1 + \tilde{h}_{-1} )
+\frac{1}{2} t_\lambda(0,0) & e \cdot \tilde{h}_\lambda(0,1) \\
+\frac{1}{2} t_\lambda(1,0) & e \cdot \tilde{h}_\lambda(1,1)
 \end{vmatrix}
 +
 \begin{vmatrix}
-\tilde{h}_2 \cdot e & ( s^{-1} \tilde{h}_2 \cdot e - s e \cdot \tilde{h}_2 ) a \\
-\tilde{h}_0 \cdot e & ( s^{-1} \tilde{h}_0 \cdot e - s e \cdot \tilde{h}_0 ) a
-\end{vmatrix} 
+\frac{1}{2}\tilde{h}_\lambda(0,0) \cdot e & \frac{1}{2} \varsigma_\lambda^+(0,0) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) \cdot e & \frac{1}{2} \varsigma_\lambda^+(1,0)
+\end{vmatrix}
 +
 \begin{vmatrix}
-\tilde{h}_2 \cdot e & ( s \tilde{h}_2 \cdot e - s^{-1} e \cdot \tilde{h}_2 ) a^{-1} \\
-\tilde{h}_0 \cdot e & ( s \tilde{h}_0 \cdot e - s^{-1} e \cdot \tilde{h}_0 ) a^{-1}
-\end{vmatrix}
+\frac{1}{2}\tilde{h}_\lambda(0,0) \cdot e & \frac{1}{2} \varsigma_\lambda^-(0,0) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) \cdot e & \frac{1}{2} \varsigma_\lambda^-(1,0)
+\end{vmatrix}.
 \]
-Apply Lemma \ref{lemma:detgymnastics3} with $n=\lambda_1 - (1-1) = 2, m=\lambda_2 - (2-1) = 0$.
+Apply Lemma \ref{lemma:detgymnastics3} to the second two terms:
 \[
 \begin{vmatrix}
-t_2 & e \cdot ( \tilde{h}_3 + \tilde{h}_1 ) \\
-t_0 & e \cdot ( \tilde{h}_1 + \tilde{h}_{-1} )
+\frac{1}{2} t_\lambda(0,0) & e \cdot \tilde{h}_\lambda(0,1) \\
+\frac{1}{2} t_\lambda(1,0) & e \cdot \tilde{h}_\lambda(1,1)
 \end{vmatrix}
 + s^2
 \begin{vmatrix}
-e \cdot \tilde{h}_2 & ( s^{-1} \tilde{h}_2 \cdot e - s e \cdot \tilde{h}_2 ) a \\
-e \cdot \tilde{h}_0 & ( s^{-1} \tilde{h}_0 \cdot e - s e \cdot \tilde{h}_0 ) a
-\end{vmatrix} 
+e \cdot \frac{1}{2}\tilde{h}_\lambda(0,0) & \frac{1}{2} \varsigma_\lambda^+(0,0) \\
+e \cdot \frac{1}{2}\tilde{h}_\lambda(1,0) & \frac{1}{2} \varsigma_\lambda^+(1,0)
+\end{vmatrix}
 + s^{-2}
 \begin{vmatrix}
-e \cdot \tilde{h}_2 & ( s \tilde{h}_2 \cdot e - s^{-1} e \cdot \tilde{h}_2 ) a^{-1} \\
-e \cdot \tilde{h}_0 & ( s \tilde{h}_0 \cdot e - s^{-1} e \cdot \tilde{h}_0 ) a^{-1}
-\end{vmatrix}
+e \cdot \frac{1}{2}\tilde{h}_\lambda(0,0) & \frac{1}{2} \varsigma_\lambda^-(0,0) \\
+e \cdot \frac{1}{2}\tilde{h}_\lambda(1,0) & \frac{1}{2} \varsigma_\lambda^-(1,0)
+\end{vmatrix}.
 \]
 Now apply $\cl_\ca$ and use the property that it is a right $\cc$-module homomorphism to remove $e$ from the $\tilde{h}_i$ terms. Apply Lemmas \ref{lemma:tclosure} and \ref{lemma:skewclosures} for the second equality.
-
-%\AP{9/19: Fixed errors in computation.}
 \begin{align*}
-& \textrm{cl}_\ca ( S_\lambda \cdot e - e \cdot S_\lambda ) \\
-=&
+&\quad \textrm{cl}_\ca ( S_\lambda \cdot e - e \cdot S_\lambda ) \\
+&=
 \begin{vmatrix}
-\textrm{cl}_\ca ( t_2 ) &  \tilde{h}_3 + \tilde{h}_1 \\
-\textrm{cl}_\ca ( t_0 ) & \tilde{h}_1 + \tilde{h}_{-1}
+\cl_\ca \big( \frac{1}{2} t_\lambda(0,0) \big) & \tilde{h}_\lambda(0,1) \\
+\cl_\ca \big( \frac{1}{2} t_\lambda(1,0) \big) & \tilde{h}_\lambda(1,1)
 \end{vmatrix}
 + s^2
 \begin{vmatrix}
-\tilde{h}_2 & \textrm{cl}_\ca \big( ( s^{-1} \tilde{h}_2 \cdot e - s e \cdot \tilde{h}_2 ) a \big) \\
-\tilde{h}_0 & \textrm{cl}_\ca \big( ( s^{-1} \tilde{h}_0 \cdot e - s e \cdot \tilde{h}_0 ) a \big)
-\end{vmatrix} 
-+ s^{-2}
-\begin{vmatrix}
-\tilde{h}_2 & \textrm{cl}_\ca \big( ( s \tilde{h}_2 \cdot e - s^{-1} e \cdot \tilde{h}_2 ) a^{-1} \big) \\
-\tilde{h}_0 & \textrm{cl}_\ca \big( ( s \tilde{h}_0 \cdot e - s^{-1} e \cdot \tilde{h}_0 ) a^{-1} \big)
+\frac{1}{2}\tilde{h}_\lambda(0,0) & \cl_\ca \big( \frac{1}{2} \varsigma_\lambda^+(0,0) \big) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) & \cl_\ca \big( \frac{1}{2} \varsigma_\lambda^+(1,0) \big)
 \end{vmatrix} \\
-=& 
+& \quad + s^{-2}
 \begin{vmatrix}
-\{2\} ( s v^{-1} - s^{-1} v ) \tilde{h}_2 &  \tilde{h}_3 + \tilde{h}_1 \\
-\{0\} ( s^{-1} v^{-1} - s v ) \tilde{h}_0 & \tilde{h}_1 + \tilde{h}_{-1}
+\frac{1}{2}\tilde{h}_\lambda(0,0) & \cl_\ca \big( \frac{1}{2} \varsigma_\lambda^-(0,0) \big) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) & \cl_\ca \big( \frac{1}{2} \varsigma_\lambda^-(1,0) \big)
 \end{vmatrix} \\
-&+ s^2
+&=
 \begin{vmatrix}
-\tilde{h}_2 & - \{3\} s^{-2} v \tilde{h}_3 - [2] ( \bar{\beta}_2 - \beta_2 ) s \big( \delta + (s v^{-1} + \beta_{1} ) \big) \tilde{h}_1 \\
-\tilde{h}_0 & - \{1\} v \tilde{h}_{1}
+\cl_\ca \big( \frac{1}{2} t(a,0) \big) & \tilde{h}(a,1) \\
+\cl_\ca \big( \frac{1}{2} t(b-1,0) \big) & \tilde{h}(b-1,1)
+\end{vmatrix}
++ s^2
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}(a,0) & \cl_\ca \big( \frac{1}{2} \varsigma^+(a,0) \big) \\
+\frac{1}{2}\tilde{h}(b-1,0) & \cl_\ca \big( \frac{1}{2} \varsigma^+(b-1,0) \big)
 \end{vmatrix} \\
-&+ s^{-2}
+& \quad + s^{-2}
 \begin{vmatrix}
-\tilde{h}_2 & \{3\} s^2 v^{-1} \tilde{h}_{3} + [2] ( \bar{\beta}_2 - \beta_2 ) s^{-1} \big( \delta + ( s v^{-1} + \beta_{1} ) \big) \tilde{h}_{1} \\
-\tilde{h}_0 & \{1\} v^{-1} \tilde{h}_{1}
+\frac{1}{2}\tilde{h}(a,0) & \cl_\ca \big( \frac{1}{2} \varsigma^-(a,0) \big) \\
+\frac{1}{2}\tilde{h}(b-1,0) & \cl_\ca \big( \frac{1}{2} \varsigma^-(b-1,0) \big)
 \end{vmatrix} \\
-=& 
+&=
 \begin{vmatrix}
-\{2\} ( s v^{-1} - s^{-1} v ) \tilde{h}_2 &  \tilde{h}_3 + \tilde{h}_1 \\
-\{0\} ( s^{-1} v^{-1} - s v ) \tilde{h}_0 & \tilde{h}_1 + \tilde{h}_{-1}
+\alpha_a \tilde{h}_a & \tilde{h}_{a+1} + \tilde{h}_{a-1} \\
+\alpha_{b-1} \tilde{h}_{b-1} & \tilde{h}_{b} + \tilde{h}_{b-2}
+\end{vmatrix}
++ s^2
+\begin{vmatrix}
+\tilde{h}_a & \omega_{a+1}^+ \tilde{h}_{a+1} + \upsilon^+_{a-1} \tilde{h}_{a-1} \\
+\tilde{h}_{b-1} & \omega_{b}^+ \tilde{h}_{b} + \upsilon^+_{b-2} \tilde{h}_{b-2}
 \end{vmatrix} \\
-&+
+& \quad + s^{-2}
 \begin{vmatrix}
-\tilde{h}_2 & - \{3\} v \tilde{h}_3 - [2] ( \bar{\beta}_2 - \beta_2 ) s^3 \big( \delta + (s v^{-1} + \beta_{1} ) \big) \tilde{h}_1 \\
-\tilde{h}_0 & - \{1\} s^2 v \tilde{h}_{1}
-\end{vmatrix}\\
-&+
-\begin{vmatrix}
-\tilde{h}_2 & \{3\} v^{-1} \tilde{h}_{3} + [2] ( \bar{\beta}_2 - \beta_2 ) s^{-3} \big( \delta + ( s v^{-1} + \beta_{1} ) \big) \tilde{h}_{1} \\
-\tilde{h}_0 & \{1\} s^{-2} v^{-1} \tilde{h}_{1}
+\tilde{h}_a & \omega_{a+1}^- \tilde{h}_{a+1} + \upsilon^-_{a-1} \tilde{h}_{a-1} \\
+\tilde{h}_{b-1} & \omega_{b}^- \tilde{h}_{b} + \upsilon^-_{b-2} \tilde{h}_{b-2}
 \end{vmatrix} \\
-=& 
-\begin{vmatrix}
-\{2\} ( s v^{-1} - s^{-1} v ) \tilde{h}_2 &  \tilde{h}_3 + \tilde{h}_1 \\
-\{0\} ( s^{-1} v^{-1} - s v ) \tilde{h}_0 & \tilde{h}_1 + \tilde{h}_{-1}
-\end{vmatrix}\\
-&+
-\begin{vmatrix}
-\tilde{h}_2 & - \{3\} ( v^{-1} - v ) \tilde{h}_3 - [2] ( \bar{\beta}_2 - \beta_2 ) \{3\} \big( \delta + (s v^{-1} + \beta_{1} ) \big) \tilde{h}_1 \\
-\tilde{h}_0 & \{1\} ( s^{-2} v^{-1} - s^2 v ) \tilde{h}_{1}
-\end{vmatrix} 
+&= \big( \alpha_a \tilde{h}_a (\tilde{h}_{b} + \tilde{h}_{b-2}) - \alpha_{b-1} \tilde{h}_{b-1} (\tilde{h}_{a+1} + \tilde{h}_{a-1}) \big) \\
+& \quad + s^2 \big( \tilde{h}_a (\omega_{b}^+ \tilde{h}_{b} + \upsilon^+_{b-2} \tilde{h}_{b-2}) - \tilde{h}_{b-1}( \omega_{a+1}^+\tilde{h}_{a+1} + \upsilon^+_{a-1} \tilde{h}_{a-1}) \big) \\
+& \quad + s^{-2} \big( \tilde{h}_a (\omega_{b}^- \tilde{h}_{b} + \upsilon^-_{b-2} \tilde{h}_{b-2}) - \tilde{h}_{b-1} (\omega_{a+1}^- \tilde{h}_{a+1} + \upsilon^-_{a-1} \tilde{h}_{a-1}) \big) \\
+&= (\alpha_a + s^2 \omega_b^+ + s^{-2} \omega_b^-) \tilde{h}_a \tilde{h}_b + (\alpha_a + s^2 \upsilon_{b-2}^+ + s^{-2} \upsilon_{b-2}^-) \tilde{h}_a \tilde{h}_{b-2} \\
+&\quad - (\alpha_{b-1} + s^{2} \omega_{a+1}^+ + s^{-2} \omega_{a+1}^-) \tilde{h}_{a+1} \tilde{h}_{b-1} - (\alpha_{b-1} + s^2 \upsilon_{a-1}^+ + s^{-2} \upsilon_{a-1}^-) \tilde{h}_{a-1} \tilde{h}_{b-1} 
 \end{align*}
-\end{example}
-\AP{9/19: Will still need to figure out how to aggregate the constants from these determinants.}
+The conjecture claims that all of these coefficients are equal to the appropriate eigenvalue minus the value of the unknot $c_\lambda - \delta$. At first glance, it's not at all obvious that these coefficients are even equal to each other. Nevertheless, we will show it is true by looking at each coefficient one by one, going in the order in which they are written. Firstly, observe:
+\begin{align*}
+\alpha_a + s^2 \omega_b^+ + s^{-2}\omega_b^- &= \{a\} (v^{-1}s^{a-1} - v s^{1-a} ) - \{b\}vs^{3-b} + \{b\}v^{-1}s^{b-3} \\
+&= (s^a - s^{-a}) (v^{-1}s^{a-1} - v s^{1-a} ) -  (s^b - s^{-b})(vs^{3-b} - v^{-1}s^{b-3}) \\
+&= (v^{-1} s^{2a-1} - vs - v^{-1}s^{-1} + vs^{1-2a}) - (vs^3 - v^{-1}s^{2b-3} - vs^{3-2b} + v^{-1}s^{-3}) \\
+&= v^{-1} \big( (s^{2a-1} - s^{-1}) + (s^{2b-3} - s^{-3}) \big) - v \big( ( s - s^{1-2a}) + (s^3 - s^{3-2b}) \big) \\
+&= v^{-1} \left( (s-s^{-1}) \sum_{i=0}^{a-1} s^{2a - 2 - 2i} + (s-s^{-1}) \sum_{i=0}^{b-1} s^{2b-4-2i} \right) \\
+&\quad v \left( (s-s^{-1}) \sum_{i=0}^{a-1} s^{-2i} + (s-s^{-1}) \sum_{i=0}^{b-1} s^{2-2i} \right) \\
+&= (s-s^{-1}) \left( v^{-1} \sum_{x \in \lambda} s^{2 \cn(x)} - v \sum_{x \in \lambda} s^{-2\cn(x)} \right) \\
+&= c_\lambda - \delta.
+\end{align*}
+Therefore, the first coefficient is what we claimed. Now we can simply show the other coefficients are equal to the first. Let's show the second coefficient is equal to the first:
+\begin{align*}
+&\quad-\alpha_{b-1} - s^2 \omega_{a+1}^+ - s^{-2} \omega_{a+1}^- \\
+&= -\{b-1\}(v^{-1}s^{b-2}-vs^{2-b}) + \{a+1\}vs^{2-a} - \{a+1\}v^{-1}s^{a-2} \\
+&= (s^{1-b} - s^{b-1} ) (v^{-1}s^{b-2} - vs^{2-b}) + (s^{a+1}-s^{a+1})(vs^{2-a} - v^{-1}s^{a-2}) \\
+&= (v^{-1}s^{-1} - v^{-1}s^{2b-3} - vs^{3-2b} + vs) - (vs^3 - vs^{1-2a} - v^{-1}s^{2a-1} + v^{-1}s) \\
+&= v^{-1} \big( (s^{2a-1} - s^{-1}) + (s^{2b-3} - s^{-3}) \big) - v \big( ( s - s^{1-2a}) + (s^3 - s^{3-2b}) \big).
+\end{align*}
 
-\AP{10/23: Partially verified that the result is indeed $c_\lambda S_\lambda$. This is a good enough sanity check for me.}
-Look at the coefficient of $\tilde{h}_2 \tilde{h}_1$, for example. We get
+The next two are slightly different. We will avoid the complexity of $\upsilon_\bullet^\pm$ by using the relation $\upsilon_\bullet^+ + \upsilon_\bullet^- = \alpha_\bullet$. Observe:
+\AP{double check below. Make sure $\upsilon_\bullet^\pm$ is right.}
 \begin{align*}
-\{ 2 \} (s v^{-1} - s^{-1} v ) + \{ 1 \} ( s^{-2} v^{-1} - s^2 v ) &= ( s^2 - s^{-2} ) ( s v^{-1} - s^{-1} v ) + ( s - s^{-1} ) ( s^{-2} v^{-1} - s^2 v ) \\
-&= s^3 v^{-1} - s v - s^{-1} v^{-1} + s^{-3} v + s^{-1} v^{-1} - s^{-3} v^{-1} - s^3 v + s v \\
-&= ( s^3 - s^{-3} ) ( v^{-1} - v )
+& \quad \alpha_a + s^2 \upsilon_{b-2}^+ + s^{-2}\upsilon_{b-2}^- \\
+&= \{a\}(v^{-1}s^{a-1} - vs^{1-a}) + (s^{b} - s^{-b}) [b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})[b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(\upsilon_{b-2}^+ + \upsilon_{b-2}^-) \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}\alpha_{b-2} \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) - (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})(vs^{3-b}-v^{-1}s^{b-3}) \\
+&= (s^a - s^{-a})(v^{-1}s^{a-1}-vs^{1-a}) - (s^{b} - s^{-b})(vs^{3-b}-v^{-1}s^{b-3}) \\
 \end{align*}
-which, after adding $\delta$ over, agrees with the eigenvalue 
+and similarly
 \begin{align*}
-c_{(2, 1)} &= \delta + ( s - s^{-1} ) \big( v^{-1} ( s^2 + 1 + s^{-2} ) - v ( s^{-2} + 1 + s^2 ) \big) \\
-&= \delta + ( s - s^{-1} ) ( v^{-1} - v ) ( s^2 + 1 + s^{-2} ) \\
-&= \delta + ( s^3 - s^{-3} ) ( v^{-1} - v )
-\end{align*}
+& \quad -\alpha_{b-1} - s^2 \upsilon_{a-1}^+ - s^{-2} \upsilon_{a-1}^- \\
+&= \{b-1\}(v^{-1}s^{b-2} - vs^{2-b}) +
+\end{align*} 
+
+
+
+
+
+
+
+
+
 %\AP{9/14: Added below}
 \begin{example}
 Let's just get a glance at what the determinants will look like for $\textrm{len}(\lambda)=3$. Arbitrarily, let $\lambda = (2, 1, 1)$. 
