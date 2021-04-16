@@ -106,7 +106,7 @@ via the functor $\cs_X$. Now we may define what $\sfskein_X(f)$ does to morphism
 \begin{figure}[h]
 \centering
 $\pic[15]{FunctorOfSkeinTheories.eps}$
-\caption{On the left is pictured a smooth embedding $f$ of a disk into an annulus. This induces a functor $\sfskein_X(f)$ between the skein categories of the disk and the annulus. On the right is an example of a morphism $y$ in the skein category of the disk and its image under this functor.}
+\caption{On the left is pictured a smooth embedding $f$ of a disk into an annulus. This induces a functor $\sfskein_X(f)$ between the skein categories of the disk and the annulus. On the right is an example of a morphism in the skein category of the disk and its image under this functor.}
 \end{figure}
 
 It is clear that $\sfskein_X(f)$ preserves composition and identity morphisms. Therefore, if we let $\mathsf{Surf}_{\textrm{emb}}$ be the category of smooth embeddings between smooth oriented surfaces, we can summarize our last few points by saying we have a functor
@@ -192,9 +192,9 @@ For a surface $\Sigma$, a link in $\Sigma \times I$ may be considered as a cycle
 
 \section{Skein Algebras of Tangles in a Cube} \label{sec:cube}
 
-In the case where $\Sigma = I^2$, the endomorphism objects of $\mathsf{D}(I^2), \mathsf{H}(I^2)$, and $\mathsf{K}(I^2)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $[n]$ be a set of $n$ points in $I^2$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose so that all points share the same orientation if in the context of an oriented skein theory). Then the endomorphism algebras 
+In the case where $\Sigma = I^2$, the endomorphism objects of $\mathsf{D}(I^2), \mathsf{H}(I^2)$, and $\mathsf{K}(I^2)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $\underline{n}$ be a set of $n$ points in $I^2$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose so that all points share the same orientation if in the context of an oriented skein theory). Then the endomorphism algebras 
 \[
-BMW_n := \End_\mathsf{D}(I^2)([n]), \qquad H_n := \End_\mathsf{H}(I^2)([n]), \qquad TL_n := \End_\mathsf{K}(I^2)([n])
+BMW_n := \End_\mathsf{D}(I^2)(\underline{n}), \qquad H_n := \End_\mathsf{H}(I^2)(\underline{n}), \qquad TL_n := \End_\mathsf{K}(I^2)(\underline{n})
 \]
 are known to be isomorphic to the Birman-Murakami-Wenzl, (Type A) Hecke, and Temperley-Lieb algebras, respectively (\AP{*Add citations}). 
 
@@ -214,20 +214,22 @@ which is a section of the natural projection $BMW_n \to H_n$ such that
 \begin{equation} \label{eq:bbsectionproperty}
 \Gamma_n(x)y = 0 = y \Gamma_n(x) \quad \textrm{for } x \in H_n, y \in I_n.
 \end{equation}
-Using this section, one can transport the minimal idempotents $y_\lambda \in H_n$ to minimal idempotents $\tilde{y}_\lambda := \Gamma_n(y_\lambda) \in BMW_n$. The elements $\tilde{y}_n := \tilde{y}_{(n)}$ are called the \textbf{(BMW) symmetrizers} and are the unique idempotent elements of $BMW_n$ satisfying the properties of the Hecke symmetrizers and property \eqref{eq:bbsectionproperty}. By \AP{cite Shelly}, these symmetrizers satisfy a very useful recurrence relation
+Using this section, one can transport the minimal idempotents $y_\lambda \in H_n$ to minimal idempotents $\tilde{y}_\lambda := \Gamma_n(y_\lambda) \in BMW_n$. The elements $\tilde{y}_n := \tilde{y}_{(n)}$ are called the \textbf{(BMW) symmetrizers} and are the unique idempotent elements of $BMW_n$ satisfying the properties of the Hecke symmetrizers and property \eqref{eq:bbsectionproperty}. Let $[n]$ be the quantum integers
+\[
+[n] := \frac{s^n - s^{-n}}{s-s^{-1}}
+\]
+and define the constants
+\[
+\beta_n:=\frac{1-s^2}{s^{2n-1}v^{-1}-1}.
+\]
+By \AP{cite Shelly}, the BMW symmetrizers satisfy a very useful recurrence relation
 \begin{equation} \label{eq:shellyrecurrence}
-*=*
+\pic{shelly0.eps} = [n]s^{-1} \pic{shelly1.eps} + \pic{shelly2.eps} + [n]s^{-1} \beta_n \pic{shelly3.eps}.
 \end{equation}
-\AP{Change $f_n$ to $\tilde{y}_n$ in symmetrizer pictures.}
-\AP{Define quantum integers and $\beta_n$}
-%\[
-%[n+1] \vcenter{\hbox{\includegraphics[width=2.9cm]{f_nplus1.eps}}} = [n]s^{-1} \vcenter{\hbox{\includegraphics[width=2.9cm]{f_notimes11otimesf_n.eps}}} + \vcenter{\hbox{\includegraphics[width=2.9cm]{sigma_ndotssigma_11otimesf_n.eps}}} + [n]s^{-1} \beta_n \vcenter{\hbox{\includegraphics[width=2.9cm]{f_notimes1H1otimesf_n.eps}}}.
-%\]
+
 For what it's worth, this relation descends to a well-known recurrence relation for the $y_n \in H_n$ via the projection map described above ($\tilde{y}_n$ gets sent to $y_n$ and the last diagram on the right-hand side gets sent to $0$). 
 
 \AP{Come back and add braiding/twist identities from BB if we need them.}
-
-\AP{Would it be wise to include the BB matrix algebra description of $BMW_n$? Might be useful to point out the central idempotents $z_\lambda$, which are distinct from the $y_\lambda$, even though I don't think I use them anywhere. Maybe a quick remark would suffice. Note that the annular closure of the $y_\lambda$ is equal to the annular closure of $z_\lambda$.}
 
 \section{Skein Algebras of the Annulus} \label{sub:annulus}
 
@@ -239,11 +241,19 @@ We'll tackle describing the structure of $\ck(A)$ before the others since it is 
 
 The HOMFLYPT and Dubrovnik cases are more complicated because the skein relations do not allow one to resolve all the crossings in a diagram. However, they do allow one to change a diagram with a negative crossing into a diagram with a positive crossing, plus diagrams with a lesser number of crossings. It follows that the skein algebras $\ch(A)$ and $\cd(A)$ are generated by knots with only positive crossings. Let $z_i$ be a knot in $A$ with winding number $i$ around the annulus. Turaev shows in \AP{cite} that the $z_i$ are algebraically independent by showing their HOMFLYPT and Dubrovnik polynomials are algebraically independent. Therefore, $\ch(A)$ is a polynomial algebra $R[z_i, i \in \Z_{\neq 0}]$. $\cd(A)$ has half as many generators since the $z_i$ in that setting are unoriented, but $\cd(A)$ is a polynomial algebra $R[z_i, i \in \Z_{> 0}]$ by the same arguments. 
 
-\AP{Picture of $z_i$}
+\begin{figure}[h]
+\centering
+$\pic[5]{z2.eps}$
+\caption{The generator $z_2 \in \cd(A)$.}
+\end{figure}
 
-The skein algebras of tangles in a cube relate to the skein algebras of the annulus via a map $\cl(-)$, depicted as a wiring diagram below. 
+The skein algebras of tangles in a cube relate to the skein algebras of the annulus via a wiring $\cl$. We will call the image of an element under this wiring the \textbf{annular closure} of the element. Note that the closure map is not unital nor multiplicative, but it does satisfy the ``trace property" $\cl(abc) = \cl(cab)$. 
 
-\AP{Picture of closure}
+\begin{figure}[h]
+\centering
+$\pic[5]{annularclosure.eps}$
+\caption{This annular closure wiring diagram.}
+\end{figure}
 
 Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda) \in \cd(A)$. Zhong and Lu show in \AP{cite} that the set $\{ \widetilde{Q}_\lambda \}_\lambda$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map
 \AP{picture of meridian map.}
@@ -298,7 +308,7 @@ Given the similarity between the presentations of $\ch(T^2)$ and $\ck(T^2)$, one
 
 At this point in the story we have introduced special links in the skein algebras of the annulus and described how we can transport these into other skein modules via threading knots. In order to say anything meaningful about these threadings, we ought to know how these special links will interact with other links once in the resulting space. For example, is there an easy way to describe how can we pass a special link through a single strand of another link? To answer this question universally, we should answer it in a certain relative skein algebra which is the endomorphism algebra of one point in the skein category of the annulus. Appropriate wirings from this skein algebra into other skein modules will give us our desired description. Here we will describe this algebra in more detail and summarize what is already known. 
 
-First we will restrict ourselves to the HOMFLYPT case, for which we summarize the results from \AP{Morton, Murphy operators}. The object we would like to discuss is $\ca_\ch := \ch(A, [1])$, which is depicted diagramatically as an annulus with one point on each boundary component. This algebra is closely related to the affine Hecke algebra of type A, $\dot{H}_1$ (see \AP{cite MS}). Two of the most basic elements of $\ca_\ch$ are
+First we will restrict ourselves to the HOMFLYPT case, for which we summarize the results from \AP{Morton, Murphy operators}. The object we would like to discuss is $\ca_\ch := \ch(A, [1])$, which is depicted diagramatically as an annulus with one point on each boundary component. This algebra is closely related to the affine Hecke algebra of type A, $\dot{H}_1$ (see \AP{cite MS}). Two of the most basic elements of $\ca_\ch$ are the elements $e$, the identity of $\ca_\ch$, and $a$, which is a single strand once around the hole of the annulus.
 \AP{Pictures of identity $e$ and once around counter-clockwise $a$.}
 The product in the algebra in this digrammatic notation is given by nesting annuli. 
 
@@ -350,7 +360,7 @@ for any $x \in BMW_n$ or $y \in \cc_\cd$. Apply the flip, the mirror, and the co
 
 Rearranging the difference of Equations \eqref{eq:recursionina1} and \eqref{eq:recursionina2} gives a relation
 \begin{equation} \label{eq:annfund}
-\tilde{h}_n \cdot e - e \cdot \tilde{h}_n = \{n\} (a^{-1} W^*_{n-1} - a W_{n-1})
+\tilde{h}_n \cdot e - e \cdot \tilde{h}_n = (s^n - s^{-n}) (a^{-1} W^*_{n-1} - a W_{n-1})
 \end{equation}
 which Shelly calls a \textit{fundamental skein relation} in $\ca_\cd$ since it reduces to to usual Dubrovnik skein relation when $n=1$. \AP{This might also be true in another sense, since there might be some connection between the wiring $W$ and something called the ``tube algebra", as pointed out by Henry Tucker.} In Chapter \AP{??}, we will provide a similar relation which amounts to rewriting the right-hand side of the equation in terms of elements of the form $h_i \cdot a^k$ (alternatively $a^k \cdot h_i$). 
 

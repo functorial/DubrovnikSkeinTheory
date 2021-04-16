@@ -83,7 +83,7 @@ The relations of Lemma \ref{lem:powersumcommutator1} hold.
 \begin{proof}
 If $n=-1$, the relation we would like to show becomes 
 \begin{equation*}
-e \cdot \tilde{h}_1 - \tilde{h}_1 \cdot e = \{1\} \left( a - a^{-1} \right)
+e \cdot \tilde{h}_1 - \tilde{h}_1 \cdot e = (s-s^{-1}) \left( a - a^{-1} \right)
 \end{equation*}
 which is just the Dubrovnik skein relation. 
 
@@ -96,9 +96,13 @@ For general values of $n$, the proof is a technical computation using repeated a
 \end{align}
 and the ``fundamental relation"
 \begin{equation}
-e \cdot \tilde{h}_n - \tilde{h}_n \cdot e = \{n\} (a W_{n-1} - a^{-1} W^*_{n-1}). \label{eq:f}
+e \cdot \tilde{h}_n - \tilde{h}_n \cdot e = (s^n - s^{-n}) (a W_{n-1} - a^{-1} W^*_{n-1}). \label{eq:f}
 \end{equation}
 
+Let's use the shorthand notation 
+\[
+\{n\} := s^n - s^{-n}.
+\]
 Start by applying Equation \eqref{eq:f} to the relation of Lemma \ref{lem:powersumcommutator1} to obtain an equivalent relation
 \begin{align}\label{eq_perprel4}
 \begin{split}
@@ -251,6 +255,10 @@ We  use the Jacobi identity and the goodness assumptions to compute
 &-& \left( \{d(\yy,\aab)\} \{d(\yy-\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \right) \tilde{P}_{\aab-\bb-\yy} \\
 =:&& c_1 \tilde{P}_{\aab+\bb+\yy} + c_2 \tilde{P}_{\aab+\bb-\yy} - c_3 \tilde{P}_{\aab-\bb+\yy} - c_4 \tilde{P}_{\aab-\bb-\yy}.
 	\end{eqnarray*}
+Define constants $\{n\}^+ := s^n + s^{-n}$, and these satisfy the relations
+\[
+\{n\}\{m\} = \{n+m\}^+ - \{n-m\}+.
+\]
 Using some simple algebra, we can show
 	\begin{eqnarray*}
 c_1 \,\,\, =& &  \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \\
@@ -471,7 +479,7 @@ whose components are essentially the identity map (more details are given in Sec
 \begin{proposition} \label{prop:symmtoJW}
 Under the algebra homomorphism
 \[
-\eta_{(I^2, [n])}: BMW_n \to TL_n
+\eta_{(I^2, \underline{n})}: BMW_n \to TL_n
 \]
 the BMW symmetrizer $\tilde{y}_n$ is sent to the Jones-Wenzl idempotent $JW_n$.
 \end{proposition}
@@ -482,7 +490,7 @@ The element $JW_n$ is the unique element of $TL_n$ satisfying the properties
 \item $JW_n^2 = JW_n$,
 \item $JW_n c_i = c_i JW_n = 0$ for all cap-cup generators $c_i$. 
 \end{enumerate}
-Since $\eta_{(I^2, [n])}$ is an algebra map, we just need to show that $\eta_{(I^2, [n])}(\tilde{y}_n)$ is non-zero. If $n=1$, then the statement is true since $\tilde{y}_1$ and $JW_1$ are the simply the identity, a single strand. \AP{Induction with recurrence relation? or...}
+Since $\eta_{(I^2, \underline{n})}$ is an algebra map, we just need to show that $\eta_{(I^2, \underline{n})}(\tilde{y}_n)$ is non-zero. If $n=1$, then the statement is true since $\tilde{y}_1$ and $JW_1$ are the simply the identity, a single strand. \AP{Induction with recurrence relation? or...}
  
 \end{proof}
 
@@ -490,7 +498,7 @@ Since $\eta_{(I^2, [n])}$ is an algebra map, we just need to show that $\eta_{(I
 In \AP{Shelly}, it is pointed out that, under the composition of algebra maps $BMW_n \to H_n \to TL_n$ (see Section \ref{sec:cube}), the BMW symmetrizer $\tilde{y}_n$ is sent to the Jones-Wenzl idempotent $JW_n$. However, these maps are defined abstractly on generators, and so \textit{a priori} they are not induced by any natural transformations of skein theories. Furthermore, the diagram
 \begin{center}
 \begin{tikzcd}
-	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_{(I^2, [n])}}", two heads] \\
+	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_{(I^2, \underline{n})}}", two heads] \\
 H_n \arrow[dr, "{\pi_{TL}}", two heads] & \\
 	& TL_n
 \end{tikzcd}
