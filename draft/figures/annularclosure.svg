@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="40.573154mm"
-   height="40.200317mm"
-   viewBox="0 0 40.573154 40.200317"
+   width="40.796902mm"
+   height="40.796902mm"
+   viewBox="0 0 40.796901 40.796901"
    version="1.1"
    id="svg8"
    sodipodi:docname="annularclosure.svg"
@@ -159,9 +159,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="118.27596"
-     inkscape:cy="40.715983"
+     inkscape:zoom="3.959798"
+     inkscape:cx="123.87514"
+     inkscape:cy="73.045031"
      inkscape:document-units="mm"
      inkscape:current-layer="layer5"
      showgrid="false"
@@ -191,7 +191,7 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"
-     transform="translate(0.10016109,-256.89984)">
+     transform="translate(0.39845101,-256.60156)">
     <g
        id="g4662"
        transform="matrix(0.39089407,0.31047871,-0.31047871,0.39089407,84.157264,164.12108)">
@@ -201,7 +201,7 @@
          cy="257"
          cx="40.000004"
          id="path4638"
-         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.00523021;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.00523019;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       <circle
          style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.00523019;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="ellipse4642"
@@ -274,19 +274,20 @@
      id="layer4"
      inkscape:label="Annulus Shading"
      style="display:inline"
-     transform="translate(0.10016109,0.1001598)" />
+     transform="translate(0.39845101,0.39844463)" />
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Annulus Dots"
      style="display:inline"
-     transform="translate(0.10016109,0.1001598)" />
+     transform="translate(0.39845101,0.39844463)" />
   <g
      inkscape:groupmode="layer"
      id="layer5"
-     inkscape:label="C">
+     inkscape:label="C"
+     transform="translate(0.29828992,0.29828483)">
     <circle
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.301;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3067"
        cx="28.126234"
        cy="3.2108624"
@@ -296,11 +297,11 @@
        cy="3.2108624"
        cx="28.126234"
        id="circle3071"
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.301;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        r="11"
        transform="rotate(38.459357)" />
     <circle
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.301;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="circle3073"
        cx="28.126234"
        cy="3.2108624"
@@ -310,7 +311,7 @@
        cy="3.2108624"
        cx="28.126234"
        id="circle3075"
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.14999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.301;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        r="16"
        transform="rotate(38.459357)" />
     <rect
@@ -319,7 +320,7 @@
        height="9.7519274"
        width="9.7519274"
        id="rect5919-5"
-       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000008;stroke-width:0.24807291;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000008;stroke-width:0.601;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        transform="rotate(0.2832418)" />
     <text
        xml:space="preserve"
@@ -332,61 +333,13 @@
          x="27.929667"
          y="21.458426"
          style="stroke-width:0.26458332" /></text>
-    <circle
-       style="opacity:1;fill:#000000;fill-opacity:0.98342542;stroke:#000000;stroke-width:0.00068292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-       id="path1761"
-       cx="28.565002"
-       cy="14.97098"
-       r="0.32265854" />
-    <circle
-       r="0.32265854"
-       cy="14.97098"
-       cx="29.764999"
-       id="circle1763"
-       style="opacity:1;fill:#000000;fill-opacity:0.98342542;stroke:#000000;stroke-width:0.00068292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
-    <circle
-       style="opacity:1;fill:#000000;fill-opacity:0.98342542;stroke:#000000;stroke-width:0.00068292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-       id="circle1765"
-       cx="35.165001"
-       cy="14.97098"
-       r="0.32265854" />
-    <circle
-       r="0.32265854"
-       cy="14.97098"
-       cx="34.064999"
-       id="circle1767"
-       style="opacity:1;fill:#000000;fill-opacity:0.98342542;stroke:#000000;stroke-width:0.00068292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
-    <circle
-       r="0.32265854"
-       cy="24.671318"
-       cx="28.764999"
-       id="circle1769"
-       style="opacity:1;fill:#000000;fill-opacity:0.98342542;stroke:#000000;stroke-width:0.00068292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
-    <circle
-       style="opacity:1;fill:#000000;fill-opacity:0.98342542;stroke:#000000;stroke-width:0.00068292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-       id="circle1771"
-       cx="29.865"
-       cy="24.671318"
-       r="0.32265854" />
-    <circle
-       r="0.32265854"
-       cy="24.671318"
-       cx="35.264999"
-       id="circle1773"
-       style="opacity:1;fill:#000000;fill-opacity:0.98342542;stroke:#000000;stroke-width:0.00068292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
-    <circle
-       style="opacity:1;fill:#000000;fill-opacity:0.98342542;stroke:#000000;stroke-width:0.00068292;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-       id="circle1775"
-       cx="34.165001"
-       cy="24.671318"
-       r="0.32265854" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="g5983"
      inkscape:label="~W_n"
      style="display:none"
-     transform="translate(0.10016109,0.1001598)">
+     transform="translate(0.39845101,0.39844463)">
     <g
        id="g1054">
       <g
@@ -507,7 +460,7 @@
     </g>
   </g>
   <g
-     transform="translate(0.10016109,0.1001598)"
+     transform="translate(0.39845101,0.39844463)"
      style="display:none"
      inkscape:label="W_n"
      id="g1117"

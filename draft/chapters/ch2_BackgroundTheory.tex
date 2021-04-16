@@ -224,7 +224,7 @@ and define the constants
 \]
 By \AP{cite Shelly}, the BMW symmetrizers satisfy a very useful recurrence relation
 \begin{equation} \label{eq:shellyrecurrence}
-\pic{shelly0.eps} = [n]s^{-1} \pic{shelly1.eps} + \pic{shelly2.eps} + [n]s^{-1} \beta_n \pic{shelly3.eps}.
+\pic[2.7]{shelly0.eps} = [n]s^{-1} \pic[2.7]{shelly1.eps} + \pic[2.7]{shelly2.eps} + [n]s^{-1} \beta_n \pic[2.7]{shelly3.eps}.
 \end{equation}
 
 For what it's worth, this relation descends to a well-known recurrence relation for the $y_n \in H_n$ via the projection map described above ($\tilde{y}_n$ gets sent to $y_n$ and the last diagram on the right-hand side gets sent to $0$). 
@@ -247,7 +247,7 @@ $\pic[5]{z2.eps}$
 \caption{The generator $z_2 \in \cd(A)$.}
 \end{figure}
 
-The skein algebras of tangles in a cube relate to the skein algebras of the annulus via a wiring $\cl$. We will call the image of an element under this wiring the \textbf{annular closure} of the element. Note that the closure map is not unital nor multiplicative, but it does satisfy the ``trace property" $\cl(abc) = \cl(cab)$. 
+The skein algebras of tangles in a cube relate to the skein algebras of the annulus via a wiring $\cl$. We will call the image of an element under this wiring the \textbf{annular closure} of the element. This map is surjective and it satisfies the ``trace property" $\cl(abc) = \cl(cab)$. Note that is it not unital nor multiplicative, but it is true that $\cl(a \otimes b) = \cl(a) \cl(b)$ where $a \otimes b$ is an element obtained by concatenating elements $a$ and $b$. 
 
 \begin{figure}[h]
 \centering
@@ -255,13 +255,17 @@ $\pic[5]{annularclosure.eps}$
 \caption{This annular closure wiring diagram.}
 \end{figure}
 
-Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda) \in \cd(A)$. Zhong and Lu show in \AP{cite} that the set $\{ \widetilde{Q}_\lambda \}_\lambda$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map
-\AP{picture of meridian map.}
-where the eigenvalue of $Q_\lambda$ is 
+Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda) \in \cd(A)$. Zhong and Lu show in \AP{cite} that the set $\{ \widetilde{Q}_\lambda \}_\lambda$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map where the eigenvalue of $Q_\lambda$ is 
 \[
 c_\lambda = \delta_\cd + ( s - s^{-1} ) \sum_{\square \in \lambda} v^{-1} s^{2 \textrm{cn}(\square)} - v s^{-2 \textrm{cn}(\square)}
 \]
 and where $\textrm{cn}(\square) := j - i$ is the \textit{content} of the box in the $\square$ in $i^\textrm{th}$ row and $j^\textrm{th}$ column of the Young diagram of the partition $\lambda$. Two distinct partitions $\lambda$ and $\lambda '$ give rise to distinct values of $c_\lambda$ and $c_\lambda'$. Therefore, each of the eigenspaces is $1$-dimensional. 
+
+\begin{figure}[h]
+\centering
+$\pic[5]{Meridian.eps}$
+\caption{The meridian map applied to the annular closure of some $x$.}
+\end{figure}
 
 The behavior of $\widetilde{Q}_\lambda$ is similar to that of the $Q_\lambda := \cl^+(y_\lambda) \in \ch(A)$ where $\cl^+(-)$ is defined by orienting the strands in wiring digram of $\cl(-)$ counter-clockwise. Using the description $\ch(A) = R[z_i, i \in \Z_{\neq 0}]$, consider the subalgebras $\ch(A)^+ := R[z_i, i \in \Z_{> 0}]$ and $\ch(A)^- := R[z_i, i \in \Z_{< 0}]$. Then the two subalgebras are isomorphic via the linear involution defined by $z_i \mapsto z_{-i}$ and $\ch(A) \cong \ch(A)^+ \otimes \ch(A)^-$. The $\{ Q_\lambda \}_\lambda$ forms an eigenbasis of $\ch(A)^+$ with resepect to the meridian map and the eigenspaces are $1$-dimensional. As a side remark, the linear involution $z_i \mapsto z_{-i}$ may be realized topologically by rotating the thickened annulus $\pi$ radians around an appropriately centered axis parallel to $A$ and taking the induced skein map. We will call this map the \textit{flip map}.
 
@@ -301,37 +305,48 @@ T_\xx T_\yy = s^{\det(\xx, \yy)} T_{\xx + \yy} + s^{-\det(\xx, \yy)} T_{\xx - \y
 \]
 which the authors call the ``product-to-sum" formulas. There is an algebra called the \textit{noncommutative torus}, which is a one-parameter deformation of the algebra of continuous functions on the torus. The Frohman-Gelca presentation of $\ck(T^2)$ matches a presentation of the invariant subalgebra of the noncommutative torus with respect to a certain involutive action, as shown in \AP{cite FG}. \AP{Is this paragraph correct?}
 
-Given the similarity between the presentations of $\ch(T^2)$ and $\ck(T^2)$, one might suspect that there exists a similar description of the Dubrovnik skein algebra $\cd(T^2)$. The answer to this question is affirmative, which is what we discuss in Chapter \AP{How to reference a chapter?}
+Given the similarity between the presentations of $\ch(T^2)$ and $\ck(T^2)$, one might suspect that there exists a similar description of the Dubrovnik skein algebra $\cd(T^2)$. The answer to this question is affirmative, which is what we discuss in Chapter \ref{chap:torus}.
 
 
 \section{A Relative Skein Algebra of the Annulus} \label{sec:relativeannulus}
 
 At this point in the story we have introduced special links in the skein algebras of the annulus and described how we can transport these into other skein modules via threading knots. In order to say anything meaningful about these threadings, we ought to know how these special links will interact with other links once in the resulting space. For example, is there an easy way to describe how can we pass a special link through a single strand of another link? To answer this question universally, we should answer it in a certain relative skein algebra which is the endomorphism algebra of one point in the skein category of the annulus. Appropriate wirings from this skein algebra into other skein modules will give us our desired description. Here we will describe this algebra in more detail and summarize what is already known. 
 
-First we will restrict ourselves to the HOMFLYPT case, for which we summarize the results from \AP{Morton, Murphy operators}. The object we would like to discuss is $\ca_\ch := \ch(A, [1])$, which is depicted diagramatically as an annulus with one point on each boundary component. This algebra is closely related to the affine Hecke algebra of type A, $\dot{H}_1$ (see \AP{cite MS}). Two of the most basic elements of $\ca_\ch$ are the elements $e$, the identity of $\ca_\ch$, and $a$, which is a single strand once around the hole of the annulus.
-\AP{Pictures of identity $e$ and once around counter-clockwise $a$.}
-The product in the algebra in this digrammatic notation is given by nesting annuli. 
+First we will restrict ourselves to the HOMFLYPT case, for which we summarize the results from \AP{Morton, Murphy operators}. The object we would like to discuss is $\ca_\ch := \ch(A, [1])$, which is depicted diagramatically as an annulus with one point on each boundary component. This algebra is closely related to the affine Hecke algebra of type A, $\dot{H}_1$ (see \AP{cite MS}). Two of the most basic elements of $\ca_\ch$ are the elements $e$, the identity of $\ca_\ch$, and $a$, which is a single strand once around the hole of the annulus. The product in the algebra in this digrammatic notation is given by nesting annuli. 
+
+\begin{figure}[h]
+\centering
+$e = \pic[4]{einA.eps} \qquad \qquad \qquad \qquad a = \pic[4]{ainA.eps}$
+\caption{On the left is the identity elements $e \in \ca_\ch$. To the right is what we denote by $a \in \ca_\ch$.}
+\end{figure}
 
 Let $\cc_\ch := \ch(A)$. Then, $\cc_\ch$ admits both a left $\cc_\ch$-action by pushing links infront of tangles in $\ca_\ch$.
-\AP{Picture of left action.}
-It is known that there is an equality of algebras between $\ca_\ch$ and the Laurent polynomial algebra $\cc_\ch[a, a^{-1}]$. In particular, $\ca_\ch$ is commutative and the left action is determined by how it acts on $e$.
+It is known that there is an equality of algebras between $\ca_\ch$ and the Laurent polynomial algebra $\cc_\ch[a, a^{-1}]$. In particular, $\ca_\ch$ is commutative and the left action is determined by how it acts on $e$. Analagously, there is a right $\cc_\ch$-action by pulling links in behind tangles in $\ca_\ch$. 
 
-Analagously, there is a right $\cc_\ch$-action by pulling links in behind tangles in $\ca_\ch$. 
-\AP{picture of right action.}
+\begin{figure}
+\centering
+$\cl(x) \cdot e = \pic[5]{LeftAction.eps} \qquad \qquad e \cdot \cl(x) = \pic[5]{RightAction.eps}$
+\caption{Here we have the annular closure of some $x$ acting separately on both the left and right of the identity $e$.}
+\end{figure}
+
+
 Both actions are examples of those arising from embeddings into the boundary of the thickened annulus, as described in Remark \ref{rem:skeinaction}. The left and right actions obviously commute, endowing $\ca_\ch$ with a $\cc_\ch$-$\cc_\ch$-bimodule structure. It is probably worth pointing out that the left action is not equal to the right action. A simple measurement of how far off the two actions are from being equal would answer our question posed above. The answer is given as a commutator relation 
 \begin{equation} \label{eq:pkcommutator}
 e \cdot P_k - P_k \cdot e = (s^k - s^{-k}) a^k.
 \end{equation}
-\AP{Make sure this order is correct.}
 The proof involves the definition of a certain wiring diagram, defining a linear map $H_n \to \ca_\ch$. The idempotents $y_{n}$ satisfy a certain recurrence relation, and the commutator relation above follows from writing $P_k$ in terms of the $y_n$ and calculations involving the image of this recurrence relation.
 
-Eventually we would like to prove a Dubrovnik analogue of Equation \eqref{eq:pkcommutator} (see Section \ref{sec:commurationrelations}), but we still haven't defined any Dubrovnik analogue of the $P_k$ (see \AP{ref}). Nevertheless, we can discuss some of what was previously known about the algebra $\ca_\cd := \cd(A, [1])$ (see \AP{Shelly} for more details).
+Eventually we would like to prove a Dubrovnik analogue of Equation \eqref{eq:pkcommutator} (see Section \ref{sec:powersumelements}), but we still haven't defined any Dubrovnik analogue of the $P_k$ (see \AP{ref}). Nevertheless, we can discuss some of what was previously known about the algebra $\ca_\cd := \cd(A, [1])$ (see \AP{Shelly} for more details).
 
 Let $\cc_\cd := \cd(A)$ and let $a, e \in \ca_\cd$ be the unoriented versions of the elements of the same name above. As in the HOMFLYPT case, there is a left-$\cc_\cd$ action on $\ca_\cd$ and the algebra $\ca_\cd$ is equal to the Laurent polynomial algebra $\cc_\cd[a^{\pm 1}]$. There is also a right-$\cc_\cd$ action on $\ca_\cd$, endowing $\ca_\cd$ with a bimodule structure. 
 
-Consider the wiring diagrams
-\AP{pictures of wirings. I would drop the subscript on $W_n$ for brevity and rename $\widetilde{W}$ to $W^*$ to not confuse with $\tilde{y}_n$.}
-which define linear maps $BMW_n \to \ca_\cd$. Let $W_n := W(\tilde{y}_{n+1})$ and $W^*_n :=  W^*(\tilde{y}_{n+1})$ where the subscript denotes the ``winding number'' around $A$. Taking the image of Equation \eqref{eq:shellyrecurrence} under $W$ gives a relation
+\begin{figure}[h] \label{fig:WandWstar}
+\centering
+$W = \pic[5]{W.eps} \qquad \qquad \qquad W^* = \pic[5]{Wstar.eps}$
+\caption{Wiring diagrams $W$ and $W^*$ which both define linear maps from the skein algebra of the square to this relative skein algebra of the annulus.}
+\end{figure}
+
+Consider the wiring diagrams pictured above in Figure \ref{fig:WandWstar} which define linear maps $BMW_n \to \ca_\cd$. Let $W_n := W(\tilde{y}_{n+1})$ and $W^*_n :=  W^*(\tilde{y}_{n+1})$ where the subscript denotes the ``winding number'' around $A$. Taking the image of Equation \eqref{eq:shellyrecurrence} under $W$ gives a relation
 \begin{equation} \label{eq:recursionina1}
 [n+1] W_n = e \cdot \tilde{h}_n + [n] s^{-1} a W_{n-1} + [n] s^{-1} \beta_n a^{-1} W^*_{n-1}
 \end{equation}
@@ -362,7 +377,7 @@ Rearranging the difference of Equations \eqref{eq:recursionina1} and \eqref{eq:r
 \begin{equation} \label{eq:annfund}
 \tilde{h}_n \cdot e - e \cdot \tilde{h}_n = (s^n - s^{-n}) (a^{-1} W^*_{n-1} - a W_{n-1})
 \end{equation}
-which Shelly calls a \textit{fundamental skein relation} in $\ca_\cd$ since it reduces to to usual Dubrovnik skein relation when $n=1$. \AP{This might also be true in another sense, since there might be some connection between the wiring $W$ and something called the ``tube algebra", as pointed out by Henry Tucker.} In Chapter \AP{??}, we will provide a similar relation which amounts to rewriting the right-hand side of the equation in terms of elements of the form $h_i \cdot a^k$ (alternatively $a^k \cdot h_i$). 
+which Shelly calls a \textit{fundamental skein relation} in $\ca_\cd$ since it reduces to to usual Dubrovnik skein relation when $n=1$. \AP{This might also be true in another sense, since there might be some connection between the wiring $W$ and something called the ``tube algebra", as pointed out by Henry Tucker.} In Section \ref{sec:morecommutationrelations}, we will provide a similar relation which amounts to rewriting the right-hand side of the equation in terms of elements of the form $h_i \cdot a^k$ (alternatively $a^k \cdot h_i$). 
 
 
 

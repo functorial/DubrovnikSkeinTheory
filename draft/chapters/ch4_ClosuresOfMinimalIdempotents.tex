@@ -1,7 +1,7 @@
 \chapter{More Formulas and Partial Results}
 
 
-\section{Commutation Relations For BMW and Hecke Symmetrizer Closures}
+\section{Commutation Relations For BMW and Hecke Symmetrizer Closures} \label{sec:morecommutationrelations}
 
 This next theorem follows directly from Equation \eqref{eq:skewcommutator2}, which makes it equivalent to Theorem \ref{thm:powersumcommutator} in some sense. This expresses the left $\cd(A)$-action on $\ca_\cd$ in terms of the right action, and vice versa. This implies a commutation relation for the closures of the BMW symmetrizers in terms of either the elements of the set $\{\tilde{h}_j \cdot a^i \}_{j, i}$ or $\{ a^i \cdot \tilde{h}_j \}_{j, i \geq 0}$ which are subsets of the bases $\{ Q_\lambda \cdot a^i \}_{i \geq 0, \lambda}$ and $\{ a^i \cdot Q_\lambda \}_{i \geq 0, \lambda}$ of $\ca_\cd$, respectively. These supersets are bases since $\ca_\cd = \cd(A)[a, a^{-1}]$ as algebras in the category of left $\cd(A)$-modules and because the map defined by $Q_\lambda \cdot a^i \mapsto a^i \cdot Q_\lambda$ is an invertible algebra homomorphism. 
 
@@ -629,7 +629,7 @@ Apply the closure to both sides. Apply the framing relation to the diagrams on t
 
 \begin{lemma} \label{lemma:skewclosures}
 Define the constants
-\AP{Double check the $\upsilon_\bullet^\pm$. Should they both be negative?}
+\AP{Double check the $\upsilon_i^\pm$. Should they both be negative?}
 \begin{align*}
 \omega_{n}^+ &:= - \{n\} s^{1-n} v, \\
 \upsilon_{n}^+ &:= s^{n} [n+1] (\bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big), \\
@@ -888,8 +888,8 @@ Therefore, the first coefficient is what we claimed. Now we can simply show the 
 &= v^{-1} \big( (s^{2a-1} - s^{-1}) + (s^{2b-3} - s^{-3}) \big) - v \big( ( s - s^{1-2a}) + (s^3 - s^{3-2b}) \big).
 \end{align*}
 
-The next two are slightly different. We will avoid the complexity of $\upsilon_\bullet^\pm$ by using the relation $\upsilon_\bullet^+ + \upsilon_\bullet^- = \alpha_\bullet$. Observe:
-\AP{double check below. Make sure $\upsilon_\bullet^\pm$ is right.}
+The next two are slightly different. We will avoid the complexity of $\upsilon_i^\pm$ by using the relation $\upsilon_i^+ + \upsilon_i^- = \alpha_i$. Observe:
+\AP{double check below. Make sure $\upsilon_i^\pm$ is right.}
 \begin{align*}
 & \quad \alpha_a + s^2 \upsilon_{b-2}^+ + s^{-2}\upsilon_{b-2}^- \\
 &= \{a\}(v^{-1}s^{a-1} - vs^{1-a}) + (s^{b} - s^{-b}) [b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
@@ -900,6 +900,7 @@ The next two are slightly different. We will avoid the complexity of $\upsilon_\
 &= (s^a - s^{-a})(v^{-1}s^{a-1}-vs^{1-a}) - (s^{b} - s^{-b})(vs^{3-b}-v^{-1}s^{b-3}) \\
 \end{align*}
 and similarly
+\AP{finish from notes.}
 \begin{align*}
 & \quad -\alpha_{b-1} - s^2 \upsilon_{a-1}^+ - s^{-2} \upsilon_{a-1}^- \\
 &= \{b-1\}(v^{-1}s^{b-2} - vs^{2-b}) +
