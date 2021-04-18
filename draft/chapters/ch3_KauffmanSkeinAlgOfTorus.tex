@@ -175,7 +175,7 @@ Where the last equality follows from a quick computation in the base ring. This 
 
 \section{A Presentation of $\cd(T^2)$} \label{sec:presentation}
 
-In this section we will demonstrate the value of the elements $\tilde{P}_k$  by showing that the skein algebra $\cd(T^2)$ admits a very simple presentation. First things first, let's define the generators. Recall that given an extended rational number $r$, there is a (homotopically) distinct oriented simple closed curve on the flat torus $T^2$ with rational slope $r$, and hence a smooth embedding of the annulus 
+In this section we will demonstrate the value of the elements $\tilde{P}_k$  by showing that the skein algebra $\cd(T^2)$ admits a very simple presentation. First things first, let's define the generators. Recall that given an extended rational number $r$, there is a (homotopically) distinct oriented simple closed curve on the flat torus $T^2$ with slope $r$, and hence a smooth embedding of the annulus 
 \[
 \iota_r: A \hookrightarrow T^2
 \]
@@ -218,7 +218,7 @@ Equation \eqref{eq:perprelations} is the image of Equation \eqref{eq:powersumcom
 
 \AP{Picture of wiring.}
 
-We will not give the proof of Equation \eqref{eq:angledrelations} here \AP{This part of the proof was finished before I started working on the project}, but it may be found in \AP{MPS}. The idea given there is similar to the idea for the proof of Equation \eqref{eq:perprelations}: first show a similar relation holds in the skein algebra of the annulus relative to two points $\cd(A, [2])$ via a brute force computation, and then Equation \eqref{eq:angledrelations} is the image of this relation under a simple wiring into $\cd(T^2)$. 
+We will not give the proof of Equation \eqref{eq:angledrelations} here, but it may be found in \AP{MPS}. The idea given there is similar to the idea for the proof of Equation \eqref{eq:perprelations}: first show a similar relation holds in the skein algebra of the annulus relative to two points $\cd(A, [2])$ via a brute force computation, and then Equation \eqref{eq:angledrelations} is the image of this relation under a simple wiring into $\cd(T^2)$. 
 
 What's left for us to show here is the second statement of the proposition, that Equations \eqref{eq:perprelations} and \eqref{eq:angledrelations} imply Equation \eqref{eq:mainrelations}. We will devote the rest of this section to doing so, starting with two technical lemmas and ending with Proposition \ref{lemma_allfromsome}. 
 
@@ -482,13 +482,13 @@ Recall that the Dubrovnik skein relations satisfy the Kauffman Bracket skein rel
 \]
 whose components are essentially the identity map (more details are given in Section \ref{sec:skeintheories}). In particular, there is an algebra homomorphism from the Birman-Murakami-Wenzl algebra to the Temperley-Lieb algebra.
 
-\begin{proposition} \label{prop:symmtoJW}
+\begin{theorem} \label{thm:symmtoJW}
 Under the algebra homomorphism
 \[
 \eta_{(I^2, \underline{n})}: BMW_n \to TL_n
 \]
 the BMW symmetrizer $\tilde{y}_n$ is sent to the Jones-Wenzl idempotent $JW_n$.
-\end{proposition}
+\end{theorem}
 \begin{proof}
 The element $JW_n$ is the unique element of $TL_n$ satisfying the properties
 \begin{enumerate}
@@ -496,8 +496,55 @@ The element $JW_n$ is the unique element of $TL_n$ satisfying the properties
 \item $JW_n^2 = JW_n$,
 \item $JW_n c_i = c_i JW_n = 0$ for all cap-cup generators $c_i$. 
 \end{enumerate}
-Since $\eta_{(I^2, \underline{n})}$ is an algebra map, we just need to show that $\eta_{(I^2, \underline{n})}(\tilde{y}_n)$ is non-zero. If $n=1$, then the statement is true since $\tilde{y}_1$ and $JW_1$ are the simply the identity, a single strand. \AP{Induction with recurrence relation? or...}
- 
+Let's abuse some notation by using $\eta$ instead of $\eta_{(I^2, \underline{n+1})}$ since it should be clear from context what we mean. Since $\eta$ is an algebra map, it is true that $\eta(\tilde{y}_n)$ are idempotent and absorb $c_i$ in the same way as $JW_n$, but it is not clear if these images are non-zero. If $n=1$, then the statement is true since $\tilde{y}_1$ and $JW_1$ are the simply the identity, a single strand. We will proceed assuming the induction hypothesis, that  $\eta(\tilde{y}_k) = JW_k$ for all $k \leq n$. The Jones-Wenzl idempotents satisfy the recurrence relation
+\begin{equation}\label{eq:jwformula}
+\pic[2.7]{JW_n+1.eps} = \pic[2.7]{JWntimes1.eps} + \frac{s^{2n} - s^{-2n}}{s^{2n+2} - s^{-2n-2}} \pic[2.7]{JWncJWn.eps}
+\end{equation}
+(see \AP{Morrison paper} and substitute $q=s^2$) and recall the recurrence relation for the BMW symmetrizers
+\begin{equation}\label{eq:bmwsymmformula}
+[n+1] \pic[2.5]{y_n+1.eps} = [n]s^{-1} \pic[2.5]{shelly1.eps} + \pic[2.5]{shelly2.eps} + [n]s^{-1} \beta_n \pic[2.5]{shelly3.eps}
+\end{equation}
+where \[\beta_n = \frac{1-s^2}{s^{2n-1}v^{-1} - 1}.\]
+We finish the proof by showing that the image of Equation \eqref{eq:bmwsymmformula} is Equation \eqref{eq:jwformula} under $\eta$. So specialize $v=-s^{-3}$ and apply $\eta$ to Equation \eqref{eq:bmwsymmformula} and use the induction hypothesis to get
+\begin{equation} \label{eq:jwproof1}
+[n+1] \pic[2.5]{eta_n+1.eps} = [n]s^{-1} \pic[2.5]{JWshelly1.eps} + \pic[2.5]{JWshelly2.eps} + \frac{s^n - s^{-n}}{s^{2n+2} + 1} \pic[2.5]{JWshelly3.eps}
+\end{equation}
+which is true after calculating $\eta([n]s^{-1} \beta_n)$. First, let's work with the second diagram on the right-hand side.
+\begin{align*}
+\pic[2.7]{JWshelly2.eps} = \pic[2.7]{JWshelly2dupe.eps} &= s \pic[2.7]{JWshelly2dupea.eps} + s^{-1} \pic[2.7]{JWshelly2dupeb.eps} \\
+&= s^n \pic[2.7]{JWshelly1.eps} + s^{-n} \pic[2.7]{JWshelly3.eps}
+\end{align*}
+since $\sigma_i JW_n = JW_n \sigma_i = s JW_n$ for a positive crossing $\sigma_i$. So Equation \eqref{eq:jwproof1} becomes
+\begin{equation} \label{eq:jwproof2}
+[n+1] \pic[2.2]{eta_n+1.eps} = \left([n]s^{-1} + s^n\right) \pic[2.2]{JWshelly1.eps} + \left(\frac{s^n - s^{-n}}{s^{2n+2} + 1} + s^{-n}\right) \pic[2.2]{JWshelly3.eps}.
+\end{equation}
+Let's divide both sides of Equation \eqref{eq:jwproof2} by $[n+1]$ and simplify the constants slightly.
+\begin{equation} \label{eq:jwproof3}
+\pic[2.7]{eta_n+1.eps} = \pic[2.7]{JWshelly1.eps} + \frac{(s^{n+2} - s^{-n-2}) + (s^n - s^{-n})}{(s^{n+2} - s^{-n-2}) - (s^n - s^{-n})} \pic[2.7]{JWshelly3.eps}
+\end{equation}
+Take the first diagram on the right-hand side and rewrite it using the following technique.
+\begin{align*}
+\pic[2.7]{JWshelly1.eps} = \pic[2.7]{JWshelly1wrap.eps} &= s \pic[2.7]{JWshelly1wrapa.eps} + s^{-1} \pic[2.7]{JWshelly1wrapb.eps} \\
+&= s^n \pic[2.7]{JWshelly1wrapa2.eps} + s^{n-2} \pic[2.7]{JWshelly1wrapb2.eps} \\
+&= s^n \pic[2.7]{JWshelly1wrapa2absorb.eps} + s^{n-2} \pic[2.7]{JWshelly1wrapb2.eps}
+\end{align*}
+We can also rewrite the second diagram on the right-hand side of Equation \eqref{eq:jwproof3} in a similar way.
+\begin{align*}
+\pic[2.7]{JWshelly3.eps} &= \pic[2.7]{JWshelly3wrap.eps} = -s^{-3} \pic[2.7]{JWshelly3wraptwist.eps} = -s^{-n-2} \pic[2.7]{JWshelly1wrapb2.eps}
+\end{align*}
+Then Equation \eqref{eq:jwproof3} becomes
+\begin{equation}
+\pic[2.4]{eta_n+1.eps} = s^n \pic[2.4]{JWshelly1wrapa2absorb.eps} + \left(s^{n-2} - \frac{1 - s^{-2n-4} + s^{-2} - s^{-2n-2}}{s^{n+2} - s^{-n-2} - s^n + s^{-n}} \right) \pic[2.4]{JWshelly1wrapb2.eps}
+\end{equation}
+Multiply both sides of the equation by $\sigma_n \cdots \sigma_1$ to get the equation
+\begin{equation} \label{eq:jwproof5}
+\pic[2.4]{eta_n+1sigma.eps} = s^n \pic[2.4]{JWntimes1.eps} + \left(s^{n-2} - \frac{1 - s^{-2n-4} + s^{-2} - s^{-2n-2}}{s^{n+2} - s^{-n-2} - s^n + s^{-n}} \right) \pic[2.4]{JWncJWn.eps}
+\end{equation}
+On the left-hand side, the crossings are absorbed and scale the diagram by $s^n$. Divide both sides by $s^n$. One can show that the equality of scalars
+\[
+s^{-n} \left(s^{n-2} - \frac{1 - s^{-2n-4} + s^{-2} - s^{-2n-2}}{s^{n+2} - s^{-n-2} - s^n + s^{-n}} \right) = \frac{s^{2n} - s^{-2n}}{s^{2n+2} - s^{-2n-2}}
+\]
+hold in the base ring. The right-hand side of the resulting equation is precisely the right-hand side of Equation \eqref{eq:jwformula}. Therefore, $\eta(\tilde{y}_{n+1} = JW_{n+1}$, which completes the proof. 
 \end{proof}
 
 \begin{remark}
@@ -509,7 +556,7 @@ H_n \arrow[dr, "{\pi_{TL}}", two heads] & \\
 	& TL_n
 \end{tikzcd}
 \end{center}
-\textbf{does not commute} since $\pi_H(c_i)=0$. However, Proposition \ref{prop:symmtoJW} shows that restricting the maps of the diagram on the relevant idempotents \textit{does} commute.
+\textit{does not commute} since $\pi_H(c_i)=0$. However, Theorem \ref{thm:symmtoJW} shows that restricting the maps of the diagram on the relevant idempotents \textit{does} commute.
 \end{remark}
 
 It was mentioned in Section \ref{sec:skeintheories} that \textit{Chebyshev polynomials} are imporant elements of the skein algebra $\ck(A) = R[z]$. Let's now elaborate what that means. The 
