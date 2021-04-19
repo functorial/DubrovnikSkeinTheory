@@ -172,6 +172,12 @@ We will work the right-hand side of this above equation down to the left-hand si
 Where the last equality follows from a quick computation in the base ring. This completes the proof.
 \end{proof}
 
+\begin{remark}
+Theorem \ref{thm:powersumcommutator} is part of a Dubrovnik generalization of the ``Miraculous Cancellations" first proven by Bonahon and Wong in \AP{BW} and again by Lê using only skein theoretic methods in \AP{Lê}. Under the natural transformation $\eta:\cd \to \ck$, the $\tilde{P}_k$ are sent to the Chebyshev polynomials $T_k$ (see Section \ref{sec:bracketcompatibility}), and the relation of Theorem \ref{thm:powersumcommutator} is sent to a commutation relation for the $T_k$. Now, if $s$ is specialized to be a $2k$-th root of unity so that $s^k = s^{-k}$, then the commutation relation implies that any threading of $T_k$ in any skein algebra $\ck_{s^{2k}=1}(\Sigma)$ is a central element. More generally, a threading in any skein module $\ck_{s^{2k}=1}(M, N)$ is \textit{transparent}, which essentially means it may move freely about the space, past any tangle. This gives rise to the \textbf{Chebyshev-Frobenius homomorphism}, first defined for skein algebras in \AP{BW} and extended to general relative skein modules in \AP{Le-Paprocki}.
+
+It would be nice to say that Theorem \ref{thm:powersumcommutator} implies a generalization of the Chebyshev-Frobenius homomorphism for Dubrovnik skein modules, but there is a major problem which is that our choice of base ring is $\Q(s,v)$, which doesn't allow for specializations to roots of unity. This choice is also used in \AP{BB} and subsequently \AP{ZL}, whose results we use here in a fundamental way. Even in the literature regarding HOMFLYPT skein theory, the elements $(s^k - s^{-k})^{-1}$ are adjoined to the base ring. It would be interesting to see if this problem may be resolved somehow, but it is not something we address outside of this remark. 
+\end{remark}
+
 
 \section{A Presentation of $\cd(T^2)$} \label{sec:presentation}
 
@@ -474,7 +480,7 @@ This together with Assumption (\ref{assumption1}) and Lemma \ref{lemma_trueforab
 
 \section{Relationships With $\ck(T^2)$ and $\ch(T^2)$} \label{sec:compatibility}
 
-\subsection{The Kauffman Bracket Case}
+\subsection{The Kauffman Bracket Case} \label{sec:bracketcompatibility}
 
 Recall that the Dubrovnik skein relations satisfy the Kauffman Bracket skein relations, and hence there is a natural transformation of functors
 \[
@@ -544,7 +550,7 @@ On the left-hand side, the crossings are absorbed and scale the diagram by $s^n$
 \[
 s^{-n} \left(s^{n-2} - \frac{1 - s^{-2n-4} + s^{-2} - s^{-2n-2}}{s^{n+2} - s^{-n-2} - s^n + s^{-n}} \right) = \frac{s^{2n} - s^{-2n}}{s^{2n+2} - s^{-2n-2}}
 \]
-hold in the base ring. The right-hand side of the resulting equation is precisely the right-hand side of Equation \eqref{eq:jwformula}. Therefore, $\eta(\tilde{y}_{n+1} = JW_{n+1}$, which completes the proof. 
+hold in the base ring. The right-hand side of the resulting equation is precisely the right-hand side of Equation \eqref{eq:jwformula}. Therefore, $\eta(\tilde{y}_{n+1}) = JW_{n+1}$, which completes the proof. 
 \end{proof}
 
 \begin{remark}
@@ -564,7 +570,7 @@ It was mentioned in Section \ref{sec:skeintheories} that \textit{Chebyshev polyn
 \[
 C^U_0 = 1, \qquad \qquad C^U_1 = 2z, \qquad \qquad C^U_n = 2 z C^U_{n-1} - C^U_{n-2}.
 \]
-Let's consider slightly modified versions $U_n := C_n^U(z/2)$. These polynomials have amazing properties, most of which we won't discuss here. One such fact is that the annular closure of the Jones-Wenzl idempotent $JW_n$ is equal to $U_n(z)$ \AP{reference??}. 
+Let's consider slightly modified versions $U_n := C_n^U(z/2)$. These polynomials have amazing properties, most of which we won't discuss here. One such fact is that the annular closure of the Jones-Wenzl idempotent $JW_n$ is equal to $U_n(z)$. This can be shown by taking the annular closure of Equation \eqref{eq:jwformula}, the recurrence relation for the $JW_n$, and using some well-known identities to show that the result is the same as the recurrence relation $U_{n+1} = z U_{n} - U_{n-1}$.
 
 There are also \textbf{Chebyshev polynomials of the first kind} $C^T_k = C^T_k(z)$ which are defined recursively as
 \[
@@ -595,7 +601,7 @@ If we show that the following equality holds
 \[
 \sum_{k=1}^\infty \frac{T_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty U_n t^n \Bigg)
 \]
-then the proof is complete since $\eta_A(\tilde{h}_n)=U_n$. The Chebyshev polynomials admit well-known generating functions (see Wikipedia)
+then the proof is complete since $\eta_A(\tilde{h}_n)=U_n$. The Chebyshev polynomials admit well-known generating functions (see Wikipedia, for example)
 \begin{align*}
 \sum_{n \geq 0} C_n^U(z)t^n &= \frac{1}{1-2tz+t^2} \\
 \sum_{k \geq 1} C_k^T(z)\frac{t^k}{k} &= \ln \left( \frac{1}{\sqrt{1-2tz+t^2}} \right).
@@ -722,7 +728,7 @@ The statement is trivial if $n=0$. By induction on positive $n$, one can express
 \[
     B_{\yy+n\zz} = \{ d \}^{-1} \Big( [B_{\yy+ (n-1)\zz}, B_\zz] + \{ d \} B_{\yy+(n-2)\zz} \Big)
 \]
-which holds for $n=1$ by Theorem \ref{thm:algebra}. Since $B_\zz = B_{-\zz}$, we can repeat a similar induction to generate $B_{\yy -n\zz}$:
+which holds for $n=1$ by Theorem \ref{thm:toruspresentation}. Since $B_\zz = B_{-\zz}$, we can repeat a similar induction to generate $B_{\yy -n\zz}$:
 \[
     B_{\yy-n\zz} = \{ d \}^{-1} \Big( [ B_{\yy-(n-1)\zz}, B_{-\zz} ] + \{ d \} B_{\yy-(n-2)\zz} \Big)
 \]
