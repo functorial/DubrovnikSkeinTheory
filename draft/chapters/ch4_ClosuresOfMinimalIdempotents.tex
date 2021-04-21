@@ -601,9 +601,13 @@ e \cdot h(m, k-l) & (s^2 - 1) \varsigma^+ (m, k-l) + (s^{-2} - 1) \varsigma^- (m
 
 Let $\textrm{cl}_\ca : \ca \to \cc$ be the wiring which connects the two boundary points of $\ca$ by an arc above the annulus. 
 
-\AP{picture}
+\begin{figure}[h]
+\centering
+$\pic[7]{cla.eps}$
+\caption{The wiring diagram which defines $\textrm{cl}_\ca : \ca \to \cc$.}
+\end{figure}
 
-This map is not an multiplicative map. The following identity is a generalization of Lemma 8.3 in Lukac. \AP{I think Shelly wrote about this. Make sure to cite him where necessary.}
+This map is not unital nor multiplicative, but it is a right $\cc$-module homomorphism. Furthermore, the closure $\cl_\ca(x \cdot e)$ is the element $\phi(x)$ which is the meridian map $\phi$ applied to $x$. The following identity is a generalization of Lemma 8.3 in Lukac. \AP{I think Shelly wrote about this. Make sure to cite him where necessary.}
 
 \begin{lemma} \label{lemma:tclosure}
 Let 
@@ -692,9 +696,9 @@ for any $n$.
 
 Next we state the main proposition of this section.
 \begin{proposition} \label{prop:schureigenvalues}
-Let $\Gamma: \cc \to \cc$ be the meridian map. Then
+Let $\phi: \cc \to \cc$ be the meridian map. Then
 \begin{equation}
-\Gamma ( S_\lambda ) = c_\lambda S_\lambda
+\phi ( S_\lambda ) = c_\lambda S_\lambda
 \end{equation}
 where
 \begin{equation}
@@ -717,12 +721,15 @@ S_\lambda = \frac{1}{2} \det \left( \tilde{h}_\lambda(i, j) \right)_{0 \leq i, j
 where the $1/2$ coefficient comes from multilinearity in the first column, and is only for the sake of uniformity of the entries. 
 Using the determinant formula above, we can write this element as a telescoping sum.
 \begin{equation}
-\Omega_\lambda = \frac{1}{2} \sum_{j=0}^{r-1}
+\begin{split}
+&\quad\,\, \Omega_\lambda \\
+&= \frac{1}{2} \sum_{j=0}^{r-1}
 \begin{vmatrix}
 \tilde{h}_\lambda (0, 0) \cdot e & \cdots & \tilde{h}_\lambda (0, j-1) \cdot e & t_\lambda (0, j) & e \cdot \tilde{h}_\lambda (0, j+1) & \cdots & e \cdot \tilde{h}_\lambda (0, r-1) \\ 
 \vdots & & \vdots & \vdots & \vdots & & \vdots \\
 \tilde{h}_\lambda (r-1, 0) \cdot e & \cdots & \tilde{h}_\lambda (r-1, j-1) \cdot e & t_\lambda (r-1, j) & e \cdot \tilde{h}_\lambda (r-1, j+1) & \cdots & e \cdot \tilde{h}_\lambda (r-1, r-1)
 \end{vmatrix}
+\end{split}
 \end{equation}
 
 Examine the $j^{\textrm{th}}$ summand where $j \neq 0$. We can iteratively apply Laplace expansions to this determinant to get a sum
@@ -737,16 +744,17 @@ for some $A_{i_1, i_2} \in \ca$. We want to change the order order of the action
 
 For any choice of $i_1, i_2$, we may apply Lemma \ref{lemma:detgymnastics4} to write
 \begin{align*}
+& \quad \,\,
 \begin{vmatrix}
 \tilde{h}_\lambda (i_1, j-1)\cdot e & t_\lambda (i_1, j) \\
 \tilde{h}_\lambda (i_2, j-1)\cdot e & t_\lambda (i_2, j)
-\end{vmatrix} 
-=&
+\end{vmatrix} \\
+&=
 \begin{vmatrix}
 e \cdot \tilde{h}_\lambda (i_1, j-1) & s^2 \varsigma_\lambda^+ (i_1, j-1) + s^{-2} \varsigma_\lambda^- (i_1, j-1) - t(i_1, j-2) \\
 e \cdot \tilde{h}_\lambda (i_2, j-1) & s^2 \varsigma_\lambda^+ (i_2, j-1) + s^{-2} \varsigma_\lambda^- (i_2, j-1) - t(i_2, j-2) 
 \end{vmatrix}\\
-&+
+&\quad\,\, +
 \sum_{l=1}^{j}
 \begin{vmatrix}
 e \cdot \tilde{h}_\lambda(i_1, j-1-l) & (s^2 - 1) \varsigma_\lambda^+ (i_1, j-1-l) + (s^{-2} - 1) \varsigma_\lambda^- (i_1, j-1-l) \\
@@ -872,7 +880,8 @@ The conjecture claims that all of these coefficients are equal to the appropriat
 \begin{align*}
 \alpha_a + s^2 \omega_b^+ + s^{-2}\omega_b^- &= \{a\} (v^{-1}s^{a-1} - v s^{1-a} ) - \{b\}vs^{3-b} + \{b\}v^{-1}s^{b-3} \\
 &= (s^a - s^{-a}) (v^{-1}s^{a-1} - v s^{1-a} ) -  (s^b - s^{-b})(vs^{3-b} - v^{-1}s^{b-3}) \\
-&= (v^{-1} s^{2a-1} - vs - v^{-1}s^{-1} + vs^{1-2a}) - (vs^3 - v^{-1}s^{2b-3} - vs^{3-2b} + v^{-1}s^{-3}) \\
+&= (v^{-1} s^{2a-1} - vs - v^{-1}s^{-1} + vs^{1-2a}) - \\
+& \quad\,\, (vs^3 - v^{-1}s^{2b-3} - vs^{3-2b} + v^{-1}s^{-3}) \\
 &= v^{-1} \big( (s^{2a-1} - s^{-1}) + (s^{2b-3} - s^{-3}) \big) - v \big( ( s - s^{1-2a}) + (s^3 - s^{3-2b}) \big) \\
 &= v^{-1} \left( (s-s^{-1}) \sum_{i=0}^{a-1} s^{2a - 2 - 2i} + (s-s^{-1}) \sum_{i=0}^{b-1} s^{2b-4-2i} \right) \\
 &\quad v \left( (s-s^{-1}) \sum_{i=0}^{a-1} s^{-2i} + (s-s^{-1}) \sum_{i=0}^{b-1} s^{2-2i} \right) \\
@@ -893,7 +902,8 @@ The next two are slightly different. We will avoid the complexity of $\upsilon_i
 \begin{align*}
 & \quad \alpha_a + s^2 \upsilon_{b-2}^+ + s^{-2}\upsilon_{b-2}^- \\
 &= \{a\}(v^{-1}s^{a-1} - vs^{1-a}) + (s^{b} - s^{-b}) [b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
-&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})[b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) \\
+&= \quad\,\, + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})[b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
 &= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(\upsilon_{b-2}^+ + \upsilon_{b-2}^-) \\
 &= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}\alpha_{b-2} \\
 &= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) - (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})(vs^{3-b}-v^{-1}s^{b-3}) \\
@@ -926,10 +936,9 @@ S_\lambda =
 \end{vmatrix}
 \]
 Then use multilinearity of determinant to express the commutator.
-\begin{equation*}
-\begin{split}
-&S_\lambda \cdot e - e \cdot S_\lambda = \\
-&\begin{vmatrix}
+\begin{align*}
+&\quad\,\, S_\lambda \cdot e - e \cdot S_\lambda \\
+&=\begin{vmatrix}
 t_2 & e \cdot (\tilde{h}_3 + \tilde{h}_1 ) & e \cdot ( \tilde{h}_4 + \tilde{h}_0 ) \\
 t_0 & e \cdot ( \tilde{h}_1 + \tilde{h}_{-1} ) & e \cdot ( \tilde{h}_2  + \tilde{h}_{-2} ) \\
 t_{-1} & e \cdot ( \tilde{h}_0 + \tilde{h}_{-2} ) & e \cdot ( \tilde{h}_1 + \tilde{h}_{-3} )
@@ -939,18 +948,17 @@ t_{-1} & e \cdot ( \tilde{h}_0 + \tilde{h}_{-2} ) & e \cdot ( \tilde{h}_1 + \til
 \tilde{h}_2 \cdot e & t_3 + t_1 & e \cdot ( \tilde{h}_4 + \tilde{h}_0 ) \\
 \tilde{h}_0 \cdot e & t_1 + t_{-1} & e \cdot ( \tilde{h}_2  + \tilde{h}_{-2} ) \\
 \tilde{h}_{-1} \cdot e & t_0 + t_{-2} & e \cdot ( \tilde{h}_1 + \tilde{h}_{-3} )
-\end{vmatrix}
-+
+\end{vmatrix} \\
+&\quad\,+
 \begin{vmatrix}
 \tilde{h}_2 \cdot e & ( \tilde{h}_3 + \tilde{h}_1 ) \cdot e & t_4 + t_0 \\
 \tilde{h}_0 \cdot e & ( \tilde{h}_1 + \tilde{h}_{-1} ) \cdot e & t_2  + t_{-2} ) \\
 \tilde{h}_{-1} \cdot e & ( \tilde{h}_0 + \tilde{h}_{-2} ) \cdot e & t_1 + t_{-3}
 \end{vmatrix}
-\end{split}
-\end{equation*}
+\end{align*}
 The third determinant of this sum can be expanded as
-\[
-( \tilde{h}_2 \cdot e )
+\begin{align*}
+&( \tilde{h}_2 \cdot e )
 \begin{vmatrix}
 ( \tilde{h}_1 + \tilde{h}_{-1} ) \cdot e & t_2 + t_{-2} \\
 ( \tilde{h}_0 + \tilde{h}_{-2} ) \cdot e & t_1 + t_{-3}
@@ -959,13 +967,13 @@ The third determinant of this sum can be expanded as
 \begin{vmatrix}
 ( \tilde{h}_3 + \tilde{h}_1 ) \cdot e & t_4 + t_0 \\
 ( \tilde{h}_0 + \tilde{h}_{-2} ) \cdot e & t_1 + t_{-3}
-\end{vmatrix}
-+ ( \tilde{h}_{-1} \cdot e ) 
+\end{vmatrix} \\
+&\quad + ( \tilde{h}_{-1} \cdot e ) 
 \begin{vmatrix}
 ( \tilde{h}_3 + \tilde{h}_1 ) \cdot e & t_4 + t_0 \\
 ( \tilde{h}_1 + \tilde{h}_{-1}) \cdot e & t_2 + t_{-2}
 \end{vmatrix}
-\]
+\end{align*}
 It is now clear we need Lemma \ref{lemma:detgymnastics3}. Sub in $n=0, m=-1, k=1$.
 
 \end{example}
@@ -974,6 +982,67 @@ It is now clear we need Lemma \ref{lemma:detgymnastics3}. Sub in $n=0, m=-1, k=1
 
 
 
-\section{A central element of $BMW_n$}
+\section{Central Elements of $BMW_n$}
 
-\AP{The meridian map applied to the identity can be expressed as a linear combination of simple braids, similar to the Murphy operator paper.}
+Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \sigma_{i-1} \in BMW_n$ for $2 \leq i \leq n$ and set $M_{1,n}$ to be the identity. The set of $M_{n, i}$ in $BMW_n$ are called the \textbf{BMW Jucys-Murphy elements}, which are invertible and are known to be central (see \AP{Isaev-Ogievetsky}). 
+\begin{figure}[h]
+\centering
+$M_{n,i} = \pic[5]{murphy.eps}$
+\caption{The Jucys-Murphy element wraps the $i^\textrm{th}$ strand around the first $i-1$ strands.}
+\end{figure}
+These generalize the well-known Jucys-Murphy elements of the symmetric group algebra $\C[S_n]$, where symmetric polynomials in the Jucys-Murphy elements generate the center $Z\left(\C[S_n]\right)$.
+
+There is a homomorphism $\psi_n: \cd(A) \to BMW_n$ defined so that $\psi_n(x)$ is the element $x$ threaded by a meridian around the identity of $BMW_n$.
+\begin{figure}
+\centering
+$\psi_n(x) = \pic[5]{meridianx.eps}$
+\caption{The image of $x$ under the homomorphism $\psi_n$.}
+\end{figure}
+The image of $\psi_n$ is clearly central. In the next proposition, we give a simple application which expresses $\psi_n(\tilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements and their inverses. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \AP{Morton}.
+
+\begin{proposition} \label{prop:murphy}
+For any $k \geq 1$, we may represent $\psi_n(\tilde{P}_k)$ as
+\begin{equation}
+\psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^n v^{-1} M_{n, i}^k - v M_{n, i}^{-k}
+\end{equation}
+where $\langle \tilde{P}_k \rangle$ is the evaluation of $\tilde{P}_k$ in a $3$-ball. 
+\end{proposition}
+\begin{proof}
+Induct on $n$. For $n=0$, the meridian wraps around no strands, so it's clear that $\psi_0(\tilde{P}_k) = \langle \tilde{P}_k \rangle$. Assume the induction hypothesis, that the statement is true for all $n<i$. Apply Theorem \ref{thm:powersumcommutator} to move $\tilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+\begin{align*}
+& \quad \pic[2.4]{meridianpk.eps} \\
+&= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) \left( \pic[2.4]{murphya1}\right)^k - (s^{k}-s^{-k}) \left(\pic[2.4]{murphyb1}\right)^k \\
+&= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) v^{-1} \left(\pic[2.4]{murphya2}\right)^k - (s^{k}-s^{-k}) v \left(\pic[2.4]{murphyb2}\right)^k \\
+&= \psi_{n-1}(\tilde{P}_k) \otimes \id_1  + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
+&= \left( \langle \tilde{P}_k \rangle M_{n-1,1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n-1,i} - v M_{n-1,i}^{-1} \right) \otimes \id_1 \\
+&\quad\, + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
+&= \langle \tilde{P}_k \rangle M_{n-1,1} \otimes \id_1 + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n-1,i}\otimes \id_1 - v M_{n-1,i}^{-1}\otimes \id_1 \\
+&\quad\, + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
+&= \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n,i} - v M_{n,i}^{-1} + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
+&= \psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^n v^{-1} M_{n, i}^k - v M_{n, i}^{-k}
+\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
