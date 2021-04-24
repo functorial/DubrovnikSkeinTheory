@@ -984,7 +984,7 @@ It is now clear we need Lemma \ref{lemma:detgymnastics3}. Sub in $n=0, m=-1, k=1
 
 \section{Central Elements of $BMW_n$}
 
-Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \sigma_{i-1} \in BMW_n$ for $2 \leq i \leq n$ and set $M_{1,n}$ to be the identity. The set of $M_{n, i}$ in $BMW_n$ are called the \textbf{BMW Jucys-Murphy elements}, which are invertible and are known to be central (see \AP{Isaev-Ogievetsky}). 
+Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \sigma_{i-1} \in BMW_n$ for $2 \leq i \leq n$. The set of $M_{n, i}$ in $BMW_n$ are called the \textbf{BMW Jucys-Murphy elements}, which are invertible and generate a commutative subalgebra (see \AP{Isaev-Ogievetsky}). 
 \begin{figure}[h]
 \centering
 $M_{n,i} = \pic[5]{murphy.eps}$
@@ -995,15 +995,15 @@ These generalize the well-known Jucys-Murphy elements of the symmetric group alg
 There is a homomorphism $\psi_n: \cd(A) \to BMW_n$ defined so that $\psi_n(x)$ is the element $x$ threaded by a meridian around the identity of $BMW_n$.
 \begin{figure}
 \centering
-$\psi_n(x) = \pic[5]{meridianx.eps}$
+$\psi_n(x) = \pic[4]{meridianx.eps}$
 \caption{The image of $x$ under the homomorphism $\psi_n$.}
 \end{figure}
-The image of $\psi_n$ is clearly central. In the next proposition, we give a simple application which expresses $\psi_n(\tilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements and their inverses. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \AP{Morton}.
+The image of $\psi_n$ is clearly central. In the next proposition, we give a simple application which expresses $\psi_n(\tilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements, their inverses, and the identity. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \AP{Morton}.
 
 \begin{proposition} \label{prop:murphy}
 For any $k \geq 1$, we may represent $\psi_n(\tilde{P}_k)$ as
 \begin{equation}
-\psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^n v^{-1} M_{n, i}^k - v M_{n, i}^{-k}
+\psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
 \end{equation}
 where $\langle \tilde{P}_k \rangle$ is the evaluation of $\tilde{P}_k$ in a $3$-ball. 
 \end{proposition}
@@ -1012,14 +1012,14 @@ Induct on $n$. For $n=0$, the meridian wraps around no strands, so it's clear th
 \begin{align*}
 & \quad \pic[2.4]{meridianpk.eps} \\
 &= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) \left( \pic[2.4]{murphya1}\right)^k - (s^{k}-s^{-k}) \left(\pic[2.4]{murphyb1}\right)^k \\
-&= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) v^{-1} \left(\pic[2.4]{murphya2}\right)^k - (s^{k}-s^{-k}) v \left(\pic[2.4]{murphyb2}\right)^k \\
-&= \psi_{n-1}(\tilde{P}_k) \otimes \id_1  + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
-&= \left( \langle \tilde{P}_k \rangle M_{n-1,1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n-1,i} - v M_{n-1,i}^{-1} \right) \otimes \id_1 \\
-&\quad\, + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
-&= \langle \tilde{P}_k \rangle M_{n-1,1} \otimes \id_1 + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n-1,i}\otimes \id_1 - v M_{n-1,i}^{-1}\otimes \id_1 \\
-&\quad\, + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
-&= \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n,i} - v M_{n,i}^{-1} + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
-&= \psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^n v^{-1} M_{n, i}^k - v M_{n, i}^{-k}
+&= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) v^{-k} \left(\pic[2.4]{murphya2}\right)^k - (s^{k}-s^{-k}) v^k \left(\pic[2.4]{murphyb2}\right)^k \\
+&= \psi_{n-1}(\tilde{P}_k) \otimes \id_1  + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&= \left( \langle \tilde{P}_k \rangle \id_{n-1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-k} M_{n-1,i}^k - v^k M_{n-1,i}^{-k} \right) \otimes \id_1 \\
+&\quad\, + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&= \langle \tilde{P}_k \rangle \id_{n-1} \otimes \id_1 + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n-1,i}^k \otimes \id_1 - v^k M_{n-1,i}^{-k}\otimes \id_1 \right) \\
+&\quad\, + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^{-k} M_{n,n}^{-k}) \\
+&= \langle \tilde{P}_k \id_n + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n,i}^k - v^k M_{n,i}^{-k} \right) + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&=  \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
 \end{align*}
 \end{proof}
 

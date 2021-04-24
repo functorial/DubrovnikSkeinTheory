@@ -134,7 +134,7 @@ Here, we are forced to fix a base ring. For our purposes, $R$ must be a commutat
 \begin{example}[\textit{Kauffman (Dubrovnik) Skein Relations}]
 Let $X_1$ be the set of two unoriented skein relations
 \begin{flalign*}
-    (1) \quad \vcenter{\hbox{\includegraphics{poscross.eps}}} &= \vcenter{\hbox{\includegraphics{negcross.eps}}} + (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{idresolution.eps}}} - (s-s^{-1}) \,\, \vcenter{\hbox{\includegraphics{capcupresolution.eps}}} \\ \\
+    (1) \quad \vcenter{\hbox{\includegraphics{poscross.eps}}} &= \vcenter{\hbox{\includegraphics{negcross.eps}}} + (s-s^{-1}) \,\, \left( \vcenter{\hbox{\includegraphics{idresolution.eps}}} - \,\, \vcenter{\hbox{\includegraphics{capcupresolution.eps}}} \right) \\ \\
     (2) \quad \vcenter{\hbox{\includegraphics{vh.eps}}} &= v \,\, \vcenter{\hbox{\includegraphics{frameresolution.eps}}}.
 \end{flalign*}
 The functor $\cd(-,-) := \cs_{X_1}(-,-)$ is the Dubrovnik skein theory (sometimes just called the Kauffman skein theory). We will use the notation $\mathsf{D}(-) := \sfskein_{X_1}(-)$ for the Dubrovnik skein categories. Using the Dubrovnik variant is important for us (see Corollary \ref{cor:liealgebra1}). This theory is related to Dubrovnik polynomials in that the Dubrovnik polynomial of a link is a normalized value of the link in $\cd(S^3)$. The normalization is often so that the Dubrovnik polynomial of the unknot is $1$, whereas the value of the unknot in $\cd(S^3)$ is $\delta_\cd := 1 - \frac{v-v^{-1}}{s-s^{-1}}$, which can be deduced from the skein relations.
@@ -316,14 +316,14 @@ First we will restrict ourselves to the HOMFLYPT case, for which we summarize th
 
 \begin{figure}[h]
 \centering
-$e = \pic[4]{einA.eps} \qquad \qquad \qquad \qquad a = \pic[4]{ainA.eps}$
+$e = \pic[5]{einA.eps} \qquad \qquad \qquad \qquad a = \pic[5]{ainA.eps}$
 \caption{On the left is the identity elements $e \in \ca_\ch$. To the right is what we denote by $a \in \ca_\ch$.}
 \end{figure}
 
 Let $\cc_\ch := \ch(A)$. Then, $\cc_\ch$ admits both a left $\cc_\ch$-action by pushing links infront of tangles in $\ca_\ch$.
 It is known that there is an equality of algebras between $\ca_\ch$ and the Laurent polynomial algebra $\cc_\ch[a, a^{-1}]$. In particular, $\ca_\ch$ is commutative and the left action is determined by how it acts on $e$. Analagously, there is a right $\cc_\ch$-action by pulling links in behind tangles in $\ca_\ch$. 
-
-\begin{figure}
+\AP{Orient these diagrams}
+\begin{figure}[h]
 \centering
 $\cl(x) \cdot e = \pic[5]{LeftAction.eps} \qquad \qquad e \cdot \cl(x) = \pic[5]{RightAction.eps}$
 \caption{Here we have the annular closure of some $x$ acting separately on both the left and right of the identity $e$.}
