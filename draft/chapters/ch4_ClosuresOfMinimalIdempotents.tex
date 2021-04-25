@@ -3,7 +3,7 @@
 
 \section{Commutation Relations For BMW and Hecke Symmetrizer Closures} \label{sec:morecommutationrelations}
 
-This next theorem follows directly from Equation \eqref{eq:skewcommutator2}, which makes it equivalent to Theorem \ref{thm:powersumcommutator} in some sense. This expresses the left $\cd(A)$-action on $\ca_\cd$ in terms of the right action, and vice versa. This implies a commutation relation for the closures of the BMW symmetrizers in terms of either the elements of the set $\{\tilde{h}_j \cdot a^i \}_{j, i}$ or $\{ a^i \cdot \tilde{h}_j \}_{j, i \geq 0}$ which are subsets of the bases $\{ Q_\lambda \cdot a^i \}_{i \geq 0, \lambda}$ and $\{ a^i \cdot Q_\lambda \}_{i \geq 0, \lambda}$ of $\ca_\cd$, respectively. These supersets are bases since $\ca_\cd = \cd(A)[a, a^{-1}]$ as algebras in the category of left $\cd(A)$-modules and because the map defined by $Q_\lambda \cdot a^i \mapsto a^i \cdot Q_\lambda$ is an invertible algebra homomorphism. 
+This next theorem follows directly from Equation \eqref{eq:skewcommutator2}, which makes it equivalent to Theorem \ref{thm:powersumcommutator} in some sense. This expresses the left $\cd(A)$-action on $\ca_\cd$ in terms of the right action, and vice versa. This implies a commutation relation for the closures of the BMW symmetrizers in terms of either the elements of the set $\{\tilde{h}_j \cdot a^i \}_{j, i}$ or $\{ a^i \cdot \tilde{h}_j \}_{j, i \geq 0}$ which are subsets of the bases $\{ \widetilde{Q}_\lambda \cdot a^i \}_{i \geq 0, \lambda}$ and $\{ a^i \cdot \widetilde{Q}_\lambda \}_{i \geq 0, \lambda}$ of $\ca_\cd$, respectively. These supersets are bases since $\ca_\cd = \cd(A)[a, a^{-1}]$ as algebras in the category of left $\cd(A)$-modules and because the map defined by $\widetilde{Q}_\lambda \cdot a^i \mapsto a^i \cdot \widetilde{Q}_\lambda$ is an invertible algebra homomorphism. 
 
 \begin{theorem} \label{prop:hncommutator}
 For any $n \geq 1$, the relations
@@ -141,16 +141,10 @@ where the last equality follows from the substitution $j=l+1$.
 
 
 
-
-
-
-
-\AP{copied from notes.}
-
 \section{Type B/C/D Schur Functions and BMW Idempotent Closures} \label{sec:Lukac}
 In \AP{Lukac}, it is shown using skein theory techniques that there is an algebra isomorphism between the ring of symmetric functions $\Lambda$ and the positive part of the skein algebra of the annulus $\ch(A)^+$. The isomorphism is defined on generators by sending the complete homogeneous symmetric functions to the annular closures of Hecke symmetrizers. Futhermore, it is shown that the image of the Schur function $s_\lambda$ is the idempotent closure $Q_\lambda$. This fact has many implications. For example, the structure constants of $\ch(A)^+$ in the basis $\{ Q_\lambda \}_\lambda$ are the Littlewood-Richardson constants. Also, the definition of $P_k$ implies that these elements truly correspond with the power sum symmetric functions. Through this isomorphism, one could transfer structure of $\Lambda$ to $\ch(A)^+$, such as the Hopf algebra structure or the plethysm structure (see \AP{Morton-Manchon}). 
 
-From a Lie-theoretic perspective, the ring of symmetric polynomials $\Lambda_N$ in $N$ variables is the ring of polynomial representations of $GL_n(\C)$. There are maps of graded rings $\Lambda_n \to \Lambda_{n-1}$ defined by specializing the $N^{\mathrm{th}}$ variable to $0$, which together form an inverse system whose inverse limit in the category of graded rings is isomorphic to $\Lambda$. This strengthens the existing relationship between the HOMFLYPT skein theory and $GL_n(\C)$ (recall that the skein relations are modeled after relations of morphisms in $U_q(\mathfrak{gl}_n)-Mod$). 
+From a Lie-theoretic perspective, the ring of symmetric polynomials $\Lambda_N$ in $N$ variables is the ring of polynomial representations of $GL_n(\C)$. There are maps of graded rings $\Lambda_n \to \Lambda_{n-1}$ defined by specializing the $N^{\mathrm{th}}$ variable to $0$, which together form an inverse system whose inverse limit in the category of graded rings is isomorphic to $\Lambda$. This strengthens the existing relationship between the HOMFLYPT skein theory and $GL_n(\C)$ (recall that the skein relations are modeled after relations of morphisms in $U_q(\mathfrak{gl}_n)$-Mod). 
 
 This section is an attempt to emulate Lukac's argument in the Dubrovnik case. First we will review some of the theory behind character rings of the orthogonal and symplectic groups. In particula, they are isomorphic as rings and there are ``Schur functions" indexed over partitions for the different types. Next, for any of the character rings, we can define a homomorphism to $\cd(A)$. We conjecture that the Schur functions are sent to the annular closures of the BMW idempotents $\tilde{Q}_\lambda$, and we prove the conjecture when the length of $\lambda$ is at most $2$.
 
@@ -163,17 +157,45 @@ This section is an attempt to emulate Lukac's argument in the Dubrovnik case. Fi
 
 \subsection{Universal Character Rings of Orthogonal and Symplectic Type}
 
-aaa
+Here we will summarize some results from \AP{Koike-Terada}. Recall that a character of a (finite-dimensional) group representation is the post-composition of the representation with the trace function. The character of a direct sum of representations is the pointwise sum of the individual characters. Also, the character of a tensor product of representations is the pointwise product of the individual characters. For compact connected Lie groups $G$, two representations of $G$ are isomorphic only if their characters are equal. In this way, the character ring of $G$ is a decategorification of the category of finite-dimensional representations of $G$. Let $R(B_n)$, $R(C_n)$, and $R(D_n)$ denote the character rings of the Lie groups $SO_{2n+1}\C$, $SP_{2n}\C$, and $SO_{2n}\C$ respectively (the type $D_n$ case will require some subtle care, see \AP{KT} for details). 
 
+The irreducible representations of $SO_{2n+1}\C$ and $SP_{2n}\C$ are indexed by partitions $\lambda$ of length at most $n$, and denote their respective characters by $sb_{n, \lambda}$ and $sc_{n, \lambda}$ respectively. The type $D_n$ case requires some subtle care, but let $sd_{n, \lambda}$ denote the character of the restriction of the appropriate irreducible representation of $O_{2n}\C$ to $SO_{2n}\C$ (see \AP{KT} for details). These are called the \textbf{Schur polynomials} of types $B_n$, $C_n$, and $D_n$.
 
+Let $G$ be any of $SO_{2n+1}\C$, $SP_{2n}\C$, and $SO_{2n}\C$. A character of $G$ is determined by its value on a maximal torus of $G$, which may be chosen to be a set of diagonal matrices. 
+\begin{align*}
+&B_n: &\quad T &= \{ \textrm{diag}(t_1, \dots, t_n, 1, t_n^{-1}, \dots, t_1^{-1}) \} \\ 
+&C_n: &\quad T &= \{ \textrm{diag}(t_1, \dots, t_n, t_n^{-1}, \dots, t_1^{-1}) \} \\ 
+&D_n: &\quad T &= \{ \textrm{diag}(t_1, \dots, t_n, t_n^{-1}, \dots, t_1^{-1}) \}
+\end{align*}
+Furthermore, it can be shown that $R(G) = \Z[t_1^{\pm 1}, \dots, t_n^{\pm 1}]^{\Z_2^n \rtimes \mathfrak{S}_n} = \Z[t_1+t_1^{-1}, \dots, t_n+t_n^{-1}]^{\mathfrak{S}_n}$. This is isomorphic to the ring of symmetric polynomials $\Lambda_n = \Z[c_1, \dots, c_n]^{S_n}$ under the identification $c_i = t_i + t_i^{-1}$. 
 
+Let $V$ be the natural representation of the group $G$. Let $h_{G,i} := \textrm{Sym}^i(V)$ and $e_{G,i} := \textrm{Alt}^i(V)$ be the symmetric and alternating powers of $V$. Also, let $h_{G,i}^\circ = h_{G,i} - h_{G_i-2}$ and $e_{G,i}^\circ = e_{G,i} - e_{G_i-2}$. The following statements are true.
+\begin{enumerate}
+\item The characters $h_{B_n,i}^\circ$ and $e_{B_n,i}$ are irreducible, and \[R(B_n) = \Z[h_{B_n,1}^\circ, \dots, h_{B_n,n}^\circ] = \Z[e_{B_n,1}, \dots, e_{B_n,n}]. \]
+\item The characters $h_{C_n,i}$ and $e_{C_n,i}^\circ$ are irreducible, and  \[R(C_n) = \Z[h_{C_n,1}, \dots, h_{C_n,n}] = \Z[e_{C_n,1}^\circ, \dots, e_{C_n,n}^\circ]. \]
+\item The characters $h_{D_n,i}^\circ$ are irreducible, $e_{D_n,i}$ is irreducible if $i \neq n$, and \[R(D_n) = \Z[h_{D_n,1}^\circ, \dots, h_{D_n,n}^\circ] = \Z[e_{D_n,1}, \dots, e_{D_n,n}]. \]
+\end{enumerate}
+The characters $h_{G,i}$ are equal to the Schur polynomials corresponding to a single row, and $e_{G_i}$, a single column.
 
+The ring $\Lambda_n$ is called the ring of symmetric polynomials in $n$ indeterminates, and it may be identified with the character ring of finite-dimensional polynomial representations of the Lie group $GL_n\C$. The projection maps $\Lambda_n \to \Lambda_{n-1}$ form an inverse system in the category of graded rings, whose inverse limit is what we call the \textbf{ring of symmetric functions} $\Lambda$. The ring $\Lambda$ may be concretely defined as the restriction of the ring of formal power series in countable many indeterminates to those series which have bounded degree and which are invariant under permutations of the indeterminates. 
 
-
-
-
-
-
+There are symmetric functions $sb_\lambda=sd_\lambda$ (they are equal) which project to the Schur polynomials $sb_{n,\lambda}$ and $sd_{n, \lambda}$ under the projections. Similarly, there are $sc_\lambda$ which project to $sc_{n, \lambda}$. These symmetric functions are called \text{Schur functions} of types B, C, and D.The sets $\{sb_\lambda \}_\lambda$ and $\{sc_\lambda \}_\lambda$ form $\Z$-bases of $\Lambda$. Furthermore, there is an involutive algebra automorphism defined by $\omega(sb_\lambda) = sc_{\lambda^t}$ where $\lambda^t$ is the transpose partition of $\lambda$. This implies that the structure constants for both bases totally coincide, i.e. if 
+\[
+sb_{\mu} sb_{\nu} = \sum_\lambda b_{\mu \nu}^\lambda sb_\lambda
+\]
+and
+\[
+sc_{\mu} sc_{\nu} = \sum_\lambda c_{\mu \nu}^{\lambda} sc_{\lambda}
+\]
+then $c_{\mu \nu}^\lambda = b_{\mu^t \nu^t}^{\lambda^t}$. In particular, if we let $hb_i := sb_{(i)}$ be the Schur functions of type B corresponding to one row and $ec_i := sc_{(1^i)}$ be the Schur functions of type C corresponding to one column, then 
+\begin{equation} \label{eq:omega1}
+\omega(hb_i) = ec_i.
+\end{equation}
+Let $hb_i^\circ := hb_i - hb_{i-2}$. For a partition $\lambda=(\lambda_0, \lambda_1, \dots, \lambda_{r-1})$ of length $r$, set $hb_\lambda^\circ(i,j) := hb_{\lambda_i - i + j}^\circ + hb_{\lambda_i - i - j}^\circ$. The classical Jacobi-Trudi formula for the type A case generalizes to the type B case as
+\begin{equation} \label{eq:jacobitrudi}
+sb_\lambda = \frac{1}{2} \det \big( hb_\lambda(i, j) \big)_{0 \leq i, j \leq r-1}
+\end{equation}
+which implies a type C generalization by applying Equation \eqref{eq:omega1}. The $1/2$ is there simply to compensate for the first column for when $j=0$. 
 
 
 \subsection{Determinantal Calculations}
@@ -238,8 +260,6 @@ which is a generalization of Equation \eqref{eq:skewcommutator2}. Also, one may 
 \end{equation}
 which follows from Equation \eqref{eq:skewcommutator3}
 \end{remark}
-
-\AP{It would probably be best to give a summary of the Lukac argument here}
 
 \begin{lemma} \label{lemma:detgymnastics3}
 The following identities hold in $\ca$. 
@@ -600,14 +620,13 @@ e \cdot h(m, k-l) & (s^2 - 1) \varsigma^+ (m, k-l) + (s^{-2} - 1) \varsigma^- (m
 \end{proof}
 
 Let $\textrm{cl}_\ca : \ca \to \cc$ be the wiring which connects the two boundary points of $\ca$ by an arc above the annulus. 
-
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 $\pic[7]{cla.eps}$
 \caption{The wiring diagram which defines $\textrm{cl}_\ca : \ca \to \cc$.}
 \end{figure}
 
-This map is not unital nor multiplicative, but it is a right $\cc$-module homomorphism. Furthermore, the closure $\cl_\ca(x \cdot e)$ is the element $\phi(x)$ which is the meridian map $\phi$ applied to $x$. The following identity is a generalization of Lemma 8.3 in Lukac. \AP{I think Shelly wrote about this. Make sure to cite him where necessary.}
+This map is not unital nor multiplicative, but it is a right $\cc$-module homomorphism so that $\cl_\ca(e \cdot x) = \delta_\cd x$. Furthermore, the closure $\cl_\ca(x \cdot e)$ is the element $\phi(x)$ which is the meridian map $\phi$ applied to $x$. The following identity is a generalization of Lemma 8.3 in Lukac.
 
 \begin{lemma} \label{lemma:tclosure}
 Let 
@@ -628,17 +647,16 @@ Recall Equation \eqref{eq:annfund}, which we restate here using different notati
 \[
 t_n = \{ n \} a^{-1}W^*_{n - 1} - \{ n \} aW_{n - 1}.
 \]
-Apply the closure to both sides. Apply the framing relation to the diagrams on the right to pick up the framing parameter terms. Use the property that the BMW idempotents absorb crossings at the price of a factor of $s$ for positive crossings and $s^{-1}$ for negative crossings. This completes the proof. 
+Apply the closure to both sides. Apply the framing relation to the diagrams on the right to pick up the framing parameter terms. Use the property that the BMW idempotents absorb crossings to a factor of $s$ for positive crossings and $s^{-1}$ for negative crossings. This completes the proof. 
 \end{proof}
 
 \begin{lemma} \label{lemma:skewclosures}
 Define the constants
-\AP{Double check the $\upsilon_i^\pm$. Should they both be negative?}
 \begin{align*}
 \omega_{n}^+ &:= - \{n\} s^{1-n} v, \\
-\upsilon_{n}^+ &:= s^{n} [n+1] (\bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big), \\
+\upsilon_{n}^+ &:= s^{n} [n+1] (\bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta_\cd + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big), \\
 \omega_{n}^- &:= \{n\} s^{n-1} v^{-1}, \\
-\upsilon_{n}^- &:= -s^{-n} [n+1] ( \bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big).
+\upsilon_{n}^- &:= -s^{-n} [n+1] ( \bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta_\cd + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big).
 \end{align*}
 Then the following identities hold in $\cc$ for all $n \geq 0$ 
 \begin{align*}
@@ -660,19 +678,19 @@ Apply Equations \eqref{eq:r3} and \eqref{eq:r1} :
 &= - \{n+1\} a W_n - ( \bar{\beta}_n - \beta_n ) [n] W^*_{n-1}.
 \end{align*}
 %\AP{There is an endomorphism on the BMW algebra which reflects the square along a vertical line through the middle of the square. Are the symmetrizers fixed by this map? I think you can use the uniqueness of the symmetrizers to prove this since they are idempotent and absorb scalars.} \PS{I agree, they should be fixed}
-The identities below hold in $\cc$. Use \cite[Lemma 21]{She16} for the second two.
+The identities below hold in $\cc$. Use \cite[Lemma 21]{She16} \AP{***} for the second two.
 \begin{align*}
 \textrm{cl}_\ca ( a W_n ) &= s^{-n} v \tilde{h}_{n+1} \\
 \textrm{cl}_\ca ( a^{-1} W^*_n ) &= s^n v^{-1} \tilde{h}_{n+1} \\
-\textrm{cl}_\ca ( W_n ) &= -s^{-n} \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n \\
-&= [n+1]^{-1} \big( \delta + [n]s^{-1} ( s^{-(n-1)} v - \beta_n s^{n-1} v^{-1} ) \big) \tilde{h}_n \\
-\textrm{cl}_\ca ( W^*_n ) &= s^n \big( \delta + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n
+\textrm{cl}_\ca ( W_n ) &= -s^{-n} \big( \delta_\cd + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n \\
+&= [n+1]^{-1} \big( \delta_\cd + [n]s^{-1} ( s^{-(n-1)} v - \beta_n s^{n-1} v^{-1} ) \big) \tilde{h}_n \\
+\textrm{cl}_\ca ( W^*_n ) &= s^n \big( \delta_\cd + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n
 \end{align*}
 Then applying $\textrm{cl}_\ca$ to the above gives
 \begin{align*} 
 & \textrm{cl}_\ca \big( s^{-1} \tilde{h}_n \cdot a - s a \cdot \tilde{h}_n \big) \\
 =& - \{n+1\} \textrm{cl}_\ca ( a W_n ) - ( \bar{\beta}_n - \beta_n ) [n] \textrm{cl}_\ca ( W^*_{n-1} ) \\
-= & - \{n+1\} s^{-n} v \tilde{h}_{n+1} - ( \bar{\beta}_n - \beta_n ) [n] s^{n-1} \big( \delta + s^{n-2} [n-1] ( s v^{-1} \beta_{n-1} ) \big) \tilde{h}_{n-1} \\
+= & - \{n+1\} s^{-n} v \tilde{h}_{n+1} - ( \bar{\beta}_n - \beta_n ) [n] s^{n-1} \big( \delta_\cd + s^{n-2} [n-1] ( s v^{-1} \beta_{n-1} ) \big) \tilde{h}_{n-1} \\
 = & \omega_{n+1}^+ \tilde{h}_{n+1} + \upsilon_{n-1}^+ \tilde{h}_{n-1}.
 \end{align*}
 The proof of the other statement is similar. 
@@ -694,79 +712,25 @@ Since the $\tilde{h}_n$ are linearly independent, it's true that
 for any $n$. 
 \end{remark}
 
-Next we state the main proposition of this section.
-\begin{proposition} \label{prop:schureigenvalues}
-Let $\phi: \cc \to \cc$ be the meridian map. Then
+Consider the algebra homomorphism $\Lambda \to \cd(A)$ defined by the assignment $hb_i \mapsto \tilde{h}_i$. This map is well defined since $\Lambda$ is generated freely as a commutative ring by the set $\{hb_i\}_{i}$. Let $S_\lambda$ be the image of $sb_\lambda$ under this assignment. Now we are ready to state the main conjecture of this section.
+\begin{conjecture} \label{conj:schureigenvalues}
+Let $\phi: \cc \to \cc$ be the meridian map.  Then
 \begin{equation}
 \phi ( S_\lambda ) = c_\lambda S_\lambda
 \end{equation}
 where
 \begin{equation}
-c_\lambda = \delta + ( s - s^{-1} ) \Big( v^{-1} \sum_{x \in \lambda} s^{2 \textrm{cn}(x)} - v \sum_{x \in \lambda} s^{-2 \textrm{cn}(x)} \Big)
+c_\lambda = \delta_\cd + ( s - s^{-1} ) \Big( v^{-1} \sum_{x \in \lambda} s^{2 \textrm{cn}(x)} - v \sum_{x \in \lambda} s^{-2 \textrm{cn}(x)} \Big)
 \end{equation}
 and where $\textrm{cn}(x)$ is the content of the cell $x$ of the Young diagram of $\lambda$ in the $(i,j)^{\textrm{th}}$ position, defined by $\textrm{cn}(x) := j-i$.
-\end{proposition}
-\begin{proof}
-Let $\lambda=(\lambda_0, \lambda_1, \dots, \lambda_{r-1})$ be a partition of length $r$. For brevity, define the elements
-\begin{eqnarray*}
-\tilde{h}_\lambda (i, j) :=&  h(\lambda_i - i, j) \\
-t_\lambda (i, j) :=& t(\lambda_i - i, j) \\
-\varsigma_\lambda^\pm (i, j) :=& \varsigma^\pm (\lambda_i - i, j) \\
-\Omega_\lambda :=& S_\lambda \cdot e - e \cdot S_\lambda .
-\end{eqnarray*}
-Using the determinant formula of Proposition \ref{prop:bcddetformula}, we can write
-\begin{equation}\label{eq:bcddetformula}
-S_\lambda = \frac{1}{2} \det \left( \tilde{h}_\lambda(i, j) \right)_{0 \leq i, j \leq r-1}
-\end{equation}
-where the $1/2$ coefficient comes from multilinearity in the first column, and is only for the sake of uniformity of the entries. 
-Using the determinant formula above, we can write this element as a telescoping sum.
-\begin{equation}
-\begin{split}
-&\quad\,\, \Omega_\lambda \\
-&= \frac{1}{2} \sum_{j=0}^{r-1}
-\begin{vmatrix}
-\tilde{h}_\lambda (0, 0) \cdot e & \cdots & \tilde{h}_\lambda (0, j-1) \cdot e & t_\lambda (0, j) & e \cdot \tilde{h}_\lambda (0, j+1) & \cdots & e \cdot \tilde{h}_\lambda (0, r-1) \\ 
-\vdots & & \vdots & \vdots & \vdots & & \vdots \\
-\tilde{h}_\lambda (r-1, 0) \cdot e & \cdots & \tilde{h}_\lambda (r-1, j-1) \cdot e & t_\lambda (r-1, j) & e \cdot \tilde{h}_\lambda (r-1, j+1) & \cdots & e \cdot \tilde{h}_\lambda (r-1, r-1)
-\end{vmatrix}
-\end{split}
-\end{equation}
+\end{conjecture}
 
-Examine the $j^{\textrm{th}}$ summand where $j \neq 0$. We can iteratively apply Laplace expansions to this determinant to get a sum
-\[
-\sum_{0 \leq i_1 \neq i_2 \leq r-1} A_{i_1, i_2} 
-\begin{vmatrix}
-\tilde{h}_\lambda (i_1, j-1)\cdot e & t_\lambda (i_1, j) \\
-\tilde{h}_\lambda (i_2, j-1)\cdot e & t_\lambda (i_2, j)
-\end{vmatrix} 
-\]
-for some $A_{i_1, i_2} \in \ca$. We want to change the order order of the action in the first column of each summand.
-
-For any choice of $i_1, i_2$, we may apply Lemma \ref{lemma:detgymnastics4} to write
-\begin{align*}
-& \quad \,\,
-\begin{vmatrix}
-\tilde{h}_\lambda (i_1, j-1)\cdot e & t_\lambda (i_1, j) \\
-\tilde{h}_\lambda (i_2, j-1)\cdot e & t_\lambda (i_2, j)
-\end{vmatrix} \\
-&=
-\begin{vmatrix}
-e \cdot \tilde{h}_\lambda (i_1, j-1) & s^2 \varsigma_\lambda^+ (i_1, j-1) + s^{-2} \varsigma_\lambda^- (i_1, j-1) - t(i_1, j-2) \\
-e \cdot \tilde{h}_\lambda (i_2, j-1) & s^2 \varsigma_\lambda^+ (i_2, j-1) + s^{-2} \varsigma_\lambda^- (i_2, j-1) - t(i_2, j-2) 
-\end{vmatrix}\\
-&\quad\,\, +
-\sum_{l=1}^{j}
-\begin{vmatrix}
-e \cdot \tilde{h}_\lambda(i_1, j-1-l) & (s^2 - 1) \varsigma_\lambda^+ (i_1, j-1-l) + (s^{-2} - 1) \varsigma_\lambda^- (i_1, j-1-l) \\
-e \cdot \tilde{h}_\lambda(i_2, j-1-l) & (s^2 - 1) \varsigma_\lambda^+ (i_2, j-1-l) + (s^{-2} - 1) \varsigma_\lambda^- (i_2, j-1-l) 
-\end{vmatrix}
-\end{align*}
-Now we can rebuild the determinants.
-\end{proof}
+If true, then this conjecture may be used to prove that $S_\lambda = \tilde{Q}_\lambda$, following the same arguement from \AP{Lukac}. Essentially, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $Q_\lambda$ are in the same eigenspace with respect to $\phi$. These eigenspaces each have dimension $1$ by \AP{Zhong-Lu}, so $S_\lambda$ would be a scalar multiple of $Q_\lambda$. Following Lukac, a simple induction argument involving the branching formula of \AP{BB} shows that this scalar is $1$. Next, let's give some evidence for why this conjecture should be true. 
 
 \begin{proposition}
 The conjecture holds when $\lambda$ has length at most $2$.
 \end{proposition}
+\begin{proof}
 The statement is trivial if $\lambda$ has length $1$ by definition of the map. Assume $\lambda = (a, b)$. Apply Equation \eqref{eq:bcddetformula}.
 \[
 S_\lambda = 
@@ -876,7 +840,7 @@ Now apply $\cl_\ca$ and use the property that it is a right $\cc$-module homomor
 &= (\alpha_a + s^2 \omega_b^+ + s^{-2} \omega_b^-) \tilde{h}_a \tilde{h}_b + (\alpha_a + s^2 \upsilon_{b-2}^+ + s^{-2} \upsilon_{b-2}^-) \tilde{h}_a \tilde{h}_{b-2} \\
 &\quad - (\alpha_{b-1} + s^{2} \omega_{a+1}^+ + s^{-2} \omega_{a+1}^-) \tilde{h}_{a+1} \tilde{h}_{b-1} - (\alpha_{b-1} + s^2 \upsilon_{a-1}^+ + s^{-2} \upsilon_{a-1}^-) \tilde{h}_{a-1} \tilde{h}_{b-1} 
 \end{align*}
-The conjecture claims that all of these coefficients are equal to the appropriate eigenvalue minus the value of the unknot $c_\lambda - \delta$. At first glance, it's not at all obvious that these coefficients are even equal to each other. Nevertheless, we will show it is true by looking at each coefficient one by one, going in the order in which they are written. Firstly, observe:
+The conjecture claims that all of these coefficients are equal to the appropriate eigenvalue minus the value of the unknot $c_\lambda - \delta_\cd$. At first glance, it's not at all obvious that these coefficients are even equal to each other. Nevertheless, we will show it is true by looking at each coefficient one by one, going in the order in which they are written. Firstly, observe:
 \begin{align*}
 \alpha_a + s^2 \omega_b^+ + s^{-2}\omega_b^- &= \{a\} (v^{-1}s^{a-1} - v s^{1-a} ) - \{b\}vs^{3-b} + \{b\}v^{-1}s^{b-3} \\
 &= (s^a - s^{-a}) (v^{-1}s^{a-1} - v s^{1-a} ) -  (s^b - s^{-b})(vs^{3-b} - v^{-1}s^{b-3}) \\
@@ -886,7 +850,7 @@ The conjecture claims that all of these coefficients are equal to the appropriat
 &= v^{-1} \left( (s-s^{-1}) \sum_{i=0}^{a-1} s^{2a - 2 - 2i} + (s-s^{-1}) \sum_{i=0}^{b-1} s^{2b-4-2i} \right) \\
 &\quad v \left( (s-s^{-1}) \sum_{i=0}^{a-1} s^{-2i} + (s-s^{-1}) \sum_{i=0}^{b-1} s^{2-2i} \right) \\
 &= (s-s^{-1}) \left( v^{-1} \sum_{x \in \lambda} s^{2 \cn(x)} - v \sum_{x \in \lambda} s^{-2\cn(x)} \right) \\
-&= c_\lambda - \delta.
+&= c_\lambda - \delta_\cd.
 \end{align*}
 Therefore, the first coefficient is what we claimed. Now we can simply show the other coefficients are equal to the first. Let's show the second coefficient is equal to the first:
 \begin{align*}
@@ -894,27 +858,24 @@ Therefore, the first coefficient is what we claimed. Now we can simply show the 
 &= -\{b-1\}(v^{-1}s^{b-2}-vs^{2-b}) + \{a+1\}vs^{2-a} - \{a+1\}v^{-1}s^{a-2} \\
 &= (s^{1-b} - s^{b-1} ) (v^{-1}s^{b-2} - vs^{2-b}) + (s^{a+1}-s^{a+1})(vs^{2-a} - v^{-1}s^{a-2}) \\
 &= (v^{-1}s^{-1} - v^{-1}s^{2b-3} - vs^{3-2b} + vs) - (vs^3 - vs^{1-2a} - v^{-1}s^{2a-1} + v^{-1}s) \\
-&= v^{-1} \big( (s^{2a-1} - s^{-1}) + (s^{2b-3} - s^{-3}) \big) - v \big( ( s - s^{1-2a}) + (s^3 - s^{3-2b}) \big).
+&= v^{-1} \big( (s^{2a-1} - s^{-1}) + (s^{2b-3} - s^{-3}) \big) - v \big( ( s - s^{1-2a}) + (s^3 - s^{3-2b}) \big) \\
+&= c_\lambda - \delta_\cd
 \end{align*}
 
 The next two are slightly different. We will avoid the complexity of $\upsilon_i^\pm$ by using the relation $\upsilon_i^+ + \upsilon_i^- = \alpha_i$. Observe:
-\AP{double check below. Make sure $\upsilon_i^\pm$ is right.}
 \begin{align*}
 & \quad \alpha_a + s^2 \upsilon_{b-2}^+ + s^{-2}\upsilon_{b-2}^- \\
-&= \{a\}(v^{-1}s^{a-1} - vs^{1-a}) + (s^{b} - s^{-b}) [b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
+&= \{a\}(v^{-1}s^{a-1} - vs^{1-a}) + (s^{b} - s^{-b}) [b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta_\cd + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
 &= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) \\
-&= \quad\,\, + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})[b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
+&\quad\,\, + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})[b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta_\cd + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
 &= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(\upsilon_{b-2}^+ + \upsilon_{b-2}^-) \\
 &= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}\alpha_{b-2} \\
 &= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) - (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})(vs^{3-b}-v^{-1}s^{b-3}) \\
 &= (s^a - s^{-a})(v^{-1}s^{a-1}-vs^{1-a}) - (s^{b} - s^{-b})(vs^{3-b}-v^{-1}s^{b-3}) \\
+&= c_\lambda - \delta_\cd
 \end{align*}
-and similarly
-\AP{finish from notes.}
-\begin{align*}
-& \quad -\alpha_{b-1} - s^2 \upsilon_{a-1}^+ - s^{-2} \upsilon_{a-1}^- \\
-&= \{b-1\}(v^{-1}s^{b-2} - vs^{2-b}) +
-\end{align*} 
+and a similar computation holds for the final coefficient. This completes the proof.
+\end{proof}
 
 
 
@@ -922,69 +883,9 @@ and similarly
 
 
 
+\section{Meridians and Jucys-Murphy Elements of $BMW_n$}
 
-
-%\AP{9/14: Added below}
-\begin{example}
-Let's just get a glance at what the determinants will look like for $\textrm{len}(\lambda)=3$. Arbitrarily, let $\lambda = (2, 1, 1)$. 
-\[
-S_\lambda = 
-\begin{vmatrix}
-\tilde{h}_2 & \tilde{h}_3 + \tilde{h}_1 & \tilde{h}_4 + \tilde{h}_0 \\
-\tilde{h}_0 & \tilde{h}_1 + \tilde{h}_{-1} & \tilde{h}_2 + \tilde{h}_{-2} \\
-\tilde{h}_{-1} & \tilde{h}_0 + \tilde{h}_{-2} & \tilde{h}_1 + \tilde{h}_{-3}
-\end{vmatrix}
-\]
-Then use multilinearity of determinant to express the commutator.
-\begin{align*}
-&\quad\,\, S_\lambda \cdot e - e \cdot S_\lambda \\
-&=\begin{vmatrix}
-t_2 & e \cdot (\tilde{h}_3 + \tilde{h}_1 ) & e \cdot ( \tilde{h}_4 + \tilde{h}_0 ) \\
-t_0 & e \cdot ( \tilde{h}_1 + \tilde{h}_{-1} ) & e \cdot ( \tilde{h}_2  + \tilde{h}_{-2} ) \\
-t_{-1} & e \cdot ( \tilde{h}_0 + \tilde{h}_{-2} ) & e \cdot ( \tilde{h}_1 + \tilde{h}_{-3} )
-\end{vmatrix}
-+
-\begin{vmatrix}
-\tilde{h}_2 \cdot e & t_3 + t_1 & e \cdot ( \tilde{h}_4 + \tilde{h}_0 ) \\
-\tilde{h}_0 \cdot e & t_1 + t_{-1} & e \cdot ( \tilde{h}_2  + \tilde{h}_{-2} ) \\
-\tilde{h}_{-1} \cdot e & t_0 + t_{-2} & e \cdot ( \tilde{h}_1 + \tilde{h}_{-3} )
-\end{vmatrix} \\
-&\quad\,+
-\begin{vmatrix}
-\tilde{h}_2 \cdot e & ( \tilde{h}_3 + \tilde{h}_1 ) \cdot e & t_4 + t_0 \\
-\tilde{h}_0 \cdot e & ( \tilde{h}_1 + \tilde{h}_{-1} ) \cdot e & t_2  + t_{-2} ) \\
-\tilde{h}_{-1} \cdot e & ( \tilde{h}_0 + \tilde{h}_{-2} ) \cdot e & t_1 + t_{-3}
-\end{vmatrix}
-\end{align*}
-The third determinant of this sum can be expanded as
-\begin{align*}
-&( \tilde{h}_2 \cdot e )
-\begin{vmatrix}
-( \tilde{h}_1 + \tilde{h}_{-1} ) \cdot e & t_2 + t_{-2} \\
-( \tilde{h}_0 + \tilde{h}_{-2} ) \cdot e & t_1 + t_{-3}
-\end{vmatrix}
-- ( \tilde{h}_0 \cdot e ) 
-\begin{vmatrix}
-( \tilde{h}_3 + \tilde{h}_1 ) \cdot e & t_4 + t_0 \\
-( \tilde{h}_0 + \tilde{h}_{-2} ) \cdot e & t_1 + t_{-3}
-\end{vmatrix} \\
-&\quad + ( \tilde{h}_{-1} \cdot e ) 
-\begin{vmatrix}
-( \tilde{h}_3 + \tilde{h}_1 ) \cdot e & t_4 + t_0 \\
-( \tilde{h}_1 + \tilde{h}_{-1}) \cdot e & t_2 + t_{-2}
-\end{vmatrix}
-\end{align*}
-It is now clear we need Lemma \ref{lemma:detgymnastics3}. Sub in $n=0, m=-1, k=1$.
-
-\end{example}
-
-
-
-
-
-\section{Central Elements of $BMW_n$}
-
-Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \sigma_{i-1} \in BMW_n$ for $2 \leq i \leq n$ and set $M_{1,n}$ to be the identity. The set of $M_{n, i}$ in $BMW_n$ are called the \textbf{BMW Jucys-Murphy elements}, which are invertible and are known to be central (see \AP{Isaev-Ogievetsky}). 
+Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \sigma_{i-1} \in BMW_n$ for $2 \leq i \leq n$ and set $M_{n,1} = \id_n$. The set of $M_{n, i}$ in $BMW_n$ are called the \textbf{BMW Jucys-Murphy elements}, which are invertible and which generate a commutative subalgebra (see \AP{Isaev-Ogievetsky} for more details). 
 \begin{figure}[h]
 \centering
 $M_{n,i} = \pic[5]{murphy.eps}$
@@ -995,33 +896,61 @@ These generalize the well-known Jucys-Murphy elements of the symmetric group alg
 There is a homomorphism $\psi_n: \cd(A) \to BMW_n$ defined so that $\psi_n(x)$ is the element $x$ threaded by a meridian around the identity of $BMW_n$.
 \begin{figure}
 \centering
-$\psi_n(x) = \pic[5]{meridianx.eps}$
+$\psi_n(x) = \pic[4]{meridianx.eps}$
 \caption{The image of $x$ under the homomorphism $\psi_n$.}
 \end{figure}
-The image of $\psi_n$ is clearly central. In the next proposition, we give a simple application which expresses $\psi_n(\tilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements and their inverses. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \AP{Morton}.
+The image of $\psi_n$ clearly lies in the center of $BMW_n$. In the next proposition, we give a simple application which expresses $\psi_n(\tilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements, their inverses, and the identity. One way to interpret the proposition is that we express $(s^k - s^{-k})^{-1}\big(\psi_n(\tilde{P}_k) - \langle \tilde{P}_k \rangle \id_n \big)$ as a power sum symmetric polynomial in the elements $\{ v^{\pm 1} M_{n,i}^{\pm 1} \}_i$. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \AP{Morton}.
 
 \begin{proposition} \label{prop:murphy}
-For any $k \geq 1$, we may represent $\psi_n(\tilde{P}_k)$ as
+For any $k \geq 1$, and any $n \geq 1$, we may represent $\psi_n(\tilde{P}_k)$ as
 \begin{equation}
-\psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^n v^{-1} M_{n, i}^k - v M_{n, i}^{-k}
+\psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=1}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
 \end{equation}
 where $\langle \tilde{P}_k \rangle$ is the evaluation of $\tilde{P}_k$ in a $3$-ball. 
 \end{proposition}
 \begin{proof}
-Induct on $n$. For $n=0$, the meridian wraps around no strands, so it's clear that $\psi_0(\tilde{P}_k) = \langle \tilde{P}_k \rangle$. Assume the induction hypothesis, that the statement is true for all $n<i$. Apply Theorem \ref{thm:powersumcommutator} to move $\tilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+Induct on $n$. For $n=1$, simply apply Theorem \ref{thm:powersumcommutator} and apply framing relations to get the desired expression (imagine removing the first $n-1$ strands from the diagrams which follow). Assume the induction hypothesis, that the statement is true for all $n<i$. Apply Theorem \ref{thm:powersumcommutator} to move $\tilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
 \begin{align*}
-& \quad \pic[2.4]{meridianpk.eps} \\
+& \quad\,\, \pic[2.4]{meridianpk.eps} \\
 &= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) \left( \pic[2.4]{murphya1}\right)^k - (s^{k}-s^{-k}) \left(\pic[2.4]{murphyb1}\right)^k \\
-&= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) v^{-1} \left(\pic[2.4]{murphya2}\right)^k - (s^{k}-s^{-k}) v \left(\pic[2.4]{murphyb2}\right)^k \\
-&= \psi_{n-1}(\tilde{P}_k) \otimes \id_1  + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
-&= \left( \langle \tilde{P}_k \rangle M_{n-1,1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n-1,i} - v M_{n-1,i}^{-1} \right) \otimes \id_1 \\
-&\quad\, + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
-&= \langle \tilde{P}_k \rangle M_{n-1,1} \otimes \id_1 + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n-1,i}\otimes \id_1 - v M_{n-1,i}^{-1}\otimes \id_1 \\
-&\quad\, + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
-&= \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-1} M_{n,i} - v M_{n,i}^{-1} + (s^k - s^{-k}) (v^{-1}M_{n,n}^k - v M_{n,n}^{-k}) \\
-&= \psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle M_{n,1} + (s^k - s^{-k}) \sum_{i=2}^n v^{-1} M_{n, i}^k - v M_{n, i}^{-k}
+&= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) v^{-k} \left(\pic[2.4]{murphya2}\right)^k - (s^{k}-s^{-k}) v^k \left(\pic[2.4]{murphyb2}\right)^k \\
+&= \psi_{n-1}(\tilde{P}_k) \otimes \id_1  + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&= \left( \langle \tilde{P}_k \rangle \id_{n-1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-k} M_{n-1,i}^k - v^k M_{n-1,i}^{-k} \right) \otimes \id_1 \\
+&\quad\,\, + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&= \langle \tilde{P}_k \rangle \id_{n-1} \otimes \id_1 + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n-1,i}^k \otimes \id_1 - v^k M_{n-1,i}^{-k}\otimes \id_1 \right) \\
+&\quad\,\, + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^{-k} M_{n,n}^{-k}) \\
+&= \langle \tilde{P}_k \id_n + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n,i}^k - v^k M_{n,i}^{-k} \right) + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&=  \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
 \end{align*}
 \end{proof}
+
+Let for a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\tilde{P}_k \cdot \tilde{y}_\lambda := \psi_n(\tilde{P}_k) \tilde{y}_\lambda$, which is essentially a meridian threaded by $\tilde{P}_k$ wrapped around $\tilde{y}_\lambda$. The next proposition shows that $\tilde{y}_\lambda$ is an eigenvector with respect to the assignment $\tilde{y}_\lambda \mapsto \tilde{P}_k \cdot \tilde{y}_\lambda$. Note that all the eigenvalues are distinct from each other. The annular closure of these eigenvalue equations generalize the result found in \AP{ZL}, which they show for $k=1$. 
+\begin{proposition} \label{prop:zlgeneralization}
+In $BMW_n$, we have that 
+\[
+\tilde{P}_k \cdot \tilde{y}_\lambda = \left( \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \lambda} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda
+\]
+where $\cn(\square)$ is the content of the cell $\square$ in the Young diagram of $\lambda$. 
+\end{proposition}
+\begin{proof}
+We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulae coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $x$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \AP{BB}). Then apply Theorem \ref{thm:powersumcommutator} to move $\tilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+\begin{align*}
+&\quad\,\, \pic[2.4]{ylambdameridianpk.eps} \\
+&= \pic[2.4]{ylambdameridianpkbranch.eps} \\
+&= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbrancha1.eps} - (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbranchb1.eps} \\
+&= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) v^{-k} \pic[2.4]{ylambdameridianpkbrancha2.eps} - (s^k - s^{-k}) v^k \pic[2.4]{ylambdameridianpkbranchb2.eps}
+\end{align*}
+The first diagram is equal to $ \left( \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(x)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \AP{Aiston-Morton} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(x)} \tilde{y}_\lambda$. This completes the proof.
+\end{proof}
+
+
+
+
+
+
+
+
+
 
 
 

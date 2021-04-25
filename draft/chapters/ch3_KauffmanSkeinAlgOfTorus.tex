@@ -874,9 +874,6 @@ The proof above provides an algorithm for expressing any $B_{n,m}$ in terms of t
 
 
 
-
-\AP{Copied from Overleaf}
-
 \subsection{Recalling Some Formulas From the Literature}
 
 Let $\Lambda = (\Lambda_1, \dots, \Lambda_n)$ be a sequence of Young diagrams such that $|\Lambda_1|=1$, $|\Lambda_{i+1}| = |\Lambda_{i}| \pm 1$, and $\Lambda_n=\lambda$. 
@@ -958,7 +955,7 @@ This is the basis we will choose to act by $\cd(T^2)$ on in Section \ref{sec:act
 We will fix the convention that $B_{1,0}$ acts as a meridian link and $B_{0,1}$ acts as a longitude link. This next proposition shows how each element of the generating set of Proposition \ref{prop:generators} act.
 
 \begin{proposition} \label{prop:generatoractions}
-In the basis $\tilde{Q}_\lambda$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^2)$ is determined by the following equations
+In the basis $\{ \tilde{Q}_\lambda \}_\lambda$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^2)$ is determined by the following equations
 \begin{align}
     B_{1,0} \cdot \tilde{Q}_\lambda &= \Bigg(\langle B_1 \rangle + \{1\} \Big( v^{-1}\sum_{x\in\lambda} s^{2\cn(x)} - v \sum_{x\in\lambda} s^{-2\cn(x)} \Big) \Bigg) \tilde{Q}_\lambda \label{eq:1,0}\\
     B_{2,0} \cdot \tilde{Q}_\lambda &= \Bigg(\langle B_2 \rangle + \{2\} \Big( v^{-2}\sum_{x\in\lambda} s^{4\cn(x)} - v^2 \sum_{x\in\lambda} s^{-4\cn(x)} \Big) \Bigg) \tilde{Q}_\lambda \label{eq:2,0}\\
@@ -968,16 +965,19 @@ In the basis $\tilde{Q}_\lambda$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^
 \end{proposition}
 \begin{proof}
 The equation \eqref{eq:1,0} follows by considering the annular closure of the branching rule formula of Theorem \ref{thm:bmwbasis}, together with Remark \ref{rmk:qclosure}. 
-Also, \eqref{eq:0,1} is precisely the result of the meridian map eigenvalue computation of Theorem \ref{thm:ann_basis}. 
-
-The proof of \eqref{eq:2,0} follows a similar induction to the proof of Theorem \ref{thm:ann_basis} in \cite{ZL01}:
-
-(\AP{Need to make diagrams for proof.})
+Also, \eqref{eq:0,1} is precisely the result of the meridian map eigenvalue computation of Theorem \ref{thm:ann_basis}. Equation \eqref{eq:2,0} follows from Proposition \ref{prop:zlgeneralization} for $k=2$. 
 
 Finally, we show \eqref{eq:1,1} by invoking the branching rule and applying an identity coming from the proof of the branching rule, seen in \cite{BB01}:
 
 (\AP{Need to make diagrams for proof.})
 \end{proof}
+
+\begin{proposition}
+In the BMW algebra, 
+\[
+B_{n,1} \cdot \tilde{y}_\lambda = 
+\]
+\end{proposition}
 
 
 
