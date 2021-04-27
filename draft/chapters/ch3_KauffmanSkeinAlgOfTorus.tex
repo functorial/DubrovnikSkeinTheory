@@ -955,29 +955,27 @@ This is the basis we will choose to act by $\cd(T^2)$ on in Section \ref{sec:act
 We will fix the convention that $B_{1,0}$ acts as a meridian link and $B_{0,1}$ acts as a longitude link. This next proposition shows how each element of the generating set of Proposition \ref{prop:generators} act.
 
 \begin{proposition} \label{prop:generatoractions}
-In the basis $\{ \tilde{Q}_\lambda \}_\lambda$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^2)$ is determined by the following equations
+In the basis $\{ \tilde{Q}_\lambda \}_\lambda$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^2)$ is determined by the equations below.
 \begin{align}
-    B_{1,0} \cdot \tilde{Q}_\lambda &= \Bigg(\langle B_1 \rangle + \{1\} \Big( v^{-1}\sum_{x\in\lambda} s^{2\cn(x)} - v \sum_{x\in\lambda} s^{-2\cn(x)} \Big) \Bigg) \tilde{Q}_\lambda \label{eq:1,0}\\
-    B_{2,0} \cdot \tilde{Q}_\lambda &= \Bigg(\langle B_2 \rangle + \{2\} \Big( v^{-2}\sum_{x\in\lambda} s^{4\cn(x)} - v^2 \sum_{x\in\lambda} s^{-4\cn(x)} \Big) \Bigg) \tilde{Q}_\lambda \label{eq:2,0}\\
-    B_{0,1} \cdot \tilde{Q}_\lambda &= \sum_{\substack{\nu \supset \lambda \\ |\mu| = |\lambda| + 1}} \tilde{Q}_\lambda + \sum_{\substack{\mu \subset \lambda \\ |\mu| = |\lambda| - 1}} \tilde{Q}_\lambda \label{eq:0,1}\\
-    B_{1,1} \cdot \tilde{Q}_\lambda &= v^{-1} \sum_{\substack{\nu \supset \lambda \\ |\mu| = |\lambda| + 1 \\ \nu = \lambda + x}} s^{2\cn(x)} \tilde{Q}_\nu + v \sum_{\substack{\mu \subset \lambda \\ |\mu| = |\lambda| - 1 \\ \mu = \lambda - x}} s^{-2\cn(x)} \tilde{Q}_\mu \label{eq:1,1}
+    B_{1,0} \cdot \tilde{Q}_\lambda &= \Bigg(\langle B_1 \rangle + \{1\} \Big( v^{-1}\sum_{\square\in\lambda} s^{2\cn(\square)} - v \sum_{\square\in\lambda} s^{-2\cn(\square)} \Big) \Bigg) \tilde{Q}_\lambda \label{eq:1,0}\\
+    B_{2,0} \cdot \tilde{Q}_\lambda &= \Bigg(\langle B_2 \rangle + \{2\} \Big( v^{-2}\sum_{\square\in\lambda} s^{4\cn(\square)} - v^2 \sum_{\square\in\lambda} s^{-4\cn(\square)} \Big) \Bigg) \tilde{Q}_\lambda \label{eq:2,0}\\
+    B_{0,1} \cdot \tilde{Q}_\lambda &= \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \tilde{Q}_\mu + \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \tilde{Q}_\nu \label{eq:0,1}\\
+    B_{1,1} \cdot \tilde{Q}_\lambda &= v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} s^{2\cn(\square)} \tilde{Q}_\mu + v \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} s^{-2\cn(\square)} \tilde{Q}_\nu \label{eq:1,1}
 \end{align}
 \end{proposition}
 \begin{proof}
 The equation \eqref{eq:1,0} follows by considering the annular closure of the branching rule formula of Theorem \ref{thm:bmwbasis}, together with Remark \ref{rmk:qclosure}. 
-Also, \eqref{eq:0,1} is precisely the result of the meridian map eigenvalue computation of Theorem \ref{thm:ann_basis}. Equation \eqref{eq:2,0} follows from Proposition \ref{prop:zlgeneralization} for $k=2$. 
-
-Finally, we show \eqref{eq:1,1} by invoking the branching rule and applying an identity coming from the proof of the branching rule, seen in \cite{BB01}:
-
-(\AP{Need to make diagrams for proof.})
-\end{proof}
-
-\begin{proposition}
-In the BMW algebra, 
+Also, \eqref{eq:0,1} is precisely the result of the meridian map eigenvalue computation of Theorem \ref{thm:ann_basis}. Equation \eqref{eq:2,0} follows from Proposition \ref{prop:zlgeneralization} for $k=2$. All that's left to show is equation \eqref{eq:1,1}. To do this, we will apply the branching rule and braiding coefficient identities of \AP{BB} (see Corollary 5.3, Proposition 6.1). We will work with rectangular diagrams with the top edge identified with the bottom edge, creating annular diagrams. First, apply a framing relation and the branching rule
+\begin{align*}
+\pic{B11cdotQlambda.eps} &= v^{-1} \pic{B11cdotQlambdaframe.eps} \\
+&= v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \pic{B11cdotQlambdaframebrancha1.eps} + v^{-1} \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \frac{\langle \nu \rangle}{\langle \lambda \rangle} \pic{B11cdotQlambdaframebranchb1.eps}
+\end{align*}
+where $\langle \lambda \rangle$ is the quantum trace of a certain path idempotent in $BMW_n$ (see \AP{BB} for details). To be clear, the first sum is over the set of partitions $\mu$ whose Young diagram is obtained by adding a single cell $\square$ to $\lambda$, and similarly for the second sum. Next, we can use the idempotent property to dubplicate and absorb idempotents. The right-hand side of the above equation becomes
 \[
-B_{n,1} \cdot \tilde{y}_\lambda = 
+v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \pic{B11cdotQlambdaframebrancha2.eps} + v^{-1} \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \frac{\langle \nu \rangle}{\langle \lambda \rangle} \pic{B11cdotQlambdaframebranchb2.eps}.
 \]
-\end{proposition}
+By the braiding coefficient formula, the diagram in the first sum is equal to $s^{2\cn(\square)} \tilde{Q}_\mu$. The diagram in the second sum is calculated during the proof of Proposition 6.1 in \AP{BB} to be $v^2 s^{-2\cn(\square)} \langle \lambda \rangle / \langle \nu \rangle \tilde{Q}_\nu$. This completes the proof. 
+\end{proof}
 
 
 
