@@ -146,7 +146,7 @@ In \AP{Lukac}, it is shown using skein theory techniques that there is an algebr
 
 From a Lie-theoretic perspective, the ring of symmetric polynomials $\Lambda_N$ in $N$ variables is the ring of polynomial representations of $GL_n(\C)$. There are maps of graded rings $\Lambda_n \to \Lambda_{n-1}$ defined by specializing the $N^{\mathrm{th}}$ variable to $0$, which together form an inverse system whose inverse limit in the category of graded rings is isomorphic to $\Lambda$. This strengthens the existing relationship between the HOMFLYPT skein theory and $GL_n(\C)$ (recall that the skein relations are modeled after relations of morphisms in $U_q(\mathfrak{gl}_n)$-Mod). 
 
-This section is an attempt to emulate Lukac's argument in the Dubrovnik case. First we will review some of the theory behind character rings of the orthogonal and symplectic groups. In particula, they are isomorphic as rings and there are ``Schur functions" indexed over partitions for the different types. Next, for any of the character rings, we can define a homomorphism to $\cd(A)$. We conjecture that the Schur functions are sent to the annular closures of the BMW idempotents $\tilde{Q}_\lambda$, and we prove the conjecture when the length of $\lambda$ is at most $2$.
+This section is an attempt to emulate Lukac's argument in the Dubrovnik case. First we will review some of the theory behind character rings of the orthogonal and symplectic groups. In particula, they are isomorphic as rings and there are ``Schur functions" indexed over partitions for the different types. Next, for any of the character rings, we can define a homomorphism to $\cd(A)$. We conjecture that the Schur functions are sent to the annular closures of the BMW idempotents $\widetilde{Q}_\lambda$, and we prove the conjecture when the length of $\lambda$ is at most $2$.
 
 
 
@@ -725,7 +725,7 @@ c_\lambda = \delta_\cd + ( s - s^{-1} ) \Big( v^{-1} \sum_{x \in \lambda} s^{2 \
 and where $\textrm{cn}(x)$ is the content of the cell $x$ of the Young diagram of $\lambda$ in the $(i,j)^{\textrm{th}}$ position, defined by $\textrm{cn}(x) := j-i$.
 \end{conjecture}
 
-If true, then this conjecture may be used to prove that $S_\lambda = \tilde{Q}_\lambda$, following the same arguement from \AP{Lukac}. Essentially, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $Q_\lambda$ are in the same eigenspace with respect to $\phi$. These eigenspaces each have dimension $1$ by \AP{Zhong-Lu}, so $S_\lambda$ would be a scalar multiple of $Q_\lambda$. Following Lukac, a simple induction argument involving the branching formula of \AP{BB} shows that this scalar is $1$. Next, let's give some evidence for why this conjecture should be true. 
+If true, then this conjecture may be used to prove that $S_\lambda = \widetilde{Q}_\lambda$, following the same arguement from \AP{Lukac}. Essentially, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $Q_\lambda$ are in the same eigenspace with respect to $\phi$. These eigenspaces each have dimension $1$ by \AP{Zhong-Lu}, so $S_\lambda$ would be a scalar multiple of $Q_\lambda$. Following Lukac, a simple induction argument involving the branching formula of \AP{BB} shows that this scalar is $1$. Next, let's give some evidence for why this conjecture should be true. 
 
 \begin{proposition}
 The conjecture holds when $\lambda$ has length at most $2$.
@@ -899,48 +899,48 @@ There is a homomorphism $\psi_n: \cd(A) \to BMW_n$ defined so that $\psi_n(x)$ i
 $\psi_n(x) = \pic[4]{meridianx.eps}$
 \caption{The image of $x$ under the homomorphism $\psi_n$.}
 \end{figure}
-The image of $\psi_n$ clearly lies in the center of $BMW_n$. In the next proposition, we give a simple application which expresses $\psi_n(\tilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements, their inverses, and the identity. One way to interpret the proposition is that we express $(s^k - s^{-k})^{-1}\big(\psi_n(\tilde{P}_k) - \langle \tilde{P}_k \rangle \id_n \big)$ as a power sum symmetric polynomial in the elements $\{ v^{\pm 1} M_{n,i}^{\pm 1} \}_i$. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \AP{Morton}.
+The image of $\psi_n$ clearly lies in the center of $BMW_n$. In the next proposition, we give a simple application which expresses $\psi_n(\widetilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements, their inverses, and the identity. One way to interpret the proposition is that we express $(s^k - s^{-k})^{-1}\big(\psi_n(\widetilde{P}_k) - \langle \widetilde{P}_k \rangle \id_n \big)$ as a power sum symmetric polynomial in the elements $\{ v^{\pm 1} M_{n,i}^{\pm 1} \}_i$. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \AP{Morton}.
 
 \begin{proposition} \label{prop:murphy}
-For any $k \geq 1$, and any $n \geq 1$, we may represent $\psi_n(\tilde{P}_k)$ as
+For any $k \geq 1$, and any $n \geq 1$, we may represent $\psi_n(\widetilde{P}_k)$ as
 \begin{equation}
-\psi_n(\tilde{P}_k) = \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=1}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
+\psi_n(\widetilde{P}_k) = \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=1}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
 \end{equation}
-where $\langle \tilde{P}_k \rangle$ is the evaluation of $\tilde{P}_k$ in a $3$-ball. 
+where $\langle \widetilde{P}_k \rangle$ is the evaluation of $\widetilde{P}_k$ in a $3$-ball. 
 \end{proposition}
 \begin{proof}
-Induct on $n$. For $n=1$, simply apply Theorem \ref{thm:powersumcommutator} and apply framing relations to get the desired expression (imagine removing the first $n-1$ strands from the diagrams which follow). Assume the induction hypothesis, that the statement is true for all $n<i$. Apply Theorem \ref{thm:powersumcommutator} to move $\tilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+Induct on $n$. For $n=1$, simply apply Theorem \ref{thm:powersumcommutator} and apply framing relations to get the desired expression (imagine removing the first $n-1$ strands from the diagrams which follow). Assume the induction hypothesis, that the statement is true for all $n<i$. Apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
 \begin{align*}
 & \quad\,\, \pic[2.4]{meridianpk.eps} \\
 &= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) \left( \pic[2.4]{murphya1}\right)^k - (s^{k}-s^{-k}) \left(\pic[2.4]{murphyb1}\right)^k \\
 &= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) v^{-k} \left(\pic[2.4]{murphya2}\right)^k - (s^{k}-s^{-k}) v^k \left(\pic[2.4]{murphyb2}\right)^k \\
-&= \psi_{n-1}(\tilde{P}_k) \otimes \id_1  + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
-&= \left( \langle \tilde{P}_k \rangle \id_{n-1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-k} M_{n-1,i}^k - v^k M_{n-1,i}^{-k} \right) \otimes \id_1 \\
+&= \psi_{n-1}(\widetilde{P}_k) \otimes \id_1  + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&= \left( \langle \widetilde{P}_k \rangle \id_{n-1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-k} M_{n-1,i}^k - v^k M_{n-1,i}^{-k} \right) \otimes \id_1 \\
 &\quad\,\, + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
-&= \langle \tilde{P}_k \rangle \id_{n-1} \otimes \id_1 + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n-1,i}^k \otimes \id_1 - v^k M_{n-1,i}^{-k}\otimes \id_1 \right) \\
+&= \langle \widetilde{P}_k \rangle \id_{n-1} \otimes \id_1 + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n-1,i}^k \otimes \id_1 - v^k M_{n-1,i}^{-k}\otimes \id_1 \right) \\
 &\quad\,\, + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^{-k} M_{n,n}^{-k}) \\
-&= \langle \tilde{P}_k \id_n + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n,i}^k - v^k M_{n,i}^{-k} \right) + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
-&=  \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
+&= \langle \widetilde{P}_k \id_n + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n,i}^k - v^k M_{n,i}^{-k} \right) + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&=  \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
 \end{align*}
 \end{proof}
 
-Let for a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\tilde{P}_k \cdot \tilde{y}_\lambda := \psi_n(\tilde{P}_k) \tilde{y}_\lambda$, which is essentially a meridian threaded by $\tilde{P}_k$ wrapped around $\tilde{y}_\lambda$. The next proposition shows that $\tilde{y}_\lambda$ is an eigenvector with respect to the assignment $\tilde{y}_\lambda \mapsto \tilde{P}_k \cdot \tilde{y}_\lambda$. Note that all the eigenvalues are distinct from each other. The annular closure of these eigenvalue equations generalize the result found in \AP{ZL}, which they show for $k=1$. 
+Let for a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\widetilde{P}_k \cdot \tilde{y}_\lambda := \psi_n(\widetilde{P}_k) \tilde{y}_\lambda$, which is essentially a meridian threaded by $\widetilde{P}_k$ wrapped around $\tilde{y}_\lambda$. The next proposition shows that $\tilde{y}_\lambda$ is an eigenvector with respect to the assignment $\tilde{y}_\lambda \mapsto \widetilde{P}_k \cdot \tilde{y}_\lambda$. Note that all the eigenvalues are distinct from each other. The annular closure of these eigenvalue equations generalize the result found in \AP{ZL}, which they show for $k=1$. 
 \begin{proposition} \label{prop:zlgeneralization}
 In $BMW_n$, we have that 
 \[
-\tilde{P}_k \cdot \tilde{y}_\lambda = \left( \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \lambda} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda
+\widetilde{P}_k \cdot \tilde{y}_\lambda = \left( \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \lambda} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda
 \]
 where $\cn(\square)$ is the content of the cell $\square$ in the Young diagram of $\lambda$. 
 \end{proposition}
 \begin{proof}
-We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulae coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $x$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \AP{BB}). Then apply Theorem \ref{thm:powersumcommutator} to move $\tilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulae coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $x$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \AP{BB}). Then apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
 \begin{align*}
 &\quad\,\, \pic[2.4]{ylambdameridianpk.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranch.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbrancha1.eps} - (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbranchb1.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) v^{-k} \pic[2.4]{ylambdameridianpkbrancha2.eps} - (s^k - s^{-k}) v^k \pic[2.4]{ylambdameridianpkbranchb2.eps}
 \end{align*}
-The first diagram is equal to $ \left( \langle \tilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(x)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \AP{Aiston-Morton} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(x)} \tilde{y}_\lambda$. This completes the proof.
+The first diagram is equal to $ \left( \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(x)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \AP{Aiston-Morton} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(x)} \tilde{y}_\lambda$. This completes the proof.
 \end{proof}
 
 

@@ -1,10 +1,10 @@
 \chapter{The Skein Algebra of the Torus} \label{chap:torus}
 
-This chapter is dedicated to the study of the Dubrovnik skein algebra of a torus $\cd(T^2)$, the main result being a simple presentation for the algebra, stated in Theorem \ref{thm:toruspresentation}. The generators $\tilde{P}_\xx$ are embeddings of certain special elements $\tilde{P}_k \in \cd(A)$, which we define in Section \ref{sec:powersumelements}. The $\tilde{P}_k$ generalize both the power sum elements $P_k \in \ch(A)$ and the Chebyshev polynomials $T_k \in \ck(A)$ which are both used widely in the context of their respective skein theories due to the simple relations they satisfy. In particular, we give a simple formula in Theorem \ref{thm:powersumcommutator} which explains how to move any embedding of $\tilde{P}_k$ past a single strand in any skein module, which gives us a family of relations between the $\tilde{P}_\xx$. In Section \ref{sec:presentation}, we show how this and another family of relations imply the relations given in the stated presentation. 
+This chapter is dedicated to the study of the Dubrovnik skein algebra of a torus $\cd(T^2)$, the main result being a simple presentation for the algebra, stated in Theorem \ref{thm:toruspresentation}. The generators $\widetilde{P}_\xx$ are embeddings of certain special elements $\widetilde{P}_k \in \cd(A)$, which we define in Section \ref{sec:powersumelements}. The $\widetilde{P}_k$ generalize both the power sum elements $P_k \in \ch(A)$ and the Chebyshev polynomials $T_k \in \ck(A)$ which are both used widely in the context of their respective skein theories due to the simple relations they satisfy. In particular, we give a simple formula in Theorem \ref{thm:powersumcommutator} which explains how to move any embedding of $\widetilde{P}_k$ past a single strand in any skein module, which gives us a family of relations between the $\widetilde{P}_\xx$. In Section \ref{sec:presentation}, we show how this and another family of relations imply the relations given in the stated presentation. 
 
-The definition of the $\tilde{P}_k$ make it clear why these elements generalize their HOMFLYPT counterparts, but the same isn't immediately clear for the Kauffman bracket case for the $T_k$. In Section \ref{sec:compatibility} we justify this claim by showing that the image of $\tilde{P}_k$ is $T_k$ under the $A$-component of the natural transformation of skein theories $\eta:\cd \to \ck$ described in the previous chapter (see Remark \label{rmk:naturaltransformation}). A corollary of this is that the presentation we give for $\cd(T^2)$ is compatible with $\ck(T^2)$ under $\eta$. Also described in this section is a ``compatibility" of the presentations of $\cd(T^2)$ and $\ch(T^2)$, given as an injective algebra homomorphism between the two. This homomorphism differs between the previous described $\cd(T^2) \to \ck(T^2)$ in the sense that it doesn't arise from any natural transformation between skein theories and is simply defined via generators and relations. However, this map is interesting because we show that $\cd(T^2)$ and $\ch(T^2)$ are universal enveloping algebras of some Lie algebras, and this homomorphism arises in the image of the universal enveloping algebra functor. 
+The definition of the $\widetilde{P}_k$ make it clear why these elements generalize their HOMFLYPT counterparts, but the same isn't immediately clear for the Kauffman bracket case for the $T_k$. In Section \ref{sec:compatibility} we justify this claim by showing that the image of $\widetilde{P}_k$ is $T_k$ under the $A$-component of the natural transformation of skein theories $\eta:\cd \to \ck$ described in the previous chapter (see Remark \label{rmk:naturaltransformation}). A corollary of this is that the presentation we give for $\cd(T^2)$ is compatible with $\ck(T^2)$ under $\eta$. Also described in this section is a ``compatibility" of the presentations of $\cd(T^2)$ and $\ch(T^2)$, given as an injective algebra homomorphism between the two. This homomorphism differs between the previous described $\cd(T^2) \to \ck(T^2)$ in the sense that it doesn't arise from any natural transformation between skein theories and is simply defined via generators and relations. However, this map is interesting because we show that $\cd(T^2)$ and $\ch(T^2)$ are universal enveloping algebras of some Lie algebras, and this homomorphism arises in the image of the universal enveloping algebra functor. 
 
-In Section \ref{sec:action}, we give a description of the natural action of $\cd(T^2)$  on $\cd(D^2 \times S^1)$, which exists because the boundary of the solid torus is $T^2$. First we give a small generating setof the algebra $\cd(T^2)$, consisting of only five elements, together with an algorithm for expressing any $\tilde{P}_\xx$ in terms of these other generators. Then, we show how these five elements act of $\cd(D^2 \times S^1)$, which implicitly describes how each $\tilde{P}_\xx$ acts. 
+In Section \ref{sec:action}, we give a description of the natural action of $\cd(T^2)$  on $\cd(D^2 \times S^1)$, which exists because the boundary of the solid torus is $T^2$. First we give a small generating setof the algebra $\cd(T^2)$, consisting of only five elements, together with an algorithm for expressing any $\widetilde{P}_\xx$ in terms of these other generators. Then, we show how these five elements act of $\cd(D^2 \times S^1)$, which implicitly describes how each $\widetilde{P}_\xx$ acts. 
 
 This chapter includes many, but not all of the details from the paper \AP{MPS} which is co-authored by Hugh Morton, Peter Samuelson, and myself. I've included only some parts of the paper which I significantly contributed to. \AP{Is this worded appropriately? Should I say more?}
 
@@ -19,22 +19,22 @@ Recall that there is a injective algebra homomorphism $\Lambda \to \ch(A)^+$ whi
 \end{equation}
 which writes each $P_k$ in terms of the generators $h_n$. 
 
-Using the Beliakova-Blanchet section $\Gamma: H_n \to BMW_n$, we may emulate this definition to define ``power sum" elements $\tilde{P}_k \in \cd(A)$ by the formal power series equation
+Using the Beliakova-Blanchet section $\Gamma: H_n \to BMW_n$, we may emulate this definition to define ``power sum" elements $\widetilde{P}_k \in \cd(A)$ by the formal power series equation
 \begin{equation}
-\sum_{k=1}^\infty \frac{\tilde{P}_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty \tilde{h}_n t^n \Bigg)
+\sum_{k=1}^\infty \frac{\widetilde{P}_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty \tilde{h}_n t^n \Bigg)
 \end{equation}
-where $\tilde{h}_n := \tilde{Q}_{(n)}$ is the annular closure of the BMW symmetrizers $\tilde{y}_n = \Gamma(y_n)$.
+where $\tilde{h}_n := \widetilde{Q}_{(n)}$ is the annular closure of the BMW symmetrizers $\tilde{y}_n = \Gamma(y_n)$.
 
 Let's now continue our discussion of Section \ref{sec:relativeannulus} with the following theorem.
 
 \begin{theorem} \label{thm:powersumcommutator}
 For any $k \geq 1$, the relation
 \begin{equation} \label{eq:powersumcommutator}
-e \cdot \tilde{P}_k - \tilde{P}_k \cdot e = (s^k - s^{-k}) (a^k - a^{-k})
+e \cdot \widetilde{P}_k - \widetilde{P}_k \cdot e = (s^k - s^{-k}) (a^k - a^{-k})
 \end{equation}
 holds. Equivalently,
 \begin{equation}
-a^i \cdot \tilde{P}_k - \tilde{P}_k \cdot a^i = (s^k - s^{-k}) (a^{k+i} - a^{-k+i})
+a^i \cdot \widetilde{P}_k - \widetilde{P}_k \cdot a^i = (s^k - s^{-k}) (a^{k+i} - a^{-k+i})
 \end{equation}
 for any integer $i$.
 \end{theorem}
@@ -51,11 +51,11 @@ for all integers $n \geq -1$, where $\tilde{h}_0 := 1$ and $\tilde{h}_{-1} := 0$
 \begin{proof}
 The relations of Theorem \ref{thm:powersumcommutator} may be organized into a single power series equation
 \begin{equation} \label{eq:skewcommutator1}
-\sum_{k=1}^\infty \frac{e \cdot \tilde{P}_k - \tilde{P}_k \cdot e}{k} t^k = \sum_{k=1}^{\infty} \frac {(s^k - s^{-k}) (a^k - a^{-k})}{k} t^k
+\sum_{k=1}^\infty \frac{e \cdot \widetilde{P}_k - \widetilde{P}_k \cdot e}{k} t^k = \sum_{k=1}^{\infty} \frac {(s^k - s^{-k}) (a^k - a^{-k})}{k} t^k
 \end{equation}
 in $\ca_\cd [[t]]$. Rewrite this equation as
 \begin{equation} \label{eq:powersumcommutator2} 
-e \cdot \Bigg( \sum_{k=1}^\infty \tilde{P}_k \Bigg) - \Bigg( \sum_{k=1}^\infty \tilde{P}_k \Bigg) \cdot e = \sum_{k=1}^{\infty} \frac {(sat)^k}{k} + \sum_{k=1}^{\infty} \frac {(s^{-1}a^{-1}t)^k}{k} - \sum_{k=1}^{\infty} \frac {(s^{-1}at)^k}{k} - \sum_{k=1}^{\infty} \frac {(sa^{-1}t)^k}{k}
+e \cdot \Bigg( \sum_{k=1}^\infty \widetilde{P}_k \Bigg) - \Bigg( \sum_{k=1}^\infty \widetilde{P}_k \Bigg) \cdot e = \sum_{k=1}^{\infty} \frac {(sat)^k}{k} + \sum_{k=1}^{\infty} \frac {(s^{-1}a^{-1}t)^k}{k} - \sum_{k=1}^{\infty} \frac {(s^{-1}at)^k}{k} - \sum_{k=1}^{\infty} \frac {(sa^{-1}t)^k}{k}
 \end{equation}
 We can make sense of the left-hand side by extending the algebra homomorphism $x \mapsto e \cdot (x)$ to an algebra homomorphism of rings of formal power series
 \begin{center}
@@ -173,7 +173,7 @@ Where the last equality follows from a quick computation in the base ring. This 
 \end{proof}
 
 \begin{remark}
-Theorem \ref{thm:powersumcommutator} is part of a Dubrovnik generalization of the ``Miraculous Cancellations" first proven by Bonahon and Wong in \AP{BW} and again by Lê using only skein theoretic methods in \AP{Lê}. Under the natural transformation $\eta:\cd \to \ck$, the $\tilde{P}_k$ are sent to the Chebyshev polynomials $T_k$ (see Section \ref{sec:bracketcompatibility}), and the relation of Theorem \ref{thm:powersumcommutator} is sent to a commutation relation for the $T_k$. Now, if $s$ is specialized to be a $2k$-th root of unity so that $s^k = s^{-k}$, then the commutation relation implies that any threading of $T_k$ in any skein algebra $\ck_{s^{2k}=1}(\Sigma)$ is a central element. More generally, a threading in any skein module $\ck_{s^{2k}=1}(M, N)$ is \textit{transparent}, which essentially means it may move freely about the space, past any tangle. This gives rise to the \textbf{Chebyshev-Frobenius homomorphism}, first defined for skein algebras in \AP{BW} and extended to general relative skein modules in \AP{Le-Paprocki}.
+Theorem \ref{thm:powersumcommutator} is part of a Dubrovnik generalization of the ``Miraculous Cancellations" first proven by Bonahon and Wong in \AP{BW} and again by Lê using only skein theoretic methods in \AP{Lê}. Under the natural transformation $\eta:\cd \to \ck$, the $\widetilde{P}_k$ are sent to the Chebyshev polynomials $T_k$ (see Section \ref{sec:bracketcompatibility}), and the relation of Theorem \ref{thm:powersumcommutator} is sent to a commutation relation for the $T_k$. Now, if $s$ is specialized to be a $2k$-th root of unity so that $s^k = s^{-k}$, then the commutation relation implies that any threading of $T_k$ in any skein algebra $\ck_{s^{2k}=1}(\Sigma)$ is a central element. More generally, a threading in any skein module $\ck_{s^{2k}=1}(M, N)$ is \textit{transparent}, which essentially means it may move freely about the space, past any tangle. This gives rise to the \textbf{Chebyshev-Frobenius homomorphism}, first defined for skein algebras in \AP{BW} and extended to general relative skein modules in \AP{Le-Paprocki}.
 
 It would be nice to say that Theorem \ref{thm:powersumcommutator} implies a generalization of the Chebyshev-Frobenius homomorphism for Dubrovnik skein modules, but there is a major problem which is that our choice of base ring is $\Q(s,v)$, which doesn't allow for specializations to roots of unity. This choice is also used in \AP{BB} and subsequently \AP{ZL}, whose results we use here in a fundamental way. Even in the literature regarding HOMFLYPT skein theory, the elements $(s^k - s^{-k})^{-1}$ are adjoined to the base ring. It would be interesting to see if this problem may be resolved somehow, but it is not something we address outside of this remark. 
 \end{remark}
@@ -181,7 +181,7 @@ It would be nice to say that Theorem \ref{thm:powersumcommutator} implies a gene
 
 \section{A Presentation of $\cd(T^2)$} \label{sec:presentation}
 
-In this section we will demonstrate the value of the elements $\tilde{P}_k$  by showing that the skein algebra $\cd(T^2)$ admits a very simple presentation. First things first, let's define the generators. Recall that given an extended rational number $r$, there is a (homotopically) distinct oriented simple closed curve on the flat torus $T^2$ with slope $r$, and hence a smooth embedding of the annulus 
+In this section we will demonstrate the value of the elements $\widetilde{P}_k$  by showing that the skein algebra $\cd(T^2)$ admits a very simple presentation. First things first, let's define the generators. Recall that given an extended rational number $r$, there is a (homotopically) distinct oriented simple closed curve on the flat torus $T^2$ with slope $r$, and hence a smooth embedding of the annulus 
 \[
 \iota_r: A \hookrightarrow T^2
 \]
@@ -191,31 +191,31 @@ into tubular neighborhood of the curve. This induces an algebra homomorphism
 \]
 on the level of skein algebras. Any knot in $\cd(T^2)$ is contained in the image of some $\cd(\iota_r)$. Since $\cd$ is an unoriented skein theory, let's only consider $r \geq 0$ to avoid redundancy due to the choice of orientations. Given any equivalence class $\xx = (a, b)$ in $\Z^2 / \langle \xx = - \xx \rangle$ with $k := \gcd(a, b)$, define the element
 \[
-\tilde{P}_\xx := \cd\big(\iota_{a/b}\big)(\tilde{P}_k)
+\widetilde{P}_\xx := \cd\big(\iota_{a/b}\big)(\widetilde{P}_k)
 \]
-to be the embedding of the ``power sum" element $\tilde{P}_k$ into this tubular neighborhood. Let's state the main theorem of the paper.
+to be the embedding of the ``power sum" element $\widetilde{P}_k$ into this tubular neighborhood. Let's state the main theorem of the paper.
 
 \begin{theorem} \label{thm:toruspresentation}
 The skein algebra $\cd(T^2)$ is presented by generators 
 \[
-\{ \tilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = - \xx \rangle \}
+\{ \widetilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = - \xx \rangle \}
 \]
 and relations
 \begin{equation} \label{eq:mainrelations}
-[\tilde{P}_\xx, \tilde{P}_\yy] = (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) (\tilde{P}_{\xx + \yy} - \tilde{P}_{\xx - \yy}).
+[\widetilde{P}_\xx, \widetilde{P}_\yy] = (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) (\widetilde{P}_{\xx + \yy} - \widetilde{P}_{\xx - \yy}).
 \end{equation}
 \end{theorem}
 
 \begin{corollary} \label{cor:liealgebra1}
-The linear span of the set $\{ \tilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = - \xx \rangle \}$ is a Lie algebra, and  $\cd(T^2)$ is its universal enveloping algebra. 
+The linear span of the set $\{ \widetilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = - \xx \rangle \}$ is a Lie algebra, and  $\cd(T^2)$ is its universal enveloping algebra. 
 \end{corollary}
 
 The full proof of this theorem may be found in the collaboration \AP{MPS}. Here, we will be focused on showing that the generators satisfy the relations given in the presentation. We formulate this as a proposition.
 \begin{proposition}
 The following special cases of Equation \eqref{eq:mainrelations} hold
 \begin{align}
-[\tilde{P}_{1, 0}, \tilde{P}_{0, n}] &= (s^n - s^{-n}) (\tilde{P}_{1, n} - \tilde{P}_{1, -n}) \label{eq:perprelations} \\
-[\tilde{P}_{1, 0}, \tilde{P}_{1, n}] &= (s^n - s^{-n}) (\tilde{P}_{2, n} - \tilde{P}_{0, n}) \label{eq:angledrelations}
+[\widetilde{P}_{1, 0}, \widetilde{P}_{0, n}] &= (s^n - s^{-n}) (\widetilde{P}_{1, n} - \widetilde{P}_{1, -n}) \label{eq:perprelations} \\
+[\widetilde{P}_{1, 0}, \widetilde{P}_{1, n}] &= (s^n - s^{-n}) (\widetilde{P}_{2, n} - \widetilde{P}_{0, n}) \label{eq:angledrelations}
 \end{align}
 for any $n \geq 1$. Furthermore, these relations generate all of the relations defined by Equation \eqref{eq:mainrelations}.
 \end{proposition}
@@ -235,11 +235,11 @@ d(\xx) &:= gcd(m,n) \quad \quad \textrm{when } \xx = (m,n).
 \end{align*} 
 We will also use the following terminology: 
 \[
-(\xx,\yy) \in \Z^2 \times \Z^2 \textrm{ is \emph{good} if  } [\tilde{P}_\xx,\tilde{P}_\yy] = \{d(\xx,\yy)\} \left( \tilde{P}_{\xx+\yy}-\tilde{P}_{\xx-\yy} \right).
+(\xx,\yy) \in \Z^2 \times \Z^2 \textrm{ is \emph{good} if  } [\widetilde{P}_\xx,\widetilde{P}_\yy] = \{d(\xx,\yy)\} \left( \widetilde{P}_{\xx+\yy}-\widetilde{P}_{\xx-\yy} \right).
 \]
 
 \begin{remark}\label{remark_goodsymmetry}
-Note that because $\tilde{P}_{\xx}=\tilde{P}_{-\xx}$, if $(\xx, \yy)$ is good, then the pairs $(\pm\xx, \pm\yy)$ are good as well. 
+Note that because $\widetilde{P}_{\xx}=\widetilde{P}_{-\xx}$, if $(\xx, \yy)$ is good, then the pairs $(\pm\xx, \pm\yy)$ are good as well. 
 \end{remark}
 
 The idea of the proof is to induct on the absolute value of the determinant of the matrix with columns $\xx$ and $\yy$. To induct, we write $\xx = \aab + \bb$ for carefully chosen vectors $\aab, \bb$ and then use the following lemma. 
@@ -253,19 +253,19 @@ The idea of the proof is to induct on the absolute value of the determinant of t
 \begin{proof}
 We  use the Jacobi identity and the goodness assumptions to compute
 	\begin{eqnarray*}
-&-&\{d(\aab, \bb)\} [\tilde{P}_{\aab+\bb}, \tilde{P}_y] + \{d(\aab, \bb)\} [\tilde{P}_{\aab-\bb}, \tilde{P}_y] \\
-=&-&[[\tilde{P}_{\aab}, \tilde{P}_{\bb}], \tilde{P}_{\yy}] \\
-=&&[[\tilde{P}_{\yy}, \tilde{P}_{\aab}], \tilde{P}_{\bb}] + [[\tilde{P}_{\bb}, \tilde{P}_y], \tilde{P}_{\aab}] \\
-=&&\{d(\yy, \aab)\} [\tilde{P}_{\yy+\aab} - \tilde{P}_{\yy-\aab}, \tilde{P}_{\bb}] + \{d(b,y)\} [\tilde{P}_{\bb+\yy} - \tilde{P}_{\bb-\yy}], \tilde{P}_{\aab}] \\
-=&&\{d(\yy,\aab)\} \left( \{d(\yy+\aab, \bb)\} \left( \tilde{P}_{\yy+\aab+\bb} - \tilde{P}_{\yy+\aab-\bb} \right) \right. \\
-&& \left. \qquad\qquad -\{d(\yy-\aab,\bb)\} \left( \tilde{P}_{\yy-\aab+\bb} - \tilde{P}_{\yy-\aab-\bb} \right) \right) \\
-&+&\{d(\bb,\yy)\} \left( \{d(\bb+\yy, \aab)\} \left( \tilde{P}_{\bb+\yy+\aab} - \tilde{P}_{\bb+\yy-\aab} \right) \right. \\
-&& \left. \qquad\qquad -\{d(\bb-\yy, \aab)\} \left( \tilde{P}_{\bb-\yy+\aab} - \tilde{P}_{\bb-\yy-\aab} \right) \right) \\
-=&& \left( \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \right) \tilde{P}_{\aab+\bb+\yy} \\
-&+& \left( \{d(\yy,\aab)\} \{d(\yy-\aab,\bb)\} - \{d(\bb,\yy)\} \{d(\bb-\yy,\aab)\} \right) \tilde{P}_{\aab+\bb-\yy} \\
-&-& \left( \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} - \{d(\bb,\yy)\} \{d(\bb-\yy,\aab)\} \right) \tilde{P}_{\aab-\bb+\yy} \\
-&-& \left( \{d(\yy,\aab)\} \{d(\yy-\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \right) \tilde{P}_{\aab-\bb-\yy} \\
-=:&& c_1 \tilde{P}_{\aab+\bb+\yy} + c_2 \tilde{P}_{\aab+\bb-\yy} - c_3 \tilde{P}_{\aab-\bb+\yy} - c_4 \tilde{P}_{\aab-\bb-\yy}.
+&-&\{d(\aab, \bb)\} [\widetilde{P}_{\aab+\bb}, \widetilde{P}_y] + \{d(\aab, \bb)\} [\widetilde{P}_{\aab-\bb}, \widetilde{P}_y] \\
+=&-&[[\widetilde{P}_{\aab}, \widetilde{P}_{\bb}], \widetilde{P}_{\yy}] \\
+=&&[[\widetilde{P}_{\yy}, \widetilde{P}_{\aab}], \widetilde{P}_{\bb}] + [[\widetilde{P}_{\bb}, \widetilde{P}_y], \widetilde{P}_{\aab}] \\
+=&&\{d(\yy, \aab)\} [\widetilde{P}_{\yy+\aab} - \widetilde{P}_{\yy-\aab}, \widetilde{P}_{\bb}] + \{d(b,y)\} [\widetilde{P}_{\bb+\yy} - \widetilde{P}_{\bb-\yy}], \widetilde{P}_{\aab}] \\
+=&&\{d(\yy,\aab)\} \left( \{d(\yy+\aab, \bb)\} \left( \widetilde{P}_{\yy+\aab+\bb} - \widetilde{P}_{\yy+\aab-\bb} \right) \right. \\
+&& \left. \qquad\qquad -\{d(\yy-\aab,\bb)\} \left( \widetilde{P}_{\yy-\aab+\bb} - \widetilde{P}_{\yy-\aab-\bb} \right) \right) \\
+&+&\{d(\bb,\yy)\} \left( \{d(\bb+\yy, \aab)\} \left( \widetilde{P}_{\bb+\yy+\aab} - \widetilde{P}_{\bb+\yy-\aab} \right) \right. \\
+&& \left. \qquad\qquad -\{d(\bb-\yy, \aab)\} \left( \widetilde{P}_{\bb-\yy+\aab} - \widetilde{P}_{\bb-\yy-\aab} \right) \right) \\
+=&& \left( \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \right) \widetilde{P}_{\aab+\bb+\yy} \\
+&+& \left( \{d(\yy,\aab)\} \{d(\yy-\aab,\bb)\} - \{d(\bb,\yy)\} \{d(\bb-\yy,\aab)\} \right) \widetilde{P}_{\aab+\bb-\yy} \\
+&-& \left( \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} - \{d(\bb,\yy)\} \{d(\bb-\yy,\aab)\} \right) \widetilde{P}_{\aab-\bb+\yy} \\
+&-& \left( \{d(\yy,\aab)\} \{d(\yy-\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\yy,\aab)\} \right) \widetilde{P}_{\aab-\bb-\yy} \\
+=:&& c_1 \widetilde{P}_{\aab+\bb+\yy} + c_2 \widetilde{P}_{\aab+\bb-\yy} - c_3 \widetilde{P}_{\aab-\bb+\yy} - c_4 \widetilde{P}_{\aab-\bb-\yy}.
 	\end{eqnarray*}
 Define constants $\{n\}^+ := s^n + s^{-n}$, and these satisfy the relations
 \[
@@ -284,15 +284,15 @@ c_1 \,\,\, =& &  \{d(\yy,\aab)\} \{d(\yy+\aab,\bb)\} + \{d(\bb,\yy)\} \{d(\bb+\y
 	\end{eqnarray*}
 Similar computations for the other $c_i$ show that 
 	\begin{align}
-\frac{1}{\{d(\aab,\bb)\}}[[\tilde{P}_\aab,\tilde{P}_\bb],\tilde{P}_\yy] &=  \frac{-1}{\{d(\aab,\bb)\}} \left( c_1 \tilde{P}_{\aab+\bb+\yy} + c_2 \tilde{P}_{\aab+\bb-\yy} - c_3 \tilde{P}_{\aab-\bb+\yy} - c_4 \tilde{P}_{\aab-\bb-\yy}\right) \notag\\ 
-&=  \{d(\xx,\yy)\} \left( \tilde{P}_{\xx+\yy} - \tilde{P}_{\xx-\yy} \right) 
--\{d(\aab-\bb,\yy)\} \left( \tilde{P}_{\aab-\bb+\yy} - \tilde{P}_{\aab-\bb-\yy} \right)\notag \\
-&= \{d(\xx,\yy)\} \left( \tilde{P}_{\xx+\yy} - \tilde{P}_{\xx-\yy} \right) 
-- [\tilde{P}_{\aab-\bb},\tilde{P}_\yy]. \label{eq:astep}
+\frac{1}{\{d(\aab,\bb)\}}[[\widetilde{P}_\aab,\widetilde{P}_\bb],\widetilde{P}_\yy] &=  \frac{-1}{\{d(\aab,\bb)\}} \left( c_1 \widetilde{P}_{\aab+\bb+\yy} + c_2 \widetilde{P}_{\aab+\bb-\yy} - c_3 \widetilde{P}_{\aab-\bb+\yy} - c_4 \widetilde{P}_{\aab-\bb-\yy}\right) \notag\\ 
+&=  \{d(\xx,\yy)\} \left( \widetilde{P}_{\xx+\yy} - \widetilde{P}_{\xx-\yy} \right) 
+-\{d(\aab-\bb,\yy)\} \left( \widetilde{P}_{\aab-\bb+\yy} - \widetilde{P}_{\aab-\bb-\yy} \right)\notag \\
+&= \{d(\xx,\yy)\} \left( \widetilde{P}_{\xx+\yy} - \widetilde{P}_{\xx-\yy} \right) 
+- [\widetilde{P}_{\aab-\bb},\widetilde{P}_\yy]. \label{eq:astep}
 	\end{align}
 	Since the pair $(\aab,\bb)$ is good, we have 
 \begin{equation}\label{eq:added}
-[\tilde{P}_{\aab}, \tilde{P}_{\bb}] = \{d(\aab, \bb )\} \big( \tilde{P}_{\xx} - \tilde{P}_{\aab-\bb} \big).
+[\widetilde{P}_{\aab}, \widetilde{P}_{\bb}] = \{d(\aab, \bb )\} \big( \widetilde{P}_{\xx} - \widetilde{P}_{\aab-\bb} \big).
 \end{equation}
 Finally, combining equations \eqref{eq:added} and \eqref{eq:astep} shows that the pair $(\xx,\yy)$ is good.
 \end{proof}
@@ -319,18 +319,18 @@ Now we'll need to prove the following elementary lemma (which is a slight modifi
 \end{proof}
 
 \begin{remark}\label{remark_gl2z}
-The mapping class group of a (smooth) surface $\Sigma$ is the group of isotopy classes of (smooth) orientation-preserving homeomorphisms $\Sigma \to \Sigma$. Any skein algebra $\cs_X(\Sigma)$ is acted on by the mapping class group of $\Sigma$: the mapping class group is generated by Dehn twists on $\Sigma$ and may be extended trivially onto $\Sigma \times I$, which induce algebra endomorphisms on the skein algebra due to functoriality of $\cs_X(-)$. Thus, there is an $SL_2(\Z)$-action on $\cd(T^2)$ and is such that $g \cdot \tilde{P}_\xx = \tilde{P}_{g\xx}$ for any $g \in \SL_2(\Z)$. One could choose to extend this to an action of the \textit{extended} mapping class group of $\Sigma$ (that is, to include orientation-reversing diffeomorphisms) so that $GL_2(Z)$ acts on $\cd(T^2)$. If matrices of determinant $-1$ are to act on $\cd(T^2)$ in the same way as before, then they will induce anti-linear algebra anti-homomorphisms on $\cd(T^2)$. One could turn these into honest algebra homomorphisms by composing with the mirror map (note that $\tilde{P}_\xx$ is fixed by the mirror map since the BMW symmetrizers are). It will be important that the orbits of this action on the $\tilde{P}_{\xx}$ are the fibers of the assignment $\tilde{P}_{\xx} \mapsto d(\xx)$ (which is essentially the statement of Lemma \ref{lemma_diophantine}). In other words, up to the action of $GL_2(\Z)$, vectors in $\Z^2$ are classified by the GCD of their entries.
+The mapping class group of a (smooth) surface $\Sigma$ is the group of isotopy classes of (smooth) orientation-preserving homeomorphisms $\Sigma \to \Sigma$. Any skein algebra $\cs_X(\Sigma)$ is acted on by the mapping class group of $\Sigma$: the mapping class group is generated by Dehn twists on $\Sigma$ and may be extended trivially onto $\Sigma \times I$, which induce algebra endomorphisms on the skein algebra due to functoriality of $\cs_X(-)$. Thus, there is an $SL_2(\Z)$-action on $\cd(T^2)$ and is such that $g \cdot \widetilde{P}_\xx = \widetilde{P}_{g\xx}$ for any $g \in \SL_2(\Z)$. One could choose to extend this to an action of the \textit{extended} mapping class group of $\Sigma$ (that is, to include orientation-reversing diffeomorphisms) so that $GL_2(Z)$ acts on $\cd(T^2)$. If matrices of determinant $-1$ are to act on $\cd(T^2)$ in the same way as before, then they will induce anti-linear algebra anti-homomorphisms on $\cd(T^2)$. One could turn these into honest algebra homomorphisms by composing with the mirror map (note that $\widetilde{P}_\xx$ is fixed by the mirror map since the BMW symmetrizers are). It will be important that the orbits of this action on the $\widetilde{P}_{\xx}$ are the fibers of the assignment $\widetilde{P}_{\xx} \mapsto d(\xx)$ (which is essentially the statement of Lemma \ref{lemma_diophantine}). In other words, up to the action of $GL_2(\Z)$, vectors in $\Z^2$ are classified by the GCD of their entries.
 \end{remark}
 
 \begin{proposition}\label{lemma_allfromsome}
-Suppose $A$ is an algebra with elements $\tilde{P}_\xx$ for $\xx \in \Z^2/\langle -\xx = \xx \rangle$ that satisfy equations \eqref{eq:perprelations} and \eqref{eq:angledrelations}. Furthermore, suppose that there is a $\GL_2(\Z)$-action on $A$ so that $g \cdot \tilde{P}_\xx = \tilde{P}_{g \xx}$ for any $g \in \GL_2(\Z)$. Then, any pair $(\xx, \yy)$ is a good pair. 
+Suppose $A$ is an algebra with elements $\widetilde{P}_\xx$ for $\xx \in \Z^2/\langle -\xx = \xx \rangle$ that satisfy equations \eqref{eq:perprelations} and \eqref{eq:angledrelations}. Furthermore, suppose that there is a $\GL_2(\Z)$-action on $A$ so that $g \cdot \widetilde{P}_\xx = \widetilde{P}_{g \xx}$ for any $g \in \GL_2(\Z)$. Then, any pair $(\xx, \yy)$ is a good pair. 
 \end{proposition}
 \begin{proof}
 	The proof proceeds by induction on $\lvert d(\xx,\yy)\rvert $, and the base case $\lvert d(\xx,\yy)\rvert = 1$ is immediate from Remark \ref{remark_gl2z} and the assumption \eqref{eq:perprelations} for $\xx = (1,0)$ and $\yy = (0,1)$. We now make the following inductive assumption:
 	\begin{equation}\label{assumption1} 
 	\textrm{For all } \xx',\yy' \in \Z^2\textrm{ with } \lvert d(\xx',\yy')\rvert < \lvert d(\xx,\yy) \rvert, \textrm{ the pair } (\xx',\yy') \textrm{ is good.}
 	\end{equation}
-	We would like to show that $[\tilde{P}_{\xx},\tilde{P}_{\yy}] = \{d(\xx,\yy)\} \big( \tilde{P}_{\xx + \yy} - \tilde{P}_{\xx-\yy} \big)$. By Remark \ref{remark_gl2z}, we may assume
+	We would like to show that $[\widetilde{P}_{\xx},\widetilde{P}_{\yy}] = \{d(\xx,\yy)\} \big( \widetilde{P}_{\xx + \yy} - \widetilde{P}_{\xx-\yy} \big)$. By Remark \ref{remark_gl2z}, we may assume
 	\[
 	\yy = \begin{bmatrix}0\\r\end{bmatrix},\quad \xx = \begin{bmatrix}p\\q\end{bmatrix},\quad d(\xx) \leq d(\yy),\quad 0 \leq q < p.
 	\]
@@ -583,7 +583,7 @@ Under the algebra homomorphism
 \[
 \eta_A: \cd(A) \to \ck(A)
 \]
-the image of the special element $\tilde{P}_k$ is equal to the Chebyshev polynomial $T_k$.
+the image of the special element $\widetilde{P}_k$ is equal to the Chebyshev polynomial $T_k$.
 \end{corollary}
 \begin{proof}
 Since $\eta$ is natural, the closure into the annulus induces a commuting square
@@ -593,9 +593,9 @@ BMW_n \arrow[r, "\cl"] \arrow[d, "\eta"] & \cd(A) \arrow[d, "\eta"] \\
 TL_n \arrow[r, "\cl"] & \ck(A)
 \end{tikzcd}
 \end{center}
-Recall the $\tilde{P}_k$ are uniquely determined by the power series equation
+Recall the $\widetilde{P}_k$ are uniquely determined by the power series equation
 \[
-\sum_{k=1}^\infty \frac{\tilde{P}_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty \tilde{h}_n t^n \Bigg).
+\sum_{k=1}^\infty \frac{\widetilde{P}_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty \tilde{h}_n t^n \Bigg).
 \]
 If we show that the following equality holds
 \[
@@ -629,7 +629,7 @@ into a tubular neighborhood of the simple closed curve of rational slope $r=a/b$
 \ck(A) \arrow[r, "\ck(\iota_r)"] & \ck(T^2)
 \end{tikzcd}
 \end{center}
-which imply that $\eta_{T^2}(\tilde{P}_\xx) = T_\xx$ for any $\xx$ where the $T_\xx$ are the generators in the Frohman-Gelca presentation of $\ck(T^2)$. Indeed, one can check that the $T_k$ satisfy the relations Theorem \ref{thm:toruspresentation}:
+which imply that $\eta_{T^2}(\widetilde{P}_\xx) = T_\xx$ for any $\xx$ where the $T_\xx$ are the generators in the Frohman-Gelca presentation of $\ck(T^2)$. Indeed, one can check that the $T_k$ satisfy the relations Theorem \ref{thm:toruspresentation}:
 \begin{align*}
 [T_\xx, T_\yy] &= T_\xx T_\yy - T_\yy T_\xx \\
 &= (s^{\det(\xx, \yy)} T_{\xx + \yy} + s^{-\det(\xx, \yy)} T_{\xx - \yy}) - (s^{\det(\yy, \xx)} T_{\yy + \xx} + s^{-\det(\yy, \xx)} T_{\yy - \xx}) \\
@@ -659,7 +659,7 @@ and relations
 \]
 This implies that the span of the generators is a Lie algebra and $\ch(T^2)$ is its universal enveloping algebra. Let's use the notation 
 \[
-\mathfrak{g}_\ch := R\{ P_\xx \mid \xx \in \Z^2 \} \qquad \qquad \mathfrak{g}_\cd := R\{ \tilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = -\xx \rangle \}.
+\mathfrak{g}_\ch := R\{ P_\xx \mid \xx \in \Z^2 \} \qquad \qquad \mathfrak{g}_\cd := R\{ \widetilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = -\xx \rangle \}.
 \]
 
 \begin{proposition}
@@ -667,7 +667,7 @@ There is an injective Lie algebra homomorphism
 \[
 \varphi: \mathfrak{g}_\cd \to \mathfrak{g}_\ch 
 \]
-defined by $\varphi(\tilde{P}_\xx) = P_\xx + P_{-\xx}$. This induces an algebra homomorphism
+defined by $\varphi(\widetilde{P}_\xx) = P_\xx + P_{-\xx}$. This induces an algebra homomorphism
 \[
 U(\varphi): \cd(T^2) \to \ch(T^2)
 \]
@@ -676,13 +676,13 @@ where $U(-)$ is the universal enveloping algebra functor. Furthermore, the restr
 \begin{proof}
 The assignment is linear since it's defined on basis elements. Let's check that
 \[
-\varphi\big( [\tilde{P}_\xx, \tilde{P}_\yy] \big) = [\varphi(\tilde{P}_\xx), \varphi(\tilde{P}_\yy)]
+\varphi\big( [\widetilde{P}_\xx, \widetilde{P}_\yy] \big) = [\varphi(\widetilde{P}_\xx), \varphi(\widetilde{P}_\yy)]
 \]
 for any $\xx$ and $\yy$. The left-hand side is
 \begin{eqnarray*}
-&&\varphi\big( [\tilde{P}_\xx, \tilde{P}_\yy] \big) \\
-=&& \varphi\big( (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)})(\tilde{P}_{\xx+\yy} - \tilde{P}_{\xx-\yy}) \big) \\
-=&& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) \big( \varphi(\tilde{P}_{\xx+\yy}) - \varphi(\tilde{P}_{\xx-\yy}) \big) \\
+&&\varphi\big( [\widetilde{P}_\xx, \widetilde{P}_\yy] \big) \\
+=&& \varphi\big( (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)})(\widetilde{P}_{\xx+\yy} - \widetilde{P}_{\xx-\yy}) \big) \\
+=&& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) \big( \varphi(\widetilde{P}_{\xx+\yy}) - \varphi(\widetilde{P}_{\xx-\yy}) \big) \\
 =&& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) \big( P_{\xx+\yy} + P_{-\xx-\yy} - P_{\xx-\yy} - P_{-\xx+\yy} \big) \\
 =&& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{\xx+\yy} + (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{-\xx-\yy} \\
 &-& (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{\xx-\yy} - (s^{\det(\xx, \yy)} - s^{-\det(\xx, \yy)}) P_{-\xx+\yy} \\
@@ -690,9 +690,9 @@ for any $\xx$ and $\yy$. The left-hand side is
 &-& (s^{-\det(\xx, -\yy)} - s^{\det(\xx, -\yy)}) P_{\xx-\yy} - (s^{-\det(-\xx, \yy)} - s^{\det(-\xx, \yy)}) P_{-\xx+\yy} \\
 =&& [P_\xx, P_\yy] + [P_{-\xx}, P_{-\yy}] + [P_{\xx}, P_{-\yy}] + [P_{-\xx}, P_{\yy}] \\
 =&& [P_{\xx} + P_{-\xx}, P_{\yy} + P_{-\yy}] \\
-=&& [\varphi(\tilde{P}_\xx), \varphi(\tilde{P}_\yy)].
+=&& [\varphi(\widetilde{P}_\xx), \varphi(\widetilde{P}_\yy)].
 \end{eqnarray*}
-Note that $\varphi(\tilde{P}_\xx) = \varphi(\tilde{P}_{-\xx})$, so the map is well-defined. This completes the proof.
+Note that $\varphi(\widetilde{P}_\xx) = \varphi(\widetilde{P}_{-\xx})$, so the map is well-defined. This completes the proof.
 \end{proof}
 
 \begin{remark}
@@ -713,26 +713,26 @@ Recall that the skein algebra of the boundary of a 3-manifold acts on the skein 
 
 First, we prove a technical lemma. 
 \begin{lemma} \label{lem:generateline}
-Let $\xx, \yy, \zz \in \Z^2$ be  such that $\xx = \yy-\zz$ and so $d := \det(\yy,\zz)$ is non-zero. Then $\tilde{P}_{\xx+n\zz}$ is generated by $\tilde{P}_\xx, \tilde{P}_\yy, \tilde{P}_\zz$ for all $n \in \Z$. 
+Let $\xx, \yy, \zz \in \Z^2$ be  such that $\xx = \yy-\zz$ and so $d := \det(\yy,\zz)$ is non-zero. Then $\widetilde{P}_{\xx+n\zz}$ is generated by $\widetilde{P}_\xx, \widetilde{P}_\yy, \widetilde{P}_\zz$ for all $n \in \Z$. 
 \end{lemma}
 \begin{proof}
-The statement is trivial if $n=0$. By induction on positive $n$, one can express $\tilde{P}_{\yy+n\zz}$ as
+The statement is trivial if $n=0$. By induction on positive $n$, one can express $\widetilde{P}_{\yy+n\zz}$ as
 \[
-    \tilde{P}_{\yy+n\zz} = \{ d \}^{-1} \Big( [\tilde{P}_{\yy+ (n-1)\zz}, \tilde{P}_\zz] + \{ d \} \tilde{P}_{\yy+(n-2)\zz} \Big)
+    \widetilde{P}_{\yy+n\zz} = \{ d \}^{-1} \Big( [\widetilde{P}_{\yy+ (n-1)\zz}, \widetilde{P}_\zz] + \{ d \} \widetilde{P}_{\yy+(n-2)\zz} \Big)
 \]
-which holds for $n=1$ by Theorem \ref{thm:toruspresentation}. Since $\tilde{P}_\zz = \tilde{P}_{-\zz}$, we can repeat a similar induction to generate $\tilde{P}_{\yy -n\zz}$:
+which holds for $n=1$ by Theorem \ref{thm:toruspresentation}. Since $\widetilde{P}_\zz = \widetilde{P}_{-\zz}$, we can repeat a similar induction to generate $\widetilde{P}_{\yy -n\zz}$:
 \[
-    \tilde{P}_{\yy-n\zz} = \{ d \}^{-1} \Big( [ \tilde{P}_{\yy-(n-1)\zz}, \tilde{P}_{-\zz} ] + \{ d \} \tilde{P}_{\yy-(n-2)\zz} \Big)
+    \widetilde{P}_{\yy-n\zz} = \{ d \}^{-1} \Big( [ \widetilde{P}_{\yy-(n-1)\zz}, \widetilde{P}_{-\zz} ] + \{ d \} \widetilde{P}_{\yy-(n-2)\zz} \Big)
 \]
 where now the base case can be any $n \geq 1$. 
 \end{proof}
-The above lemma may the thought of geometrically as a way of generating the integer points of a line with rational slope in the lattice $\{ \tilde{P}_{n,m} \vert (n,m) \in \Z^2 \}$, given the right initial conditions.
+The above lemma may the thought of geometrically as a way of generating the integer points of a line with rational slope in the lattice $\{ \widetilde{P}_{n,m} \vert (n,m) \in \Z^2 \}$, given the right initial conditions.
 
 \begin{proposition} \label{prop:generators}
-The algebra $\cd(T^2)$ is generated by the elements $\tilde{P}_{0,0}, \tilde{P}_{1,0}, \tilde{P}_{0,1}, \tilde{P}_{1,1}, \tilde{P}_{2,0}$.
+The algebra $\cd(T^2)$ is generated by the elements $\widetilde{P}_{0,0}, \widetilde{P}_{1,0}, \widetilde{P}_{0,1}, \widetilde{P}_{1,1}, \widetilde{P}_{2,0}$.
 \end{proposition}
 \begin{proof}
-Let's visualize and keep track of which $\tilde{P}_{n, m}$ we've generated by dots on a lattice. So, we start with the configuration below.
+Let's visualize and keep track of which $\widetilde{P}_{n, m}$ we've generated by dots on a lattice. So, we start with the configuration below.
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
@@ -753,7 +753,7 @@ Let's visualize and keep track of which $\tilde{P}_{n, m}$ we've generated by do
 
 First, we generate the element
 \[
-    \tilde{P}_{1,-1} = \{ 1 \}^{-1} \Big( [\tilde{P}_{1,0}, D_{0,1}] + \{ 1 \}^{-1} D_{1,1} \Big).
+    \widetilde{P}_{1,-1} = \{ 1 \}^{-1} \Big( [\widetilde{P}_{1,0}, D_{0,1}] + \{ 1 \}^{-1} D_{1,1} \Big).
 \]
 
 \begin{center}
@@ -779,7 +779,7 @@ Then, we can generate two parallel lines of minimal distance apart by applying \
         \xx_1 = (0,1), \quad \yy_1 = (1,0), \quad \zz_1 = (1,-1) \\
         \xx_2 = (0,2), \quad \yy_2 = (1,1), \quad \zz_2 = (1,-1)
 \end{align*}
-thus generating $\tilde{P}_{n, 1-n}, \tilde{P}_{n, 2-n}$ for all $n \in \Z$.
+thus generating $\widetilde{P}_{n, 1-n}, \widetilde{P}_{n, 2-n}$ for all $n \in \Z$.
 
 \begin{center}
 \begin{tikzpicture}[scale=.7]
@@ -850,15 +850,15 @@ to generate the vertical line of points through $(n,0)$.
 \end{tikzpicture}
 \end{center}
 
-Finally, any $\tilde{P}_{0,m}$ for $m \neq 0$ can be expressed as
+Finally, any $\widetilde{P}_{0,m}$ for $m \neq 0$ can be expressed as
 \[
-    \tilde{P}_{0,m} = \{ m \}^{-1} \Big( [\tilde{P}_{1,m}, \tilde{P}_{-1,0}] + \{ m \} \tilde{P}_{2,m} \Big)
+    \widetilde{P}_{0,m} = \{ m \}^{-1} \Big( [\widetilde{P}_{1,m}, \widetilde{P}_{-1,0}] + \{ m \} \widetilde{P}_{2,m} \Big)
 \]
-which generates the last of what is left of the $\tilde{P}_{n,m}$. This completes the proof.
+which generates the last of what is left of the $\widetilde{P}_{n,m}$. This completes the proof.
 \end{proof}
 
 \begin{remark}
-The proof above provides an algorithm for expressing any $\tilde{P}_{n,m}$ in terms of the five generators. Of course, this expression is complicated, but it is not surprising since the generating set is so small.
+The proof above provides an algorithm for expressing any $\widetilde{P}_{n,m}$ in terms of the five generators. Of course, this expression is complicated, but it is not surprising since the generating set is so small.
 \end{remark}
 
 
@@ -924,11 +924,11 @@ for all up-down tableaux $\Lambda$.
 \end{theorem}
 
 \begin{remark} \label{rmk:qclosure}
-Recall our notation $\tilde{Q}_\lambda := \cl(\tilde{y}_\lambda)$. Then Theorem \ref{thm:bmwbasis} implies
+Recall our notation $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda)$. Then Theorem \ref{thm:bmwbasis} implies
 \[
-    \cl(q_\Lambda) = \cl(\fa_\Lambda \fb_\Lambda) = \cl(\fb_\Lambda \fa_\Lambda) = \cl(\tilde{y}_{\lambda(\Lambda)}) = \tilde{Q}_{\lambda(\Lambda)},
+    \cl(q_\Lambda) = \cl(\fa_\Lambda \fb_\Lambda) = \cl(\fb_\Lambda \fa_\Lambda) = \cl(\tilde{y}_{\lambda(\Lambda)}) = \widetilde{Q}_{\lambda(\Lambda)},
 \]
-so therefore $\cl(z_\lambda^{(n)})$ is a positive integer multiple of $\tilde{Q}_{\lambda(\Lambda)}$.
+so therefore $\cl(z_\lambda^{(n)})$ is a positive integer multiple of $\widetilde{Q}_{\lambda(\Lambda)}$.
 \end{remark}
 
 Let's formally restate a theorem which was mentioned in Section \ref{sub:annulus}.
@@ -936,13 +936,13 @@ Let's formally restate a theorem which was mentioned in Section \ref{sub:annulus
 \begin{theorem}[\AP{ZL01}, Corollary 2, Proposition 2.1]\label{thm:ann_basis} 
 $\,$
 \begin{enumerate}
-    \item The elements $\tilde{Q}_\lambda$ form a basis of the skein module of a solid torus $\cd(I^2 \times S^1)$, where $\lambda$ ranges over all Young diagrams. 
+    \item The elements $\widetilde{Q}_\lambda$ form a basis of the skein module of a solid torus $\cd(I^2 \times S^1)$, where $\lambda$ ranges over all Young diagrams. 
     \item Let $\phi: \cc \to \cc$ be the meridian map so that $\phi(x)$ is a simple loop wrapped around $x$. Then
     \[
-        \phi \big( \tilde{Q}_\lambda \big) = c_\lambda \tilde{Q}_\lambda
+        \phi \big( \widetilde{Q}_\lambda \big) = c_\lambda \widetilde{Q}_\lambda
     \]
     where 
-        \[c_\lambda = \delta + (s - s^{-1}) \Bigg( v^{-1}\sum_{x \in \lambda} s^{2\cn(x)} - v\sum_{x \in \lambda} s^{-2\cn(x)} \Bigg)
+        \[c_\lambda = \delta_\cd + (s - s^{-1}) \Bigg( v^{-1}\sum_{x \in \lambda} s^{2\cn(x)} - v\sum_{x \in \lambda} s^{-2\cn(x)} \Bigg)
     \]
 \end{enumerate}
 \end{theorem}
@@ -952,15 +952,15 @@ This is the basis we will choose to act by $\cd(T^2)$ on in Section \ref{sec:act
 
 \subsection{Showing How Generators Act} \label{sec:action}
 
-We will fix the convention that $\tilde{P}_{1,0}$ acts as a meridian link and $\tilde{P}_{0,1}$ acts as a longitude link. This next proposition shows how each element of the generating set of Proposition \ref{prop:generators} act.
+We will fix the convention that $\widetilde{P}_{1,0}$ acts as a meridian link and $\widetilde{P}_{0,1}$ acts as a longitude link. This next proposition shows how each element of the generating set of Proposition \ref{prop:generators} act.
 
 \begin{proposition} \label{prop:generatoractions}
-In the basis $\{ \tilde{Q}_\lambda \}_\lambda$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^2)$ is determined by the equations below.
+In the basis $\{ \widetilde{Q}_\lambda \}_\lambda$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^2)$ is determined by the equations below.
 \begin{align}
-    \tilde{P}_{1,0} \cdot \tilde{Q}_\lambda &= \Bigg(\langle \tilde{P}_1 \rangle + \{1\} \Big( v^{-1}\sum_{\square\in\lambda} s^{2\cn(\square)} - v \sum_{\square\in\lambda} s^{-2\cn(\square)} \Big) \Bigg) \tilde{Q}_\lambda \label{eq:1,0}\\
-    \tilde{P}_{2,0} \cdot \tilde{Q}_\lambda &= \Bigg(\langle \tilde{P}_2 \rangle + \{2\} \Big( v^{-2}\sum_{\square\in\lambda} s^{4\cn(\square)} - v^2 \sum_{\square\in\lambda} s^{-4\cn(\square)} \Big) \Bigg) \tilde{Q}_\lambda \label{eq:2,0}\\
-    \tilde{P}_{0,1} \cdot \tilde{Q}_\lambda &= \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \tilde{Q}_\mu + \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \tilde{Q}_\nu \label{eq:0,1}\\
-    \tilde{P}_{1,1} \cdot \tilde{Q}_\lambda &= v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} s^{2\cn(\square)} \tilde{Q}_\mu + v \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} s^{-2\cn(\square)} \tilde{Q}_\nu \label{eq:1,1}
+    \widetilde{P}_{1,0} \cdot \widetilde{Q}_\lambda &= \Bigg(\langle \widetilde{P}_1 \rangle + \{1\} \Big( v^{-1}\sum_{\square\in\lambda} s^{2\cn(\square)} - v \sum_{\square\in\lambda} s^{-2\cn(\square)} \Big) \Bigg) \widetilde{Q}_\lambda \label{eq:1,0}\\
+    \widetilde{P}_{2,0} \cdot \widetilde{Q}_\lambda &= \Bigg(\langle \widetilde{P}_2 \rangle + \{2\} \Big( v^{-2}\sum_{\square\in\lambda} s^{4\cn(\square)} - v^2 \sum_{\square\in\lambda} s^{-4\cn(\square)} \Big) \Bigg) \widetilde{Q}_\lambda \label{eq:2,0}\\
+    \widetilde{P}_{0,1} \cdot \widetilde{Q}_\lambda &= \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \widetilde{Q}_\mu + \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \widetilde{Q}_\nu \label{eq:0,1}\\
+    \widetilde{P}_{1,1} \cdot \widetilde{Q}_\lambda &= v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} s^{2\cn(\square)} \widetilde{Q}_\mu + v \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} s^{-2\cn(\square)} \widetilde{Q}_\nu \label{eq:1,1}
 \end{align}
 \end{proposition}
 \begin{proof}
@@ -974,7 +974,7 @@ where the first sum is over the set of partitions $\mu$ whose Young diagram is o
 \[
 v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \pic{B11cdotQlambdaframebrancha2.eps} + v^{-1} \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \frac{\langle \nu \rangle}{\langle \lambda \rangle} \pic{B11cdotQlambdaframebranchb2.eps}.
 \]
-By the braiding coefficient formula, the diagram in the first sum is equal to $s^{2\cn(\square)} \tilde{Q}_\mu$. The diagram in the second sum is calculated during the proof of Proposition 6.1 in \AP{BB} to be $v^2 s^{-2\cn(\square)} \langle \lambda \rangle / \langle \nu \rangle \tilde{Q}_\nu$. This completes the proof. 
+By the braiding coefficient formula, the diagram in the first sum is equal to $s^{2\cn(\square)} \widetilde{Q}_\mu$. The diagram in the second sum is calculated during the proof of Proposition 6.1 in \AP{BB} to be $v^2 s^{-2\cn(\square)} \langle \lambda \rangle / \langle \nu \rangle \widetilde{Q}_\nu$. This completes the proof. 
 \end{proof}
 
 
