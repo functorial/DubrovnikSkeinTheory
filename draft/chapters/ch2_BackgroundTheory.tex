@@ -95,9 +95,9 @@ $\pic[15]{CompositionInSkeinCategory.eps}$
 
 The endomorphism algebras in this category are called \textbf{skein algebras} and are denoted by $\cs_X(\Sigma, N) := \cs_X(\Sigma \times I, (N \times \{0\}) \sqcup (N \times \{1\}) \big)$. If $N$ is the empty set, then we reduce the notation to simply $\cs_X(\Sigma)$.
 
-If $f: \Sigma \to \Sigma'$ is a smooth embedding of surfaces, then there is an induced functor 
+If $f: \Sigma \to \Sigma'$ is a smooth embedding of surfaces then there is an induced functor 
 \[
-\sfskein_X(f): \sfskein_X(\Sigma') \to \sfskein_X(\Sigma)
+\sfskein_X(f,W): \sfskein_X(\Sigma') \to \sfskein_X(\Sigma)
 \]
 defined on objects by $\sfskein_X(f)(N) = f(N)$ and on morphisms in the following way. First, extend $f$ trivially to $f \times \id_I: \Sigma \times I \to \Sigma' \times I$. Then, in the skein algebra of the complement of the image of $f \times \id_I$, choose the multiplicative identity element $e \in \cs_X\big( \Sigma' - \im(f) \big)$ which is the empty tangle. The pair $(f \times \id_I, e)$ is an object in the category $\sfc$, which gives rise to a wiring
 \[e: \cs_X\Big(\Sigma \times I, \big(N \times \{0\}\big) \sqcup \big(N' \times \{1\}\big) \Big) \to \cs_X\Big(\Sigma' \times I, \big(f(N) \times \{0\}\big) \sqcup \big( f(N') \times \{1\} \big) \Big)\]
@@ -115,6 +115,8 @@ It is clear that $\sfskein_X(f)$ preserves composition and identity morphisms. T
 \]
 In particular, $\sfskein_X(f)$ defines algebra homomorphisms on the skein algebras
 \[e: \cs_X\big(\Sigma, N\big) \to \cs_X\big(\Sigma', f(N)\big).\]
+
+Actually, more general functors may be defined. Given such an $f$ and a set of points $N^\circ$ in the complement of the image of $f$, one may define $\sfskein_X(f, N^\circ)$ on objects by $\sfskein_X(f, N^\circ)(N) = N \sqcup N^\circ$ and on morphisms in the same way above, just replace $e$ with the identity of $\cs_X\big( \Sigma' - \im(f), N^\circ \big)$. Then $\sfskein_X(f, \varnothing) = \sfskein_X(f)$.
 
 \begin{remark} \label{rem:skeinaction}
 The above homomorphisms are a special case of a more general type of map. If $N$ is a set of framed points on $\Sigma$, then a smooth embedding $f: \Sigma \to \partial M$ induces a $\cs_X(\Sigma, N)$-module structure on $\cs_X\big(M, N'\big)$ for any $N'$ with $f(N) \subseteq N'$. The action is given by ``pushing tangles in through the boundary". In other words, the pre-composition of a smooth embedding of a collar neighborhood $g: \partial M \times I \to M$ with $f \times \id_I: \Sigma\times I \to \partial M \times I$ induces a bilinear map
