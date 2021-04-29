@@ -87,7 +87,7 @@ Recall the power sum elements $P_k$ satisfy the power series equation
 \begin{equation} \label{def:Pk}
 \sum_{k=1}^\infty \frac{P_k}{k} x^k = \ln \Big( \sum_{n=0}^\infty h_n x^n \Big)
 \end{equation}
-By \cite[Theorem 4.2]{Mor02b}\AP{fix}, the power sum elements satisfy a commutation relation in $\ca_\ch$
+By Theorem 4.2 of \cite{Mor02b}, the power sum elements satisfy a commutation relation in $\ca_\ch$
 \begin{equation}
 e \cdot P_k - P_k \cdot e = (s^{k} - s^{-k}) a^k
 \end{equation} 
@@ -142,7 +142,7 @@ where the last equality follows from the substitution $j=l+1$.
 
 
 \section{Type B/C/D Schur Functions and BMW Idempotent Closures} \label{sec:Lukac}
-In \AP{Lukac}, it is shown using skein theory techniques that there is an algebra isomorphism between the ring of symmetric functions $\Lambda$ and the positive part of the skein algebra of the annulus $\ch(A)^+$. The isomorphism is defined on generators by sending the complete homogeneous symmetric functions to the annular closures of Hecke symmetrizers. Futhermore, it is shown that the image of the Schur function $s_\lambda$ is the idempotent closure $Q_\lambda$. This fact has many implications. For example, the structure constants of $\ch(A)^+$ in the basis $\{ Q_\lambda \}_\lambda$ are the Littlewood-Richardson constants. Also, the definition of $P_k$ implies that these elements truly correspond with the power sum symmetric functions. Through this isomorphism, one could transfer structure of $\Lambda$ to $\ch(A)^+$, such as the Hopf algebra structure or the plethysm structure (see \AP{Morton-Manchon}). 
+In \cite{Luk05}, it is shown using skein theory techniques that there is an algebra isomorphism between the ring of symmetric functions $\Lambda$ and the positive part of the skein algebra of the annulus $\ch(A)^+$. The isomorphism is defined on generators by sending the complete homogeneous symmetric functions to the annular closures of Hecke symmetrizers. Futhermore, it is shown that the image of the Schur function $s_\lambda$ is the idempotent closure $Q_\lambda$. This fact has many implications. For example, the structure constants of $\ch(A)^+$ in the basis $\{ Q_\lambda \}_\lambda$ are the Littlewood-Richardson constants. Also, the definition of $P_k$ implies that these elements truly correspond with the power sum symmetric functions. Through this isomorphism, one could transfer structure of $\Lambda$ to $\ch(A)^+$, such as the Hopf algebra structure or the plethysm structure (see \cite{MM08}). 
 
 From a Lie-theoretic perspective, the ring of symmetric polynomials $\Lambda_N$ in $N$ variables is the ring of polynomial representations of $GL_n(\C)$. There are maps of graded rings $\Lambda_n \to \Lambda_{n-1}$ defined by specializing the $N^{\mathrm{th}}$ variable to $0$, which together form an inverse system whose inverse limit in the category of graded rings is isomorphic to $\Lambda$. This strengthens the existing relationship between the HOMFLYPT skein theory and $GL_n(\C)$ (recall that the skein relations are modeled after relations of morphisms in $U_q(\mathfrak{gl}_n)$-Mod). 
 
@@ -157,9 +157,9 @@ This section is an attempt to emulate Lukac's argument in the Dubrovnik case. Fi
 
 \subsection{Universal Character Rings of Orthogonal and Symplectic Type}
 
-Here we will summarize some results from \AP{Koike-Terada}. Recall that a character of a (finite-dimensional) group representation is the post-composition of the representation with the trace function. The character of a direct sum of representations is the pointwise sum of the individual characters. Also, the character of a tensor product of representations is the pointwise product of the individual characters. For compact connected Lie groups $G$, two representations of $G$ are isomorphic only if their characters are equal. In this way, the character ring of $G$ is a decategorification of the category of finite-dimensional representations of $G$. Let $R(B_n)$, $R(C_n)$, and $R(D_n)$ denote the character rings of the Lie groups $SO_{2n+1}\C$, $SP_{2n}\C$, and $SO_{2n}\C$ respectively (the type $D_n$ case will require some subtle care, see \AP{KT} for details). 
+Here we will summarize some results from \cite{KT87}. Recall that a character of a (finite-dimensional) group representation is the post-composition of the representation with the trace function. The character of a direct sum of representations is the pointwise sum of the individual characters. Also, the character of a tensor product of representations is the pointwise product of the individual characters. For compact connected Lie groups $G$, two representations of $G$ are isomorphic only if their characters are equal. In this way, the character ring of $G$ is a decategorification of the category of finite-dimensional representations of $G$. Let $R(B_n)$, $R(C_n)$, and $R(D_n)$ denote the character rings of the Lie groups $SO_{2n+1}\C$, $SP_{2n}\C$, and $SO_{2n}\C$ respectively (the type $D_n$ case will require some subtle care, but we will not address these issues here). 
 
-The irreducible representations of $SO_{2n+1}\C$ and $SP_{2n}\C$ are indexed by partitions $\lambda$ of length at most $n$, and denote their respective characters by $sb_{n, \lambda}$ and $sc_{n, \lambda}$ respectively. The type $D_n$ case requires some subtle care, but let $sd_{n, \lambda}$ denote the character of the restriction of the appropriate irreducible representation of $O_{2n}\C$ to $SO_{2n}\C$ (see \AP{KT} for details). These are called the \textbf{Schur polynomials} of types $B_n$, $C_n$, and $D_n$.
+The irreducible representations of $SO_{2n+1}\C$ and $SP_{2n}\C$ are indexed by partitions $\lambda$ of length at most $n$, and denote their respective characters by $sb_{n, \lambda}$ and $sc_{n, \lambda}$ respectively. The type $D_n$ case requires some subtle care, but let $sd_{n, \lambda}$ denote the character of the restriction of the appropriate irreducible representation of $O_{2n}\C$ to $SO_{2n}\C$. These are called the \textbf{Schur polynomials} of types $B_n$, $C_n$, and $D_n$.
 
 Let $G$ be any of $SO_{2n+1}\C$, $SP_{2n}\C$, and $SO_{2n}\C$. A character of $G$ is determined by its value on a maximal torus of $G$, which may be chosen to be a set of diagonal matrices. 
 \begin{align*}
@@ -725,7 +725,7 @@ c_\lambda = \delta_\cd + ( s - s^{-1} ) \Big( v^{-1} \sum_{x \in \lambda} s^{2 \
 and where $\textrm{cn}(x)$ is the content of the cell $x$ of the Young diagram of $\lambda$ in the $(i,j)^{\textrm{th}}$ position, defined by $\textrm{cn}(x) := j-i$.
 \end{conjecture}
 
-If true, then this conjecture may be used to prove that $S_\lambda = \widetilde{Q}_\lambda$, following the same arguement from \AP{Lukac}. Essentially, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $Q_\lambda$ are in the same eigenspace with respect to $\phi$. These eigenspaces each have dimension $1$ by \AP{Zhong-Lu}, so $S_\lambda$ would be a scalar multiple of $Q_\lambda$. Following Lukac, a simple induction argument involving the branching formula of \AP{BB} shows that this scalar is $1$. Next, let's give some evidence for why this conjecture should be true. 
+If true, then this conjecture may be used to prove that $S_\lambda = \widetilde{Q}_\lambda$, following the same arguement from \cite{Luk05}. Essentially, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $Q_\lambda$ are in the same eigenspace with respect to $\phi$. These eigenspaces each have dimension $1$ by \cite{LZ02}, so $S_\lambda$ would be a scalar multiple of $Q_\lambda$. Following Lukac, a simple induction argument involving the branching formula of \cite{BB01} shows that this scalar is $1$. Next, let's give some evidence for why this conjecture should be true. 
 
 \begin{proposition}
 The conjecture holds when $\lambda$ has length at most $2$.
@@ -885,7 +885,7 @@ and a similar computation holds for the final coefficient. This completes the pr
 
 \section{Meridians and Jucys-Murphy Elements of $BMW_n$}
 
-Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \sigma_{i-1} \in BMW_n$ for $2 \leq i \leq n$ and set $M_{n,1} = \id_n$. The set of $M_{n, i}$ in $BMW_n$ are called the \textbf{BMW Jucys-Murphy elements}, which are invertible and which generate a commutative subalgebra (see \AP{Isaev-Ogievetsky} for more details). 
+Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \sigma_{i-1} \in BMW_n$ for $2 \leq i \leq n$ and set $M_{n,1} = \id_n$. The set of $M_{n, i}$ in $BMW_n$ are called the \textbf{BMW Jucys-Murphy elements}, which are invertible and which generate a commutative subalgebra (see \cite{IMO14} for more details). 
 \begin{figure}[h]
 \centering
 $M_{n,i} = \pic[5]{murphy.eps}$
@@ -899,7 +899,7 @@ There is a homomorphism $\psi_n: \cd(A) \to BMW_n$ defined so that $\psi_n(x)$ i
 $\psi_n(x) = \pic[4]{meridianx.eps}$
 \caption{The image of $x$ under the homomorphism $\psi_n$.}
 \end{figure}
-The image of $\psi_n$ clearly lies in the center of $BMW_n$. In the next proposition, we give a simple application which expresses $\psi_n(\widetilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements, their inverses, and the identity. One way to interpret the proposition is that we express $(s^k - s^{-k})^{-1}\big(\psi_n(\widetilde{P}_k) - \langle \widetilde{P}_k \rangle \id_n \big)$ as a power sum symmetric polynomial in the elements $\{ v^{\pm 1} M_{n,i}^{\pm 1} \}_i$. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \AP{Morton}.
+The image of $\psi_n$ clearly lies in the center of $BMW_n$. In the next proposition, we give a simple application which expresses $\psi_n(\widetilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements, their inverses, and the identity. One way to interpret the proposition is that we express $(s^k - s^{-k})^{-1}\big(\psi_n(\widetilde{P}_k) - \langle \widetilde{P}_k \rangle \id_n \big)$ as a power sum symmetric polynomial in the elements $\{ v^{\pm 1} M_{n,i}^{\pm 1} \}_i$. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \cite{Mor02b}.
 
 \begin{proposition} \label{prop:murphy}
 For any $k \geq 1$, and any $n \geq 1$, we may represent $\psi_n(\widetilde{P}_k)$ as
@@ -924,7 +924,7 @@ Induct on $n$. For $n=1$, simply apply Theorem \ref{thm:powersumcommutator} (via
 \end{align*}
 \end{proof}
 
-Let for a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\widetilde{P}_k \cdot \tilde{y}_\lambda := \psi_n(\widetilde{P}_k) \tilde{y}_\lambda$, which is essentially a meridian threaded by $\widetilde{P}_k$ wrapped around $\tilde{y}_\lambda$. The next proposition shows that $\tilde{y}_\lambda$ is an eigenvector with respect to the assignment $\tilde{y}_\lambda \mapsto \widetilde{P}_k \cdot \tilde{y}_\lambda$. Note that all the eigenvalues are distinct from each other. The annular closure of these eigenvalue equations generalize the result found in \AP{ZL}, which they show for $k=1$. 
+Let for a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\widetilde{P}_k \cdot \tilde{y}_\lambda := \psi_n(\widetilde{P}_k) \tilde{y}_\lambda$, which is essentially a meridian threaded by $\widetilde{P}_k$ wrapped around $\tilde{y}_\lambda$. The next proposition shows that $\tilde{y}_\lambda$ is an eigenvector with respect to the assignment $\tilde{y}_\lambda \mapsto \widetilde{P}_k \cdot \tilde{y}_\lambda$. Note that all the eigenvalues are distinct from each other. The annular closure of these eigenvalue equations generalize the result found in \cite{LZ02}, which they show for $k=1$. 
 \begin{proposition} \label{prop:zlgeneralization}
 In $BMW_n$, we have that 
 \[
@@ -933,14 +933,14 @@ In $BMW_n$, we have that
 where $\cn(\square)$ is the content of the cell $\square$ in the Young diagram of $\lambda$. 
 \end{proposition}
 \begin{proof}
-We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulae coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $x$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \AP{BB}). Then apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulae coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $x$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \cite{BB01}). Then apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
 \begin{align*}
 &\quad\,\, \pic[2.4]{ylambdameridianpk.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranch.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbrancha1.eps} - (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbranchb1.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) v^{-k} \pic[2.4]{ylambdameridianpkbrancha2.eps} - (s^k - s^{-k}) v^k \pic[2.4]{ylambdameridianpkbranchb2.eps}
 \end{align*}
-The first diagram is equal to $ \left( \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(x)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \AP{Aiston-Morton} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(x)} \tilde{y}_\lambda$. This completes the proof.
+The first diagram is equal to $ \left( \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(x)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \cite{AM98} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(x)} \tilde{y}_\lambda$. This completes the proof.
 \end{proof}
 
 

@@ -23,6 +23,29 @@
 	address = {address}
 }
 
+\bib{BB01}{article}{
+	author = {Beliakova, Anna},
+	author = {Blanchet, Christian},
+	title = {Skein construction of idempotents in
+              {B}irman-{M}urakami-{W}enzl algebras},
+	journal = {Math. Ann.},
+	volume = {321},
+	number = {2},
+	pages = {347--373},
+	year = {2001},
+}
+
+\bib{AM98}{article}{
+	author = {Aiston, A. K.},
+	author = {Morton, H. R.},
+	title = {Idempotents of {H}ecke algebras of type {$A$}},
+	journal = {J. Knot Theory Ramifications},
+	volume = {7},
+	number = {4},
+	pages = {463--487},
+	year = {1998},
+}
+
 % Other fields exist. See
 %
 % https://ctan.org/tex-archive/macros/latex/contrib/amsrefs

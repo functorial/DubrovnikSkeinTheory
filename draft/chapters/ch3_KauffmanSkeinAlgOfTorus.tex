@@ -6,14 +6,14 @@ The definition of the $\widetilde{P}_k$ make it clear why these elements general
 
 In Section \ref{sec:action}, we give a description of the natural action of $\cd(T^2)$  on $\cd(D^2 \times S^1)$, which exists because the boundary of the solid torus is $T^2$. First we give a small generating setof the algebra $\cd(T^2)$, consisting of only five elements, together with an algorithm for expressing any $\widetilde{P}_\xx$ in terms of these other generators. Then, we show how these five elements act of $\cd(D^2 \times S^1)$, which implicitly describes how each $\widetilde{P}_\xx$ acts. 
 
-This chapter includes many, but not all of the details from the paper \AP{MPS} which is co-authored by Hugh Morton, Peter Samuelson, and myself. I've included only some parts of the paper which I significantly contributed to. \AP{Is this worded appropriately? Should I say more?}
+This chapter includes many, but not all of the details from the paper \cite{MPS20} which is co-authored by Hugh Morton, Peter Samuelson, and myself. I've included only some parts of the paper which I've significantly contributed to, and all parts included would not exist without the support of the collaboration. \AP{Is this worded appropriately? Should I say more?}
 
 
 
 
 \section{Power Sum Elements} \label{sec:powersumelements}
 
-Recall that there is a injective algebra homomorphism $\Lambda \to \ch(A)^+$ which sends the Schur function $s_\lambda$ to the minimal idempotent closure $Q_\lambda$. Use $h_n := Q_{(n)}$ to denote the image of the $n^\textrm{th}$ complete homogeneous symmetric function under this homomorphism. In \AP{MS} the authors import power sum elements from $\Lambda$ to $P_k \in \ch(A)$. The power sum elements have a concrete definition in $\Lambda$, but alternatively they may be defined using an equation of formal power series in the ring $\ch(A)[[t]]$ as
+Recall that there is a injective algebra homomorphism $\Lambda \to \ch(A)^+$ which sends the Schur function $s_\lambda$ to the minimal idempotent closure $Q_\lambda$. Use $h_n := Q_{(n)}$ to denote the image of the $n^\textrm{th}$ complete homogeneous symmetric function under this homomorphism. In \cite{MS17} the authors import power sum elements from $\Lambda$ to $P_k \in \ch(A)$. The power sum elements have a concrete definition in $\Lambda$, but alternatively they may be defined using an equation of formal power series in the ring $\ch(A)[[t]]$ as
 \begin{equation}
 \sum_{k=1}^\infty \frac{P_k}{k} t^k = \ln \Bigg( 1 + \sum_{n=1}^\infty h_n t^n \Bigg)
 \end{equation}
@@ -173,9 +173,9 @@ Where the last equality follows from a quick computation in the base ring. This 
 \end{proof}
 
 \begin{remark}
-Theorem \ref{thm:powersumcommutator} is part of a Dubrovnik generalization of the ``Miraculous Cancellations" first proven by Bonahon and Wong in \AP{BW} and again by Lê using only skein theoretic methods in \AP{Lê}. Under the natural transformation $\eta:\cd \to \ck$, the $\widetilde{P}_k$ are sent to the Chebyshev polynomials $T_k$ (see Section \ref{sec:bracketcompatibility}), and the relation of Theorem \ref{thm:powersumcommutator} is sent to a commutation relation for the $T_k$. Now, if $s$ is specialized to be a $2k$-th root of unity so that $s^k = s^{-k}$, then the commutation relation implies that any threading of $T_k$ in any skein algebra $\ck_{s^{2k}=1}(\Sigma)$ is a central element. More generally, a threading in any skein module $\ck_{s^{2k}=1}(M, N)$ is \textit{transparent}, which essentially means it may move freely about the space, past any tangle. This gives rise to the \textbf{Chebyshev-Frobenius homomorphism}, first defined for skein algebras in \AP{BW} and extended to general relative skein modules in \AP{Le-Paprocki}.
+Theorem \ref{thm:powersumcommutator} is part of a Dubrovnik generalization of the ``Miraculous Cancellations" first proven by Bonahon and Wong in \cite{BW16} and again by Lê in \cite{Le15} using only skein theoretic methods. Under the natural transformation $\eta:\cd \to \ck$, the $\widetilde{P}_k$ are sent to the Chebyshev polynomials $T_k$ (see Section \ref{sec:bracketcompatibility}), and the relation of Theorem \ref{thm:powersumcommutator} is sent to a commutation relation for the $T_k$. Now, if $s$ is specialized to be a $2k$-th root of unity so that $s^k = s^{-k}$, then the commutation relation implies that any threading of $T_k$ in any skein algebra $\ck_{s^{2k}=1}(\Sigma)$ is a central element. More generally, a threading in any skein module $\ck_{s^{2k}=1}(M, N)$ is \textit{transparent}, which essentially means it may move freely about the space, past any tangle. This gives rise to the \textbf{Chebyshev-Frobenius homomorphism}, first defined for skein algebras in \cite{BW16} and extended to general relative skein modules in \cite{LP19}.
 
-It would be nice to say that Theorem \ref{thm:powersumcommutator} implies a generalization of the Chebyshev-Frobenius homomorphism for Dubrovnik skein modules, but there is a major problem which is that our choice of base ring is $\Q(s,v)$, which doesn't allow for specializations to roots of unity. This choice is also used in \AP{BB} and subsequently \AP{ZL}, whose results we use here in a fundamental way. Even in the literature regarding HOMFLYPT skein theory, the elements $(s^k - s^{-k})^{-1}$ are adjoined to the base ring. It would be interesting to see if this problem may be resolved somehow, but it is not something we address outside of this remark. 
+It would be nice to say that Theorem \ref{thm:powersumcommutator} implies a generalization of the Chebyshev-Frobenius homomorphism for Dubrovnik skein modules, but there is a major problem which is that our choice of base ring is $\Q(s,v)$, which doesn't allow for specializations to roots of unity. This choice is also used in \cite{BB01} and subsequently \cite{LZ02}, the results of which we use here in a fundamental way. Even in the literature regarding HOMFLYPT skein theory, the elements $(s^k - s^{-k})^{-1}$ are adjoined to the base ring. It would be interesting to see if this problem may be resolved somehow, but it is not something we address outside of this remark. 
 \end{remark}
 
 
@@ -210,7 +210,7 @@ and relations
 The linear span of the set $\{ \widetilde{P}_\xx \mid \xx \in \Z^2 / \langle \xx = - \xx \rangle \}$ is a Lie algebra, and  $\cd(T^2)$ is its universal enveloping algebra. 
 \end{corollary}
 
-The full proof of this theorem may be found in the collaboration \AP{MPS}. Here, we will be focused on showing that the generators satisfy the relations given in the presentation. We formulate this as a proposition.
+The full proof of this theorem may be found in the collaboration \cite{MPS20}. Here, we will be focused on showing that the generators satisfy the relations given in the presentation. We formulate this as a proposition.
 \begin{proposition}
 The following special cases of Equation \eqref{eq:mainrelations} hold
 \begin{align}
@@ -222,9 +222,13 @@ for any $n \geq 1$. Furthermore, these relations generate all of the relations d
 
 Equation \eqref{eq:perprelations} is the image of Equation \eqref{eq:powersumcommutator} under the wiring of $\ca_\cd$ into $\cd(T^2)$ depicted below.
 
-\AP{Picture of wiring.}
+\begin{figure}[h]
+\centering
+$\pic[7]{clAtoD.eps}$
+\caption{A wiring diagram which defines a linear map $\ca_\cd \to \cd(T^2)$.}
+\end{figure}
 
-We will not give the proof of Equation \eqref{eq:angledrelations} here, but it may be found in \AP{MPS}. The idea given there is similar to the idea for the proof of Equation \eqref{eq:perprelations}: first show a similar relation holds in the skein algebra of the annulus relative to two points $\cd(A, [2])$ via a brute force computation, and then Equation \eqref{eq:angledrelations} is the image of this relation under a simple wiring into $\cd(T^2)$. 
+We will not give the proof of Equation \eqref{eq:angledrelations} here, but the idea is similar to the idea for the proof of Equation \eqref{eq:perprelations}: first show a similar relation holds in the skein algebra of the annulus relative to two points $\cd(A, [2])$, and then Equation \eqref{eq:angledrelations} is the image of this relation under a simple wiring into $\cd(T^2)$. 
 
 What's left for us to show here is the second statement of the proposition, that Equations \eqref{eq:perprelations} and \eqref{eq:angledrelations} imply Equation \eqref{eq:mainrelations}. We will devote the rest of this section to doing so, starting with two technical lemmas and ending with Proposition \ref{lemma_allfromsome}. 
 
@@ -297,7 +301,7 @@ Similar computations for the other $c_i$ show that
 Finally, combining equations \eqref{eq:added} and \eqref{eq:astep} shows that the pair $(\xx,\yy)$ is good.
 \end{proof}
 
-Now we'll need to prove the following elementary lemma (which is a slight modification of \cite[Lemma 1]{FG00} \AP{fix}). This is used to make a careful choice of vectors $\aab, \bb$ so that the previous lemma can be applied. 
+Now we'll need to prove the following elementary lemma (which is a slight modification of Lemma 1 in \cite{FG00}). This is used to make a careful choice of vectors $\aab, \bb$ so that the previous lemma can be applied. 
 
 \begin{lemma}\label{lemma_diophantine}
 	Suppose $p,q \in \N$ are relatively prime with $q < p$. Then there exist $u,v,w,z \in \Z$ such that the following conditions hold:
@@ -506,7 +510,7 @@ Let's abuse some notation by using $\eta$ instead of $\eta_{(I^2, \underline{n+1
 \begin{equation}\label{eq:jwformula}
 \pic[2.7]{JW_n+1.eps} = \pic[2.7]{JWntimes1.eps} + \frac{s^{2n} - s^{-2n}}{s^{2n+2} - s^{-2n-2}} \pic[2.7]{JWncJWn.eps}
 \end{equation}
-(see \AP{Morrison paper} and substitute $q=s^2$) and recall the recurrence relation for the BMW symmetrizers
+(see \cite{Mor17} and substitute $q=s^2$) and recall the recurrence relation for the BMW symmetrizers
 \begin{equation}\label{eq:bmwsymmformula}
 [n+1] \pic[2.5]{y_n+1.eps} = [n]s^{-1} \pic[2.5]{shelly1.eps} + \pic[2.5]{shelly2.eps} + [n]s^{-1} \beta_n \pic[2.5]{shelly3.eps}
 \end{equation}
@@ -554,7 +558,7 @@ hold in the base ring. The right-hand side of the resulting equation is precisel
 \end{proof}
 
 \begin{remark}
-In \AP{Shelly}, it is pointed out that, under the composition of algebra maps $BMW_n \to H_n \to TL_n$ (see Section \ref{sec:cube}), the BMW symmetrizer $\tilde{y}_n$ is sent to the Jones-Wenzl idempotent $JW_n$. However, these maps are defined abstractly on generators, and so \textit{a priori} they are not induced by any natural transformations of skein theories. Furthermore, the diagram
+In \cite{She16}, it is pointed out that, under the composition of algebra maps $BMW_n \to H_n \to TL_n$ (see Section \ref{sec:cube}), the BMW symmetrizer $\tilde{y}_n$ is sent to the Jones-Wenzl idempotent $JW_n$. However, these maps are defined abstractly on generators, and so \textit{a priori} they are not induced by any natural transformations of skein theories. Furthermore, the diagram
 \begin{center}
 \begin{tikzcd}
 	& BMW_n \arrow[dl, "{\pi_H}", two heads] \arrow[dd, "{\eta_{(I^2, \underline{n})}}", two heads] \\
@@ -871,7 +875,7 @@ The proof above provides an algorithm for expressing any $\widetilde{P}_{n,m}$ i
 Let $\Lambda = (\Lambda_1, \dots, \Lambda_n)$ be a sequence of Young diagrams such that $|\Lambda_1|=1$, $|\Lambda_{i+1}| = |\Lambda_{i}| \pm 1$, and $\Lambda_n=\lambda$. 
 We will call such a sequence an \textit{up-down tableau} of length $n$ and shape $\lambda(\Lambda) := \Lambda_n$. 
 If $\Lambda = (\Lambda_1, \dots, \Lambda_{n-1}, \Lambda_n)$, then define $\Lambda' = (\Lambda_1, \dots, \Lambda_{n-1})$. 
-In particular, $|\lambda(\Lambda)| = |\lambda(\Lambda')| \pm 1$. Following \AP{BB01}, recursively define morphisms $\fa_\Lambda$ and $\fb_\Lambda$ by:
+In particular, $|\lambda(\Lambda)| = |\lambda(\Lambda')| \pm 1$. Following \cite{BB01}, recursively define morphisms $\fa_\Lambda$ and $\fb_\Lambda$ by:
 \begin{align*}
     \fa_1 &:= \id_1 =: \fb_1 
 \end{align*}
@@ -885,9 +889,9 @@ and if $|\Lambda_n| = |\Lambda_{n-1}| - 1$, then
     \fa_\Lambda &:= \frac{ \langle \Lambda_n \rangle}{ \langle \Lambda_{n-1} \rangle} (\fa_{\Lambda'} \otimes 1_1) (\tilde{y}_{\lambda(\Lambda)} \otimes \cap) \\
     \fb_\Lambda &:= (\tilde{y}_{\lambda(\Lambda)} \otimes \cup) (\fb_{\Lambda'} \otimes 1_1)
 \end{align*}
-where the morphisms $\cup \in \Hom_{\sfd(I^2)} \big( \varnothing, [2] \big)$ and $\cap \in \Hom_{\sfd(I^2)} \big( [2], \varnothing \big)$ are the obvious cup and cap morphisms, $\otimes$ is the monoidal product of $\sfd(I^2)$ induced by some standard embedding $I^2 \sqcup I^2 \to I^2$, and $\langle \lambda \rangle$ for a partition $\lambda$ is the quantum trace of a certain path idempotent in $BMW_n$ (see \AP{BB} for details). 
+where the morphisms $\cup \in \Hom_{\sfd(I^2)} \big( \varnothing, [2] \big)$ and $\cap \in \Hom_{\sfd(I^2)} \big( [2], \varnothing \big)$ are the obvious cup and cap morphisms, $\otimes$ is the monoidal product of $\sfd(I^2)$ induced by some standard embedding $I^2 \sqcup I^2 \to I^2$, and $\langle \lambda \rangle$ for a partition $\lambda$ is the quantum trace of a certain path idempotent in $BMW_n$ (see \cite{BB01} for details). 
 
-\begin{theorem}[\AP{BB01}, Section 5] \label{thm:bmwbasis}
+\begin{theorem}[\cite{BB01}, Section 5] \label{thm:bmwbasis}
 Let $d_\lambda^{(n)}$ be the number of up-down tableaux of length $n$ and shape $\lambda$. 
 Let $\mathcal{M}_{d_\lambda}$ denote the $d_\lambda^{(n)} \times d_\lambda^{(n)}$ matrix algebra. 
 Also, let
@@ -933,7 +937,7 @@ so therefore $\cl(z_\lambda^{(n)})$ is a positive integer multiple of $\widetild
 
 Let's formally restate a theorem which was mentioned in Section \ref{sub:annulus}.
 
-\begin{theorem}[\AP{ZL01}, Corollary 2, Proposition 2.1]\label{thm:ann_basis} 
+\begin{theorem}[\cite{LZ02}, Corollary 2, Proposition 2.1]\label{thm:ann_basis} 
 $\,$
 \begin{enumerate}
     \item The elements $\widetilde{Q}_\lambda$ form a basis of the skein module of a solid torus $\cd(I^2 \times S^1)$, where $\lambda$ ranges over all Young diagrams. 
@@ -974,7 +978,7 @@ where the first sum is over the set of partitions $\mu$ whose Young diagram is o
 \[
 v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \pic{B11cdotQlambdaframebrancha2.eps} + v^{-1} \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \frac{\langle \nu \rangle}{\langle \lambda \rangle} \pic{B11cdotQlambdaframebranchb2.eps}.
 \]
-By the braiding coefficient formula, the diagram in the first sum is equal to $s^{2\cn(\square)} \widetilde{Q}_\mu$. The diagram in the second sum is calculated during the proof of Proposition 6.1 in \AP{BB} to be $v^2 s^{-2\cn(\square)} \langle \lambda \rangle / \langle \nu \rangle \widetilde{Q}_\nu$. This completes the proof. 
+By the braiding coefficient formula, the diagram in the first sum is equal to $s^{2\cn(\square)} \widetilde{Q}_\mu$. The diagram in the second sum is calculated during the proof of Proposition 6.1 in \cite{BB01} to be $v^2 s^{-2\cn(\square)} \langle \lambda \rangle / \langle \nu \rangle \widetilde{Q}_\nu$. This completes the proof. 
 \end{proof}
 
 
