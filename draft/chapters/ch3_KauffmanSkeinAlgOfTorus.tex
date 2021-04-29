@@ -896,7 +896,7 @@ Let $d_\lambda^{(n)}$ be the number of up-down tableaux of length $n$ and shape 
 Let $\mathcal{M}_{d_\lambda}$ denote the $d_\lambda^{(n)} \times d_\lambda^{(n)}$ matrix algebra. 
 Also, let
 \[
-    q_\Lambda := \alpha_\Lambda \beta_\Lambda, \qquad \qquad z_\lambda^{(n)}:= \sum_{\lambda(\Lambda)=\lambda} q_\Lambda
+    q_\Lambda := \alpha_\Lambda \beta_\Lambda
 \]
 
 \begin{enumerate} 
@@ -904,8 +904,7 @@ Also, let
 \[
     \rho: \underset{|\lambda| = n, n-2, \dots}{\bigoplus} \mathcal{M}_{d_{\lambda}^{(n)}} \overset{\sim}{\longrightarrow} BMW_n
 \]
-such that the image of a standard basis element is $\rho( e_{\Lambda,\Xi}^\lambda) = \alpha_\Lambda \beta_\Xi$ where $\lambda(\Lambda) = \lambda = \lambda(\Xi)$.
-It follows that the $z_\lambda^{(n)}$ are central idempotents of $BMW_n$. \\
+such that the image of a standard basis element is $\rho( e_{\Lambda,\Xi}^\lambda) = \alpha_\Lambda \beta_\Xi$ where $\lambda(\Lambda) = \lambda = \lambda(\Xi)$. \\
 \item (Branching formula)
 \[
     q_\Lambda \otimes 1_1 = \sum_{\Xi'=\Lambda} q_\Xi
@@ -930,9 +929,8 @@ for all up-down tableaux $\Lambda$.
 \begin{remark} \label{rmk:qclosure}
 Recall our notation $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda)$. Then Theorem \ref{thm:bmwbasis} implies
 \[
-    \cl(q_\Lambda) = \cl(\fa_\Lambda \fb_\Lambda) = \cl(\fb_\Lambda \fa_\Lambda) = \cl(\tilde{y}_{\lambda(\Lambda)}) = \widetilde{Q}_{\lambda(\Lambda)},
+    \cl(q_\Lambda) = \cl(\fa_\Lambda \fb_\Lambda) = \cl(\fb_\Lambda \fa_\Lambda) = \cl(\tilde{y}_{\lambda(\Lambda)}) = \widetilde{Q}_{\lambda(\Lambda)}.
 \]
-so therefore $\cl(z_\lambda^{(n)})$ is a positive integer multiple of $\widetilde{Q}_{\lambda(\Lambda)}$.
 \end{remark}
 
 Let's formally restate a theorem which was mentioned in Section \ref{sub:annulus}.
