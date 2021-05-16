@@ -1,9 +1,8 @@
 \chapter{Skein Theory} \label{chapter2}
 
-\AP{Look at old diagrams to see if we can fit any in this chapter.}
 
 \section{Foundations and General Notions} \label{sec:foundations}
-In this work, we will be forced to discuss a few different variants of skein modules. For this reason, it will be useful to first describe some general framework of skein theory so that each of these variants will be a special case. Unless otherwise stated, we will assume $M$ is an oriented $3$-manifold with boundary $\partial M$ (possibly empty), $\Sigma$ is an oriented surface, $I$ is the real interval $[0,1]$, $R$ is a commutative and unital ring. 
+In this work, we will need to discuss a few different variants of skein modules. For this reason, it will be useful to first describe some general framework of skein theory so that each of these variants will be a special case. Unless otherwise stated, we will assume $M$ is an oriented $3$-manifold with boundary $\partial M$ (possibly empty), $\Sigma$ is an oriented surface, $I$ is the real interval $[0,1]$, and $R$ is a commutative and unital ring. 
 
 \begin{definition}
     Let $T_1, T_2: X \to M$ be smooth embeddings of a smooth manifold $X$ into $M$. A \textbf{smooth ambient isotopy} $H: T_1 \Rightarrow T_2$ is a smooth homotopy of diffeomorphisms $H_t: M \to M$ such that $H_0=\id_M$ and $H_1 \circ T_1 = T_2$. Furthermore, we demand that the boundary $\partial M$ is fixed by the homotopy. 
@@ -28,7 +27,7 @@ for some finite sets $J$ and $K$ such that
 \end{enumerate}
 If $B$ is empty, then the result is called a \textbf{link} in $M$. Similarly, if $L$ is empty, then it's called a \textbf{braid} in $M$. 
 
-One may also consider \textit{oriented} or \textit{framed} tangles by choosing an orientation or framing for each point in $N$ and for each connected component of $L$ and $B$ such that the choices are compatible with each other with respect to the smooth embedding.
+One may also consider \textit{oriented} or \textit{framed} tangles by choosing an orientation or framing for each point in $N$ and for each connected component of $L$ and $B$ such that the choices are compatible with each other with respect to the smooth embedding. We define a \textbf{framing} of an tangle $T$ to be an extension to a smooth embedding of $T \times I$ into $M$ up to ambient isotopy, so that each connected component of (the image of) $T$ may be thought of as a ribbon. We impose the condition that the framings may not include half-twists, so a framing is essentially just an assignment of an integer to each connected component of $T$.
 %For our purposes, the difference between framed and unframed tangles will be a matter of convention; we choose to work with framed tangles as is standard in the literature. 
 If $M = \Sigma \times I$, then we will assume that the points in $N$ are contained in $\Sigma \times \{ \frac{1}{2} \}$ and that their framings are thought to be embedded orthogonally to $\Sigma \times \{ \ast \}$. 
 \end{definition}
@@ -43,7 +42,8 @@ We say a framed tangle in $\Sigma \times I$ has \textbf{blackboard framing} if t
 \[
     \vcenter{\hbox{\includegraphics[height=3cm]{twist.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{invvh2.eps}}}.
 \]
-This suggests that we may represent framed links in $\Sigma \times I$ as link diagrams on $\Sigma$. Indeed, equivalence under ambient isotopy is captured by the three Reidemeister moves below.
+This suggests that we may represent framed links in $\Sigma \times I$ as link diagrams on $\Sigma$. Indeed, equivalence under ambient isotopy is the same as equivalence under the three Reidemeister moves below.
+\AP{fix first one}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1resolution.eps}}}
 \end{equation}
@@ -54,13 +54,13 @@ This suggests that we may represent framed links in $\Sigma \times I$ as link di
 \vcenter{\hbox{\includegraphics[height=3cm]{r3a.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{r3b.eps}}}.
 \end{equation}
 
-Define the \textbf{writhe} of a tangle diagram is the number of positive crossings minus the number of negative crossings (a positive crossing is when the bottom-left to top-right strand is on top). It is easy to see that the Reidemeister moves above preserve the writhe of a diagram, so the writhe is a well defined integer on isotopy classes of diagrams. Writhe should be thought of as a grading on the free $R$-module on the set of tangles in the given space, which provides a good reason to work with framed links over ordinary links. Such a module is a main ingredient of this theory, so let's honor it with a proper discussion.
+Define the \textbf{writhe} of a tangle diagram is the number of positive crossings minus the number of negative crossings (a positive crossing is when the bottom-left to top-right strand is on top). It is easy to see that the Reidemeister moves above preserve the writhe of a diagram, so the writhe is a well defined integer on isotopy classes of diagrams. The writhe should be thought of as a grading on the free $R$-module on the set of tangles in the given space, which provides a good reason to work with framed links over ordinary links. Such a module is a main ingredient of this theory, so let's honor it with a proper discussion.
 
 \begin{definition}
 Let $\ct(M, N)$ be the free $R$-module generated by the set of framed $N$-tangles in $M$. Analagously, we can define $\ct^{or}(M,N)$ to be the free $R$-module generated by the set of oriented framed $N$-tangles in $M$. All definitions which are to follow in this section have an analagous definition using oriented tangles. Also, we will formally define $\ct_R(\varnothing, \varnothing) := R$. 
 \end{definition}
 
-The construction $\ct( -, -)$ is actually a symmetric monoidal functor $\ct: \sfc \to R\textsf{-Mod}$ for a careful choice of category $\sfc$ which we now describe. The objects of $\sfc$ are pairs $(M, N)$ of the same type as discussed previously. A morphism $(f, W): (M', N') \to (M, N)$ is a pair of a smooth, orientation-preserving embedding $f: M' \to M$ such that $M - f(M')$ is either a smooth 3-manifold or the empty set, and choice of $W \in \ct\big( M-f(M'), N \sqcup f(N') \big)$ (unless $M - f(M')$ is empty, in which case $W$ is a formal symbol for the "empty link" in the empty set). Composition is given by $(g, W') \circ (f, W) = (g \circ f, W' \cup W)$, which is associative since $\circ$ and $\cup$ are associative.
+The construction $\ct( -, -)$ is actually a symmetric monoidal functor $\ct: \sfc \to R\textsf{-Mod}$ for a careful choice of category $\sfc$ which we now describe. The objects of $\sfc$ are pairs $(M, N)$ of the same type as discussed previously. A morphism $(f, W): (M', N') \to (M, N)$ is a pair of a smooth, orientation-preserving embedding $f: M' \to M$ such that $M - f(M')$ is either a smooth 3-manifold or the empty set, and choice of $W \in \ct\big( M-f(M'), N \sqcup f(N') \big)$ (unless $M - f(M')$ is empty, in which case $W$ is a formal symbol for the ``empty link" in the empty set). Composition is given by gluing wirings. In other words, $(g, W') \circ (f, W) = (g \circ f, W' \cup W)$, which is associative since $\circ$ and $\cup$ are associative.
 
 \begin{figure}[h]
 \centering
@@ -68,7 +68,7 @@ $\vcenter{\hbox{\includegraphics[height=3cm]{CompositionInC.eps}}}$
 \caption{An example of how composition works in $\sfc$.}
 \end{figure}
 
-The induced map denoted $W: \ct(M', N') \to \ct(M, N)$ is a linear map defined by $W(T) = W \cup T$, and we will refer to such a linear map $W$ as a \textbf{wiring}. We are abusing notation by denoting this linear map by $W$, but it should be clear from the context what $f$ is since it is technically encoded in the data of the element $W \in \ct\big( M-f(M'), N \sqcup f(N') \big)$. It is true that $\ct$ preserves composition and identity morphisms, making and so $\ct$ is functorial. $\sfc$ can now be equipped with a symmetric monoidal structure via disjoint union. It is clear that 
+The induced map denoted $W: \ct(M', N') \to \ct(M, N)$ is a linear map defined by $W(T) = W \cup T$, and we will refer to such a linear map $W$ as a \textbf{wiring}. We are abusing notation by denoting this linear map by $W$, but it should be clear from the context what $f$ is since it is technically encoded in the data of the element $W \in \ct\big( M-f(M'), N \sqcup f(N') \big)$. It is true that $\ct$ preserves composition and identity morphisms which makes $\ct$ a functor. $\sfc$ can now be equipped with a symmetric monoidal structure via disjoint union. It is clear that 
 \[\ct_R(M \sqcup M', N \sqcup N') \cong \ct_R(M, N) \underset{R}{\otimes} \ct_R(M', N')\]
 for any sets of framed points $N \subset \partial M$ and $N' \subset \partial M'$. The unit is given by the object $(\varnothing, \varnothing) \in \sfc$ and define $\ct(\varnothing, \varnothing) := R$, which makes $\ct$ a symmetric monoidal functor. 
 
@@ -77,7 +77,14 @@ Let $B$ be the smooth closed $3$-ball, $N_i$ be a choice of $2i$ boundary points
 \[\{ W(x) \mid x \in X \text{ and } W:\ct(B, N_B) \to \ct(M, N_M) \text{ is a wiring diagram} \}.\] 
 A quotient of the form $\cs_X(M, N) := \ct(M, N) / \ci(X)$ is called a \textbf{skein module} of $M$ relative to $N$. If $N = \varnothing$ is the empty set, we may use the notation $\cs_X(M) := \cs_X(M, \varnothing)$. Similar definitions may be given using oriented and/or unframed tangles instead. 
 \end{definition}
-The construction $\cs_X(-, -)$ is a functor in the same way that $\ct(-, -)$ is; a smooth, orientation-preserving embedding $f: M \to M'$ and an element $W \in \cs_X\big( M-f(M'), N \sqcup f(N') \big)$ (assume $N$ is disjoint from $\im(f)$) defines a linear map $W: \cs_X(M, N) \to \cs_X(M', N')$. In fact, the quotient maps $\alpha_{(M, N)}: \ct(M, N) \to \cs_X(M, N)$ yield a natural transformation. In other words, given a morphism $(M, N) \to (M', N')$ in $\sfc$, the diagram
+
+A simple example of a skein relation is 
+\begin{align}
+&\pic[2.5]{poscross.eps} - \pic[2.5]{negcross.eps}
+\end{align}
+which eliminates the over-under distinction for crossings. Imposing this skein relation on isotopy classes of tangles results in homotopy classes of tangles. We will explore more examples in Section \ref{sec:skeintheories}.
+
+In general, the construction $\cs_X(-, -)$ is a functor in the same way that $\ct(-, -)$ is; a smooth, orientation-preserving embedding $f: M \to M'$ and an element $W \in \cs_X\big( M-f(M'), N \sqcup f(N') \big)$ (assume $N$ is disjoint from $\im(f)$) defines a linear map $W: \cs_X(M, N) \to \cs_X(M', N')$. In fact, the quotient maps $\alpha_{(M, N)}: \ct(M, N) \to \cs_X(M, N)$ yield a natural transformation. In other words, given a morphism $(M, N) \to (M', N')$ in $\sfc$, the diagram
 \begin{center}
 \begin{tikzcd}
 	\ct(M, N) \arrow[d,"\alpha_{(M, N)}"] \arrow[r, "W"] 
@@ -108,7 +115,7 @@ via the functor $\cs_X$. Now we may define what $\sfskein_X(f)$ does to morphism
 \begin{figure}[h]
 \centering
 $\pic[15]{FunctorOfSkeinTheories.eps}$
-\caption{On the left is pictured a smooth embedding $f$ of a disk into an annulus. This induces a functor $\sfskein_X(f)$ between the skein categories of the disk and the annulus. On the right is an example of a morphism in the skein category of the disk and its image under this functor.}
+\caption{A morphism in the skein category of the disk and its image under a functor to the skein category of the annulus.}
 \end{figure}
 
 It is clear that $\sfskein_X(f)$ preserves composition and identity morphisms. Therefore, if we let $\mathsf{Surf}_{\textrm{emb}}$ be the category of smooth embeddings between smooth oriented surfaces, we can summarize our last few points by saying we have a functor
@@ -118,7 +125,7 @@ It is clear that $\sfskein_X(f)$ preserves composition and identity morphisms. T
 In particular, $\sfskein_X(f)$ defines algebra homomorphisms on the skein algebras
 \[e: \cs_X\big(\Sigma, N\big) \to \cs_X\big(\Sigma', f(N)\big).\]
 
-Actually, more general functors may be defined. Given such an $f$ and a set of points $N^\circ$ in the complement of the image of $f$, one may define $\sfskein_X(f, N^\circ)$ on objects by $\sfskein_X(f, N^\circ)(N) = N \sqcup N^\circ$ and on morphisms in the same way above, just replace $e$ with the identity of $\cs_X\big( \Sigma' - \im(f), N^\circ \big)$. Then $\sfskein_X(f, \varnothing) = \sfskein_X(f)$.
+Actually, more general functors may be defined. Given such an $f$ and a set of points $N^\circ$ in the complement of the image of $f$, one may define $\sfskein_X(f, N^\circ)$ on objects by $\sfskein_X(f, N^\circ)(N) = N \sqcup N^\circ$ and on morphisms in the same way above, by replacing $e$ with the identity of $\cs_X\big( \Sigma' - \im(f), N^\circ \big)$. Then $\sfskein_X(f, \varnothing) = \sfskein_X(f)$.
 
 \begin{remark} \label{rem:skeinaction}
 If $N$ is a set of framed points on $\Sigma$, then a smooth embedding $f: \Sigma \to \partial M$ induces a $\cs_X(\Sigma, N)$-module structure on $\cs_X\big(M, N'\big)$ for any $N'$ with $f(N) \subseteq N'$. The action is given by ``pushing tangles in through the boundary". In other words, the pre-composition of a smooth embedding of a collar neighborhood $g: \partial M \times I \to M$ with $f \times \id_I: \Sigma\times I \to \partial M \times I$ induces a bilinear map
@@ -131,39 +138,42 @@ because $M$ minus a collar neighborhood is diffeomorphic to itself. Alternativel
 
 \section{Examples of Skein Theories} \label{sec:skeintheories}
 
-The last section leaves us with an important and unanswered question. Which sets of skein relations $X$ produce interesting skein theories? One class of examples is found by importing sets of relations satisfied by morphisms in a linear ribbon category as skein relations. Ribbon categories are braided monoidal categories which are rigid and equipped with a twist morphism for every object, satisfying some compatibility conditions. The axioms are such that the morphisms may be interpreted as framed braid diagrams. In particular, the morphisms satisfy the Reidemeister moves shown previously. We will discuss three examples of skein theories derived from skein relations which are meant to emulate linear relations satisfied by the braid and twist morphisms in certain ribbon categories coming from the representation theory of quantum groups, a topic which has generated a lot of interest from mathematicians since the 1980s. The categories of representations of quantum groups are ribbon categories with non-involutive braidings and the skein relations below capture how far off the braidings are from being involutive.  
+The last section leaves us with an important and unanswered question. Which sets of skein relations $X$ produce interesting skein theories? One class of examples is found by importing sets of relations satisfied by morphisms in a linear ribbon category as skein relations. Ribbon categories are braided monoidal categories which are rigid and equipped with a twist morphism for every object, satisfying some compatibility conditions \cite{RT90}. The axioms are such that morphisms built from braidings between tensor products of objects may be interpreted as framed braid diagrams. In particular, the morphisms satisfy the Reidemeister moves shown previously. We will discuss three examples of skein theories derived from skein relations which are meant to emulate linear relations satisfied by the braid and twist morphisms in certain ribbon categories coming from the representation theory of quantum groups, a topic which has generated a lot of interest from mathematicians since the 1980s. The categories of representations of quantum groups are ribbon categories with non-involutive braidings and the skein relations below capture how far off the braidings are from being involutive.  
 
 Here, we are forced to fix a base ring. For our purposes, $R$ must be a commutative ring containing invertible elements $s$ and $v$. Typical choices of $R$ are $\Z[s^{\pm 1}, v^{\pm 1}], \Q(s, v)$, or some other ring in between these. \\
 
 \begin{example}[\textit{Kauffman (Dubrovnik) Skein Relations}]
 Let $X_1$ be the set of two unoriented skein relations
 \begin{align}
-&\pic[2.5]{poscross.eps} = \pic[2.5]{negcross.eps} + (s-s^{-1}) \left( \pic[2.5]{idresolution.eps} - \pic[2.5]{capcupresolution.eps} \right) \\ 
-&\pic[2.5]{vh.eps} = v \pic[2.5]{frameresolution.eps}.
+&\pic[2.5]{poscross.eps} = \pic[2.5]{negcross.eps} + (s-s^{-1}) \left( \pic[2.5]{idresolution.eps} - \pic[2.5]{capcupresolution.eps} \right), \\ 
+&\pic[2.5]{vh.eps} = v \pic[2.5]{frameresolution.eps}, \\
+&\pic[2.5]{unknot.eps} = 1 - \frac{v-v^{-1}}{s-s^{-1}} \pic[2.5]{empty.eps}.
 \end{align}
-The functor $\cd(-,-) := \cs_{X_1}(-,-)$ is the Dubrovnik skein theory (sometimes just called the Kauffman skein theory). We will use the notation $\mathsf{D}(-) := \sfskein_{X_1}(-)$ for the Dubrovnik skein categories. Using the Dubrovnik variant is important for us (see Corollary \ref{cor:liealgebra1}). This theory is related to Dubrovnik polynomials in that the Dubrovnik polynomial of a link is a normalized value of the link in $\cd(S^3)$. The normalization is often so that the Dubrovnik polynomial of the unknot is $1$, whereas the value of the unknot in $\cd(S^3)$ is $\delta_\cd := 1 - \frac{v-v^{-1}}{s-s^{-1}}$, which can be deduced from the skein relations.
+The value of the unknot will be denoted by $\delta_\cd := 1 - \frac{v-v^{-1}}{s-s^{-1}}$. The functor $\cd(-,-) := \cs_{X_1}(-,-)$ is the Dubrovnik skein theory (sometimes called the Kauffman skein theory). We will use the notation $\mathsf{D}(-) := \sfskein_{X_1}(-)$ for the Dubrovnik skein categories. Using the Dubrovnik variant is important for us (see Corollary \ref{cor:liealgebra1}). This theory is related to Dubrovnik polynomials in that the Dubrovnik polynomial of a link is a normalized value of the link in $\cd(S^3)$, depending on the framing.
 \end{example}
 
 \begin{example}[\textit{HOMFLYPT Skein Relations}]
 Next, let $X_2$ be the set of two oriented skein relations
 \begin{align}
-&\pic[2.5]{poscrossor.eps} = \pic[2.5]{negcrossor.eps} + (s-s^{-1}) \pic[2.5]{idresolutionor.eps} \\
-&\pic[2.5]{vhor.eps} = v \pic[2.5]{frameresolutionor.eps}.
+&\pic[2.5]{poscrossor.eps} = \pic[2.5]{negcrossor.eps} + (s-s^{-1}) \pic[2.5]{idresolutionor.eps}, \\
+&\pic[2.5]{vhor.eps} = v \pic[2.5]{frameresolutionor.eps}, \\
+&\pic{unknotor.eps} = \frac{v-v^{-1}}{s-s^{-1}} \pic[2.5]{empty.eps}.
 \end{align}
-The functor $\ch(-,-) := \cs_{X_2}(-,-)$ is the HOMFLYPT skein theory and we use the notation $\mathsf{H}(-) := \sfskein_{X_2}(-)$ for the HOMFLYPT skein categories. As in the Dubrovnik case, this theory is related to HOMFLYPT polynomials so that the HOMFLYPT polynomial of a link is a normalized value of the link in $\ch(S^3)$. Again, some often make the choice to normalize this polynomial so that the value of the unknot is $1$, but the value of the unknot in $\ch(S^3)$ is $\delta_\ch := -\frac{v-v^{-1}}{s-s^{-1}}$.
+The value of the unknot will be denoted by $\delta_\ch := \frac{v-v^{-1}}{s-s^{-1}}$. The functor $\ch(-,-) := \cs_{X_2}(-,-)$ is the HOMFLYPT skein theory and we use the notation $\mathsf{H}(-) := \sfskein_{X_2}(-)$ for the HOMFLYPT skein categories. As in the Dubrovnik case, this theory is related to HOMFLYPT polynomials so that the HOMFLYPT polynomial of a link is a normalized value of the link in $\ch(S^3)$.
 \end{example}
 
 \begin{example}[\textit{Kauffman Bracket Skein Relations}]
 As a final example, let $X_3$ be the set of two unoriented skein relations
 \begin{align}
-&\pic[2.5]{poscross.eps} = s \pic[2.5]{idresolution.eps} + s^{-1} \pic[2.5]{capcupresolution.eps} \\
-&\pic[2.5]{vh.eps} = -s^{-3} \pic[2.5]{frameresolution.eps}.
+&\pic[2.5]{poscross.eps} = s \pic[2.5]{idresolution.eps} + s^{-1} \pic[2.5]{capcupresolution.eps}, \\
+&\pic[2.5]{vh.eps} = -s^{-3} \pic[2.5]{frameresolution.eps}, \\
+&\pic[2.5]{unknot.eps} = -s^2 - s^{-2} \pic[2.5]{empty.eps}.
 \end{align}
-The functor $\ck(-,-) := \cs_{X_3}(-,-)$ is the Kauffman bracket skein theory (not be confused with the Kauffman skein theory) and we use $\mathsf{K}(-) := \sfskein_{X_3}(-)$ to notate the Kauffman bracket skein categories. The value of a link in $\ck(S^3)$ is equal to its bracket polynomial, which may be normalized as above to obtain its Jones polynomial. One could choose the framing parameter to be $v$ instead of $-s^{-3}$ like we did before without any obvious consequences, but it is standard in the literature to make the choice we present here. The value of the unknot is $\delta_\ck := -s^2 - s^{-2}$.
+The value of the unknot will be denoted by $\delta_\ck := -s^2 - s^{-2}$. The functor $\ck(-,-) := \cs_{X_3}(-,-)$ is the Kauffman bracket skein theory (not be confused with the Kauffman skein theory) and we use $\mathsf{K}(-) := \sfskein_{X_3}(-)$ to notate the Kauffman bracket skein categories. The value of a link in $\ck(S^3)$ is equal to its bracket polynomial, which may be normalized to obtain its Jones polynomial. One could choose the framing parameter to be $v$ instead of $-s^{-3}$ like we did before without any obvious consequences, but it is standard in the literature to make the choice we present here.
 \end{example}
 
 \begin{remark} \label{rmk:naturaltransformation}
-Any linear combination of tangles which satisfy the Dubrovnik skein relations will also satisfy the Kauffman bracket skein relations after making the specialization $v=-s^{-3}$. This can be seen by performing the calculation in the relative skein algebra of the ball with $4$ points. Let $\sigma^\pm$ be the diagrams of positive and negative crossings, $e$ the planar diagram with two vertical strands, and $c$ the planar diagram with two horizontal strands. Then the Dubrovnik skein relation is
+Any linear combination of tangles which satisfy the Dubrovnik skein relations will also satisfy the Kauffman bracket skein relations after making the specialization $v=-s^{-3}$. This can be seen by performing a calculation in the relative skein algebra of the ball with $4$ points. Let $\sigma^\pm$ be the diagrams of positive and negative crossings, $e$ the planar diagram with two vertical strands, and $c$ the planar diagram with two horizontal strands. Then the Dubrovnik skein relation is
 \[
 \sigma^+_\cd - \sigma^-_\cd - (s-s^{-1})e_\cd + (s-s^{-1})c_\cd = 0
 \]
@@ -194,11 +204,13 @@ For a surface $\Sigma$, a link in $\Sigma \times I$ may be considered as a cycle
 
 \section{Skein Algebras of Tangles in a Cube} \label{sec:cube}
 
-In the case where $\Sigma = I^2$, the endomorphism objects of $\mathsf{D}(I^2), \mathsf{H}(I^2)$, and $\mathsf{K}(I^2)$ are known and provide the motivation for why the choices of skein relations are what they are. For an integer $n \geq 1$, let $\underline{n}$ be a set of $n$ points in $I^2$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose so that all points share the same orientation if in the context of an oriented skein theory). Then the endomorphism algebras 
+The Birman-Murakami-Wenzl (BMW) algebras, Hecke algebras (of type A), and Temperley-Lieb algebras are endomorphism algebras of certain representations of quantum groups. These algebras widely-studied due to their importance in representation theory, combinatorics, and geometry. For us, they are important because of their relation to the skein theories defined above. 
+
+The endomorphism algebras in the categories $\mathsf{D}(I^2), \mathsf{H}(I^2)$, and $\mathsf{K}(I^2)$ are well-known and motivate the choices of their defining skein relations. For an integer $n \geq 1$, let $\underline{n}$ be a set of $n$ points in $I^2$, chosen to be evenly spaced along the line segment $\{ 1/2 \} \times I$ (choose all points to share the same orientation if in the context of an oriented skein theory). Then the endomorphism algebras 
 \[
 BMW_n := \End_\mathsf{D}(I^2)(\underline{n}), \qquad H_n := \End_\mathsf{H}(I^2)(\underline{n}), \qquad TL_n := \End_\mathsf{K}(I^2)(\underline{n})
 \]
-are known to be isomorphic to the Birman-Murakami-Wenzl, (Type A) Hecke, and Temperley-Lieb algebras, respectively (see \cite{Abr08}, \cite{AM98}, \cite{Mor10}).
+are known to be isomorphic to the Birman-Murakami-Wenzl, (Type A) Hecke, and Temperley-Lieb algebras respectively after certain specializations of the parameters (see \cite{Abr08}, \cite{AM98}, \cite{Mor10}).
 
 \begin{figure}[H]
 \centering
@@ -206,15 +218,17 @@ $\pic[13]{relativestackingproduct.eps}$
 \caption{An example of a product of elements in $BMW_3$. The multiplication structure is induced by a wiring diagram.}
 \end{figure}
 
-Let $q \in \C$ be not a root of unity, $U_q(\mathfrak{gl}_N)$ be the Drinfeld-Jimbo quantum group associated to the Lie algebra $\mathfrak{gl}_N$, and $V$ be the natural representation of $U_q(\mathfrak{gl}_N)$ (see \cite{CP94}). Then $H_n$ acts on the $n$-fold tensor product $V^{\otimes n}$ by $U_q(\mathfrak{gl}_N)$-linear endomorphisms, and this action generates $\End_{U_q(\mathfrak{gl}_N)}(V^{\otimes n})$. This is actually part of the statement of quantum Frobenius-Schur-Weyl duality: $V^{\otimes n}$ is a $U_q(\mathfrak{gl}_N)$-$H_n$-bimodule, and the action of one algebra generates the linear endomorphisms with respect to the other. So a representation of one algebra determines a representation of the other via tensor product with $V^{\otimes n}$. The Birman-Murakami-Wenzl algebra plays the role of the Hecke algebra for $U_q(\mathfrak{g}_N)$ in the case where $\mathfrak{g}$ is one of the orthogonal or symplectic Lie algebras. For this reason, from a Lie theoretic point of view, the HOMFLYPT skein theory is thought of as a ``type A" theory, while the Dubrovnik skein theory is a ``types B, C, D" skein theory.
+Let $q \in \C$ be not a root of unity, $U_q(\mathfrak{gl}_N)$ be the Drinfeld-Jimbo quantum group associated to the Lie algebra $\mathfrak{gl}_N$, and $V$ be the natural representation of $U_q(\mathfrak{gl}_N)$ (see \cite{CP94}). Then $H_n$ acts on the $n$-fold tensor product $V^{\otimes n}$ by $U_q(\mathfrak{gl}_N)$-linear endomorphisms, and this action generates $\End_{U_q(\mathfrak{gl}_N)}(V^{\otimes n})$. 
+
+This is actually part of the statement of quantum Frobenius-Schur-Weyl duality: $V^{\otimes n}$ is a $U_q(\mathfrak{gl}_N)$-$H_n$-bimodule, and the action of one algebra generates the linear endomorphisms with respect to the other. So a representation of one algebra determines a representation of the other via tensor product with $V^{\otimes n}$. The Birman-Murakami-Wenzl algebra plays the role of the Hecke algebra for $U_q(\mathfrak{g}_N)$ in the case where $\mathfrak{g}$ is one of the orthogonal or symplectic Lie algebras. For this reason, from a Lie theoretic point of view, the HOMFLYPT skein theory is thought of as a ``type A" theory, while the Dubrovnik skein theory is a ``types B, C, D" skein theory.
 
 As for the Temperley-Lieb algebra $TL_n$, it acts on the $n$-fold tensor power $V^{\otimes n}$ of the natural representation of $U_q(\mathfrak{gl}_2)$ (one may replace $\mathfrak{gl}_2$ with $\mathfrak{sl}_2$). Actually, there is a surjective algebra homomorphism $\pi_{TL}: H_n \to TL_n$ and the action $H_n \to \End_{U_q(\mathfrak{gl}_2)}(V^{\otimes n})$ factors through this homomorphism (see \cite{Jim86}). One can conclude that the action of $H_n$ on $V^{\otimes n}$ is not faithful, at least in the case when $N=2$ and $n \geq 2$.
 
-Much is known about these algebras and some of the results surrounding them are very useful in our context. One of the main ideas is that each of the algebras discussed above has a family of idempotents which provide algebraically nice closures to links in the skein algebra of an annulus. Let's first describe the Hecke algebra in more detail before focusing on the BMW algebra. 
+Much is known about these algebras and some of the results surrounding them are very useful in our context. One of the main ideas is that each of the algebras discussed above has a family of idempotents which provide algebraically nice closures to links in the skein algebra of the annulus. Let's first describe the Hecke algebra in more detail before focusing on the BMW algebra. 
 
-For any partition $\lambda$ of $n$, there exists an element $y_\lambda \in H_n$ which is idempotent, so that $y_\lambda^2 = y_\lambda$, and minimal in the sense that it generates a minimal left-ideal of $H_n$ (see \cite{AM98}). The elements $y_n := y_{(n)}$ corresponding to single row partitions are called \textbf{(Hecke) symmetrizers}. These elements have a certain absorption property which makes them unique, which we will now describe. Let us use $\sigma_i \in H_n$ be the positive crossing between the $i^{\rm{th}}$ and $(i+1)^{\rm{th}}$ strands. The algebra $H_n$ is generated by the $\sigma_i$ and the symmetrizers are the unique idempotent elements satisfying $\sigma_i y_n = s y_n = y_n \sigma_i$. In this way, $y_n$ corresponds to a $1$-dimensional representation of $H_n$ (it is a deformation of the trivial representation of $\C S_n$ where $s=1$).
+Recall that a parition $\lambda$ of a non-negative integer $n$ is a tuple of weakly-decreasing positive integers $(\lambda_1, \dots, \lambda_k)$ that sum to $n$. For any partition $\lambda$ of $n$, there exists an element $y_\lambda \in H_n$ which is idempotent, so that $y_\lambda^2 = y_\lambda$, and minimal in the sense that it generates a minimal left-ideal of $H_n$ (see \cite{AM98}). The elements $y_n := y_{(n)}$ corresponding to single row partitions are called \textbf{(Hecke) symmetrizers}. These elements have a certain absorption property which makes them unique, which we will now describe. Let $\sigma_i \in H_n$ be the positive crossing between the $i^{\rm{th}}$ and $(i+1)^{\rm{th}}$ strands. The algebra $H_n$ is generated by the $\sigma_i$ and the symmetrizers are the unique idempotent elements satisfying $\sigma_i y_n = s y_n = y_n \sigma_i$. In this way, $y_n$ corresponds to a $1$-dimensional representation of $H_n$ (it is a deformation of the trivial representation of $\C S_n$ where $s=1$).
 
-A similar story holds for the BMW algebra. Firstly, $BMW_n$ is generated by positive crossing elements $\sigma_i$ and cap-cup elements $c_i$. The $c_i$ generate a proper ideal $I_n$ in $BMW_n$. In \cite{BB01}, the authors show that the complement of $I_n$ in $BMW_n$ is isomorphic to $H_n$, giving an isomorphism $BMW_n \cong H_n \oplus I_n$. Then they construct an additive and multiplicative (but non-unital) homomorphism 
+A similar story holds for the BMW algebra. Firstly, $BMW_n$ is generated by positive crossing elements $\sigma_i$ and cap-cup elements $c_i$. The $c_i$ generate a proper ideal $I_n$ in $BMW_n$. In \cite{BB01}, Beliakova and Blanchet show that the complement of $I_n$ in $BMW_n$ is isomorphic to $H_n$, giving an isomorphism $BMW_n \cong H_n \oplus I_n$. Then they construct an additive and multiplicative (but non-unital) homomorphism 
 \begin{equation}
 \Gamma_n : H_n \to BMW_n
 \end{equation}
@@ -240,7 +254,7 @@ For what it's worth, this relation descends to a well-known recurrence relation 
 
 \section{Skein Algebras of the Annulus} \label{sub:annulus}
 
-Let's use the notation $A := S^1 \times [0,1]$ for the annulus. The thickened annulus represents perhaps the simplest space with non-trivial topology that can harbor links. There are often many different smooth embeddings of the thickened annulus into a given 3-manifold $M$ (one for every element of $\pi_1(M)$, at the very least). Keep in mind that if we have a smooth embedding $f: A \times I \hookrightarrow M$, then we have an induced linear map between skein modules $\cs_X(f): \cs_X (A) \to \cs_X (M)$, allowing us to prod for information about $\cs_X(M)$. One useful type of embedding of $A$ is into a tubular neighborhood of a knot, which is often called \textit{decorating} or \textit{threading} a knot.
+Let's use the notation $A := S^1 \times [0,1]$ for the annulus. The thickened annulus represents perhaps the simplest space with non-trivial topology that can harbor links. There are often many different smooth embeddings of the thickened annulus into a given 3-manifold $M$ (one for every conjugacy class of $\pi_1(M)$, at the very least). Keep in mind that if we have a smooth embedding $f: A \times I \hookrightarrow M$, then we have an induced linear map between skein modules $\cs_X(f): \cs_X (A) \to \cs_X (M)$, allowing us to prod for information about $\cs_X(M)$. One useful type of embedding of $A$ is into a tubular neighborhood of a knot, which is often called \textit{decorating} or \textit{threading} a knot.
 
 \begin{figure}[h]
 \centering
@@ -250,17 +264,17 @@ $\pic{threading.eps}$
 
 A first observation is that any skein algebra of the form $\cs_X(A)$ is commutative because the link algebra $\cs_\varnothing(A)$ is a commutative algebra. To see this, consider the product of two links $L_1$ and $L_2$ in the link algebra and start by stretching $L_2$ towards the outer boundary past $L_1$, followed by moving it down below the furthest point of $L_1$, and finally contracting $L_2$ can to its original radial position. This is essentially the Eckmann-Hilton argument. 
 
-We'll tackle describing the structure of $\ck(A)$ before the others since it is the easiest. The Kauffman bracket skein relation allows one to resolve all crossings in any diagram on any surface $\Sigma$.The set of non-trivial mutli-curves (non-trivial meaning that no curve bounds a disk), together with the empty link in $A \times \{ \ast \}$ forms a basis of $\ck(A)$ (actually, the theorem is stated for any skein algebra, see \cite{BP00} for example). There is only one non-trivial curve $z$ and the set $\{ z^k \}_{k \in \N}$ exhaust all of the multicurves. Therefore, $\ck(A)$ is a polynomial algebra $R[z]$. 
+We'll tackle describing the structure of $\ck(A)$ before the others since it is the easiest. The Kauffman bracket skein relation allows one to resolve all crossings in any diagram on any surface $\Sigma$.The set of non-trivial multi-curves (non-trivial meaning that no curve bounds a disk), together with the empty link in $A \times \{ \ast \}$ forms a basis of $\ck(A)$ (actually, the theorem is stated for any surface, see \cite{BP00} for example). There is only one non-trivial curve $z$ and the set $\{ z^k \}_{k \in \N}$ exhaust all of the multicurves. Therefore, $\ck(A)$ is a polynomial algebra $R[z]$. 
 
 The HOMFLYPT and Dubrovnik cases are more complicated because the skein relations do not allow one to resolve all the crossings in a diagram. However, they do allow one to change a diagram with a negative crossing into a diagram with a positive crossing, plus diagrams with a lesser number of crossings. It follows that the skein algebras $\ch(A)$ and $\cd(A)$ are generated by knots with only positive crossings. Let $z_i$ be a knot in $A$ with winding number $i$ around the annulus. Turaev shows in \cite{Tur90} that the $z_i$ are algebraically independent by showing their HOMFLYPT and Dubrovnik polynomials are algebraically independent. Therefore, $\ch(A)$ is a polynomial algebra $R[z_i, i \in \Z_{\neq 0}]$. $\cd(A)$ has half as many generators since the $z_i$ in that setting are unoriented, but $\cd(A)$ is a polynomial algebra $R[z_i, i \in \Z_{> 0}]$ by the same arguments. 
 
 \begin{figure}[H]
 \centering
 $\pic[5]{z2.eps}$
-\caption{The generator $z_2 \in \cd(A)$.}
+\caption{The generator $z_3 \in \cd(A)$.}
 \end{figure}
 
-The skein algebras of tangles in a cube relate to the skein algebras of the annulus via a wiring $\cl$. We will call the image of an element under this wiring the \textbf{annular closure} of the element. This map is surjective and it satisfies the ``trace property" $\cl(abc) = \cl(cab)$. Note that is it not unital nor multiplicative, but it is true that $\cl(a \otimes b) = \cl(a) \cl(b)$ where $a \otimes b$ is an element obtained by concatenating elements $a$ and $b$. 
+The skein algebras of tangles in a cube relate to the skein algebras of the annulus via a wiring $\cl$. We will call the image of an element under this wiring the \textbf{annular closure} of the element. This map and it satisfies the ``trace property" $\cl(abc) = \cl(cab)$. Note that is it not unital nor multiplicative, but it is true that $\cl(a \otimes b) = \cl(a) \cl(b)$ where $a \otimes b$ is an element obtained by concatenating elements $a$ and $b$. Furthermore, it is well-known that any annular link is the closure of some braid.
 
 \begin{figure}[h]
 \centering
@@ -268,7 +282,7 @@ $\pic[5]{annularclosure.eps}$
 \caption{This annular closure wiring diagram.}
 \end{figure}
 
-Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda) \in \cd(A)$. Zhong and Lu show in \cite{LZ02} that the set $\{ \widetilde{Q}_\lambda \}_\lambda$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all paritions. Actually, it is an eigenbasis with respect to the meridian map $\phi:\cd(A) \to \cd(A)$ where the eigenvalue of $\widetilde{Q}_\lambda$ is 
+Let $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda) \in \cd(A)$. Zhong and Lu show in \cite{LZ02} that the set $\{ \widetilde{Q}_\lambda \}_\lambda$ forms a basis of $\cd(A)$ over the base ring $R=\Q(s, v)$, where $\lambda$ ranges over all partitions. Actually, it is an eigenbasis with respect to the meridian map $\phi:\cd(A) \to \cd(A)$ where the eigenvalue of $\widetilde{Q}_\lambda$ is 
 \[
 c_\lambda = \delta_\cd + ( s - s^{-1} ) \sum_{\square \in \lambda} v^{-1} s^{2 \textrm{cn}(\square)} - v s^{-2 \textrm{cn}(\square)}
 \]
@@ -282,7 +296,7 @@ $\pic[5]{Meridian.eps}$
 
 The behavior of $\widetilde{Q}_\lambda$ is similar to that of the $Q_\lambda := \cl^+(y_\lambda) \in \ch(A)$ where $\cl^+(-)$ is defined by orienting the strands in wiring digram of $\cl(-)$ counter-clockwise. Using the description $\ch(A) = R[z_i, i \in \Z_{\neq 0}]$, consider the subalgebras $\ch(A)^+ := R[z_i, i \in \Z_{> 0}]$ and $\ch(A)^- := R[z_i, i \in \Z_{< 0}]$. Then the two subalgebras are isomorphic via the linear involution defined by $z_i \mapsto z_{-i}$ and $\ch(A) \cong \ch(A)^+ \otimes \ch(A)^-$. The $\{ Q_\lambda \}_\lambda$ forms an eigenbasis of $\ch(A)^+$ with resepect to the meridian map and the eigenspaces are $1$-dimensional. As a side remark, the linear involution $z_i \mapsto z_{-i}$ may be realized topologically by rotating the thickened annulus $\pi$ radians around an appropriately centered axis parallel to $A$ and taking the induced skein map. We will call this map the \textit{flip map}.
 
-In \cite{Luk05}, it's shown how to interpret $\ch(A)^+$ as the ring of symmetric functions $\Lambda$ (also see \cite{Mor02b}). There is an injective algebra homomorphism $\Lambda \to \ch(A)^+$ which sends the Schur function $s_\lambda$ to the minimal idempotent closure $Q_\lambda$. This theorem has plenty of implications. For example, the structure constants of $\Lambda$ in the basis $\{ s_\lambda \}_\lambda$ are the Littlewood-Richardson coefficients, which are then sent to structure constants of $\ch(A)^+$ in the basis $\{ Q_\lambda \}_\lambda$. In Section \ref{sec:Lukac}, we give a summary about the ring $\Lambda$ and discuss partial results surrounding the Dubrovnik analogue of this homomorphism.
+In \cite{Luk05}, it's shown how to interpret $\ch(A)^+$ as the ring of symmetric functions $\Lambda$ (also see \cite{Mor02b}). There is an injective algebra homomorphism $\Lambda \to \ch(A)^+$ which sends the Schur function $s_\lambda$ to the minimal idempotent closure $Q_\lambda$. This homomorphism may be upgraded to an isomorphism if we extend the scalars of $\Lambda$ to $\Lambda_R = R \otimes \Lambda$. This theorem has plenty of implications. For example, the structure constants of $\Lambda$ in the basis $\{ s_\lambda \}_\lambda$ are the Littlewood-Richardson coefficients, which are then sent to structure constants of $\ch(A)^+$ in the basis $\{ Q_\lambda \}_\lambda$. In Section \ref{sec:Lukac}, we give a summary about the ring $\Lambda$ and discuss partial results surrounding the Dubrovnik analogue of this homomorphism.
 
 Another application of the interpretation of $\ch(A)^+$ as $\Lambda$ is the definition of new special links in the skein algebra. There is a family of elements in $\Lambda$ known as the power sum symmetric functions, whose counterparts in $\ch(A)^+$ we will denote by $P_k$ for integers $k \geq 1$. These elements are algebraically independent in $\Lambda_\Q := \Q \otimes \Lambda$. Therefore, ordered monomials in the $P_k$ form a basis of $\ch(A)^+$.
 
@@ -297,7 +311,7 @@ of the annulus into a tubular neighborhood of the line of slope $r$ in the flat 
 \[
 \ch(\iota_r): \ch(A) \to \ch(T^2)
 \]
-on the level of skein algebras. The $\iota_r$ are distinct isotopically (even homotopically) and are exhaustive in the sense that any knot in the thickened torus is may be represented as being contained in the image of an $\iota_q$. Therefore, any basis of $\ch(A)^+$ defines a basis of $\ch(T^2)$. Let's consider this with respect to the the power-sum monomial basis of $\ch(A)^+$. More precisely, for any pair of integers $\xx = (a, b)$ where $k = \gcd(\xx)$, define 
+on the level of skein algebras. The $\iota_r$ are distinct isotopically (even homotopically) and are exhaustive in the sense that any knot in the thickened torus is may be represented as being contained in the image of an $\iota_q$. Therefore, any generating set of $\ch(A)^+$ defines a generating set of $\ch(T^2)$. Let's consider this with respect to the the power-sum monomial basis of $\ch(A)^+$. More precisely, for any pair of integers $\xx = (a, b)$ where $k = \gcd(\xx)$, define 
 \[
 P_\xx := \ch(\iota_{a/b})(P_k).
 \]
@@ -306,9 +320,9 @@ In \cite{MS17}, Morton and Samuelson prove that the skein algebra $\ch(T^2)$ adm
 \[
 [P_\xx, P_\yy] = \big( s^{\det(\xx,\yy)} - s^{-\det(\xx,\yy)} \big) P_{\xx + \yy}.
 \]
-This presentation exhibits a relationship to the elliptic Hall algebra: a 2-parameter family of algebras obtained via Hall algebra decategorification of categories of coherent sheaves over certain elliptic curves (see \cite{BS12}). Along the diagonal of the parameter space, the Burban-Schiffman presentation of the elliptic Hall algebra matches the Morton-Samuelson presentation of the skein algebra of the torus. At the very least, this highlights two things. Firstly, the skein algebra of the torus admits a known deformation. Secondly, skein algebras are connected to surprising areas of mathematics and hence deserve our attention. \AP{Is this paragraph correct?}
+This presentation exhibits a relationship to the elliptic Hall algebra $\mathcal{E}_{q,t}$: a 2-parameter family of algebras obtained via Hall algebra decategorification of categories of coherent sheaves over certain elliptic curves (see \cite{BS12}). Along the diagonal of the parameter space, the Burban-Schiffman presentation of the elliptic Hall algebra matches the Morton-Samuelson presentation of the skein algebra of the torus, which makes $\mathcal{E}_{s,s} \cong \ch(T^2)$. At the very least, this highlights two things. Firstly, the skein algebra of the torus admits a known deformation. Secondly, skein algebras are connected to surprising areas of mathematics and hence deserve our attention. 
 
-Next we describe the Kauffman bracket skein algebra of the torus, although the order of exposition is opposite to the historical order of discovery. The story is actually quite similar to the HOMFLYPT case. Recall that $\ck(A)$ is a polynomial algebra $R[z]$ where $z$ is the simple closed curve around the hole of the annulus with winding number $1$. There exist polynomials known as \textit{Chebyshev polynomials} $T_k \in R[z]$ for all integer $k \geq 1$ which form a basis of $\ck(A)$. For any pair of integers $\xx = (a, b) \in \Z^2$, define elements $T_\xx \in \ck(T^2)$ as 
+Next we describe the Kauffman bracket skein algebra of the torus, although the order of exposition is opposite to the historical order of discovery. The story is actually quite similar to the HOMFLYPT case. Recall that $\ck(A)$ is a polynomial algebra $R[z]$ where $z$ is the simple closed curve around the hole of the annulus with winding number $1$. There exist polynomials known as \textit{Chebyshev polynomials} $T_k \in R[z]$ for all integers $k \geq 1$ which form a basis of $\ck(A)$ and are characterized by the property $T_k(z+z^{-1}) = z^k + z^{-k}$. For any pair of integers $\xx = (a, b) \in \Z^2$, define elements $T_\xx \in \ck(T^2)$ as 
 \[
 T_\xx := \ck(\iota_{a/b})(T_k).
 \]
@@ -316,7 +330,7 @@ Note that $T_\xx = T_{-\xx}$ because the $T_k$ are fixed under the flip map, whi
 \[
 T_\xx T_\yy = s^{\det(\xx, \yy)} T_{\xx + \yy} + s^{-\det(\xx, \yy)} T_{\xx - \yy}
 \]
-which the authors call the ``product-to-sum" formulas. There is an algebra called the \textit{noncommutative torus}, which is a one-parameter deformation of the algebra of continuous functions on the torus. The Frohman-Gelca presentation of $\ck(T^2)$ matches a presentation of the invariant subalgebra of the noncommutative torus with respect to a certain involutive action. \AP{Is this paragraph correct?}
+which the authors call the ``product-to-sum" formulas. There is an algebra called the \textit{noncommutative torus}, which is a one-parameter deformation of the algebra of continuous functions on the torus. The Frohman-Gelca presentation of $\ck(T^2)$ matches a presentation of the invariant subalgebra of the noncommutative torus with respect to a certain involutive action.
 
 Given the similarity between the presentations of $\ch(T^2)$ and $\ck(T^2)$, one might suspect that there exists a similar description of the Dubrovnik skein algebra $\cd(T^2)$. The answer to this question is affirmative, which is what we discuss in Chapter \ref{chap:torus}.
 
@@ -333,8 +347,8 @@ $e = \pic[5]{einA.eps} \qquad \qquad \qquad \qquad a = \pic[5]{ainA.eps}$
 \caption{On the left is the identity elements $e \in \ca_\ch$. To the right is what we denote by $a \in \ca_\ch$.}
 \end{figure}
 
-Let $\cc_\ch := \ch(A)$. Then, $\cc_\ch$ admits both a left $\cc_\ch$-action by pushing links infront of tangles in $\ca_\ch$.
-It is known that there is an equality of algebras between $\ca_\ch$ and the Laurent polynomial algebra $\cc_\ch[a, a^{-1}]$. In particular, $\ca_\ch$ is commutative and the left action is determined by how it acts on $e$. Analagously, there is a right $\cc_\ch$-action by pulling links in behind tangles in $\ca_\ch$. 
+Let $\cc_\ch := \ch(A)$. Then, $\ca_\ch$ admits both a left $\cc_\ch$-action by pushing links in front of tangles in $\ca_\ch$.
+It is known that there is an equality of algebras between $\ca_\ch$ and the Laurent polynomial algebra $\cc_\ch[a, a^{-1}]$ with coefficients in $\cc_\ch$. In particular, $\ca_\ch$ is commutative and the left action is determined by how it acts on $e$. Analagously, there is a right $\cc_\ch$-action by pulling links in behind tangles in $\ca_\ch$. 
 
 \begin{figure}[H]
 \centering
@@ -343,7 +357,7 @@ $\cl(x) \cdot e = \pic[5]{LeftAction.eps} \qquad \qquad e \cdot \cl(x) = \pic[5]
 \end{figure}
 
 
-Both actions are examples of those arising from embeddings into the boundary of the thickened annulus, as described in Remark \ref{rem:skeinaction}. The left and right actions obviously commute, endowing $\ca_\ch$ with a $\cc_\ch$-$\cc_\ch$-bimodule structure. It is probably worth pointing out that the left action is not equal to the right action. A simple measurement of how far off the two actions are from being equal would answer our question posed above. The answer is given as a commutator relation 
+Both actions are examples of those arising from embeddings into the boundary of the thickened annulus, as described in Remark \ref{rem:skeinaction}. The left and right actions obviously commute, endowing $\ca_\ch$ with a $\cc_\ch$-$\cc_\ch$-bimodule structure. It is probably worth pointing out that the left action is not equal to the right action. A simple measurement of how far off the two actions are from being equal would answer our question posed above. The answer is given in \cite{Mor02b} as a commutator relation 
 \begin{equation} \label{eq:pkcommutator}
 e \cdot P_k - P_k \cdot e = (s^k - s^{-k}) a^k.
 \end{equation}
@@ -369,7 +383,7 @@ There are maps
 \[
 	(-)^*: BMW_n \to BMW_n \qquad \overline{(-)}: BMW_n \to BMW_n
 \]
-induced by the diffeomorphisms of the thickened square $(x, y, t) \mapsto (x, 1-y, 1-t)$ and $(x, y, t) \mapsto (x, y, 1-t)$, respectively. The map $\overline{(-)}$ is often called the \emph{mirror map} and is an $R$-anti-linear involution, while $(-)^*$ will be called the \emph{flip map} and is an $R$-linear involution. The symmetrizers $\tilde{y}_n$ are fixed under these maps because the mirror and flip maps preserve the properties which make $\tilde{y}_n$ unique.
+induced by the diffeomorphisms of the thickened square $(x, y, t) \mapsto (x, 1-y, 1-t)$ and $(x, y, t) \mapsto (x, y, 1-t)$, respectively. The map $\overline{(-)}$ is often called the \emph{mirror map} and is an $R$-anti-linear involution, while $(-)^*$ will be called the \emph{flip map} and is an $R$-linear involution. The symmetrizers $\tilde{y}_n$ are fixed under these maps because the mirror and flip maps preserve the properties that determine $\tilde{y}_n$ uniquely.
 Using the quotient map defined by the equivalence relation $(x, 0, t) \sim (x, 1, t)$, we may analagously define maps
 \[
 	(-)^*: \ca_\cd \to \ca_\cd, \qquad \overline{(-)}: \ca_\cd \to \ca_\cd
@@ -390,7 +404,7 @@ Rearranging the difference of Equations \eqref{eq:recursionina1} and \eqref{eq:r
 \begin{equation} \label{eq:annfund}
 \tilde{h}_n \cdot e - e \cdot \tilde{h}_n = (s^n - s^{-n}) (a^{-1} W^*_{n-1} - a W_{n-1})
 \end{equation}
-which Shelly calls a \textit{fundamental skein relation} in $\ca_\cd$ since it reduces to to usual Dubrovnik skein relation when $n=1$. \AP{This might also be true in another sense, since there might be some connection between the wiring $W$ and something called the ``tube algebra", as pointed out by Henry Tucker.} In Section \ref{sec:morecommutationrelations}, we will provide a similar relation which amounts to rewriting the right-hand side of the equation in terms of elements of the form $h_i \cdot a^k$ (alternatively $a^k \cdot h_i$). 
+which Shelly calls a \textit{fundamental skein relation} in $\ca_\cd$ since it reduces to to usual Dubrovnik skein relation when $n=1$. In Section \ref{sec:morecommutationrelations}, we will provide a similar relation which amounts to rewriting the right-hand side of the equation in terms of elements of the form $h_i \cdot a^k$ (alternatively $a^k \cdot h_i$). 
 
 
 
