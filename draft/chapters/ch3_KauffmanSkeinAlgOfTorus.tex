@@ -1,12 +1,12 @@
 \chapter{The Skein Algebra of the Torus} \label{chap:torus}
 
-This chapter is dedicated to the study of the Dubrovnik skein algebra of a torus $\cd(T^2)$, the main result being a simple presentation for the algebra, stated in Theorem \ref{thm:toruspresentation}. The generators $\widetilde{P}_\xx$ are embeddings of certain special elements $\widetilde{P}_k \in \cd(A)$, which we define in Section \ref{sec:powersumelements}. The $\widetilde{P}_k$ generalize both the power sum elements $P_k \in \ch(A)$ and the Chebyshev polynomials $T_k \in \ck(A)$ which are both used widely in the context of their respective skein theories due to the simple relations they satisfy. In particular, we give a simple formula in Theorem \ref{thm:powersumcommutator} which explains how to move any embedding of $\widetilde{P}_k$ past a single strand in any skein module, which gives us a family of relations between the $\widetilde{P}_\xx$. In Section \ref{sec:presentation}, we show how this and another family of relations imply the relations given in the stated presentation. 
+This chapter is dedicated to the study of the Dubrovnik skein algebra of the torus $\cd(T^2)$, the main result being a simple presentation for the algebra, stated in Theorem \ref{thm:toruspresentation}. The generators $\widetilde{P}_\xx$ are embeddings of certain special elements $\widetilde{P}_k \in \cd(A)$, which we define in Section \ref{sec:powersumelements}. The $\widetilde{P}_k$ generalize both the power sum elements $P_k \in \ch(A)$ and the Chebyshev polynomials $T_k \in \ck(A)$ which are both used widely in the context of their respective skein theories due to the simple relations they satisfy. In particular, we give a simple formula in Theorem \ref{thm:powersumcommutator} which explains how to move any embedding of $\widetilde{P}_k$ past a single strand in any skein module, which gives us a family of relations between the $\widetilde{P}_\xx$. In Section \ref{sec:presentation}, we show how this and another family of relations imply the relations given in the stated presentation. 
 
-The definition of the $\widetilde{P}_k$ make it clear why these elements generalize their HOMFLYPT counterparts, but the same isn't immediately clear for the Kauffman bracket case for the $T_k$. In Section \ref{sec:compatibility} we justify this claim by showing that the image of $\widetilde{P}_k$ is $T_k$ under the $A$-component of the natural transformation of skein theories $\eta:\cd \to \ck$ described in the previous chapter (see Remark \label{rmk:naturaltransformation}). A corollary of this is that the presentation we give for $\cd(T^2)$ is compatible with $\ck(T^2)$ under $\eta$. Also described in this section is a ``compatibility" of the presentations of $\cd(T^2)$ and $\ch(T^2)$, given as an injective algebra homomorphism between the two. This homomorphism differs between the previous described $\cd(T^2) \to \ck(T^2)$ in the sense that it doesn't arise from any natural transformation between skein theories and is simply defined via generators and relations. However, this map is interesting because we show that $\cd(T^2)$ and $\ch(T^2)$ are universal enveloping algebras of some Lie algebras, and this homomorphism arises in the image of the universal enveloping algebra functor. 
+The definition of the $\widetilde{P}_k$ make it clear why these elements generalize their HOMFLYPT counterparts, but the same isn't immediately clear for the Kauffman bracket case for the $T_k$. In Section \ref{sec:compatibility} we justify this claim by showing that the image of $\widetilde{P}_k$ is equal to $T_k$ under the $A$-component of the natural transformation of skein theories $\eta:\cd \to \ck$ described in the previous chapter (see Remark \ref{rmk:naturaltransformation}). A corollary of this is that the presentation we give for $\cd(T^2)$ is compatible with $\ck(T^2)$ under $\eta$. Also described in this section is a ``compatibility" of the presentations of $\cd(T^2)$ and $\ch(T^2)$, given as an injective algebra homomorphism between the two. This homomorphism differs between the previous described $\cd(T^2) \to \ck(T^2)$ in the sense that it doesn't arise from any natural transformation between skein theories and is simply defined via generators and relations. However, this map is interesting because we show that $\cd(T^2)$ and $\ch(T^2)$ are universal enveloping algebras of some Lie algebras, and this homomorphism arises in the image of the universal enveloping algebra functor. 
 
-In Section \ref{sec:action}, we give a description of the natural action of $\cd(T^2)$  on $\cd(D^2 \times S^1)$, which exists because the boundary of the solid torus is $T^2$. First we give a small generating setof the algebra $\cd(T^2)$, consisting of only five elements, together with an algorithm for expressing any $\widetilde{P}_\xx$ in terms of these other generators. Then, we show how these five elements act of $\cd(D^2 \times S^1)$, which implicitly describes how each $\widetilde{P}_\xx$ acts. 
+In Section \ref{sec:action}, we give a description of the natural action of $\cd(T^2)$  on $\cd(D^2 \times S^1)$, which exists because the boundary of the solid torus is $T^2$. First we give a small generating set of the algebra $\cd(T^2)$, consisting of only five elements, together with an algorithm for expressing any $\widetilde{P}_\xx$ in terms of these other generators. Then, we show how these five elements act of $\cd(D^2 \times S^1)$, which implicitly describes how each $\widetilde{P}_\xx$ acts. 
 
-This chapter includes many, but not all of the details from the paper \cite{MPS20} which is co-authored by Hugh Morton, Peter Samuelson, and myself. I've included only some parts of the paper which I've significantly contributed to, and all parts included would not exist without the support of the collaboration. \AP{Is this worded appropriately? Should I say more?}
+This chapter includes many, but not all of the details from the paper \cite{MPS20} which is co-authored by Hugh Morton, Peter Samuelson, and myself. The proofs included in this chapter are the proofs from \cite{MPS20} that either I wrote or contributed significantly to.
 
 
 
@@ -169,13 +169,17 @@ We will work the right-hand side of this above equation down to the left-hand si
 =&& [n]\left(\bar{\beta}_{n+1} - \beta_{n+1} \right) \left( s - s^{-1}\beta_{n} \right) \left( aW_{n-1} - a^{-1}W^*_{n-1} \right) \\
 =&-& \{n\}\left( aW_{n-1} - a^{-1}W^*_{n-1} \right).
 \end{eqnarray*}
-Where the last equality follows from a quick computation in the base ring. This completes the proof.
+Where the last equality follows from the identity
+\begin{equation}
+ \left(\bar{\beta}_{n+1} - \beta_{n+1} \right) \left( s - s^{-1}\beta_{n} \right) = -(s - s^{-1})
+\end{equation}
+which may be shown using simple algebraic manipulations in the base ring. This completes the proof.
 \end{proof}
 
 \begin{remark}
 Theorem \ref{thm:powersumcommutator} is part of a Dubrovnik generalization of the ``Miraculous Cancellations" first proven by Bonahon and Wong in \cite{BW16} and again by Lê in \cite{Le15} using only skein theoretic methods. Under the natural transformation $\eta:\cd \to \ck$, the $\widetilde{P}_k$ are sent to the Chebyshev polynomials $T_k$ (see Section \ref{sec:bracketcompatibility}), and the relation of Theorem \ref{thm:powersumcommutator} is sent to a commutation relation for the $T_k$. Now, if $s$ is specialized to be a $2k$-th root of unity so that $s^k = s^{-k}$, then the commutation relation implies that any threading of $T_k$ in any skein algebra $\ck_{s^{2k}=1}(\Sigma)$ is a central element. More generally, a threading in any skein module $\ck_{s^{2k}=1}(M, N)$ is \textit{transparent}, which essentially means it may move freely about the space, past any tangle. This gives rise to the \textbf{Chebyshev-Frobenius homomorphism}, first defined for skein algebras in \cite{BW16} and extended to general relative skein modules in \cite{LP19}.
 
-It would be nice to say that Theorem \ref{thm:powersumcommutator} implies a generalization of the Chebyshev-Frobenius homomorphism for Dubrovnik skein modules, but there is a major problem which is that our choice of base ring is $\Q(s,v)$, which doesn't allow for specializations to roots of unity. This choice is also used in \cite{BB01} and subsequently \cite{LZ02}, the results of which we use here in a fundamental way. Even in the literature regarding HOMFLYPT skein theory, the elements $(s^k - s^{-k})^{-1}$ are adjoined to the base ring. It would be interesting to see if this problem may be resolved somehow, but it is not something we address outside of this remark. 
+It would be nice to say that Theorem \ref{thm:powersumcommutator} implies a generalization of the Chebyshev-Frobenius homomorphism for Dubrovnik skein modules, but there are a couple problems currently preventing this. The first is that our choice of base ring is $\Q(s,v)$ doesn't allow for specializations to roots of unity. This choice is also used in \cite{BB01} and subsequently \cite{LZ02}, the results of which we use here in a fundamental way. Even in the literature regarding HOMFLYPT skein theory, the elements $(s^k - s^{-k})^{-1}$ are adjoined to the base ring. Solving this first problem would show that the threading of any knot by $\tilde{P}_k$ in any skein algebra $\cd(\Sigma)$ would be central. The second problem is that Theorem \ref{thm:powersumcommutator} doesn't imply self-transparency. That is, it doesn't show how $\tilde{P}_k$ may pass through itself. It would be interesting to see if this problem may be resolved somehow, perhaps by following arguments found in \cite{Le15}, but it is not something we address outside of this remark. 
 \end{remark}
 
 
@@ -217,7 +221,7 @@ The following special cases of Equation \eqref{eq:mainrelations} hold
 [\widetilde{P}_{1, 0}, \widetilde{P}_{0, n}] &= (s^n - s^{-n}) (\widetilde{P}_{1, n} - \widetilde{P}_{1, -n}) \label{eq:perprelations} \\
 [\widetilde{P}_{1, 0}, \widetilde{P}_{1, n}] &= (s^n - s^{-n}) (\widetilde{P}_{2, n} - \widetilde{P}_{0, n}) \label{eq:angledrelations}
 \end{align}
-for any $n \geq 1$. Furthermore, these relations generate all of the relations defined by Equation \eqref{eq:mainrelations}.
+for any $n \geq 1$. Furthermore, these relations imply all of the relations defined by Equation \eqref{eq:mainrelations}.
 \end{proposition}
 
 Equation \eqref{eq:perprelations} is the image of Equation \eqref{eq:powersumcommutator} under the wiring of $\ca_\cd$ into $\cd(T^2)$ depicted below.
@@ -554,7 +558,7 @@ On the left-hand side, the crossings are absorbed and scale the diagram by $s^n$
 \[
 s^{-n} \left(s^{n-2} - \frac{1 - s^{-2n-4} + s^{-2} - s^{-2n-2}}{s^{n+2} - s^{-n-2} - s^n + s^{-n}} \right) = \frac{s^{2n} - s^{-2n}}{s^{2n+2} - s^{-2n-2}}
 \]
-hold in the base ring. The right-hand side of the resulting equation is precisely the right-hand side of Equation \eqref{eq:jwformula}. Therefore, $\eta(\tilde{y}_{n+1}) = JW_{n+1}$, which completes the proof. 
+holds in the base ring. The right-hand side of the resulting equation is precisely the right-hand side of Equation \eqref{eq:jwformula}. Therefore, $\eta(\tilde{y}_{n+1}) = JW_{n+1}$, which completes the proof. 
 \end{proof}
 
 \begin{remark}
@@ -569,7 +573,7 @@ H_n \arrow[dr, "{\pi_{TL}}", two heads] & \\
 \textit{does not commute} since $\pi_H(c_i)=0$. However, Theorem \ref{thm:symmtoJW} shows that restricting the maps of the diagram on the relevant idempotents \textit{does} commute.
 \end{remark}
 
-It was mentioned in Section \ref{sec:skeintheories} that \textit{Chebyshev polynomials} are imporant elements of the skein algebra $\ck(A) = R[z]$. Let's now elaborate what that means. The 
+It was mentioned in Section \ref{sec:skeintheories} that \textit{Chebyshev polynomials} are important elements of the skein algebra $\ck(A) = R[z]$. Let's now elaborate what that means. The 
 \textbf{Chebyshev polynomials of the second kind} $C^S_n = C^S_n(z)$ are defined recursively as
 \[
 C^U_0 = 1, \qquad \qquad C^U_1 = 2z, \qquad \qquad C^U_n = 2 z C^U_{n-1} - C^U_{n-2}.
@@ -581,6 +585,13 @@ There are also \textbf{Chebyshev polynomials of the first kind} $C^T_k = C^T_k(z
 C^T_0 = 1, \qquad \qquad C^T_1 = z, \qquad \qquad C^T_k = 2 z C^T_{k-1} - C^T_{k-2}.
 \]
 Again, we will need slightly modified versions of these, $T_k := 2C^T_k(z/2)$.  
+
+It may be interesting to point out that these Chebyshev polynomials satisfy the relations
+\begin{align}
+C^T_k(z + z^{-1}) &= z^k + z^{-k}  \\
+C^U_k(z + z^{-1}) &= \frac{z^k + z^{-k}}{z + z^{-1}}
+\end{align}
+however, we won't use these facts here.
 
 \begin{corollary}
 Under the algebra homomorphism
@@ -675,7 +686,7 @@ defined by $\varphi(\widetilde{P}_\xx) = P_\xx + P_{-\xx}$. This induces an alge
 \[
 U(\varphi): \cd(T^2) \to \ch(T^2)
 \]
-where $U(-)$ is the universal enveloping algebra functor. Furthermore, the restrition of this homomorphism to an annulus provides an identification for $\cd(A)$ as a subalgebra of $\ch(A)$.
+where $U(-)$ is the universal enveloping algebra functor. Furthermore, the restriction of this homomorphism to an annulus provides an identification for $\cd(A)$ as a subalgebra of $\ch(A)$.
 \end{proposition}
 \begin{proof}
 The assignment is linear since it's defined on basis elements. Let's check that
@@ -702,13 +713,13 @@ Note that $\varphi(\widetilde{P}_\xx) = \varphi(\widetilde{P}_{-\xx})$, so the m
 Let $\Z^\times$ be the group of units of $\Z$. There is a $\Z^\times$-action on $\ch(T^2)$ given by $(-1) \cdot P_{\xx} = P_{-\xx}$. Then the proposition essentially says that the image of $\phi$ is the subalgebra of invariants with respect to this action.
 
 \begin{remark}
-Maybe it's worth pointing out that this homomorphism is simply defined abstractly on generators. It is not clear whether or not this map is induced by something topological in nature, as was the case for the map $\eta_{T^2}: \cd(T^2) \to \ck(T^2)$. After all, we are relating an unoriented skein theory with an oriented one. If this map were to arise from topology, it would have to involve a choice of orientations for each component of each link. All attempts to find such a choice has been unsuccessful. Therefore, it is not clear that a description of the natural action of $\cd(T^2)$ on $\cd(D^2 \times I)$ is compatible with $\phi$. In other words, it's not immediately clear whether or not the formulas of \cite{MS17} which describe the action of $\ch(T^2)$ on $\ch(D^2 \times I)$ describe analagous formulas in the Dubrovnik case. We examine this closer in the section that follows.
+Maybe it's worth pointing out that this homomorphism is simply defined abstractly on generators. It is not clear whether or not this map is induced by something topological in nature, as was the case for the map $\eta_{T^2}: \cd(T^2) \to \ck(T^2)$. After all, we are relating an unoriented skein theory with an oriented one. If this map were to arise from topology, it would have to involve a choice of orientations for each component of each link. All attempts to find such a choice have been unsuccessful. Therefore, it isn't clear that a description of the natural action of $\cd(T^2)$ on $\cd(D^2 \times I)$ is compatible with $\phi$. In other words, it's not immediately clear whether or not the formulas of \cite{MS17} which describe the action of $\ch(T^2)$ on $\ch(D^2 \times I)$ describe analagous formulas in the Dubrovnik case. We examine this closer in the section that follows.
 \end{remark}
 
 
 \section{An Action $\cd(T^2) \curvearrowright \cd(D^2 \times I)$} \label{sec:action}
 
-Recall that the skein algebra of the boundary of a 3-manifold acts on the skein module of that manifold, Hence $\cd(D^2 \times I)$ carries the structure of a $\cd(T^2)$-module. In this section we give an implicit description of this action. The first step is to show that $\cd(T^2)$ is generated by five specific elements. The proof we give may be viewed as an algorithm to write each basis element as a product of generators. Next, formulas are given for how each of those generators act. Note that $\cd(D^2 \times I)$ also carries an algebra structure and is isomorphic to $\cd(A)$ as algebras, but the $\cd(T^2)$ action does not commute with the product. Thus, we consider $\cd(D^2 \times I)$ simply as a vector space with basis $\{\tilde{y}_\lambda \}_\lambda$. 
+Recall that the skein algebra of the boundary of a 3-manifold acts on the skein module of that manifold, hence $\cd(D^2 \times I)$ carries the structure of a $\cd(T^2)$-module. In this section we give an implicit description of this action. The first step is to show that $\cd(T^2)$ is generated by five specific elements. The proof we give may be viewed as an algorithm to write each basis element as a product of generators. Next, formulas are given for how each of those generators act. Note that $\cd(D^2 \times I)$ also carries an algebra structure and is isomorphic to $\cd(A)$ as algebras, but the $\cd(T^2)$ action does not commute with the product. Thus, we consider $\cd(D^2 \times I)$ simply as a vector space with basis $\{\tilde{y}_\lambda \}$. 
 
 
 
@@ -719,7 +730,7 @@ Recall that the skein algebra of the boundary of a 3-manifold acts on the skein 
 
 First, we prove a technical lemma. 
 \begin{lemma} \label{lem:generateline}
-Let $\xx, \yy, \zz \in \Z^2$ be  such that $\xx = \yy-\zz$ and so $d := \det(\yy,\zz)$ is non-zero. Then $\widetilde{P}_{\xx+n\zz}$ is generated by $\widetilde{P}_\xx, \widetilde{P}_\yy, \widetilde{P}_\zz$ for all $n \in \Z$. 
+Let $\xx, \yy, \zz \in \Z^2$ be  such that $\xx = \yy-\zz$ and so $d := \det(\yy,\zz)$ is non-zero. Then $\widetilde{P}_{\xx+n\zz}$ is an element of the subalgebra generated by $\widetilde{P}_\xx, \widetilde{P}_\yy, \widetilde{P}_\zz$ for all $n \in \Z$. 
 \end{lemma}
 \begin{proof}
 The statement is trivial if $n=0$. By induction on positive $n$, one can express $\widetilde{P}_{\yy+n\zz}$ as
@@ -874,7 +885,7 @@ The proof above provides an algorithm for expressing any $\widetilde{P}_{n,m}$ i
 
 \subsection{Recalling Some Formulas From the Literature}
 
-Let $\Lambda = (\Lambda_1, \dots, \Lambda_n)$ be a sequence of Young diagrams such that $|\Lambda_1|=1$, $|\Lambda_{i+1}| = |\Lambda_{i}| \pm 1$, and $\Lambda_n=\lambda$. 
+Let $\Lambda = (\Lambda_1, \dots, \Lambda_n)$ be a sequence of Young diagrams such that $\Lambda_1 = (1)$, $|\Lambda_{i+1}| = |\Lambda_{i}| \pm 1$, either $\Lambda_{i+1} \subset \Lambda_{i}$ or $\Lambda_{i} \subset \Lambda_{i+1}$, and $\Lambda_n=\lambda$. 
 We will call such a sequence an \textit{up-down tableau} of length $n$ and shape $\lambda(\Lambda) := \Lambda_n$. 
 If $\Lambda = (\Lambda_1, \dots, \Lambda_{n-1}, \Lambda_n)$, then define $\Lambda' = (\Lambda_1, \dots, \Lambda_{n-1})$. 
 In particular, $|\lambda(\Lambda)| = |\lambda(\Lambda')| \pm 1$. Following \cite{BB01}, recursively define morphisms $\fa_\Lambda$ and $\fb_\Lambda$ by:
@@ -959,7 +970,7 @@ This is the basis we will choose to act by $\cd(T^2)$ on in Section \ref{sec:act
 We will fix the convention that $\widetilde{P}_{1,0}$ acts as a meridian link and $\widetilde{P}_{0,1}$ acts as a longitude link. This next proposition shows how each element of the generating set of Proposition \ref{prop:generators} act.
 
 \begin{proposition} \label{prop:generatoractions}
-In the basis $\{ \widetilde{Q}_\lambda \}_\lambda$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^2)$ is determined by the equations below.
+In the basis $\{ \widetilde{Q}_\lambda \}$ of $\cd(I^2 \times S^1)$, the action of $\cd(T^2)$ is determined by the equations below.
 \begin{align}
     \widetilde{P}_{1,0} \cdot \widetilde{Q}_\lambda &= \Bigg(\langle \widetilde{P}_1 \rangle + \{1\} \Big( v^{-1}\sum_{\square\in\lambda} s^{2\cn(\square)} - v \sum_{\square\in\lambda} s^{-2\cn(\square)} \Big) \Bigg) \widetilde{Q}_\lambda \label{eq:1,0}\\
     \widetilde{P}_{2,0} \cdot \widetilde{Q}_\lambda &= \Bigg(\langle \widetilde{P}_2 \rangle + \{2\} \Big( v^{-2}\sum_{\square\in\lambda} s^{4\cn(\square)} - v^2 \sum_{\square\in\lambda} s^{-4\cn(\square)} \Big) \Bigg) \widetilde{Q}_\lambda \label{eq:2,0}\\
@@ -974,7 +985,7 @@ Also, \eqref{eq:0,1} is precisely the result of the meridian map eigenvalue comp
 \pic{B11cdotQlambda.eps} &= v^{-1} \pic{B11cdotQlambdaframe.eps} \\
 &= v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \pic{B11cdotQlambdaframebrancha1.eps} + v^{-1} \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \frac{\langle \nu \rangle}{\langle \lambda \rangle} \pic{B11cdotQlambdaframebranchb1.eps}
 \end{align*}
-where the first sum is over the set of partitions $\mu$ whose Young diagram is obtained by adding a single cell $\square$ to $\lambda$, and similarly for the second sum. Next, we can use the idempotent property to dubplicate and absorb idempotents. The right-hand side of the above equation becomes
+where the first sum is over the set of partitions $\mu$ whose Young diagram is obtained by adding a single cell $\square$ to $\lambda$, and similarly for the second sum. Next, we can use the idempotent property to duplicate and absorb idempotents. The right-hand side of the above equation becomes
 \[
 v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \pic{B11cdotQlambdaframebrancha2.eps} + v^{-1} \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \frac{\langle \nu \rangle}{\langle \lambda \rangle} \pic{B11cdotQlambdaframebranchb2.eps}.
 \]

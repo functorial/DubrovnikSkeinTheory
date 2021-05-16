@@ -30,7 +30,7 @@ or
 \end{equation}
 \end{theorem}
 \begin{proof}
-The formula for the $d_i$ were discovered experimentally by coding a solver using the SymPy package in Python. The second equation is just the mirror map applied to the first equation, so we will just prove the first equation.
+The formulas for the $d_i$ were discovered experimentally by coding a solver using the SymPy package in Python. The second equation is just the mirror map applied to the first equation, so we will just prove the first equation.
 
 The idea of the proof depends on a reformulation of Equation \eqref{eq:skewcommutator2} as
 \[
@@ -42,11 +42,11 @@ The case of $n=0$ is trivial. For $n=1$, just apply the Kauffman skein relation.
 \begin{align*}
 \tilde{h}_n \cdot e &= e \cdot \tilde{h}_n - ( s a + s^{-1} a^{-1} ) ( e \cdot \tilde{h}_{n-1} ) + e \cdot \tilde{h}_{n-2} + ( s^{-1} a + s a^{-1} ) ( \tilde{h}_{n-1} \cdot e ) - \tilde{h}_{n-2} \cdot e \\
 &= e \cdot \tilde{h}_n - ( s a + s^{-1} a^{-1} ) ( e \cdot \tilde{h}_{n-1} ) + e \cdot \tilde{h}_{n-2} + ( s^{-1} a + s a^{-1} ) \sum_{i=0}^{n-1} d_i (e \cdot \tilde{h}_{n-1-i}) \\
-&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad - \sum_{i=0}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
+&\quad \,\, - \sum_{i=0}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
 &= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) \sum_{i=1}^{n-1} d_i (e \cdot \tilde{h}_{n-1-i}) - \sum_{i=1}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
 &= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) \sum_{i=0}^{n-2} d_{i+1} (e \cdot \tilde{h}_{n-2-i}) - \sum_{i=1}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
 &= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) d_1 ( e \cdot \tilde{h}_{n-2} ) \\
-&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad\quad+ \sum_{i=1}^{n-2} \big( ( s^{-1} a + s a^{-1} ) d_{i+1} - d_i \big) (e \cdot \tilde{h}_{n-2-i}). \\
+&\quad\,\, + \sum_{i=1}^{n-2} \big( ( s^{-1} a + s a^{-1} ) d_{i+1} - d_i \big) (e \cdot \tilde{h}_{n-2-i}). \\
 \end{align*}
 It is a straightforward computation to show that $( s^{-1} a + s a^{-1} ) d_1 = d_2$:
 \begin{align*}
@@ -70,7 +70,7 @@ This completes the proof of the statement.
 \end{proof}
 
 \begin{remark}
-There exists an algebra homomorphism from $\cd(A)$ to the ring of symmetric functions $\Lambda_R$ (see Section \ref{sec:Lukac}). Conjecturally, this map is an isomorphism, which would imply that the sets $\{ \tilde{h}_\lambda \cdot a^i \}_{\lambda, i}$ and $\{ a^i \cdot \tilde{h}_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $\tilde{h}_\lambda := \tilde{h}_{\lambda_1} \cdots \tilde{h}_{\lambda_r}$, form bases of $\ca_\cd = \cd(A)[a, a^{-1}]$ \AP{or is this already known separately somehow?}. If so, then Theorem \ref{prop:hncommutator} provides transition formulas between these two bases, and therefore giving a full description of $\ca_\cd$ as a $\cd(A)$-$\cd(A)$-bimodule. 
+There exists an algebra homomorphism from $\cd(A)$ to the ring of symmetric functions $\Lambda_R$ (see Section \ref{sec:Lukac}). Conjecturally, this map is an isomorphism, which would imply that the sets $\{ \tilde{h}_\lambda \cdot a^i \}_{\lambda, i}$ and $\{ a^i \cdot \tilde{h}_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $\tilde{h}_\lambda := \tilde{h}_{\lambda_1} \cdots \tilde{h}_{\lambda_r}$, form bases of $\ca_\cd = \cd(A)[a, a^{-1}]$. If so, then Theorem \ref{prop:hncommutator} provides transition formulas between these two bases, which would then give a full description of $\ca_\cd$ as a $\cd(A)$-$\cd(A)$-bimodule. 
 \end{remark}
 
 One might expect similar formulas to hold in the HOMFLYPT case. To our knowledge, there is no HOMFLYPT analogue of Theorem \ref{prop:hncommutator} written down in the literature. Let's do that here. 
@@ -93,7 +93,7 @@ e \cdot P_k - P_k \cdot e = (s^{k} - s^{-k}) a^k
 \end{equation} 
 which may be rephrased as a power series equation 
 \[
-e \cdot \Big( \sum_{k=1}^\infty P_k x^k \Big) - \Big( \sum_{k=1}^\infty P_k x^k \Big) \cdot e = \sum_{k=1}^\infty s^k a^k - \sum_{k=1}^\infty s^{-k} a^k.
+e \cdot \Big( \sum_{k=1}^\infty \frac{P_k}{k} x^k \Big) - \Big( \sum_{k=1}^\infty \frac{P_k}{k} x^k \Big) \cdot e = \sum_{k=1}^\infty s^k a^k - \sum_{k=1}^\infty s^{-k} a^k.
 \]
 On the left-hand side, use the defining equation \eqref{def:Pk}. Use the power series formulation of natual log on the right-hand side. So we have
 \[
@@ -146,7 +146,7 @@ In \cite{Luk05}, it is shown using skein theory techniques that there is an alge
 
 From a Lie-theoretic perspective, the ring of symmetric polynomials $\Lambda_N$ in $N$ variables is the ring of polynomial representations of $GL_n(\C)$. There are maps of graded rings $\Lambda_n \to \Lambda_{n-1}$ defined by specializing the $N^{\mathrm{th}}$ variable to $0$, which together form an inverse system whose inverse limit in the category of graded rings is isomorphic to $\Lambda$. This strengthens the existing relationship between the HOMFLYPT skein theory and $GL_n(\C)$ (recall that the skein relations are modeled after relations of morphisms in $U_q(\mathfrak{gl}_n)$-Mod). 
 
-This section is an attempt to emulate Lukac's argument in the Dubrovnik case. First we will review some of the theory behind character rings of the orthogonal and symplectic groups. In particula, they are isomorphic as rings and there are ``Schur functions" indexed over partitions for the different types. Next, for any of the character rings, we can define a homomorphism to $\cd(A)$. We conjecture that the Schur functions are sent to the annular closures of the BMW idempotents $\widetilde{Q}_\lambda$, and we prove the conjecture when the length of $\lambda$ is at most $2$.
+This section is an attempt to emulate Lukac's argument in the Dubrovnik case. First we will review some of the theory behind character rings of the orthogonal and symplectic groups. In particular, they are isomorphic as rings and there are ``Schur functions" indexed over partitions for the different types. Next, for any of the character rings, we can define a homomorphism to $\cd(A)$. We conjecture that the Schur functions are sent to the annular closures of the BMW idempotents $\widetilde{Q}_\lambda$, and we prove the conjecture when the length of $\lambda$ is at most $2$.
 
 
 
@@ -157,11 +157,11 @@ This section is an attempt to emulate Lukac's argument in the Dubrovnik case. Fi
 
 \subsection{Universal Character Rings of Orthogonal and Symplectic Type}
 
-Here we will summarize some results from \cite{KT87}. Recall that a character of a (finite-dimensional) group representation is the post-composition of the representation with the trace function. The character of a direct sum of representations is the pointwise sum of the individual characters. Also, the character of a tensor product of representations is the pointwise product of the individual characters. For compact connected Lie groups $G$, two representations of $G$ are isomorphic only if their characters are equal. In this way, the character ring of $G$ is a decategorification of the category of finite-dimensional representations of $G$. Let $R(B_n)$, $R(C_n)$, and $R(D_n)$ denote the character rings of the Lie groups $SO_{2n+1}\C$, $SP_{2n}\C$, and $SO_{2n}\C$ respectively (the type $D_n$ case will require some subtle care, but we will not address these issues here). 
+Here we will summarize some results from \cite{KT87}. Recall that a character of a (finite-dimensional) group representation is the post-composition of the representation with the trace function. The character of a direct sum of representations is the pointwise sum of the individual characters. Also, the character of a tensor product of representations is the pointwise product of the individual characters. For compact connected Lie groups $G$, two representations of $G$ are isomorphic only if their characters are equal. In this way, the character ring of $G$ is a decategorification of the category of finite-dimensional representations of $G$. Let $R(B_n)$, $R(C_n)$, and $R(D_n)$ denote the character rings of the Lie groups $SO_{2n+1}(\C)$, $SP_{2n}(\C)$, and $SO_{2n}(\C)$ respectively (the type $D_n$ case will require some subtle care, but we will not address these issues here). 
 
-The irreducible representations of $SO_{2n+1}\C$ and $SP_{2n}\C$ are indexed by partitions $\lambda$ of length at most $n$, and denote their respective characters by $sb_{n, \lambda}$ and $sc_{n, \lambda}$ respectively. The type $D_n$ case requires some subtle care, but let $sd_{n, \lambda}$ denote the character of the restriction of the appropriate irreducible representation of $O_{2n}\C$ to $SO_{2n}\C$. These are called the \textbf{Schur polynomials} of types $B_n$, $C_n$, and $D_n$.
+The irreducible representations of $SO_{2n+1}(\C)$ and $SP_{2n}(\C)$ are indexed by partitions $\lambda$ of length at most $n$, and denote their respective characters by $sb_{n, \lambda}$ and $sc_{n, \lambda}$ respectively. Let $sd_{n, \lambda}$ denote the character of the restriction of the appropriate irreducible representation of $O_{2n}(\C)$ to $SO_{2n}(\C)$. These are called the \textbf{Schur polynomials} of types $B_n$, $C_n$, and $D_n$.
 
-Let $G$ be any of $SO_{2n+1}\C$, $SP_{2n}\C$, and $SO_{2n}\C$. A character of $G$ is determined by its value on a maximal torus of $G$, which may be chosen to be a set of diagonal matrices. 
+Let $G$ be any of $SO_{2n+1}(\C)$, $SP_{2n}(\C)$, and $SO_{2n}(\C)$. A character of $G$ is determined by its value on a maximal torus of $G$, which may be chosen to be a set of diagonal matrices. 
 \begin{align*}
 &B_n: &\quad T &= \{ \textrm{diag}(t_1, \dots, t_n, 1, t_n^{-1}, \dots, t_1^{-1}) \} \\ 
 &C_n: &\quad T &= \{ \textrm{diag}(t_1, \dots, t_n, t_n^{-1}, \dots, t_1^{-1}) \} \\ 
@@ -177,9 +177,9 @@ Let $V$ be the natural representation of the group $G$. Let $h_{G,i} := \textrm{
 \end{enumerate}
 The characters $h_{G,i}$ are equal to the Schur polynomials corresponding to a single row, and $e_{G_i}$, a single column.
 
-The ring $\Lambda_n$ is called the ring of symmetric polynomials in $n$ indeterminates, and it may be identified with the character ring of finite-dimensional polynomial representations of the Lie group $GL_n\C$. The projection maps $\Lambda_n \to \Lambda_{n-1}$ form an inverse system in the category of graded rings, whose inverse limit is what we call the \textbf{ring of symmetric functions} $\Lambda$. The ring $\Lambda$ may be concretely defined as the restriction of the ring of formal power series in countable many indeterminates to those series which have bounded degree and which are invariant under permutations of the indeterminates. 
+The ring $\Lambda_n$ is called the ring of symmetric polynomials in $n$ indeterminates, and it may be identified with the character ring of finite-dimensional polynomial representations of the Lie group $GL_n(\C)$. The projection maps $\Lambda_n \to \Lambda_{n-1}$ form an inverse system in the category of graded rings, whose inverse limit is what we call the \textbf{ring of symmetric functions} $\Lambda$. The ring $\Lambda$ may be concretely defined as the restriction of the ring of formal power series in countable many indeterminates to those series which have bounded degree and which are invariant under permutations of the indeterminates. 
 
-There are symmetric functions $sb_\lambda=sd_\lambda$ (they are equal) which project to the Schur polynomials $sb_{n,\lambda}$ and $sd_{n, \lambda}$ under the projections. Similarly, there are $sc_\lambda$ which project to $sc_{n, \lambda}$. These symmetric functions are called \text{Schur functions} of types B, C, and D.The sets $\{sb_\lambda \}_\lambda$ and $\{sc_\lambda \}_\lambda$ form $\Z$-bases of $\Lambda$. Furthermore, there is an involutive algebra automorphism defined by $\omega(sb_\lambda) = sc_{\lambda^t}$ where $\lambda^t$ is the transpose partition of $\lambda$. This implies that the structure constants for both bases totally coincide, i.e. if 
+There are symmetric functions $sb_\lambda=sd_\lambda$ (they are equal) which project to the Schur polynomials $sb_{n,\lambda}$ and $sd_{n, \lambda}$ under the projections. Similarly, there are $sc_\lambda$ which project to $sc_{n, \lambda}$. These symmetric functions are called \text{Schur functions} of types B, C, and D. The sets $\{sb_\lambda \}_\lambda$ and $\{sc_\lambda \}_\lambda$ form $\Z$-bases of $\Lambda$. Furthermore, there is an involutive algebra automorphism defined by $\omega(sb_\lambda) = sc_{\lambda^t}$ where $\lambda^t$ is the transpose partition of $\lambda$. This implies that the structure constants for both bases totally coincide, i.e. if 
 \[
 sb_{\mu} sb_{\nu} = \sum_\lambda b_{\mu \nu}^\lambda sb_\lambda
 \]
@@ -458,7 +458,7 @@ h(m, k-1) \cdot e & t(m, k)
 \end{vmatrix}.
 \end{split}
 \end{equation}
-Next, recursively apply Equation \ref{eq:detgymnastics5} its own trailing term $k$ times so that the right-hand side becomes
+Next, recursively apply Equation \ref{eq:detgymnastics5} to its own trailing term $k$ times so that the right-hand side becomes
 \begin{align*}
 &\sum_{l=0}^{k-1} \left(
 \begin{vmatrix}
@@ -678,7 +678,7 @@ Apply Equations \eqref{eq:r3} and \eqref{eq:r1} :
 &= - \{n+1\} a W_n - ( \bar{\beta}_n - \beta_n ) [n] W^*_{n-1}.
 \end{align*}
 %\AP{There is an endomorphism on the BMW algebra which reflects the square along a vertical line through the middle of the square. Are the symmetrizers fixed by this map? I think you can use the uniqueness of the symmetrizers to prove this since they are idempotent and absorb scalars.} \PS{I agree, they should be fixed}
-The identities below hold in $\cc$. Use \cite[Lemma 21]{She16} \AP{***} for the second two.
+The identities below hold in $\cc$. Use Lemma 21 from \cite{She16} to prove the second two.
 \begin{align*}
 \textrm{cl}_\ca ( a W_n ) &= s^{-n} v \tilde{h}_{n+1} \\
 \textrm{cl}_\ca ( a^{-1} W^*_n ) &= s^n v^{-1} \tilde{h}_{n+1} \\
@@ -724,14 +724,14 @@ c_\lambda = \delta_\cd + ( s - s^{-1} ) \Big( v^{-1} \sum_{x \in \lambda} s^{2 \
 \end{equation}
 and where $\textrm{cn}(x)$ is the content of the cell $x$ of the Young diagram of $\lambda$ in the $(i,j)^{\textrm{th}}$ position, defined by $\textrm{cn}(x) := j-i$.
 \end{conjecture}
-
+\AP{make this a corollary}
 If true, then this conjecture may be used to prove that $S_\lambda = \widetilde{Q}_\lambda$, following the same arguement from \cite{Luk05}. Essentially, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $Q_\lambda$ are in the same eigenspace with respect to $\phi$. These eigenspaces each have dimension $1$ by \cite{LZ02}, so $S_\lambda$ would be a scalar multiple of $Q_\lambda$. Following Lukac, a simple induction argument involving the branching formula of \cite{BB01} shows that this scalar is $1$. Next, let's give some evidence for why this conjecture should be true. 
 
 \begin{proposition}
 The conjecture holds when $\lambda$ has length at most $2$.
 \end{proposition}
 \begin{proof}
-The statement is trivial if $\lambda$ has length $1$ by definition of the map. Assume $\lambda = (a, b)$. Apply Equation \eqref{eq:bcddetformula}.
+The statement is trivial if $\lambda$ has length $1$ by definition of the map. Assume $\lambda = (a, b)$. Apply Equation \eqref{eq:jacobitrudi}.
 \[
 S_\lambda = 
 \begin{vmatrix}
@@ -891,7 +891,6 @@ Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \
 $M_{n,i} = \pic[5]{murphy.eps}$
 \caption{The Jucys-Murphy element wraps the $i^\textrm{th}$ strand around the first $i-1$ strands.}
 \end{figure}
-These generalize the well-known Jucys-Murphy elements of the symmetric group algebra $\C[S_n]$, where symmetric polynomials in the Jucys-Murphy elements generate the center $Z\left(\C[S_n]\right)$.
 
 There is a homomorphism $\psi_n: \cd(A) \to BMW_n$ defined so that $\psi_n(x)$ is the element $x$ threaded by a meridian around the identity of $BMW_n$.
 \begin{figure}
@@ -924,7 +923,7 @@ Induct on $n$. For $n=1$, simply apply Theorem \ref{thm:powersumcommutator} (via
 \end{align*}
 \end{proof}
 
-Let for a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\widetilde{P}_k \cdot \tilde{y}_\lambda := \psi_n(\widetilde{P}_k) \tilde{y}_\lambda$, which is essentially a meridian threaded by $\widetilde{P}_k$ wrapped around $\tilde{y}_\lambda$. The next proposition shows that $\tilde{y}_\lambda$ is an eigenvector with respect to the assignment $\tilde{y}_\lambda \mapsto \widetilde{P}_k \cdot \tilde{y}_\lambda$. Note that all the eigenvalues are distinct from each other. The annular closure of these eigenvalue equations generalize the result found in \cite{LZ02}, which they show for $k=1$. 
+For a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\widetilde{P}_k \cdot \tilde{y}_\lambda := \psi_n(\widetilde{P}_k) \tilde{y}_\lambda$, which is essentially a meridian threaded by $\widetilde{P}_k$ wrapped around $\tilde{y}_\lambda$. The next proposition shows that $\tilde{y}_\lambda$ is an eigenvector with respect to the assignment $\tilde{y}_\lambda \mapsto \widetilde{P}_k \cdot \tilde{y}_\lambda$. Note that all the eigenvalues are distinct from each other. The annular closure of these eigenvalue equations generalize the result found in \cite{LZ02}, which they show for $k=1$. 
 \begin{proposition} \label{prop:zlgeneralization}
 In $BMW_n$, we have that 
 \[
@@ -933,7 +932,8 @@ In $BMW_n$, we have that
 where $\cn(\square)$ is the content of the cell $\square$ in the Young diagram of $\lambda$. 
 \end{proposition}
 \begin{proof}
-We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulae coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $x$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \cite{BB01}). Then apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulas coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $x$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \cite{BB01}). Then apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+\AP{fix dots in diagrams}
 \begin{align*}
 &\quad\,\, \pic[2.4]{ylambdameridianpk.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranch.eps} \\
