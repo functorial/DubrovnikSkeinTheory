@@ -43,9 +43,8 @@ We say a framed tangle in $\Sigma \times I$ has \textbf{blackboard framing} if t
     \vcenter{\hbox{\includegraphics[height=3cm]{twist.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{invvh2.eps}}}.
 \]
 This suggests that we may represent framed links in $\Sigma \times I$ as link diagrams on $\Sigma$. Indeed, equivalence under ambient isotopy is the same as equivalence under the three Reidemeister moves below.
-\AP{fix first one}
 \begin{equation}
-\vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1resolution.eps}}}
+\vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1resolution.eps}}}\quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{modifiedr1b.eps}}}
 \end{equation}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[height=3cm]{r2a.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{r2c.eps}}} \quad = \quad \vcenter{\hbox{\includegraphics[height=3cm]{r2b.eps}}}
@@ -115,7 +114,7 @@ via the functor $\cs_X$. Now we may define what $\sfskein_X(f)$ does to morphism
 \begin{figure}[h]
 \centering
 $\pic[15]{FunctorOfSkeinTheories.eps}$
-\caption{A morphism in the skein category of the disk and its image under a functor to the skein category of the annulus.}
+\caption{A morphism in $\sfskein_X(D^2)$ and its image under a functor to $\sfskein_X(A)$.}
 \end{figure}
 
 It is clear that $\sfskein_X(f)$ preserves composition and identity morphisms. Therefore, if we let $\mathsf{Surf}_{\textrm{emb}}$ be the category of smooth embeddings between smooth oriented surfaces, we can summarize our last few points by saying we have a functor
@@ -215,7 +214,7 @@ are known to be isomorphic to the Birman-Murakami-Wenzl, (Type A) Hecke, and Tem
 \begin{figure}[H]
 \centering
 $\pic[13]{relativestackingproduct.eps}$
-\caption{An example of a product of elements in $BMW_3$. The multiplication structure is induced by a wiring diagram.}
+\caption{The multiplication structure in $BMW_n$ is induced by a wiring diagram.}
 \end{figure}
 
 Let $q \in \C$ be not a root of unity, $U_q(\mathfrak{gl}_N)$ be the Drinfeld-Jimbo quantum group associated to the Lie algebra $\mathfrak{gl}_N$, and $V$ be the natural representation of $U_q(\mathfrak{gl}_N)$ (see \cite{CP94}). Then $H_n$ acts on the $n$-fold tensor product $V^{\otimes n}$ by $U_q(\mathfrak{gl}_N)$-linear endomorphisms, and this action generates $\End_{U_q(\mathfrak{gl}_N)}(V^{\otimes n})$. 
@@ -344,7 +343,7 @@ First we will restrict ourselves to the HOMFLYPT case, for which we summarize th
 \begin{figure}[h]
 \centering
 $e = \pic[5]{einA.eps} \qquad \qquad \qquad \qquad a = \pic[5]{ainA.eps}$
-\caption{On the left is the identity elements $e \in \ca_\ch$. To the right is what we denote by $a \in \ca_\ch$.}
+\caption{Left: the identity element $e \in \ca_\ch$. Right: $a \in \ca_\ch$.}
 \end{figure}
 
 Let $\cc_\ch := \ch(A)$. Then, $\ca_\ch$ admits both a left $\cc_\ch$-action by pushing links in front of tangles in $\ca_\ch$.
@@ -353,7 +352,7 @@ It is known that there is an equality of algebras between $\ca_\ch$ and the Laur
 \begin{figure}[H]
 \centering
 $\cl(x) \cdot e = \pic[5]{LeftAction.eps} \qquad \qquad e \cdot \cl(x) = \pic[5]{RightAction.eps}$
-\caption{Here we have the annular closure of some $x$ acting separately on both the left and right of the identity $e$.}
+\caption{The annular closure of some $x$ acting separately on both the left and right of $e$.}
 \end{figure}
 
 
@@ -370,7 +369,7 @@ Let $\cc_\cd := \cd(A)$ and let $a, e \in \ca_\cd$ be the unoriented versions of
 \begin{figure}[h] \label{fig:WandWstar}
 \centering
 $W = \pic[5]{W.eps} \qquad \qquad \qquad W^* = \pic[5]{Wstar.eps}$
-\caption{Wiring diagrams $W$ and $W^*$ which both define linear maps from the skein algebra of the square to this relative skein algebra of the annulus.}
+\caption{Wiring diagrams $W$ and $W^*$ which both induce linear maps.}
 \end{figure}
 
 Consider the wiring diagrams pictured above in Figure \ref{fig:WandWstar} which define linear maps $BMW_n \to \ca_\cd$. Let $W_n := W(\tilde{y}_{n+1})$ and $W^*_n :=  W^*(\tilde{y}_{n+1})$ where the subscript denotes the ``winding number'' around $A$. Taking the image of Equation \eqref{eq:shellyrecurrence} under $W$ gives a relation
