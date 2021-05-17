@@ -713,6 +713,7 @@ for any $n$.
 \end{remark}
 
 Consider the algebra homomorphism $\Lambda \to \cd(A)$ defined by the assignment $hb_i \mapsto \tilde{h}_i$. This map is well defined since $\Lambda$ is generated freely as a commutative ring by the set $\{hb_i\}_{i}$. Let $S_\lambda$ be the image of $sb_\lambda$ under this assignment. Now we are ready to state the main conjecture of this section.
+
 \begin{conjecture} \label{conj:schureigenvalues}
 Let $\phi: \cc \to \cc$ be the meridian map.  Then
 \begin{equation}
@@ -725,8 +726,40 @@ c_\lambda = \delta_\cd + ( s - s^{-1} ) \Big( v^{-1} \sum_{x \in \lambda} s^{2 \
 and where $\textrm{cn}(x)$ is the content of the cell $x$ of the Young diagram of $\lambda$ in the $(i,j)^{\textrm{th}}$ position, defined by $\textrm{cn}(x) := j-i$.
 \end{conjecture}
 
-\AP{make this a corollary}
-If true, then this conjecture may be used to prove that $S_\lambda = \widetilde{Q}_\lambda$, following the same arguement from \cite{Luk05}. Essentially, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $Q_\lambda$ are in the same eigenspace with respect to $\phi$. These eigenspaces each have dimension $1$ by \cite{LZ02}, so $S_\lambda$ would be a scalar multiple of $Q_\lambda$. Following Lukac, a simple induction argument involving the branching formula of \cite{BB01} shows that this scalar is $1$. Next, let's give some evidence for why this conjecture should be true. 
+Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $\widetilde{Q}_\lambda$ are in the same eigenspace with respect to $\phi$. By \cite{LZ02}, each eigenspace is $1$-dimensional, and so $S_\lambda$ is a scalar multiple of $\widetilde{Q}_\lambda$. What's left is to show that this scalar is $1$. Let's state this as a corollary.
+
+\begin{corollary}
+For any partition $\lambda$, we have 
+\[
+S_\lambda = \widetilde{Q}_\lambda.
+\]
+\end{corollary}
+\begin{proof}
+This proof is a generalization of the arguement given in \cite{Luk05}. Firstly, the statement is true when $\lambda$ is either the empty partition or the unique partition $\square$ of $1$, simply by definition of $S_\lambda$. Koike and Terada provide the structure constants with respect to the $S_\lambda$ \cite{KT87}. This multiplication rule has as a special case the formula
+\begin{equation}
+S_\mu S_\square = \sum_{\mu'} S_{\mu'}
+\end{equation}
+where the sum runs over all $\mu'$ obtained by either adding or removing one square from $\mu$. The annular closure applied to the branching formula from \cite{BB01} shows the same formula
+\begin{equation}
+\widetilde{Q}_\mu \widetilde{Q}_\square = \sum_{\mu'} \widetilde{Q}_{\mu'}.
+\end{equation}
+Setting $\mu=\square$ implies the equations
+\begin{align}
+S_\square^n &= \sum_\lambda d_\lambda S_\lambda \label{eq:lukeq1} \\
+\widetilde{Q}_\square^n &= \sum_\lambda d_\lambda \widetilde{Q}_\lambda . \label{eq:lukeq2}
+\end{align}
+where the scalars $d_\lambda$ are positive integers and the sums range over partitions $\lambda$ such that there exists an up-down tableau of length $n$ and shape $\lambda$. As stated above, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $\widetilde{Q}_\lambda$ are contained in the same eigenspace of $\phi$. \cite{LZ02} shows that each eigenspace is $1$-dimensional, so
+\begin{equation} \label{eq:lukeq3}
+S_\lambda = k_\lambda \widetilde{Q}_\lambda
+\end{equation}
+for some scalar $k_\lambda$. Now, $S_\square = \widetilde{Q}_\square$ by definition of $S_\square$, so we may set Equations \eqref{eq:lukeq1} and \eqref{eq:lukeq2} equal to eachother. After expressing $S_\lambda$ in terms of $\widetilde{Q}_\lambda$ using Equation \eqref{eq:lukeq3}, we may write
+\begin{equation}
+\sum_\lambda d_\lambda (1-k_\lambda) \widetilde{Q}_\lambda = 0.
+\end{equation}
+Since the $\widetilde{Q}_\lambda$ are linearly independent \cite{LZ02}, it must be true that $k_\lambda=1$ for all $\lambda$ appearing in the sum. For each partition $\lambda$ there exist some up-down tableau of shape $\lambda$, so each $k_\lambda$ appears in the sum for some $n$. Therefore, $k_\lambda=1$ for all partitions $\lambda$. This completes the proof. 
+\end{proof}
+
+Using the machinery built in this section, we can prove a special case of Conjecture \ref{conj:schureigenvalues}.
 
 \begin{proposition}
 The conjecture holds when $\lambda$ has length at most $2$.
