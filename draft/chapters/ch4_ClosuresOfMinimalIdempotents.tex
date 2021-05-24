@@ -937,7 +937,7 @@ The image of $\psi_n$ clearly lies in the center of $BMW_n$. In the next proposi
 \begin{proposition} \label{prop:murphy}
 For any $k \geq 1$, and any $n \geq 1$, we may represent $\psi_n(\widetilde{P}_k)$ as
 \begin{equation}
-\psi_n(\widetilde{P}_k) = \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=1}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
+\psi_n(\widetilde{P}_k) = \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
 \end{equation}
 where $\langle \widetilde{P}_k \rangle$ is the evaluation of $\widetilde{P}_k$ in a $3$-ball. 
 \end{proposition}
@@ -961,19 +961,19 @@ For a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\widetilde{P}_k \cd
 \begin{proposition} \label{prop:zlgeneralization}
 In $BMW_n$, we have that 
 \[
-\widetilde{P}_k \cdot \tilde{y}_\lambda = \left( \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \lambda} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda
+\widetilde{P}_k \cdot \tilde{y}_\lambda = \left( \langle \widetilde{P}_k \rangle + (s^k - s^{-k})\sum_{\square \in \lambda} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(\square)} \right) \right) \tilde{y}_\lambda
 \]
 where $\cn(\square)$ is the content of the cell $\square$ in the Young diagram of $\lambda$. 
 \end{proposition}
 \begin{proof}
-We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulas coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $x$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \cite{BB01}). Then apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulas coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $\square$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \cite{BB01}). Then apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
 \begin{align*}
 &\quad\,\, \pic[2.4]{ylambdameridianpk.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranch.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbrancha1.eps} - (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbranchb1.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) v^{-k} \pic[2.4]{ylambdameridianpkbrancha2.eps} - (s^k - s^{-k}) v^k \pic[2.4]{ylambdameridianpkbranchb2.eps}
 \end{align*}
-The first diagram is equal to $ \left( \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(x)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(x)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \cite{AM98} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(x)} \tilde{y}_\lambda$. This completes the proof.
+The first diagram is equal to $ \left( \langle \widetilde{P}_k \rangle+ (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(\square)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(\square)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \cite{AM98} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(\square)} \tilde{y}_\lambda$. This completes the proof.
 \end{proof}
 
 
