@@ -79,6 +79,9 @@
 \newcommand{\AP}[1]{{\color{blue} * #1}}
 \newcommand{\pic}[2][3]{{\,\vcenter{\hbox{\includegraphics[width= #1 cm]{#2}}}}}
 
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
 \tikzset{
     invisible/.style={opacity=0},
     visible on/.style={alt={#1{}{invisible}}},
@@ -225,7 +228,7 @@ Then $\cd(M,N)$ is naturally an algebra. \\ \pause
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Idempotents in Birman-Murakami-Wenzl Algebras}
-\begin{theorem}[Ram-Wenzl 1992, Beliakova-Blanchet, 2001]
+\begin{theorem}[Ram-Wenzl 1992, Beliakova-Blanchet 2001]
 For each partition $\lambda \vdash n$, there is a minimal idempotent $\tilde{y}_\lambda \in BMW_n$.
 \end{theorem} \pause
 \[ \pic{annularclosure.eps} \rightsquigarrow \cl: BMW_n \to \cd(A) \] \pause
@@ -257,7 +260,7 @@ $\rightsquigarrow \widetilde{P}_k$ are ``like" power sum symmetric functions. \\
 \begin{frame}{A Relative Skein Algebra}
 Let $\ca := \cd(A, 1)$.
 \begin{align*}
-e &= \pic{einA.eps} \qquad \quad&a &= \pic{ainA.eps} \\ 
+e &= \pic{einA_D.eps} \qquad \quad&a &= \pic{ainA_D.eps} \\ 
 \cl(x) \cdot e &= \pic{LeftActionUnor.eps} \qquad \quad&e \cdot \cl(x) &= \pic{RightActionUnor.eps}
 \end{align*}
 \end{frame}
@@ -290,7 +293,7 @@ d_i = \sum_{l=0}^{i-1} (s^2 - 1)s^{2l-i}a^{i-2l} + (s^{-2} - 1) s^{i-2l}a^{2l-i}
 1) By power series manipulations, the statement is equivalent to
 \begin{align*}
 e \cdot \big(\widetilde{Q}_{(n+2)} + \widetilde{Q}_{(n)}\big) &- \big(\widetilde{Q}_{(n+2)} + \widetilde{Q}_{(n)}\big) \cdot e \\ &= \\ (sa + s^{-1}a^{-1}) \big(e \cdot \widetilde{Q}_{(n+1)}\big) &- (s^{-1}a + sa^{-1}) \big(\widetilde{Q}_{(n+1)} \cdot e\big)
-\end{align*} \pause
+\end{align*}
 2) [Shelly, 2016] The $\widetilde{y}_{(n)}$ satisfy a skein-theoretic recurrence relation. 
 \[
 [n+1] \pic[1.4]{y_n+1.eps} = [n]s^{-1} \pic[1.4]{shelly1.eps} + \pic[1.4]{shelly2.eps} + [n]s^{-1} \beta_n \pic[1.4]{shelly3.eps}
@@ -304,9 +307,9 @@ e \cdot \big(\widetilde{Q}_{(n+2)} + \widetilde{Q}_{(n)}\big) &- \big(\widetilde
 The Jucys-Murphy elements $M_{n,i}$ generate a commutative subalgebra of $BMW_n$.
 \[M_{n,i} = \pic[2.4]{murphy.eps} \qquad 2 \leq i \leq n\] \pause
 
-\begin{theorem}[P.]
+\begin{proposition}[P.]
 \[\pic[1.7]{meridianpk.eps} = \langle \widetilde{P}_k \rangle 1 +  (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}\]
-\end{theorem}
+\end{proposition}
 
 \end{frame}
 
@@ -314,7 +317,7 @@ The Jucys-Murphy elements $M_{n,i}$ generate a commutative subalgebra of $BMW_n$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Application: Central Elements of $BMW_n$}
-\ul{Sketch:} Apply commutation relation for $\widetilde{P}_k$. \pause
+\ul{Sketch:} Apply commutation relation for $\widetilde{P}_k$.
 \begin{align*}
 & \quad\,\, \pic[1.5]{meridianpk.eps} \\
 &= \pic[1.5]{meridianpkpass} + (s^k - s^{-k}) \pic[1.5]{murphya1}^k - (s^{k}-s^{-k}) \pic[1.5]{murphyb1}^k \\
@@ -326,9 +329,9 @@ The Jucys-Murphy elements $M_{n,i}$ generate a commutative subalgebra of $BMW_n$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Application: Meridians of $\widetilde{y}_\lambda$}
-\begin{theorem}[P.]
+\begin{proposition}[P.]
 \[\pic[1.5]{ylambdameridianpk.eps} = \Bigg( \langle \widetilde{P}_k \rangle + (s^k - s^{-k})\sum_{\square \in \lambda} \Big(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(\square)} \Big) \Bigg) \tilde{y}_\lambda\]
-\end{theorem} \pause
+\end{proposition} \pause
 \ul{Observation:} For any fixed $k$, the eigenvalues of $\tilde{y}_\lambda$ are distinct. \pause
 \ul{Consequence:} The basis $\{\widetilde{Q}_\lambda\}$ of $\cd(A)$ is an eigenbasis with $1$-dimensional eigenspaces. Setting $k=1$ recovers the result from [Lu-Zhong, 2002]. 
 \end{frame}
@@ -353,14 +356,14 @@ The image of $\widetilde{P}_k \in \cd(A)$ under $\eta_A$ is the Chebyshev polyno
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\scshape The Algebra $\cd(T^2)$}
 \begin{frame}{Skein Algebras of $T^2$}
-\begin{theorem}[Frohman-Gelca, 2000]
+\begin{theorem}[Frohman-Gelca 2000]
 The algebra $\ck(T^2)$ is presented by generators $T_\xx$ for $\xx \in \Z^2 / \langle \xx = - \xx \rangle$ subject to the relations
 \[
 T_\xx T_\yy = s^{\det(\xx,\yy)} T_{\xx + \yy} + s^{-\det(\xx,\yy)} T_{\xx - \yy}
 \]
 \end{theorem}
 \pause
-\begin{theorem}[Morton-Samuelson, 2017]
+\begin{theorem}[Morton-Samuelson 2017]
 The algebra $\ch(T^2)$ is presented by generators $P_\xx$ for $\xx \in \Z^2$ subject to the relations
 \[
 [P_\xx, P_\yy] = (s^{\det(\xx,\yy)} - s^{-\det(\xx,\yy)}) P_{\xx + \yy}
@@ -394,7 +397,7 @@ The algebra $\cd(T^2)$ is presented by generators $\widetilde{P}_\xx$ for $\xx \
 \item $[\widetilde{P}_\xx, \widetilde{P}_\yy] = (s^{\det(\xx,\yy)} - s^{-\det(\xx,\yy)}) ( \widetilde{P}_{\xx + \yy} - \widetilde{P}_{\xx - \yy} )$.
 	\begin{enumerate}
 		\item $[\widetilde{P}_{1, 0}, \widetilde{P}_{0, n}] = (s^n - s^{-n}) (\widetilde{P}_{1, n} - \widetilde{P}_{1, -n})$ 			\item $[\widetilde{P}_{1, 0}, \widetilde{P}_{1, n}] = (s^n - s^{-n}) (\widetilde{P}_{2, n} - \widetilde{P}_{0, n})$ 
-		\item Use $SL_2(\Z)$-action on $\cd(T^2)$. Induct on $\gcd(\xx)$.
+		\item Use $SL_2(\Z)$-action on $\cd(T^2)$. Induct on $|\det(\xx,\yy)|$.
 	\end{enumerate}
 \item The $\widetilde{P}_\xx$ generate $\cd(T^2)$.
 	\begin{enumerate}
@@ -537,7 +540,7 @@ $\cdots$\end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{A $\cd(T^2)$-Action on $\cd(D^2 \times S^1)$}
 
-\begin{theorem}[P.]
+\begin{proposition}[P.]
 The $\cd(T^2)$-action on $\cd(D^2 \times S^1)$ is determined by the equations
 \begin{align*}
     \widetilde{P}_{1,0} \cdot \widetilde{Q}_\lambda &= \Bigg(\langle \widetilde{P}_1 \rangle + \{1\} \Big( v^{-1}\sum_{\square\in\lambda} s^{2\cn(\square)} - v \sum_{\square\in\lambda} s^{-2\cn(\square)} \Big) \Bigg) \widetilde{Q}_\lambda \\
@@ -545,7 +548,7 @@ The $\cd(T^2)$-action on $\cd(D^2 \times S^1)$ is determined by the equations
     \widetilde{P}_{0,1} \cdot \widetilde{Q}_\lambda &= \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} \widetilde{Q}_\mu + \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} \widetilde{Q}_\nu \\
     \widetilde{P}_{1,1} \cdot \widetilde{Q}_\lambda &= v^{-1} \sum_{\substack{\lambda \subset \mu \\ \mu = \lambda + \square}} s^{2\cn(\square)} \widetilde{Q}_\mu + v \sum_{\substack{\nu \subset \lambda \\ \lambda = \nu + \square}} s^{-2\cn(\square)} \widetilde{Q}_\nu 
 \end{align*}
-\end{theorem}
+\end{proposition}
 \end{frame}
 
 
@@ -553,18 +556,52 @@ The $\cd(T^2)$-action on $\cd(D^2 \times S^1)$ is determined by the equations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\scshape Type B/C/D Schur Functions}
 \begin{frame}{Symmetric Functions and $\ch(A)^+$}
+$\Lambda$ - The ring of symmetric functions \\
+$s_\lambda$ - Schur function \\
+$\ch(A)^+$ - Annular HOMFLYPT links oriented counter-clockwise 
+\begin{theorem}[Lukac 2005]
+There is a basis of elements $Q_\lambda$ in $\ch(A)^+$ indexed by partitions $\lambda$. \\
+The assignment $\Lambda \to \ch(A)^+$  defined by 
+\[ s_\lambda \mapsto Q_\lambda \]
+is an algebra isomorphism.
+\end{theorem}
 
+\ul{Hope:} Generalize this to Dubrovnik case.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Frame 1}
-
+\begin{frame}{Orthogonal \& Symplectic Schur Functions}
+\begin{center}
+Partition $\lambda$ $\qquad\longrightarrow\qquad$ Symmetric functions $sb_\lambda, sc_\lambda$
+\end{center} \pause
+\begin{theorem}[Koike-Terada 1987, Koike 1989]
+The sets $\{sb_\lambda\}$ and $\{sc_\lambda\}$  are bases of $\Lambda$. \\
+The structure constants of $\Lambda$ with resepct to each basis are identical natural numbers. 
+\end{theorem}
+\pause
+\begin{conjecture}
+Both of the assignments $\Lambda \to \cd(A)$ defined by
+\[ sb_{(n)} \mapsto \widetilde{Q}_{(n)} \]
+\[ sc_{(n)} \mapsto \widetilde{Q}_{(n)} \]
+are algebra isomorphisms.
+\end{conjecture}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Frame 1}
+\begin{frame}{Partial Proof of Conjecture}
+\ul{Idea:} Let $S_\lambda$ be the image of $sc_\lambda$. Show $S_\lambda=\widetilde{Q}_\lambda$. \\
+\begin{enumerate}
+\item Show $S_\lambda$ is in the same eigenspace of $\widetilde{Q}_\lambda$ with respect to the meridian map $\Gamma$.
+	\begin{enumerate}
+	\item Use a Jacobi-Trudi type identity to write $S_\lambda$ as a determinant whose entries are in terms of $S_{(n)} = \widetilde{Q}_{(n)}$.
+	\item Factor $\Gamma$ though the algebra $\ca$ so that $\Gamma(x)=\cl_\ca(x \cdot e): \quad \pic[2]{LeftActionUnor.eps} \mapsto \pic[2]{Meridianclx.eps}$ 
+	\item ??? $\cl_\ca(e \cdot x) = \delta x$. Try to translate left-action to right-action. (Works if $|\lambda| \leq 2$)
+	\item Compute eigenvalue.
+	\end{enumerate}
+\item Eigenspaces are $1$-dimensional $\Rightarrow S_\lambda = d Q_\lambda$. Show $d=1$ with branching rules: $S_\square^n = \sum c_\mu S_\mu$ and $\widetilde{Q}_\square^n = \sum c_\mu \widetilde{Q}_\mu$
+\end{enumerate}
 
 \end{frame}
 
