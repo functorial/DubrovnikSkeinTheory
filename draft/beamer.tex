@@ -135,15 +135,16 @@
 %\subtitle{SUBTITLE}
 \author{
 	Alexander Pokorny\\
-	{\it University of California, Riverside}\\
+	{\it University of California, Riverside}
 }
 \date{
-	$\pic[2]{wikipedia_trefoil.eps}$
+	$\pic[1]{wikipedia_trefoil.eps}$
 	\\
-	\vspace{1cm}
+	\vspace{0.5cm}
 	\today
 }
 \titlepage
+\ul{Defense Committee:} Dr. Peter Samuelson (Chair), \\ \qquad\qquad\qquad\qquad\quad\, Dr. Jacob Greenstein, Dr. Stefano Vidussi
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,7 +187,7 @@ $\pic[1.6]{wikipedia_trefoil_circ.eps} = \pic[1.6]{wikipedia_trefoil_circ1.eps} 
 \[\pic[8]{Ntangles.eps}\] \pause
 
 \begin{definition}
-Let $M$ be an oriented $3$-manifold and $R:= \Q(s,v)$. \\
+Let $M$ be an oriented $3$-manifold, $N \subset \partial M$ finite, and $R:= \Q(s,v)$. \\
 \[
 \cd(M, N) := R\big\{ \textrm{Tangles in $M$ relative to $N$} \big\} / \sim
 \]
@@ -200,11 +201,12 @@ Let $M$ be an oriented $3$-manifold and $R:= \Q(s,v)$. \\
 \begin{frame}{Functoriality}
 $\quad$A ``nice" embedding $\,f: (M,N) \to (M',N')$ \\
 $+$ A wiring diagram in image complement \\
-$=$ A linear transformation $D(f): \cd(M,N) \to \cd(M', N')$ \\
+$=$ A linear transformation $\cd(f): \cd(M,N) \to \cd(M', N')$ \\
 \[
 \pic[10]{CompositionInC.eps}
 \] \pause
 \ul{Consequence:} Dubrovnik skein theory is a type of algebraic topology for smooth, oriented, $3$-manifolds.
+\ul{Hope:} Develop this theory by describing the modules $\cd(M,N)$ and how they relate to each other.
 \end{frame}
 
 
@@ -271,17 +273,17 @@ e &= \pic{einA_D.eps} \qquad \quad&a &= \pic{ainA_D.eps} \\
 \begin{frame}{Commutation Relations}
 \begin{theorem}[Morton-P.-Samuelson]
 \[
-e \cdot \widetilde{P}_k - \widetilde{P}_k \cdot e = (s^k - s^{-k})(a^k - a^{-k})
+e \cdot \widetilde{P}_k = \widetilde{P}_k \cdot e + (s^k - s^{-k})(a^k - a^{-k})
 \]
 \end{theorem}
 \pause
 \begin{theorem}[P.]
 \[
-e \cdot \widetilde{Q}_{(n)} - \widetilde{Q}_{(n)} \cdot e = \sum_{i=1}^n d_i \big(e \cdot \widetilde{Q}_{(n-i)}\big)
+e \cdot \widetilde{Q}_{(n)} = \widetilde{Q}_{(n)} \cdot e + \sum_{i=1}^n d_i \big(\widetilde{Q}_{(n-i)} \cdot e \big)
 \]
 where
 \[
-d_i = \sum_{l=0}^{i-1} (s^2 - 1)s^{2l-i}a^{i-2l} + (s^{-2} - 1) s^{i-2l}a^{2l-i}
+d_i = \sum_{l=0}^{i-1} (1 - s^{-2})s^{i-2l}a^{i-2l} + (1-s^2) s^{2l-i}a^{2l-i}
 \]
 \end{theorem}
 \end{frame}
@@ -379,7 +381,7 @@ The algebra $\ch(T^2)$ is presented by generators $P_\xx$ for $\xx \in \Z^2$ sub
 Let $\xx=(a,b), k=\gcd(\xx)$. \\
 
 Define $\widetilde{P}_\xx \in \cd(T^2)$ be the embedding of $\widetilde{P}_k$ along the closed curve of slope $a/b$. 
-
+\pause
 \begin{theorem}[Morton-P.-Samuelson]
 The algebra $\cd(T^2)$ is presented by generators $\widetilde{P}_\xx$ for $\xx \in \Z^2 / \langle \xx = -\xx \rangle$ subject to the relations
 \[
@@ -394,19 +396,20 @@ The algebra $\cd(T^2)$ is presented by generators $\widetilde{P}_\xx$ for $\xx \
 \begin{frame}{A Presentation of $\cd(T^2)$}
 \ul{Proof:} 
 \begin{enumerate}
+\item The $\widetilde{P}_\xx$ generate $\cd(T^2)$.
+	\begin{enumerate}
+		\item The $\widetilde{P}_k$ generate $\cd(A)$.
+		\item Each link in $\cd(T^2)$ is a sum of products of annular knots.
+	\end{enumerate}
 \item $[\widetilde{P}_\xx, \widetilde{P}_\yy] = (s^{\det(\xx,\yy)} - s^{-\det(\xx,\yy)}) ( \widetilde{P}_{\xx + \yy} - \widetilde{P}_{\xx - \yy} )$.
 	\begin{enumerate}
 		\item $[\widetilde{P}_{1, 0}, \widetilde{P}_{0, n}] = (s^n - s^{-n}) (\widetilde{P}_{1, n} - \widetilde{P}_{1, -n})$ 			\item $[\widetilde{P}_{1, 0}, \widetilde{P}_{1, n}] = (s^n - s^{-n}) (\widetilde{P}_{2, n} - \widetilde{P}_{0, n})$ 
 		\item Use $SL_2(\Z)$-action on $\cd(T^2)$. Induct on $|\det(\xx,\yy)|$.
 	\end{enumerate}
-\item The $\widetilde{P}_\xx$ generate $\cd(T^2)$.
+\item These relations present the algebra.
 	\begin{enumerate}
-		\item Each link in $\cd(T^2)$ is a sum of products of annular knots.
-		\item The $\widetilde{P}_k$ generate $\cd(A)$.
-	\end{enumerate}
-\item The $\widetilde{P}_\xx$ are linearly independent. 
-	\begin{enumerate}
-		\item Diamond lemma type argument.
+		\item Diamond lemma type argument $\rightsquigarrow$ unordered words in $\widetilde{P}_\xx$ form a basis.
+		\item The above relations allow reordering of words.
 	\end{enumerate}
 \end{enumerate}
 \end{frame}
@@ -582,9 +585,8 @@ The structure constants of $\Lambda$ with resepct to each basis are identical na
 \pause
 \begin{conjecture}
 Both of the assignments $\Lambda \to \cd(A)$ defined by
-\[ sb_{(n)} \mapsto \widetilde{Q}_{(n)} \]
-\[ sc_{(n)} \mapsto \widetilde{Q}_{(n)} \]
-are algebra isomorphisms.
+\[ sb_{(n)} \mapsto \widetilde{Q}_{(n)} \qquad sc_{(n)} \mapsto \widetilde{Q}_{(n)}\]
+are algebra isomorphisms which send $sb_\lambda$ and $sc_\lambda$ to $\widetilde{Q}_\lambda$, respectively.
 \end{conjecture}
 \end{frame}
 
@@ -596,7 +598,7 @@ are algebra isomorphisms.
 \item Show $S_\lambda$ is in the same eigenspace of $\widetilde{Q}_\lambda$ with respect to the meridian map $\Gamma$.
 	\begin{enumerate}
 	\item Use a Jacobi-Trudi type identity to write $S_\lambda$ as a determinant whose entries are in terms of $S_{(n)} = \widetilde{Q}_{(n)}$.
-	\item Factor $\Gamma$ though the algebra $\ca$ so that $\Gamma(x)=\cl_\ca(x \cdot e): \quad \pic[2]{LeftActionUnor.eps} \mapsto \pic[2]{Meridianclx.eps}$ 
+	\item Factor $\Gamma$ as $\Gamma(x)=\cl_\ca(x \cdot e)$: \[\pic[2]{clxUnor.eps} \mapsto \pic[2]{LeftActionUnor.eps} \mapsto \pic[2]{Meridianclx.eps}\] 
 	\item ??? $\cl_\ca(e \cdot x) = \delta x$. Try to translate left-action to right-action. (Works if $|\lambda| \leq 2$)
 	\item Compute eigenvalue.
 	\end{enumerate}
