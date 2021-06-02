@@ -29,6 +29,11 @@
 \setuldepth{Berlin}
 \allowdisplaybreaks
 
+\usepackage[T1]{fontenc}
+\usepackage[USenglish,UKenglish,french,spanish,italian]{babel}
+\usepackage[useregional]{datetime2}
+\newcommand{\mydate}{\DTMdisplaydate{2021}{6}{3}{-1}}
+
 \let\nc\newcommand
 \let\rnc\renewcommand
 \nc{\la}{\label}
@@ -73,7 +78,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\sk}{\mathrm{Sk}}
-\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\frg}{\mathfrak{g}}
 \newcommand{\fa}{\mathfrak{a}}
 \newcommand{\fb}{\mathfrak{b}}
 \newcommand{\AP}[1]{{\color{blue} * #1}}
@@ -141,7 +146,8 @@
 	$\pic[1]{wikipedia_trefoil.eps}$
 	\\
 	\vspace{0.5cm}
-	\today
+	\selectlanguage{USenglish}
+	\mydate
 }
 \titlepage
 \ul{Defense Committee:} Dr. Peter Samuelson (Chair), \\ \qquad\qquad\qquad\qquad\quad\, Dr. Jacob Greenstein, Dr. Stefano Vidussi
@@ -168,13 +174,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Dubrovnik Skein Relations}
+\begin{frame}{Kauffman (Dubrovnik) Skein Relations}
 
 \begin{align}
 &\pic[1.5]{poscross.eps} = \pic[1.5]{negcross.eps} + (s-s^{-1}) \left( \pic[1.5]{idresolution.eps} - \pic[1.5]{capcupresolution.eps} \right) \\ \vspace{1cm}
 &\pic[1.5]{vh.eps} = v \pic[1.5]{frameresolution.eps}\\ \vspace{1cm}
 &\pic[1.5]{unknot.eps} = \left( 1 - \frac{v-v^{-1}}{s-s^{-1}} \right) \pic[1.5]{empty.eps} 
-\end{align} \pause
+\end{align}
 \makebox[\linewidth][l]{\rule{11cm}{0.4pt}}
 $\pic[1.6]{wikipedia_trefoil_circ.eps} = \pic[1.6]{wikipedia_trefoil_circ1.eps} + (s-s^{-1}) \left( \pic[1.6]{wikipedia_trefoil_circ2.eps} - \pic[1.6]{wikipedia_trefoil_circ3.eps} \right)$
 \end{frame}
@@ -182,9 +188,9 @@ $\pic[1.6]{wikipedia_trefoil_circ.eps} = \pic[1.6]{wikipedia_trefoil_circ1.eps} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Skein Modules}
-\ul{Observation:} Skein relations are defined locally. \\ \pause
+\ul{Observation:} Skein relations are defined locally. \\ 
 \ul{Consequence:} May impose skein relations on tangles in $\qquad\qquad\quad$arbitrary $3$-dimensional manifolds.
-\[\pic[8]{Ntangles.eps}\] \pause
+\[\pic[8]{Ntangles.eps}\]
 
 \begin{definition}
 Let $M$ be an oriented $3$-manifold, $N \subset \partial M$ finite, and $R:= \Q(s,v)$. \\
@@ -204,9 +210,9 @@ $+$ A wiring diagram in image complement \\
 $=$ A linear transformation $\cd(f): \cd(M,N) \to \cd(M', N')$ \\
 \[
 \pic[10]{CompositionInC.eps}
-\] \pause
-\ul{Consequence:} Dubrovnik skein theory is a type of algebraic topology for smooth, oriented, $3$-manifolds.
-\ul{Hope:} Develop this theory by describing the modules $\cd(M,N)$ and how they relate to each other.
+\]
+\ul{Consequence:} Dubrovnik skein theory is a type of algebraic topology for smooth, oriented, $3$-manifolds. \\
+\ul{Hope:} Develop this theory by finding algebraic presentations of nice examples of modules D(M,N) and how they relate to each other.
 \end{frame}
 
 
@@ -218,7 +224,7 @@ If
 \item $M = \Sigma \times I$ \\
 \item $N = (X \times \{0\}) \sqcup (X \times \{1\})$
 \end{itemize} 
-Then $\cd(M,N)$ is naturally an algebra. \\ \pause
+Then $\cd(M,N)$ is naturally an algebra. \\
 \makebox[\linewidth][l]{\rule{11cm}{0.4pt}} \\
 \ul{e.g.:} $\, \Sigma =$ Square, $\,N = 2n$ points \,$\rightsquigarrow$ $\,\cd(\Sigma,N) \cong BMW_n$ 
 \[
@@ -232,8 +238,8 @@ Then $\cd(M,N)$ is naturally an algebra. \\ \pause
 \begin{frame}{Idempotents in Birman-Murakami-Wenzl Algebras}
 \begin{theorem}[Ram-Wenzl 1992, Beliakova-Blanchet 2001]
 For each partition $\lambda \vdash n$, there is a minimal idempotent $\tilde{y}_\lambda \in BMW_n$.
-\end{theorem} \pause
-\[ \pic{annularclosure.eps} \rightsquigarrow \cl: BMW_n \to \cd(A) \] \pause
+\end{theorem}
+\[ \pic{annularclosure.eps} \rightsquigarrow \cl: BMW_n \to \cd(A) \]
 \begin{theorem}[Lu-Zhong 2002]
 The elements $\widetilde{Q}_\lambda := \cl(\tilde{y}_\lambda)$ form a basis of $\cd(A)$.
 \end{theorem}
@@ -307,7 +313,7 @@ e \cdot \big(\widetilde{Q}_{(n+2)} + \widetilde{Q}_{(n)}\big) &- \big(\widetilde
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Application: Central Elements of $BMW_n$}
 The Jucys-Murphy elements $M_{n,i}$ generate a commutative subalgebra of $BMW_n$.
-\[M_{n,i} = \pic[2.4]{murphy.eps} \qquad 2 \leq i \leq n\] \pause
+\[M_{n,i} = \pic[2.4]{murphy.eps} \qquad 2 \leq i \leq n\]
 
 \begin{proposition}[P.]
 \[\pic[1.7]{meridianpk.eps} = \langle \widetilde{P}_k \rangle 1 +  (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}\]
@@ -333,9 +339,9 @@ The Jucys-Murphy elements $M_{n,i}$ generate a commutative subalgebra of $BMW_n$
 \begin{frame}{Application: Meridians of $\widetilde{y}_\lambda$}
 \begin{proposition}[P.]
 \[\pic[1.5]{ylambdameridianpk.eps} = \Bigg( \langle \widetilde{P}_k \rangle + (s^k - s^{-k})\sum_{\square \in \lambda} \Big(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(\square)} \Big) \Bigg) \tilde{y}_\lambda\]
-\end{proposition} \pause
-\ul{Observation:} For any fixed $k$, the eigenvalues of $\tilde{y}_\lambda$ are distinct. \pause
-\ul{Consequence:} The basis $\{\widetilde{Q}_\lambda\}$ of $\cd(A)$ is an eigenbasis with $1$-dimensional eigenspaces. Setting $k=1$ recovers the result from [Lu-Zhong, 2002]. 
+\end{proposition}
+\ul{Observation:} For any fixed $k$, the eigenvalues of $\tilde{y}_\lambda$ are distinct.
+\ul{Consequence:} The basis $\{\widetilde{Q}_\lambda\}$ of $\cd(A)$ is a simultaneous eigenbasis with $1$-dimensional eigenspaces for all $\widetilde{P}_k$. Setting $k=1$ recovers the result from [Lu-Zhong, 2002]. 
 \end{frame}
 
 
@@ -346,8 +352,8 @@ The Kauffman bracket skein relation $\rightsquigarrow$ Jones polynomial
 \[
 \pic[1.5]{poscross.eps} = s \pic[1.5]{idresolution.eps} + s^{-1} \pic[1.5]{capcupresolution.eps}
 \] \pause
-\ul{Fact:} The Dubrovnik skein relation satisfies the Kauffman bracket skein relation.\\ \pause
-\ul{Consequence:} There is a natural transformation of skein theories $\eta: \cd \Rightarrow \ck$. \pause
+\ul{Fact:} The Kauffman bracket skein relation implies the Dubrovnik skein relation.\\ 
+\ul{Consequence:} There is a natural transformation of skein theories $\eta: \cd \Rightarrow \ck$.
 \begin{theorem}[Morton-P.-Samuelson]
 The image of $\widetilde{P}_k \in \cd(A)$ under $\eta_A$ is the Chebyshev polynomial $T_k \in \ck(A)$. 
 \end{theorem}
@@ -364,7 +370,6 @@ The algebra $\ck(T^2)$ is presented by generators $T_\xx$ for $\xx \in \Z^2 / \l
 T_\xx T_\yy = s^{\det(\xx,\yy)} T_{\xx + \yy} + s^{-\det(\xx,\yy)} T_{\xx - \yy}
 \]
 \end{theorem}
-\pause
 \begin{theorem}[Morton-Samuelson 2017]
 The algebra $\ch(T^2)$ is presented by generators $P_\xx$ for $\xx \in \Z^2$ subject to the relations
 \[
@@ -381,7 +386,6 @@ The algebra $\ch(T^2)$ is presented by generators $P_\xx$ for $\xx \in \Z^2$ sub
 Let $\xx=(a,b), k=\gcd(\xx)$. \\
 
 Define $\widetilde{P}_\xx \in \cd(T^2)$ be the embedding of $\widetilde{P}_k$ along the closed curve of slope $a/b$. 
-\pause
 \begin{theorem}[Morton-P.-Samuelson]
 The algebra $\cd(T^2)$ is presented by generators $\widetilde{P}_\xx$ for $\xx \in \Z^2 / \langle \xx = -\xx \rangle$ subject to the relations
 \[
@@ -393,7 +397,7 @@ The algebra $\cd(T^2)$ is presented by generators $\widetilde{P}_\xx$ for $\xx \
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{A Presentation of $\cd(T^2)$}
+\begin{frame}{Main Theorem: A Presentation of $\cd(T^2)$}
 \ul{Proof:} 
 \begin{enumerate}
 \item The $\widetilde{P}_\xx$ generate $\cd(T^2)$.
@@ -433,8 +437,8 @@ There is a surjective algebra homomorphism $\cd(T^2) \to \ck(T^2)$ defined by
 \begin{frame}{Relationship with $\ch(T^2)$}
 
 \begin{corollary}[P.]
-The algebras $\cd(T^2)$ and $\ch(T^2)$ are universal enveloping algebras of some Lie algebras $\fg_\cd$ and $\fg_\ch$ generated by the $\widetilde{P}_\xx$ and $T_\xx$, respectively. \\
-There is an injective Lie algebra homomorphism $\fg_\cd \to \fg_\ch$ defined by 
+The algebras $\cd(T^2)$ and $\ch(T^2)$ are universal enveloping algebras of some Lie algebras $\frg_\cd$ and $\frg_\ch$ spanned by the $\widetilde{P}_\xx$ and $P_\xx$, respectively. \\
+There is an injective Lie algebra homomorphism $\frg_\cd \to \frg_\ch$ defined by 
 \[\widetilde{P}_\xx \mapsto P_\xx + P_{-\xx}.\]
 \end{corollary}
 \ul{Proof:} $[\widetilde{P}_\xx, \widetilde{P}_\yy] - (s^{\det(\xx,\yy)} - s^{-\det(\xx,\yy)}) ( \widetilde{P}_{\xx + \yy} - \widetilde{P}_{\xx - \yy} )$ is sent to $0$. \\
@@ -577,12 +581,11 @@ is an algebra isomorphism.
 \begin{frame}{Orthogonal \& Symplectic Schur Functions}
 \begin{center}
 Partition $\lambda$ $\qquad\longrightarrow\qquad$ Symmetric functions $sb_\lambda, sc_\lambda$
-\end{center} \pause
+\end{center} 
 \begin{theorem}[Koike-Terada 1987, Koike 1989]
 The sets $\{sb_\lambda\}$ and $\{sc_\lambda\}$  are bases of $\Lambda$. \\
-The structure constants of $\Lambda$ with resepct to each basis are identical natural numbers. 
+The structure constants of $\Lambda$ with respect to each basis are identical natural numbers. 
 \end{theorem}
-\pause
 \begin{conjecture}
 Both of the assignments $\Lambda \to \cd(A)$ defined by
 \[ sb_{(n)} \mapsto \widetilde{Q}_{(n)} \qquad sc_{(n)} \mapsto \widetilde{Q}_{(n)}\]
@@ -599,7 +602,7 @@ are algebra isomorphisms which send $sb_\lambda$ and $sc_\lambda$ to $\widetilde
 	\begin{enumerate}
 	\item Use a Jacobi-Trudi type identity to write $S_\lambda$ as a determinant whose entries are in terms of $S_{(n)} = \widetilde{Q}_{(n)}$.
 	\item Factor $\Gamma$ as $\Gamma(x)=\cl_\ca(x \cdot e)$: \[\pic[2]{clxUnor.eps} \mapsto \pic[2]{LeftActionUnor.eps} \mapsto \pic[2]{Meridianclx.eps}\] 
-	\item ??? $\cl_\ca(e \cdot x) = \delta x$. Try to translate left-action to right-action. (Works if $|\lambda| \leq 2$)
+	\item $\cl_\ca(e \cdot x) = \delta x$. Try to translate left-action to right-action (works if $|\lambda| \leq 2$).
 	\item Compute eigenvalue.
 	\end{enumerate}
 \item Eigenspaces are $1$-dimensional $\Rightarrow S_\lambda = d Q_\lambda$. Show $d=1$ with branching rules: $S_\square^n = \sum c_\mu S_\mu$ and $\widetilde{Q}_\square^n = \sum c_\mu \widetilde{Q}_\mu$
@@ -609,8 +612,14 @@ are algebra isomorphisms which send $sb_\lambda$ and $sc_\lambda$ to $\widetilde
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Frame 1}
+\begin{frame}
+\begin{center}
+Thanks for listening!
+\\
+\vspace{0.8cm}
+$\pic[2]{wikipedia_trefoil.eps}$
 
+\end{center}
 \end{frame}
 
 \end{document}
