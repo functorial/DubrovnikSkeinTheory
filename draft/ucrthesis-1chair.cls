@@ -133,6 +133,9 @@
 %%%				increased the widow and orphan penalties, other quality-
 %%%				of-life improvements.
 %%%
+%%%			I changed the spacing to double spacing. 
+%%%			My format reviewer didn't like the pseudo double spacing. -Alex Pokorny
+%%%
 %%%  }
 %%% ====================================================================
 
@@ -542,7 +545,7 @@ Dissertation Committee Chair
 
 \let\l@table\l@figure
 
-\doublespacing
+\setstretch{2}
 
 \AtBeginEnvironment{biblist}{%
 	\singlespacing
