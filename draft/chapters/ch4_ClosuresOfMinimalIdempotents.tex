@@ -963,7 +963,7 @@ For a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\widetilde{P}_k \cd
 \begin{proposition} \label{prop:zlgeneralization}
 In $BMW_n$, we have that 
 \[
-\widetilde{P}_k \cdot \tilde{y}_\lambda = \left( \langle \widetilde{P}_k \rangle + (s^k - s^{-k})\sum_{\square \in \lambda} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(\square)} \right) \right) \tilde{y}_\lambda
+\widetilde{P}_k \cdot \tilde{y}_\lambda = \left( \langle \widetilde{P}_k \rangle + (s^k - s^{-k})\sum_{\square \in \lambda} \left(  v^{-k} s^{2k \cn(\square)} - v^k s^{-2k \cn(\square)} \right) \right) \tilde{y}_\lambda
 \]
 where $\cn(\square)$ is the content of the cell $\square$ in the Young diagram of $\lambda$. 
 \end{proposition}
@@ -975,7 +975,7 @@ We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| 
 &= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbrancha1.eps} - (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbranchb1.eps} \\
 &= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) v^{-k} \pic[2.4]{ylambdameridianpkbrancha2.eps} - (s^k - s^{-k}) v^k \pic[2.4]{ylambdameridianpkbranchb2.eps}
 \end{align*}
-The first diagram is equal to $ \left( \langle \widetilde{P}_k \rangle+ (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2 \cn(\square)} - v^k s^{-2 \cn(\square)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(\square)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \cite{AM98} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(\square)} \tilde{y}_\lambda$. This completes the proof.
+The first diagram is equal to $ \left( \langle \widetilde{P}_k \rangle+ (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2k \cn(\square)} - v^k s^{-2k \cn(\square)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(\square)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \cite{AM98} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(\square)} \tilde{y}_\lambda$. This completes the proof.
 \end{proof}
 
 
