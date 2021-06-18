@@ -1,4 +1,4 @@
-#DubrovnikSkeinTheory--Thesis
+# DubrovnikSkeinTheory--Thesis
 
 This is my PhD thesis, which I completed under the supervision of Professor Peter Samuelson and defended on the afternoon of June 3rd, 2021.
 
