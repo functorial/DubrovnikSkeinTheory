@@ -1,0 +1,1012 @@
+\chapter{More Formulas and Partial Results}
+
+
+\section{Commutation Relations For BMW and Hecke Symmetrizer Closures} \label{sec:morecommutationrelations}
+
+This next theorem follows directly from Equation \eqref{eq:skewcommutator2}, which makes it equivalent to Theorem \ref{thm:powersumcommutator} in some sense. This expresses the left $\cd(A)$-action on $\ca_\cd$ in terms of the right action, and vice versa. This implies a commutation relation for the closures of the BMW symmetrizers in terms of either the elements of the set $\{\tilde{h}_j \cdot a^i \}_{j, i}$ or $\{ a^i \cdot \tilde{h}_j \}_{j, i \geq 0}$ which are subsets of the bases $\{ \widetilde{Q}_\lambda \cdot a^i \}_{i \geq 0, \lambda}$ and $\{ a^i \cdot \widetilde{Q}_\lambda \}_{i \geq 0, \lambda}$ of $\ca_\cd$, respectively. These supersets are bases since $\ca_\cd = \cd(A)[a, a^{-1}]$ as algebras in the category of left $\cd(A)$-modules and because the map defined by $\widetilde{Q}_\lambda \cdot a^i \mapsto a^i \cdot \widetilde{Q}_\lambda$ is an invertible algebra homomorphism. 
+
+\begin{theorem} \label{prop:hncommutator}
+For any $n \geq 1$, the relations
+\begin{equation}
+\tilde{h}_n \cdot e = \sum_{i=0}^n d_i (e \cdot \tilde{h}_{n-i})
+\end{equation}
+and
+\begin{equation}
+e \cdot \tilde{h}_n = \sum_{i=0}^n \bar{d}_i (\tilde{h}_{n-i} \cdot e)
+\end{equation}
+hold in $\ca_\cd$, where
+\begin{align*}
+d_0 & = 1, \\
+d_i & = \sum_{l=0}^{i-1} (1 - s^2) s^{2l-i} a^{i-2l} + (1 - s^{-2}) s^{i-2l} a^{2l-i} \qquad \forall i \geq 1, \\
+\bar{d}_i & = \sum_{l=0}^{i-1} (1 - s^{-2}) s^{i-2l} a^{i-2l} + (1 - s^{2}) s^{2l-i} a^{2l-i} \qquad \forall i \geq 1.
+\end{align*}
+Equivalently,
+\begin{equation}
+e \cdot \tilde{h}_n - \tilde{h}_n \cdot e = \sum_{i=1}^n \bar{d}_i (\tilde{h}_{n-i} \cdot e)
+\end{equation}
+or 
+\begin{equation}
+\tilde{h}_n \cdot e - e \cdot \tilde{h}_n = \sum_{i=1}^n d_i (e \cdot \tilde{h}_{n-i}).
+\end{equation}
+\end{theorem}
+\begin{proof}
+The formulas for the $d_i$ were discovered experimentally by coding a solver using the SymPy package in Python. The second equation is just the mirror map applied to the first equation, so we will just prove the first equation.
+
+The idea of the proof depends on a reformulation of Equation \eqref{eq:skewcommutator2} as
+\[
+\tilde{h}_n \cdot e = e \cdot \tilde{h}_n - ( s a + s^{-1} a^{-1} ) ( e \cdot \tilde{h}_{n-1} ) + e \cdot \tilde{h}_{n-2} + ( s^{-1} a + s a^{-1} ) \tilde{h}_{n-1} \cdot e - \tilde{h}_{n-2} \cdot e
+\]
+and a recursive application of this formula to its last two terms on the right-hand side of the equation. 
+
+The case of $n=0$ is trivial. For $n=1$, just apply the Kauffman skein relation. Now assume the induction hypothesis, that the formula in the statement is true for all $k \leq n-1$. Then apply this assumption to Equation \eqref{eq:skewcommutator2}:
+\begin{align*}
+\tilde{h}_n \cdot e &= e \cdot \tilde{h}_n - ( s a + s^{-1} a^{-1} ) ( e \cdot \tilde{h}_{n-1} ) + e \cdot \tilde{h}_{n-2} + ( s^{-1} a + s a^{-1} ) ( \tilde{h}_{n-1} \cdot e ) - \tilde{h}_{n-2} \cdot e \\
+&= e \cdot \tilde{h}_n - ( s a + s^{-1} a^{-1} ) ( e \cdot \tilde{h}_{n-1} ) + e \cdot \tilde{h}_{n-2} + ( s^{-1} a + s a^{-1} ) \sum_{i=0}^{n-1} d_i (e \cdot \tilde{h}_{n-1-i}) \\
+&\quad \,\, - \sum_{i=0}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
+&= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) \sum_{i=1}^{n-1} d_i (e \cdot \tilde{h}_{n-1-i}) - \sum_{i=1}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
+&= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) \sum_{i=0}^{n-2} d_{i+1} (e \cdot \tilde{h}_{n-2-i}) - \sum_{i=1}^{n-2} d_i (e \cdot \tilde{h}_{n-2-i}) \\
+&= e \cdot \tilde{h}_n + d_1 ( e \cdot \tilde{h}_{n-1} ) + ( s^{-1} a + s a^{-1} ) d_1 ( e \cdot \tilde{h}_{n-2} ) \\
+&\quad\,\, + \sum_{i=1}^{n-2} \big( ( s^{-1} a + s a^{-1} ) d_{i+1} - d_i \big) (e \cdot \tilde{h}_{n-2-i}). \\
+\end{align*}
+It is a straightforward computation to show that $( s^{-1} a + s a^{-1} ) d_1 = d_2$:
+\begin{align*}
+( s^{-1} a + s a^{-1} ) d_1 &= ( s^{-1} a + s a^{-1} ) \big( ( 1 - s^2 ) s^{-1} a + ( 1 + s^{-2} ) s a^{-1} \big) \\
+&= ( 1 - s^2 ) s^{-2} a^2 + (1 - s^{-2} ) s^0 a^0 + ( 1 - s^2 ) s^0 a^0 + ( 1 - s^{-2} ) s^2 a^{-2} \\
+&= d_2.
+\end{align*}
+It's slightly more tedious to show that $( s^{-1} a + s a^{-1} ) d_{i+1} - d_i = d_{i+2}$ for all $i \geq 1$:
+\begin{eqnarray*}
+&&( s^{-1} a + s a^{-1} ) d_{i+1} - d_i \\
+=&& ( s^{-1} a + s a^{-1} ) \sum_{l=0}^{i} (1 - s^2) s^{2l-i} a^{i-2l} + (1 - s^{-2}) s^{i-2l} a^{2l-i} \\
+&-& \sum_{l=0}^{i-1} (1 - s^2) s^{2l-(i-1)} a^{(i-1)-2l} + (1 - s^{-2}) s^{(i-1)-2l} a^{2l-(i-1)} \\
+=&& \sum_{l=0}^{i} (1 - s^2) s^{2l-(i+1)} a^{(i+1)-2l} + (1 - s^{-2}) s^{(i+1)-2l} a^{2l-(i+1)} \\
+&+& \sum_{l=0}^{i} (1 - s^2) s^{2l-(i-1)} a^{(i-1)-2l} + (1 - s^{-2}) s^{(i-1)-2l} a^{2l-(i-1)} \\
+&-& \sum_{l=0}^{i-1} (1 - s^2) s^{2l-(i-1)} a^{(i-1)-2l} + (1 - s^{-2}) s^{(i-1)-2l} a^{2l-(i-1)} \\
+=&& \sum_{l=0}^{i} (1 - s^2) s^{2l-(i+1)} a^{(i+1)-2l} + (1 - s^{-2}) s^{(i+1)-2l} a^{2l-(i+1)} \\
+&+& (1 - s^2) s^{i+1} a^{-1-i} + (1 - s^{-2}) s^{-1-i} a^{i+1} \\
+=&& d_{i+2}.
+\end{eqnarray*}
+This completes the proof of the statement. 
+\end{proof}
+
+\begin{remark}
+There exists an algebra homomorphism from $\cd(A)$ to the ring of symmetric functions $\Lambda_R$ (see Section \ref{sec:Lukac}). Conjecturally, this map is an isomorphism, which would imply that the sets $\{ \tilde{h}_\lambda \cdot a^i \}_{\lambda, i}$ and $\{ a^i \cdot \tilde{h}_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $\tilde{h}_\lambda := \tilde{h}_{\lambda_1} \cdots \tilde{h}_{\lambda_r}$, form bases of $\ca_\cd = \cd(A)[a, a^{-1}]$. If so, then Theorem \ref{prop:hncommutator} provides transition formulas between these two bases, which would then give a full description of $\ca_\cd$ as a $\cd(A)$-$\cd(A)$-bimodule. 
+\end{remark}
+
+One might expect similar formulas to hold in the HOMFLYPT case. To our knowledge, there is no HOMFLYPT analogue of Theorem \ref{prop:hncommutator} written down in the literature. Let's do that here. 
+
+\begin{lemma} \label{lem:homfly1}
+For all integers $n$, the following relation holds in $\ca_\ch$
+\begin{equation}
+e \cdot h_n - h_n \cdot e = s a \cdot h_{n-1} - h_{n-1} \cdot  s^{-1} a
+\end{equation}
+where we use the convention $h_0 = 1$ and $h_n = 0$ if $n < 0$. 
+\end{lemma}
+\begin{proof}
+Recall the power sum elements $P_k$ satisfy the power series equation
+\begin{equation} \label{def:Pk}
+\sum_{k=1}^\infty \frac{P_k}{k} x^k = \ln \Big( \sum_{n=0}^\infty h_n x^n \Big)
+\end{equation}
+By Theorem 4.2 of \cite{Mor02b}, the power sum elements satisfy a commutation relation in $\ca_\ch$
+\begin{equation}
+e \cdot P_k - P_k \cdot e = (s^{k} - s^{-k}) a^k
+\end{equation} 
+which may be rephrased as a power series equation 
+\[
+e \cdot \Big( \sum_{k=1}^\infty \frac{P_k}{k} x^k \Big) - \Big( \sum_{k=1}^\infty \frac{P_k}{k} x^k \Big) \cdot e = \sum_{k=1}^\infty s^k a^k - \sum_{k=1}^\infty s^{-k} a^k.
+\]
+On the left-hand side, use the defining equation \eqref{def:Pk}. Use the power series formulation of natual log on the right-hand side. So we have
+\[
+\ln \Bigg( e \cdot \Big( \sum_{k=0}^\infty h_k x^k \Big) \Bigg) - \ln \Bigg( \Big( \sum_{k=0}^\infty h_k x^k \Big) \cdot e \Bigg) = \ln ( 1 - s a x ) - \ln ( 1 - s^{-1} a x ).
+\]
+After moving terms around, using properties of natural log, and exponentiating both sides, we arrive at the equation
+\[
+\Big( \sum_{n=0}^\infty (h_n \cdot e ) x^n \Big) ( 1 - s a x ) = \Big( \sum_{n=0}^\infty ( e \cdot h_n ) x^k \Big) ( 1 - s^{-1} a x )
+\]
+which implies the statement of the lemma.
+\end{proof}
+
+Recall that the algebra $\ca_\ch$ is equal to the Laurent polynomial ring $\ch(A)^+[a, a^{-1}]$. Under the isomorphism between $\ch(A)^+$ and the ring of symmetric functions $\Lambda_R$, the $h_n$ identify with the complete homogeneous symmetric functions. It is well-known that ordered monomials in the complete homogeneous symmetric functions form a basis of $\Lambda$, hence the sets $\{h_\lambda \cdot a^i \}_{\lambda, i}$ and $\{a^i \cdot h_\lambda \}_{\lambda, i}$ over integers $i$ and partitions $\lambda$, where $h_\lambda := h_{\lambda_1} \cdots h_{\lambda_r}$, form bases of $\ca_\ch$. The following theorem gives transition formulas between these two bases. 
+
+\begin{theorem} \label{prop:homfly2}
+The Hecke symmetrizers $h_n$ satisfy the equations
+\[
+h_n \cdot e = e \cdot h_n + ( 1 - s^2 ) \sum_{l=1}^{n} s^{-l} ( a^l \cdot h_{n-l} )
+\]
+and
+\[
+e \cdot h_n = h_n \cdot e + (1 - s^{-2} ) \sum_{l=1}^{n} s^l ( h_{n-l} \cdot a^l ).
+\]
+\end{theorem}
+\begin{proof}
+We will prove the first equality. The second is completely analagous. Proceed by induction. When $n=1$, the statement follows from the HOMFLY skein relation. 
+
+We can rearrange the terms of Lemma \ref{lem:homfly1} to get
+\begin{equation} \label{eq:homfly1b}
+h_n \cdot e = e \cdot h_n + s^{-1} a ( h_{n-1} \cdot e ) - s a ( e \cdot h_{n-1} ).
+\end{equation}
+By the induction hypothesis,
+\begin{align*}
+h_n \cdot e & = e \cdot h_n + s^{-1} a ( h_{n-1} \cdot e ) - s a ( e \cdot h_{n-1} ) \\
+& = e \cdot h_n + s^{-1} a \Big( e \cdot h_{n-1} + ( 1 - s^2 ) \sum_{j=1}^{n-1} s^{-j} a^j ( e \cdot h_{n-1-j} ) \Big) - s a ( e \cdot h_{n-1} ) \\
+& = e \cdot h_n + ( s^{-1} - s ) a ( e \cdot h_{n-1} ) + ( 1 - s^2 ) \sum_{j=1}^{n-1} s^{-j-1} a^{j+1} ( e \cdot h_{n-1-j} ) \\ 
+& = e \cdot h_n + ( 1 - s^2 ) s^{-1} a ( e \cdot h_{n-1} ) + ( 1 - s^2 ) \sum_{j=1}^{n-1} s^{-(j+1)} a^{j+1} ( e \cdot h_{n-(j+1)} ) \\
+&= e \cdot h_n + ( 1 - s^2 ) \sum_{l=1}^{n} s^{-l} a^{l} ( e \cdot h_{n-l} )
+\end{align*}
+where the last equality follows from the substitution $j=l+1$. 
+\end{proof}
+
+
+
+
+
+
+\section{Type B/C/D Schur Functions and BMW Idempotent Closures} \label{sec:Lukac}
+In \cite{Luk05}, it is shown using skein theory techniques that there is an algebra isomorphism between the ring of symmetric functions $\Lambda$ and the positive part of the skein algebra of the annulus $\ch(A)^+$. The isomorphism is defined on generators by sending the complete homogeneous symmetric functions to the annular closures of Hecke symmetrizers. Futhermore, it is shown that the image of the Schur function $s_\lambda$ is the idempotent closure $Q_\lambda$. This fact has many implications. For example, the structure constants of $\ch(A)^+$ in the basis $\{ Q_\lambda \}_\lambda$ are the Littlewood-Richardson constants. Also, the definition of $P_k$ implies that these elements truly correspond with the power sum symmetric functions. Through this isomorphism, one could transfer structure of $\Lambda$ to $\ch(A)^+$, such as the Hopf algebra structure or the plethysm structure (see \cite{MM08}). 
+
+From a Lie-theoretic perspective, the ring of symmetric polynomials $\Lambda_N$ in $N$ variables is the ring of polynomial representations of $GL_n(\C)$. There are maps of graded rings $\Lambda_n \to \Lambda_{n-1}$ defined by specializing the $N^{\mathrm{th}}$ variable to $0$, which together form an inverse system whose inverse limit in the category of graded rings is isomorphic to $\Lambda$. This strengthens the existing relationship between the HOMFLYPT skein theory and $GL_n(\C)$ (recall that the skein relations are modeled after relations of morphisms in $U_q(\mathfrak{gl}_n)$-Mod). 
+
+This section is an attempt to emulate Lukac's argument in the Dubrovnik case. First we will review some of the theory behind character rings of the orthogonal and symplectic groups. In particular, they are isomorphic as rings and there are ``Schur functions" indexed over partitions for the different types. Next, for any of the character rings, we can define a homomorphism to $\cd(A)$. We conjecture that the Schur functions are sent to the annular closures of the BMW idempotents $\widetilde{Q}_\lambda$, and we prove the conjecture when the length of $\lambda$ is at most $2$.
+
+
+
+
+
+
+
+
+\subsection{Universal Character Rings of Orthogonal and Symplectic Type}
+
+Here we will summarize some results from \cite{KT87}. Recall that a character of a (finite-dimensional) group representation is the post-composition of the representation with the trace function. The character of a direct sum of representations is the pointwise sum of the individual characters. Also, the character of a tensor product of representations is the pointwise product of the individual characters. For compact connected Lie groups $G$, two representations of $G$ are isomorphic only if their characters are equal. In this way, the character ring of $G$ is a decategorification of the category of finite-dimensional representations of $G$. Let $R(B_n)$, $R(C_n)$, and $R(D_n)$ denote the character rings of the Lie groups $SO_{2n+1}(\C)$, $SP_{2n}(\C)$, and $SO_{2n}(\C)$ respectively (the type $D_n$ case will require some subtle care, but we will not address these issues here). 
+
+The irreducible representations of $SO_{2n+1}(\C)$ and $SP_{2n}(\C)$ are indexed by partitions $\lambda$ of length at most $n$, and denote their respective characters by $sb_{n, \lambda}$ and $sc_{n, \lambda}$ respectively. Let $sd_{n, \lambda}$ denote the character of the restriction of the appropriate irreducible representation of $O_{2n}(\C)$ to $SO_{2n}(\C)$. These are called the \textbf{Schur polynomials} of types $B_n$, $C_n$, and $D_n$.
+
+Let $G$ be any of $SO_{2n+1}(\C)$, $SP_{2n}(\C)$, and $SO_{2n}(\C)$. A character of $G$ is determined by its value on a maximal torus of $G$, which may be chosen to be a set of diagonal matrices. 
+\begin{align*}
+&B_n: &\quad T &= \{ \textrm{diag}(t_1, \dots, t_n, 1, t_n^{-1}, \dots, t_1^{-1}) \} \\ 
+&C_n: &\quad T &= \{ \textrm{diag}(t_1, \dots, t_n, t_n^{-1}, \dots, t_1^{-1}) \} \\ 
+&D_n: &\quad T &= \{ \textrm{diag}(t_1, \dots, t_n, t_n^{-1}, \dots, t_1^{-1}) \}
+\end{align*}
+Furthermore, it can be shown that $R(G) = \Z[t_1^{\pm 1}, \dots, t_n^{\pm 1}]^{\Z_2^n \rtimes \mathfrak{S}_n} = \Z[t_1+t_1^{-1}, \dots, t_n+t_n^{-1}]^{\mathfrak{S}_n}$. This is isomorphic to the ring of symmetric polynomials $\Lambda_n = \Z[c_1, \dots, c_n]^{S_n}$ under the identification $c_i = t_i + t_i^{-1}$. 
+
+Let $V$ be the natural representation of the group $G$. Let $h_{G,i} := \textrm{Sym}^i(V)$ and $e_{G,i} := \textrm{Alt}^i(V)$ be the symmetric and alternating powers of $V$. Also, let $h_{G,i}^\circ = h_{G,i} - h_{G_i-2}$ and $e_{G,i}^\circ = e_{G,i} - e_{G_i-2}$. The following statements are true.
+\begin{enumerate}
+\item The characters $h_{B_n,i}^\circ$ and $e_{B_n,i}$ are irreducible, and \[R(B_n) = \Z[h_{B_n,1}^\circ, \dots, h_{B_n,n}^\circ] = \Z[e_{B_n,1}, \dots, e_{B_n,n}]. \]
+\item The characters $h_{C_n,i}$ and $e_{C_n,i}^\circ$ are irreducible, and  \[R(C_n) = \Z[h_{C_n,1}, \dots, h_{C_n,n}] = \Z[e_{C_n,1}^\circ, \dots, e_{C_n,n}^\circ]. \]
+\item The characters $h_{D_n,i}^\circ$ are irreducible, $e_{D_n,i}$ is irreducible if $i \neq n$, and \[R(D_n) = \Z[h_{D_n,1}^\circ, \dots, h_{D_n,n}^\circ] = \Z[e_{D_n,1}, \dots, e_{D_n,n}]. \]
+\end{enumerate}
+The characters $h_{G,i}$ are equal to the Schur polynomials corresponding to a single row, and $e_{G_i}$, a single column.
+
+The ring $\Lambda_n$ is called the ring of symmetric polynomials in $n$ indeterminates, and it may be identified with the character ring of finite-dimensional polynomial representations of the Lie group $GL_n(\C)$. The projection maps $\Lambda_n \to \Lambda_{n-1}$ form an inverse system in the category of graded rings, whose inverse limit is what we call the \textbf{ring of symmetric functions} $\Lambda$. The ring $\Lambda$ may be concretely defined as the restriction of the ring of formal power series in countable many indeterminates to those series which have bounded degree and which are invariant under permutations of the indeterminates. 
+
+There are symmetric functions $sb_\lambda=sd_\lambda$ (they are equal) which project to the Schur polynomials $sb_{n,\lambda}$ and $sd_{n, \lambda}$ under the projections. Similarly, there are $sc_\lambda$ which project to $sc_{n, \lambda}$. These symmetric functions are called \text{Schur functions} of types B, C, and D. The sets $\{sb_\lambda \}_\lambda$ and $\{sc_\lambda \}_\lambda$ form $\Z$-bases of $\Lambda$. Furthermore, there is an involutive algebra automorphism defined by $\omega(sb_\lambda) = sc_{\lambda^t}$ where $\lambda^t$ is the transpose partition of $\lambda$. This implies that the structure constants for both bases totally coincide, i.e. if 
+\[
+sb_{\mu} sb_{\nu} = \sum_\lambda b_{\mu \nu}^\lambda sb_\lambda
+\]
+and
+\[
+sc_{\mu} sc_{\nu} = \sum_\lambda c_{\mu \nu}^{\lambda} sc_{\lambda}
+\]
+then $c_{\mu \nu}^\lambda = b_{\mu^t \nu^t}^{\lambda^t}$. Furthermore, Koike and Terada show that $b_{\mu \nu}^\lambda = b_{\mu^t \nu^t}^{\lambda^t}$ and $c_{\mu \nu}^\lambda = c_{\mu^t \nu^t}^{\lambda^t}$. Therefore, $c_{\mu \nu}^\lambda = b_{\mu \nu}^\lambda$. These structure constants are natural numbers, and may be expressed as sums of products of Littlewood-Richardson numbers (see \cite{Koi89}).
+
+In regards to $\omega$, if we let $hb_i := sb_{(i)}$ be the Schur functions of type B corresponding to one row and $ec_i := sc_{(1^i)}$ be the Schur functions of type C corresponding to one column, then 
+\begin{equation} \label{eq:omega1}
+\omega(hb_i) = ec_i.
+\end{equation}
+Let $hb_i^\circ := hb_i - hb_{i-2}$. For a partition $\lambda=(\lambda_0, \lambda_1, \dots, \lambda_{r-1})$ of length $r$, set $hb_\lambda^\circ(i,j) := hb_{\lambda_i - i + j}^\circ + hb_{\lambda_i - i - j}^\circ$. The classical Jacobi-Trudi formula for the type A case generalizes to the type B case as
+\begin{equation} \label{eq:jacobitrudi}
+sb_\lambda = \frac{1}{2} \det \big( hb_\lambda(i, j) \big)_{0 \leq i, j \leq r-1}
+\end{equation}
+which implies a type C generalization by applying Equation \eqref{eq:omega1}. The $1/2$ is there simply to compensate for the first column for when $j=0$. 
+
+
+\subsection{Determinantal Calculations}
+
+The computations in this section will be very technical. Let's fix some notation to hopefully make everything slightly easier to read. First, let
+\begin{align*}
+t_n &:= \tilde{h}_n \cdot e - e  \cdot \tilde{h}_n, \\
+h(n, k) &:= \tilde{h}_{n+k} + \tilde{h}_{n-k}, \\
+t(n, k) &:= t_{n+k} + t_{n-k} = h(n, k) \cdot e - e \cdot h(n, k).
+\end{align*}
+Let's also define the `skew commutator' elements
+\begin{align*}
+\varsigma^+ (n, k) &:= s^{-1} h(n, k) \cdot a - s a \cdot h(n, k) \\
+\varsigma^- (n, k) &:=  s h(n, k) \cdot a^{-1} - s^{-1} a^{-1} \cdot h(n, k).
+\end{align*}
+It might be worth pointing out these simple relations: 
+\begin{equation}
+\begin{split}
+t(n, -k) &= t(n, k), \\
+h(n, -k) &= h(n, k), \\
+\varsigma^\pm (n, -k) &= \varsigma^\pm (n, k), \\
+t(n, 0) &= 2 t_n, \\
+h(n, 0) &= 2 \tilde{h}_n. \\
+\end{split}
+\end{equation}
+There is a way to write a commutator in terms of skew commutators. This is given by the equation
+\begin{equation} \label{eq:skewcommutator3}
+t(n, k) = \frac{-1}{s-s^{-1}} \big( a^{-1} \varsigma^+(n, k) - a \varsigma^-(n, k) \big)
+\end{equation}
+for all $k \geq 0$. Also, we may restate the identity of Lemma \ref{lem:powersumcommutator1} in terms of this new notation.
+\begin{equation} \label{eq:skewcommutator2}
+t(n, 1) = \frac{1}{2} \varsigma^+ (n, 0) + \frac{1}{2} \varsigma^- (n, 0)
+\end{equation}
+
+\begin{lemma} \label{lemma:skewcommutatordecomp}
+For all $k \geq 0$, the following holds in $\ca$.
+\[
+t(n, k+1) =  \varsigma^+ (n, k) + \varsigma^- (n, k) - t(n, k-1)
+\]
+\end{lemma}
+\begin{proof}
+The base case is $2$ times Equation \ref{eq:skewcommutator2} since $t(n, 1) = t(n, -1)$. To show the general case, use equation \eqref{eq:skewcommutator2} twice.
+\begin{align*}
+t(n, k+1)
+&= t_{n+(k+1)} + t_{n-(k+1)} \\
+&= \big( ( s^{-1} \tilde{h}_{n+k} \cdot e - s e \cdot \tilde{h}_{n+k} ) a + ( s \tilde{h}_{n+k} \cdot e - s^{-1} e \cdot \tilde{h}_{n+k} ) a^{-1} - t_{n+(k-1)} \big) \\
+&\qquad + \big( ( s^{-1} \tilde{h}_{n-k} \cdot e - s e \cdot \tilde{h}_{n-k} ) a + ( s \tilde{h}_{n-k} \cdot e - s^{-1} e \cdot \tilde{h}_{n-k} ) a^{-1} - t_{n-(k-1)} \big) \\
+&= \big( s^{-1} h(n, k) \cdot e - s e \cdot h(n, k) \big) a + \big( s h(n, k) \cdot e - s^{-1} e \cdot h(n, k) \big) a^{-1} \\
+&\qquad - t(n, k-1) \\
+&= \varsigma^+ (n, k) + \varsigma^- (n, k) - t(n, k-1)
+\end{align*}
+\end{proof}
+
+\begin{remark}
+An alternate formulation of the first statement of the lemma above is
+\begin{equation} \label{eq:skewcommutator4}
+t(n, k+1) + t(n, k-1) = \varsigma^+ (n, k) + \varsigma^- (n, k)
+\end{equation}
+which is a generalization of Equation \eqref{eq:skewcommutator2}. Also, one may apply the identity to itself recursively to get a closed form for the $t(n,k)$ in terms of skew-commutators, but the closed form splits into cases depending on $k$. Thirdly, this lemma yields a kind of recursive formula for the skew commutators, given as
+\begin{equation} \label{eq:skewcommutator5}
+\varsigma^+ (n, k) + \varsigma^- (n, k) = \frac{-1}{s-s^{-1}} \Big( a^{-1} \big( \varsigma^+(n, k+1) + \varsigma^+(n, k-1) \big) - a \big( \varsigma^-(n, k+1) + \varsigma^-(n, k-1) \big) \Big)
+\end{equation}
+which follows from Equation \eqref{eq:skewcommutator3}
+\end{remark}
+
+\begin{lemma} \label{lemma:detgymnastics3}
+The following identities hold in $\ca$. 
+\leavevmode 
+\begin{enumerate}
+\item
+\begin{equation*}
+\begin{vmatrix}
+h(n, k) \cdot e & \varsigma^+ (n, k) \\
+h(m, k) \cdot e & \varsigma^+ (m, k)
+\end{vmatrix}
+= s^2
+\begin{vmatrix}
+e \cdot h(n, k) & \varsigma^+ (n, k) \\
+e \cdot h(m, k) & \varsigma^+ (m, k)
+\end{vmatrix}
+\end{equation*}
+\item
+\begin{equation*}
+\begin{vmatrix}
+h(n, k) \cdot e & \varsigma^- (n, k) \\
+h(m, k) \cdot e & \varsigma^- (m, k) 
+\end{vmatrix}
+= s^{-2}
+\begin{vmatrix}
+e \cdot h(n, k) & \varsigma^- (n, k) \\
+e \cdot h(m, k) & \varsigma^- (m, k) 
+\end{vmatrix}
+\end{equation*}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Here is the computation for the first item. The proof of the second runs completely parallel. First, expand the determinants.
+\[
+\big( h(n, k) \cdot e \big) \varsigma^+ (m, k) - \big( h(m, k) \cdot e \big) \varsigma^+ (n, k) = s^2 \big( e \cdot h(n, k) \big) \varsigma^+ (m, k) - s^2 \big( e \cdot h(m, k) \big) \varsigma^+ (n, k)
+\]
+Collect terms in the following way.
+\[
+\big( h(n, k) \cdot e - s^2 e \cdot h(n, k) \big) \varsigma^+ (m, k) = \big( h(m, k) \cdot e - s^2 e \cdot h(m, k) \big) \varsigma^+(n, k)
+\]
+The right-hand side is equal to the left-hand side with the indices $n$ and $m$ interchanged. So the equation holds if and only if the left hand side is invariant under permuting $n$ and $m$. Let $P(n,m)$ equal the left-hand side. Expand the product in $P(n, m)$ using the definition of $\varsigma^+(m, k)$
+\begin{align*}
+P(n, m) & = \big( h(n, k) \cdot e - s^2 e \cdot h(n, k) \big) \varsigma^+ (m, k) \\
+& = \big( h(n, k) \cdot e - s^2 e \cdot h(n, k) \big) \big( s^{-1} h(n, k) \cdot a - s a \cdot h(n, k) \big) \\
+& = \Big( s^{-1} \big( h(n, k) h(m, k) \big) \cdot e + s^3 e \cdot \big( h(n, k) h(m, k) \big) \\
+& \qquad  - s h(n, k) \cdot e \cdot h(m, k) - s h(m, k) \cdot e \cdot h(n, k) \Big) a
+\end{align*}
+Use that $\cc$ is commutative to get that $P(n, m) - P(m, n) = 0$. This completes the proof. 
+\end{proof}
+
+\begin{remark}
+It may be worth pointing out that the factor of $a$ in $\varsigma^+(n, k)$ and the factor of $a^{-1}$ in $\varsigma^-(n, k)$ don't affect the identities above. In other words, scaling identity (1) by $a^{-1}$ gives
+\begin{equation}
+\begin{vmatrix}
+h(n, k) \cdot e & s^{-1} h(n, k) \cdot e - s e \cdot h(n, k) \\
+h(m, k) \cdot e & s^{-1} h(m, k) \cdot e - s e \cdot h(m, k)
+\end{vmatrix}
+= s^2
+\begin{vmatrix}
+e \cdot h(n, k) & s^{-1} h(n, k) \cdot e - s e \cdot h(n, k) \\
+e \cdot h(m, k) & s^{-1} h(m, k) \cdot e - s e \cdot h(m, k)
+\end{vmatrix}
+\end{equation}
+and scaling identity (2) by $a$ gives
+\begin{equation}
+\begin{vmatrix}
+h(n, k) \cdot e &  s h(n, k) \cdot e - s^{-1} e \cdot h(n, k) \\
+h(m, k) \cdot e & s h(m, k) \cdot e - s^{-1} e \cdot h(m, k)
+\end{vmatrix}
+= s^{-2}
+\begin{vmatrix}
+e \cdot h(n, k) & s h(n, k) \cdot e - s^{-1} e \cdot h(n, k) \\
+e \cdot h(m, k) & s h(m, k) \cdot e - s^{-1} e \cdot h(m, k)
+\end{vmatrix}.
+\end{equation}
+\end{remark}
+
+The previous two lemmas together imply the next lemma. 
+
+\begin{lemma} \label{lemma:detgymnastics4}
+For all $k \geq 0$, we have
+\begin{align*}
+&\quad \,
+\begin{vmatrix}
+h(n, k) \cdot e & t(n, k+1) \\
+h(m, k) \cdot e & t(m, k+1)
+\end{vmatrix} \\
+&=
+\begin{vmatrix}
+e \cdot h(n, k) & s^2 \varsigma^+ (n, k) + s^{-2} \varsigma^- (n, k) - t(n, k-1) \\
+e \cdot h(m, k) & s^2 \varsigma^+ (m, k) + s^{-2} \varsigma^- (m, k) - t(m, k-1)
+\end{vmatrix}\\
+& \qquad +
+\sum_{l=1}^{k}
+\begin{vmatrix}
+e \cdot h(n, k-l) & (s^2 - 1) \varsigma^+ (n, k-l) + (s^{-2} - 1) \varsigma^- (n, k-l) \\
+e \cdot h(m, k-l) & (s^2 - 1) \varsigma^+ (m, k-l) + (s^{-2} - 1) \varsigma^- (m, k-l)
+\end{vmatrix}.
+\end{align*} 
+\end{lemma}
+\begin{proof}
+First, when $k=0$, the statement should be read as
+\begin{align*}
+\begin{vmatrix}
+h(n, 0) \cdot e & t(n, 1) \\
+h(m, 0) \cdot e & t(m, 1)
+\end{vmatrix} 
+=
+\frac{1}{2}
+\begin{vmatrix}
+e \cdot h(n, k) & s^2 \varsigma^+ (n, 0) + s^{-2} \varsigma^- (n, 0)\\
+e \cdot h(m, k) & s^2 \varsigma^+ (m, 0) + s^{-2} \varsigma^- (m, 0)
+\end{vmatrix}
+\end{align*}
+which follows straightforwardly by applying Equation \ref{eq:skewcommutator2} to the entries $t(n,1)$ and $t(m,1)$ before applying Lemma \ref{lemma:detgymnastics3}. In general, use Lemma \ref{lemma:skewcommutatordecomp} to write 
+\begin{align*}
+\begin{vmatrix}
+h(n, k) \cdot e & t(n, k+1) \\
+h(m, k) \cdot e & t(m, k+1) \\
+\end{vmatrix}
+&=
+\begin{vmatrix}
+h(n, k) \cdot e & \varsigma^+ (n, k) \\
+h(m, k) \cdot e & \varsigma^+ (m, k)
+\end{vmatrix}
++
+\begin{vmatrix}
+h(n, k) \cdot e & \varsigma^- (n, k) \\
+h(m, k) \cdot e & \varsigma^- (m, k) 
+\end{vmatrix} \\
+& \quad +
+\begin{vmatrix}
+h(n, k) \cdot e & - t(n, k-1)\\
+h(m, k) \cdot e & - t(m, k-1)
+\end{vmatrix}.
+\end{align*}
+On the first two summands, apply Lemma \ref{lemma:detgymnastics3} to switch the order of the action in the first columns at the price of the specified scalar. For the third summand, observe
+\begin{align*}
+\begin{vmatrix}
+h(n, k) \cdot e & - t(n, k-1) \\
+h(m, k) \cdot e & - t(m, k-1) 
+\end{vmatrix}
+&=
+\begin{vmatrix}
+t(n, k-1) & h(n, k) \cdot e \\
+t(m, k-1) & h(m, k) \cdot e
+\end{vmatrix} \\
+&= 
+\begin{vmatrix}
+t(n, k-1) & t(n, k) \\
+t(m, k-1) & t(m, k)
+\end{vmatrix} 
++
+\begin{vmatrix}
+t(n, k-1) & e \cdot h(n, k) \\
+t(m, k-1) & e \cdot h(m, k)
+\end{vmatrix} \\
+&=
+\begin{vmatrix}
+h(n, k-1) \cdot e & t(n, k) \\
+h(m, k-1) \cdot e & t(m, k)
+\end{vmatrix} 
+- 
+\begin{vmatrix}
+e \cdot h(n, k-1) & t(n, k) \\
+e \cdot h(m, k-1) & t(m, k)
+\end{vmatrix} \\
+& \quad +
+\begin{vmatrix}
+e \cdot h(n, k) & - t(n, k-1) \\
+e \cdot h(m, k) & - t(m, k-1)
+\end{vmatrix}.
+\end{align*}
+Thus, for all $k \geq 0$, we have
+\begin{equation}\label{eq:detgymnastics5}
+\begin{split}
+\begin{vmatrix}
+h(n, k) \cdot e & t(n, k+1) \\
+h(m, k) \cdot e & t(m, k+1)
+\end{vmatrix}
+&=
+\begin{vmatrix}
+e \cdot h(n, k) & s^2 \varsigma^+ (n, k) + s^{-2} \varsigma^- (n, k) - t(n, k-1) \\
+e \cdot h(m, k) & s^2 \varsigma^+ (m, k) + s^{-2} \varsigma^- (m, k) - t(m, k-1)
+\end{vmatrix} \\
+& \quad -
+\begin{vmatrix}
+e \cdot h(n, k-1) & t(n, k) \\
+e \cdot h(m, k-1) & t(m, k)
+\end{vmatrix} 
++
+\begin{vmatrix}
+h(n, k-1) \cdot e & t(n, k) \\
+h(m, k-1) \cdot e & t(m, k)
+\end{vmatrix}.
+\end{split}
+\end{equation}
+Next, recursively apply Equation \ref{eq:detgymnastics5} to its own trailing term $k$ times so that the right-hand side becomes
+\begin{align*}
+&\sum_{l=0}^{k-1} \left(
+\begin{vmatrix}
+e \cdot h(n, k-l) & s^2 \varsigma^+ (n, k-l) + s^{-2} \varsigma^- (n, k-l) - t(n, k-1-l) \\
+e \cdot h(m, k-l) & s^2 \varsigma^+ (m, k-l) + s^{-2} \varsigma^- (m, k-l) - t(m, k-1-l)
+\end{vmatrix} \right. \\
+& \left. \qquad -
+\begin{vmatrix}
+e \cdot h(n, k-1-l) & t(n, k-l) \\
+e \cdot h(m, k-1-l) & t(m, k-l)
+\end{vmatrix} \right)
++
+\begin{vmatrix}
+h(n, 0) \cdot e & t(n, 1) \\
+h(m, 0) \cdot e & t(m, 1)
+\end{vmatrix}.
+\end{align*}
+Through some careful reindexing work, we rewrite this as
+\begin{align*}
+&\begin{vmatrix}
+e \cdot h(n, k) & s^2 \varsigma^+ (n, k) + s^{-2} \varsigma^- (n, k) - t(n, k-1) \\
+e \cdot h(m, k) & s^2 \varsigma^+ (m, k) + s^{-2} \varsigma^- (m, k) - t(m, k-1)
+\end{vmatrix}\\
+&+
+\sum_{l=1}^{k-1}
+\begin{vmatrix}
+e \cdot h(n, k-l) & s^2 \varsigma^+ (n, k-l) + s^{-2} \varsigma^- (n, k-l) - t(n, k-1-l) - t(n, k+1-l)\\
+e \cdot h(m, k-l) & s^2 \varsigma^+ (m, k-l) + s^{-2} \varsigma^- (m, k-l) - t(m, k-1-l) - t(m, k+1-l)
+\end{vmatrix} \\
+&-
+\begin{vmatrix}
+e \cdot h(n, 0) & t(n, 1) \\
+e \cdot h(m, 0) & t(m, 1) \\
+\end{vmatrix}
++
+\begin{vmatrix}
+h(n, 0) \cdot e & t(n, 1) \\
+h(m, 0) \cdot e & t(m, 1)
+\end{vmatrix}.
+\end{align*}
+Apply Lemma \ref{lemma:skewcommutatordecomp} to the terms in the entries in the second column of each matrix in the big sum. Finally, observe the following applications of Lemmas \ref{lemma:detgymnastics3} and  \ref{lemma:skewcommutatordecomp}:
+\begin{align*}
+&-
+\begin{vmatrix}
+e \cdot h(n, 0) & t(n, 1) \\
+e \cdot h(m, 0) & t(m, 1) \\
+\end{vmatrix}
++
+\begin{vmatrix}
+h(n, 0) \cdot e & t(n, 1) \\
+h(m, 0) \cdot e & t(m, 1)
+\end{vmatrix} \\
+=& 
+-
+\begin{vmatrix}
+e \cdot h(n, 0) & t(n, 1) \\
+e \cdot h(m, 0) & t(m, 1) \\
+\end{vmatrix}
++
+\begin{vmatrix}
+e \cdot h(n, 0) & s^2 \varsigma^+ (n, 0) + s^{-2} \varsigma^- (n, 0) - t(n, -1) \\
+e \cdot h(m, 0) & s^2 \varsigma^+ (m, 0) + s^{-2} \varsigma^- (m, 0) - t(m, -1)
+\end{vmatrix} \\
+=& 
+\begin{vmatrix}
+e \cdot h(n, 0) & s^2 \varsigma^+ (n, 0) + s^{-2} \varsigma^- (n, 0) - 2 t(n, 1) \\
+e \cdot h(m, 0) & s^2 \varsigma^+ (m, 0) + s^{-2} \varsigma^- (m, 0) - 2 t(m, 1)
+\end{vmatrix} \\
+=& 
+\begin{vmatrix}
+e \cdot h(n, 0) & (s^2 - 1) \varsigma^+ (n, 0) + (s^{-2} - 1) \varsigma^- (n, 0) \\
+e \cdot h(m, 0) & (s^2 - 1) \varsigma^+ (m, 0) + (s^{-2} - 1) \varsigma^- (m, 0)
+\end{vmatrix} 
+\end{align*}
+where we use $t(n, 1) = t(n, -1)$. This completes the proof. 
+\end{proof}
+
+\begin{remark} \label{rmk:detgymnastics6}
+Using a parallel technique as in the proof of Lemma \ref{lemma:detgymnastics4}, one can show that
+\begin{align*}
+& \quad \,
+\begin{vmatrix}
+e \cdot h(n, k) & t(n, k+1) \\
+e \cdot h(m, k) & t(m, k+1)
+\end{vmatrix} \\
+&=
+\begin{vmatrix}
+h(n, k) \cdot e & s^{-2} \varsigma^+ (n, k) + s^{2} \varsigma^- (n, k) - t(n, k-1) \\
+h(m, k) \cdot e & s^{-2} \varsigma^+ (m, k) + s^{2} \varsigma^- (m, k) - t(m, k-1)
+\end{vmatrix}\\
+& \quad +
+\sum_{l=1}^{k}
+\begin{vmatrix}
+h(n, k-l) \cdot e & (s^{-2} - 1) \varsigma^+ (n, k-l) + (s^{2} - 1) \varsigma^- (n, k-l) \\
+h(m, k-l) \cdot e & (s^{-2} - 1) \varsigma^+ (m, k-l) + (s^{2} - 1) \varsigma^- (m, k-l)
+\end{vmatrix}.
+\end{align*}
+\end{remark}
+
+\begin{corollary}
+\begin{align*}
+\begin{vmatrix}
+t(n, k) & t(n, k+1) \\
+t(m, k) & t(m, k+1)
+\end{vmatrix}
+& =
+\sum_{l=0}^{k}
+\begin{vmatrix}
+e \cdot h(n, k-l) & (s^2 - 1) \varsigma^+ (n, k-l) + (s^{-2} - 1) \varsigma^- (n, k-l) \\
+e \cdot h(m, k-l) & (s^2 - 1) \varsigma^+ (m, k-l) + (s^{-2} - 1) \varsigma^- (m, k-l)
+\end{vmatrix} \\
+& = \sum_{l=0}^{k}
+\begin{vmatrix}
+h(n, k-l) \cdot e & (1 - s^{-2}) \varsigma^+ (n, k-l) + (1 - s^{2}) \varsigma^- (n, k-l) \\
+h(m, k-l) \cdot e & (1 - s^{-2}) \varsigma^+ (m, k-l) + (1 - s^{2}) \varsigma^- (m, k-l)
+\end{vmatrix}.
+\end{align*}
+\end{corollary}
+\begin{proof}
+We prove the first equality. The second follows by using Remark \ref{rmk:detgymnastics6}.
+\begin{align*}
+&\quad \begin{vmatrix}
+t(n, k) & t(n, k+1) \\
+t(m, k) & t(m, k+1)
+\end{vmatrix} \\
+&= - 
+\begin{vmatrix}
+e \cdot h(n, k) & t(n, k+1) \\
+e \cdot h(m, k) & t(m, k+1)
+\end{vmatrix} 
++
+\begin{vmatrix}
+h(n, k) \cdot e & t(n, k+1) \\
+h(m, k) \cdot e & t(m, k+1)
+\end{vmatrix}
+\\
+&= - 
+\begin{vmatrix}
+e \cdot h(n, k) & \varsigma^+ (n, k) + \varsigma^- (n, k) - t(n, k-1) \\
+e \cdot h(m, k) & \varsigma^+ (m, k) + \varsigma^- (m, k) - t(m, k-1)
+\end{vmatrix} \\
+&\quad +
+\begin{vmatrix}
+e \cdot h(n, k) & s^2 \varsigma^+ (n, k) + s^{-2} \varsigma^- (n, k) - t(n, k-1) \\
+e \cdot h(m, k) & s^2 \varsigma^+ (m, k) + s^{-2} \varsigma^- (m, k) - t(m, k-1)
+\end{vmatrix}\\
+&\quad +
+\sum_{l=1}^{k}
+\begin{vmatrix}
+e \cdot h(n, k-l) & (s^2 - 1) \varsigma^+ (n, k-l) + (s^{-2} - 1) \varsigma^- (n, k-l) \\
+e \cdot h(m, k-l) & (s^2 - 1) \varsigma^+ (m, k-l) + (s^{-2} - 1) \varsigma^- (m, k-l)
+\end{vmatrix} \\
+= & \sum_{l=0}^{k}
+\begin{vmatrix}
+e \cdot h(n, k-l) & (s^2 - 1) \varsigma^+ (n, k-l) + (s^{-2} - 1) \varsigma^- (n, k-l) \\
+e \cdot h(m, k-l) & (s^2 - 1) \varsigma^+ (m, k-l) + (s^{-2} - 1) \varsigma^- (m, k-l)
+\end{vmatrix} 
+\end{align*}
+\end{proof}
+
+Let $\textrm{cl}_\ca : \ca \to \cc$ be the wiring which connects the two boundary points of $\ca$ by an arc above the annulus. 
+\begin{figure}[H]
+\centering
+$\pic[7]{cla.eps}$
+\caption{The wiring diagram which defines $\textrm{cl}_\ca : \ca \to \cc$.}
+\end{figure}
+
+This map is not unital nor multiplicative, but it is a right $\cc$-module homomorphism so that $\cl_\ca(e \cdot x) = \delta_\cd x$. Furthermore, the closure $\cl_\ca(x \cdot e)$ is the element $\phi(x)$ which is the meridian map $\phi$ applied to $x$. The following identity is a generalization of Lemma 8.3 in Lukac.
+
+\begin{lemma} \label{lemma:tclosure}
+Let 
+\[
+\alpha_n := \{ n \} \left( v^{-1} s^{n - 1} - v s^{1 - n} \right).
+\] 
+Then, 
+\[
+\textrm{cl}_\ca \left( \frac{1}{2} t(n,0) \right) = \textrm{cl}_\ca (t_n) = \alpha_n \tilde{h}_n
+\]
+and hence 
+\[
+\textrm{cl}_\ca \big( t(n, k) \big) = \alpha_{n+k} \tilde{h}_{n+k} + \alpha_{n-k} \tilde{h}_{n-k}.
+\]
+\end{lemma}
+\begin{proof}
+Recall Equation \eqref{eq:annfund}, which we restate here using different notation:
+\[
+t_n = \{ n \} a^{-1}W^*_{n - 1} - \{ n \} aW_{n - 1}.
+\]
+Apply the closure to both sides. Apply the framing relation to the diagrams on the right to pick up the framing parameter terms. Use the property that the BMW idempotents absorb crossings to a factor of $s$ for positive crossings and $s^{-1}$ for negative crossings. This completes the proof. 
+\end{proof}
+
+\begin{lemma} \label{lemma:skewclosures}
+Define the constants
+\begin{align*}
+\omega_{n}^+ &:= - \{n\} s^{1-n} v, \\
+\upsilon_{n}^+ &:= s^{n} [n+1] (\bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta_\cd + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big), \\
+\omega_{n}^- &:= \{n\} s^{n-1} v^{-1}, \\
+\upsilon_{n}^- &:= -s^{-n} [n+1] ( \bar{\beta}_{n+1} - \beta_{n+1} ) \big( \delta_\cd + s^{n-1} [n] ( s v^{-1} + \beta_{n} ) \big).
+\end{align*}
+Then the following identities hold in $\cc$ for all $n \geq 0$ 
+\begin{align*}
+\textrm{cl}_\ca \left( \frac{1}{2} \varsigma^+(n,0) \right) &= \quad \textrm{cl}_\ca \big( s^{-1} \tilde{h}_n \cdot a - s a \cdot \tilde{h}_n \big) \quad = \omega_{n+1}^+ \tilde{h}_{n+1} + \upsilon_{n-1}^+ \tilde{h}_{n-1}, \\
+\textrm{cl}_\ca \left( \frac{1}{2} \varsigma^-(n,0) \right) &=\textrm{cl}_\ca \big( s \tilde{h}_n \cdot a^{-1} - s^{-1} a^{-1} \cdot \tilde{h}_n \big) = \omega_{n+1}^- \tilde{h}_{n+1} + \upsilon_{n-1}^- \tilde{h}_{n-1}
+\end{align*}
+which implies that
+\begin{align*}
+\textrm{cl}_\ca \big( \varsigma^+ (n, k) \big) &= \omega_{n+k+1}^+ \tilde{h}_{n+k+1} + \upsilon_{n+k-1}^+ \tilde{h}_{n+k-1} + \omega_{n-k+1}^+ \tilde{h}_{n-k+1} + \upsilon_{n-k-1}^+ \tilde{h}_{n-k-1}, \\
+\textrm{cl}_\ca \big( \varsigma^- (n, k) \big) &= \omega_{n+k+1}^- \tilde{h}_{n+k+1} + \upsilon_{n+k-1}^- \tilde{h}_{n+k-1} + \omega_{n-k+1}^- \tilde{h}_{n-k+1} + \upsilon_{n-k-1}^- \tilde{h}_{n-k-1}.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Apply Equations \eqref{eq:r3} and \eqref{eq:r1} :
+\begin{align*}
+& \quad \, ( s^{-1} \tilde{h}_n \cdot e - s e \cdot \tilde{h}_n ) a \\
+&=  \Big( s^{-1} \big( [n+1] W_n - [n] s a W_{n-1} - [n] s \bar{\beta}_n a^{-1} W^*_{n-1} \big) \\
+&\quad \, - s \big( [n+1] W_n - [n] s^{-1} a W_{n-1} - [n] s^{-1} \beta_n a^{-1} W^*_{n-1} \big) \Big) a \\
+&= - \{n+1\} a W_n - ( \bar{\beta}_n - \beta_n ) [n] W^*_{n-1}.
+\end{align*}
+%\AP{There is an endomorphism on the BMW algebra which reflects the square along a vertical line through the middle of the square. Are the symmetrizers fixed by this map? I think you can use the uniqueness of the symmetrizers to prove this since they are idempotent and absorb scalars.} \PS{I agree, they should be fixed}
+The identities below hold in $\cc$. Use Lemma 21 from \cite{She16} to prove the second two.
+\begin{align*}
+\textrm{cl}_\ca ( a W_n ) &= s^{-n} v \tilde{h}_{n+1} \\
+\textrm{cl}_\ca ( a^{-1} W^*_n ) &= s^n v^{-1} \tilde{h}_{n+1} \\
+\textrm{cl}_\ca ( W_n ) &= -s^{-n} \big( \delta_\cd + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n \\
+&= [n+1]^{-1} \big( \delta_\cd + [n]s^{-1} ( s^{-(n-1)} v - \beta_n s^{n-1} v^{-1} ) \big) \tilde{h}_n \\
+\textrm{cl}_\ca ( W^*_n ) &= s^n \big( \delta_\cd + s^{n-1} [n] ( s v^{-1} + \beta_n ) \big) \tilde{h}_n
+\end{align*}
+Then applying $\textrm{cl}_\ca$ to the above gives
+\begin{align*} 
+& \textrm{cl}_\ca \big( s^{-1} \tilde{h}_n \cdot a - s a \cdot \tilde{h}_n \big) \\
+=& - \{n+1\} \textrm{cl}_\ca ( a W_n ) - ( \bar{\beta}_n - \beta_n ) [n] \textrm{cl}_\ca ( W^*_{n-1} ) \\
+= & - \{n+1\} s^{-n} v \tilde{h}_{n+1} - ( \bar{\beta}_n - \beta_n ) [n] s^{n-1} \big( \delta_\cd + s^{n-2} [n-1] ( s v^{-1} \beta_{n-1} ) \big) \tilde{h}_{n-1} \\
+= & \omega_{n+1}^+ \tilde{h}_{n+1} + \upsilon_{n-1}^+ \tilde{h}_{n-1}.
+\end{align*}
+The proof of the other statement is similar. 
+\end{proof}
+
+\begin{remark}
+As a quick corollary of this lemma, apply $\textrm{cl}_\ca$ to Equation \eqref{eq:skewcommutator4} with $k=0$, so
+\[
+\textrm{cl}_\ca \big( 2 t(n, 1) \big) = \textrm{cl}_\ca \big( \varsigma^+ (n, 0) + \varsigma^- (n, 0) \big)
+\]
+and apply the previous two Lemmas and divide by $2$ to get
+\[
+\alpha_{n+1} \tilde{h}_{n+1} + \alpha_{n-1} \tilde{h}_{n-1} = (\omega^+_{n+1} + \omega^-_{n+1}) \tilde{h}_{n+1} + (\upsilon^+_{n-1} + \upsilon^-_{n-1}) \tilde{h}_{n-1}.
+\]
+Since the $\tilde{h}_n$ are linearly independent, it's true that 
+\begin{equation}
+\alpha_n = \omega_n^+ + \omega_n^- = \upsilon_n^+ + \upsilon_n^-
+\end{equation}
+for any $n$. 
+\end{remark}
+
+Consider the algebra homomorphism $\Lambda \to \cd(A)$ defined by the assignment $hb_i \mapsto \tilde{h}_i$. This map is well defined since $\Lambda$ is generated freely as a commutative ring by the set $\{hb_i\}_{i}$. Let $S_\lambda$ be the image of $sb_\lambda$ under this assignment. Now we are ready to state the main conjecture of this section.
+
+\begin{conjecture} \label{conj:schureigenvalues}
+Let $\phi: \cc \to \cc$ be the meridian map.  Then
+\begin{equation}
+\phi ( S_\lambda ) = c_\lambda S_\lambda
+\end{equation}
+where
+\begin{equation}
+c_\lambda = \delta_\cd + ( s - s^{-1} ) \Big( v^{-1} \sum_{x \in \lambda} s^{2 \textrm{cn}(x)} - v \sum_{x \in \lambda} s^{-2 \textrm{cn}(x)} \Big)
+\end{equation}
+and where $\textrm{cn}(x)$ is the content of the cell $x$ of the Young diagram of $\lambda$ in the $(i,j)^{\textrm{th}}$ position, defined by $\textrm{cn}(x) := j-i$.
+\end{conjecture}
+
+Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $\widetilde{Q}_\lambda$ are in the same eigenspace with respect to $\phi$. By \cite{LZ02}, each eigenspace is $1$-dimensional, and so $S_\lambda$ is a scalar multiple of $\widetilde{Q}_\lambda$. What's left is to show that this scalar is $1$. Let's state this as a corollary.
+
+\begin{corollary}
+For any partition $\lambda$, we have 
+\[
+S_\lambda = \widetilde{Q}_\lambda.
+\]
+\end{corollary}
+\begin{proof}
+This proof is a generalization of the arguement given in \cite{Luk05}. Firstly, the statement is true when $\lambda$ is either the empty partition or the unique partition $\square$ of $1$, simply by definition of $S_\lambda$. Koike and Terada provide the structure constants with respect to the $S_\lambda$ \cite{KT87}. This multiplication rule has as a special case the formula
+\begin{equation}
+S_\mu S_\square = \sum_{\mu'} S_{\mu'}
+\end{equation}
+where the sum runs over all $\mu'$ obtained by either adding or removing one square from $\mu$. The annular closure applied to the branching formula from \cite{BB01} shows the same formula
+\begin{equation}
+\widetilde{Q}_\mu \widetilde{Q}_\square = \sum_{\mu'} \widetilde{Q}_{\mu'}.
+\end{equation}
+Setting $\mu=\square$ implies the equations
+\begin{align}
+S_\square^n &= \sum_\lambda d_\lambda S_\lambda \label{eq:lukeq1} \\
+\widetilde{Q}_\square^n &= \sum_\lambda d_\lambda \widetilde{Q}_\lambda . \label{eq:lukeq2}
+\end{align}
+where the scalars $d_\lambda$ are positive integers and the sums range over partitions $\lambda$ such that there exists an up-down tableau of length $n$ and shape $\lambda$. As stated above, Conjecture \ref{conj:schureigenvalues} states that $S_\lambda$ and $\widetilde{Q}_\lambda$ are contained in the same eigenspace of $\phi$. \cite{LZ02} shows that each eigenspace is $1$-dimensional, so
+\begin{equation} \label{eq:lukeq3}
+S_\lambda = k_\lambda \widetilde{Q}_\lambda
+\end{equation}
+for some scalar $k_\lambda$. Now, $S_\square = \widetilde{Q}_\square$ by definition of $S_\square$, so we may set Equations \eqref{eq:lukeq1} and \eqref{eq:lukeq2} equal to eachother. After expressing $S_\lambda$ in terms of $\widetilde{Q}_\lambda$ using Equation \eqref{eq:lukeq3}, we may write
+\begin{equation}
+\sum_\lambda d_\lambda (1-k_\lambda) \widetilde{Q}_\lambda = 0.
+\end{equation}
+Since the $\widetilde{Q}_\lambda$ are linearly independent \cite{LZ02}, it must be true that $k_\lambda=1$ for all $\lambda$ appearing in the sum. For each partition $\lambda$ there exist some up-down tableau of shape $\lambda$, so each $k_\lambda$ appears in the sum for some $n$. Therefore, $k_\lambda=1$ for all partitions $\lambda$. This completes the proof. 
+\end{proof}
+
+Using the machinery built in this section, we can prove a special case of Conjecture \ref{conj:schureigenvalues}.
+
+\begin{proposition}
+The conjecture holds when $\lambda$ has length at most $2$.
+\end{proposition}
+\begin{proof}
+The statement is trivial if $\lambda$ has length $1$ by definition of the map. Assume $\lambda = (a, b)$. Apply Equation \eqref{eq:jacobitrudi}.
+\[
+S_\lambda = 
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}_\lambda(0,0) & \tilde{h}_\lambda(0,1) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) & \tilde{h}_\lambda(1,1)
+\end{vmatrix}
+\]
+Use multilinearity of the determinant as we did above to decompose the commutator $S_\lambda \cdot e - e \cdot S_\lambda$.
+\begin{equation*}
+S_\lambda \cdot e - e \cdot S_\lambda = 
+\begin{vmatrix}
+\frac{1}{2} t_\lambda(0,0) & e \cdot \tilde{h}_\lambda(0,1) \\
+\frac{1}{2} t_\lambda(1,0) & e \cdot \tilde{h}_\lambda(1,1)
+\end{vmatrix}
++
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}_\lambda(0,0) \cdot e & t_\lambda(0,1) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) \cdot e & t_\lambda(1,1)
+\end{vmatrix} \\
+\end{equation*}
+The entries in the second column of the second determinant need to be split using Equation \eqref{eq:skewcommutator2} into a form which is compatible with Lemma \ref{lemma:detgymnastics3}. The right-hand side becomes
+\[
+\begin{vmatrix}
+\frac{1}{2} t_\lambda(0,0) & e \cdot \tilde{h}_\lambda(0,1) \\
+\frac{1}{2} t_\lambda(1,0) & e \cdot \tilde{h}_\lambda(1,1)
+\end{vmatrix}
++
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}_\lambda(0,0) \cdot e & \frac{1}{2} \varsigma_\lambda^+(0,0) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) \cdot e & \frac{1}{2} \varsigma_\lambda^+(1,0)
+\end{vmatrix}
++
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}_\lambda(0,0) \cdot e & \frac{1}{2} \varsigma_\lambda^-(0,0) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) \cdot e & \frac{1}{2} \varsigma_\lambda^-(1,0)
+\end{vmatrix}.
+\]
+Apply Lemma \ref{lemma:detgymnastics3} to the second two terms:
+\[
+\begin{vmatrix}
+\frac{1}{2} t_\lambda(0,0) & e \cdot \tilde{h}_\lambda(0,1) \\
+\frac{1}{2} t_\lambda(1,0) & e \cdot \tilde{h}_\lambda(1,1)
+\end{vmatrix}
++ s^2
+\begin{vmatrix}
+e \cdot \frac{1}{2}\tilde{h}_\lambda(0,0) & \frac{1}{2} \varsigma_\lambda^+(0,0) \\
+e \cdot \frac{1}{2}\tilde{h}_\lambda(1,0) & \frac{1}{2} \varsigma_\lambda^+(1,0)
+\end{vmatrix}
++ s^{-2}
+\begin{vmatrix}
+e \cdot \frac{1}{2}\tilde{h}_\lambda(0,0) & \frac{1}{2} \varsigma_\lambda^-(0,0) \\
+e \cdot \frac{1}{2}\tilde{h}_\lambda(1,0) & \frac{1}{2} \varsigma_\lambda^-(1,0)
+\end{vmatrix}.
+\]
+Now apply $\cl_\ca$ and use the property that it is a right $\cc$-module homomorphism to remove $e$ from the $\tilde{h}_i$ terms. Apply Lemmas \ref{lemma:tclosure} and \ref{lemma:skewclosures} for the second equality.
+\begin{align*}
+&\quad \textrm{cl}_\ca ( S_\lambda \cdot e - e \cdot S_\lambda ) \\
+&=
+\begin{vmatrix}
+\cl_\ca \big( \frac{1}{2} t_\lambda(0,0) \big) & \tilde{h}_\lambda(0,1) \\
+\cl_\ca \big( \frac{1}{2} t_\lambda(1,0) \big) & \tilde{h}_\lambda(1,1)
+\end{vmatrix}
++ s^2
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}_\lambda(0,0) & \cl_\ca \big( \frac{1}{2} \varsigma_\lambda^+(0,0) \big) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) & \cl_\ca \big( \frac{1}{2} \varsigma_\lambda^+(1,0) \big)
+\end{vmatrix} \\
+& \quad + s^{-2}
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}_\lambda(0,0) & \cl_\ca \big( \frac{1}{2} \varsigma_\lambda^-(0,0) \big) \\
+\frac{1}{2}\tilde{h}_\lambda(1,0) & \cl_\ca \big( \frac{1}{2} \varsigma_\lambda^-(1,0) \big)
+\end{vmatrix} \\
+&=
+\begin{vmatrix}
+\cl_\ca \big( \frac{1}{2} t(a,0) \big) & \tilde{h}(a,1) \\
+\cl_\ca \big( \frac{1}{2} t(b-1,0) \big) & \tilde{h}(b-1,1)
+\end{vmatrix}
++ s^2
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}(a,0) & \cl_\ca \big( \frac{1}{2} \varsigma^+(a,0) \big) \\
+\frac{1}{2}\tilde{h}(b-1,0) & \cl_\ca \big( \frac{1}{2} \varsigma^+(b-1,0) \big)
+\end{vmatrix} \\
+& \quad + s^{-2}
+\begin{vmatrix}
+\frac{1}{2}\tilde{h}(a,0) & \cl_\ca \big( \frac{1}{2} \varsigma^-(a,0) \big) \\
+\frac{1}{2}\tilde{h}(b-1,0) & \cl_\ca \big( \frac{1}{2} \varsigma^-(b-1,0) \big)
+\end{vmatrix} \\
+&=
+\begin{vmatrix}
+\alpha_a \tilde{h}_a & \tilde{h}_{a+1} + \tilde{h}_{a-1} \\
+\alpha_{b-1} \tilde{h}_{b-1} & \tilde{h}_{b} + \tilde{h}_{b-2}
+\end{vmatrix}
++ s^2
+\begin{vmatrix}
+\tilde{h}_a & \omega_{a+1}^+ \tilde{h}_{a+1} + \upsilon^+_{a-1} \tilde{h}_{a-1} \\
+\tilde{h}_{b-1} & \omega_{b}^+ \tilde{h}_{b} + \upsilon^+_{b-2} \tilde{h}_{b-2}
+\end{vmatrix} \\
+& \quad + s^{-2}
+\begin{vmatrix}
+\tilde{h}_a & \omega_{a+1}^- \tilde{h}_{a+1} + \upsilon^-_{a-1} \tilde{h}_{a-1} \\
+\tilde{h}_{b-1} & \omega_{b}^- \tilde{h}_{b} + \upsilon^-_{b-2} \tilde{h}_{b-2}
+\end{vmatrix} \\
+&= \big( \alpha_a \tilde{h}_a (\tilde{h}_{b} + \tilde{h}_{b-2}) - \alpha_{b-1} \tilde{h}_{b-1} (\tilde{h}_{a+1} + \tilde{h}_{a-1}) \big) \\
+& \quad + s^2 \big( \tilde{h}_a (\omega_{b}^+ \tilde{h}_{b} + \upsilon^+_{b-2} \tilde{h}_{b-2}) - \tilde{h}_{b-1}( \omega_{a+1}^+\tilde{h}_{a+1} + \upsilon^+_{a-1} \tilde{h}_{a-1}) \big) \\
+& \quad + s^{-2} \big( \tilde{h}_a (\omega_{b}^- \tilde{h}_{b} + \upsilon^-_{b-2} \tilde{h}_{b-2}) - \tilde{h}_{b-1} (\omega_{a+1}^- \tilde{h}_{a+1} + \upsilon^-_{a-1} \tilde{h}_{a-1}) \big) \\
+&= (\alpha_a + s^2 \omega_b^+ + s^{-2} \omega_b^-) \tilde{h}_a \tilde{h}_b + (\alpha_a + s^2 \upsilon_{b-2}^+ + s^{-2} \upsilon_{b-2}^-) \tilde{h}_a \tilde{h}_{b-2} \\
+&\quad - (\alpha_{b-1} + s^{2} \omega_{a+1}^+ + s^{-2} \omega_{a+1}^-) \tilde{h}_{a+1} \tilde{h}_{b-1} - (\alpha_{b-1} + s^2 \upsilon_{a-1}^+ + s^{-2} \upsilon_{a-1}^-) \tilde{h}_{a-1} \tilde{h}_{b-1} 
+\end{align*}
+The conjecture claims that all of these coefficients are equal to the appropriate eigenvalue minus the value of the unknot $c_\lambda - \delta_\cd$. At first glance, it's not at all obvious that these coefficients are even equal to each other. Nevertheless, we will show it is true by looking at each coefficient one by one, going in the order in which they are written. Firstly, observe:
+\begin{align*}
+\alpha_a + s^2 \omega_b^+ + s^{-2}\omega_b^- &= \{a\} (v^{-1}s^{a-1} - v s^{1-a} ) - \{b\}vs^{3-b} + \{b\}v^{-1}s^{b-3} \\
+&= (s^a - s^{-a}) (v^{-1}s^{a-1} - v s^{1-a} ) -  (s^b - s^{-b})(vs^{3-b} - v^{-1}s^{b-3}) \\
+&= (v^{-1} s^{2a-1} - vs - v^{-1}s^{-1} + vs^{1-2a}) - \\
+& \quad\,\, (vs^3 - v^{-1}s^{2b-3} - vs^{3-2b} + v^{-1}s^{-3}) \\
+&= v^{-1} \big( (s^{2a-1} - s^{-1}) + (s^{2b-3} - s^{-3}) \big) - v \big( ( s - s^{1-2a}) + (s^3 - s^{3-2b}) \big) \\
+&= v^{-1} \left( (s-s^{-1}) \sum_{i=0}^{a-1} s^{2a - 2 - 2i} + (s-s^{-1}) \sum_{i=0}^{b-1} s^{2b-4-2i} \right) \\
+&\quad v \left( (s-s^{-1}) \sum_{i=0}^{a-1} s^{-2i} + (s-s^{-1}) \sum_{i=0}^{b-1} s^{2-2i} \right) \\
+&= (s-s^{-1}) \left( v^{-1} \sum_{x \in \lambda} s^{2 \cn(x)} - v \sum_{x \in \lambda} s^{-2\cn(x)} \right) \\
+&= c_\lambda - \delta_\cd.
+\end{align*}
+Therefore, the first coefficient is what we claimed. Now we can simply show the other coefficients are equal to the first. Let's show the second coefficient is equal to the first:
+\begin{align*}
+&\quad-\alpha_{b-1} - s^2 \omega_{a+1}^+ - s^{-2} \omega_{a+1}^- \\
+&= -\{b-1\}(v^{-1}s^{b-2}-vs^{2-b}) + \{a+1\}vs^{2-a} - \{a+1\}v^{-1}s^{a-2} \\
+&= (s^{1-b} - s^{b-1} ) (v^{-1}s^{b-2} - vs^{2-b}) + (s^{a+1}-s^{a+1})(vs^{2-a} - v^{-1}s^{a-2}) \\
+&= (v^{-1}s^{-1} - v^{-1}s^{2b-3} - vs^{3-2b} + vs) - (vs^3 - vs^{1-2a} - v^{-1}s^{2a-1} + v^{-1}s) \\
+&= v^{-1} \big( (s^{2a-1} - s^{-1}) + (s^{2b-3} - s^{-3}) \big) - v \big( ( s - s^{1-2a}) + (s^3 - s^{3-2b}) \big) \\
+&= c_\lambda - \delta_\cd
+\end{align*}
+
+The next two are slightly different. We will avoid the complexity of $\upsilon_i^\pm$ by using the relation $\upsilon_i^+ + \upsilon_i^- = \alpha_i$. Observe:
+\begin{align*}
+& \quad \alpha_a + s^2 \upsilon_{b-2}^+ + s^{-2}\upsilon_{b-2}^- \\
+&= \{a\}(v^{-1}s^{a-1} - vs^{1-a}) + (s^{b} - s^{-b}) [b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta_\cd + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) \\
+&\quad\,\, + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})[b-1] (\bar{\beta}_{b-1} - \beta_{b-1}) \big(\delta_\cd + s^{b-3}[b-2](sv^{-1}+\beta_{b-2})\big) \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(\upsilon_{b-2}^+ + \upsilon_{b-2}^-) \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) + (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}\alpha_{b-2} \\
+&= \{a\}(v^{-1}s^{a-1}-vs^{1-a}) - (s^{b} - s^{-b})(s^{b-2}-s^{2-b})^{-1}(s^{b-2}-s^{2-b})(vs^{3-b}-v^{-1}s^{b-3}) \\
+&= (s^a - s^{-a})(v^{-1}s^{a-1}-vs^{1-a}) - (s^{b} - s^{-b})(vs^{3-b}-v^{-1}s^{b-3}) \\
+&= c_\lambda - \delta_\cd
+\end{align*}
+and a similar computation holds for the final coefficient. This completes the proof.
+\end{proof}
+
+
+
+
+
+
+
+\section{Meridians and Jucys-Murphy Elements of $BMW_n$}
+
+Consider the elements $M_{n, i} = \sigma_{i-1} \cdots \sigma_1 \sigma_1 \cdots \sigma_{i-1} \in BMW_n$ for $2 \leq i \leq n$ and set $M_{n,1} = \id_n$. The set of $M_{n, i}$ in $BMW_n$ are called the \textbf{BMW Jucys-Murphy elements}, which are invertible and which generate a commutative subalgebra (see \cite{IMO14} for more details). 
+\begin{figure}[h]
+\centering
+$M_{n,i} = \pic[5]{murphy.eps}$
+\caption{The Jucys-Murphy element wraps the $i^\textrm{th}$ strand around the first $i-1$ strands.}
+\end{figure}
+
+There is a homomorphism $\psi_n: \cd(A) \to BMW_n$ defined so that $\psi_n(x)$ is the element $x$ threaded by a meridian around the identity of $BMW_n$.
+\begin{figure}
+\centering
+$\psi_n(x) = \pic[4]{meridianx.eps}$
+\caption{The image of $x$ under the homomorphism $\psi_n$.}
+\end{figure}
+The image of $\psi_n$ clearly lies in the center of $BMW_n$. In the next proposition, we give a simple application which expresses $\psi_n(\widetilde{P}_k)$ as a linear combination of the BMW Jucys-Murphy elements, their inverses, and the identity. One way to interpret the proposition is that we express $(s^k - s^{-k})^{-1}\big(\psi_n(\widetilde{P}_k) - \langle \widetilde{P}_k \rangle \id_n \big)$ as a power sum symmetric polynomial in the elements $\{ v^{\pm 1} M_{n,i}^{\pm 1} \}_i$. This is a Dubrovnik generalization of the HOMFLYPT counterpart found in \cite{Mor02b}.
+
+\begin{proposition} \label{prop:murphy}
+For any $k \geq 1$, and any $n \geq 1$, we may represent $\psi_n(\widetilde{P}_k)$ as
+\begin{equation}
+\psi_n(\widetilde{P}_k) = \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
+\end{equation}
+where $\langle \widetilde{P}_k \rangle$ is the evaluation of $\widetilde{P}_k$ in a $3$-ball. 
+\end{proposition}
+\begin{proof}
+Induct on $n$. For $n=1$, simply apply Theorem \ref{thm:powersumcommutator} (via wirings coming from the skein functors described in Section \ref{sec:foundations}) and apply framing relations to get the desired expression (imagine removing the first $n-1$ strands from the diagrams which follow). Assume the induction hypothesis, that the statement is true for all $n<i$. Apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+\begin{align*}
+& \quad\,\, \pic[2.4]{meridianpk.eps} \\
+&= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) \left( \pic[2.4]{murphya1}\right)^k - (s^{k}-s^{-k}) \left(\pic[2.4]{murphyb1}\right)^k \\
+&= \pic[2.4]{meridianpkpass} + (s^k - s^{-k}) v^{-k} \left(\pic[2.4]{murphya2}\right)^k - (s^{k}-s^{-k}) v^k \left(\pic[2.4]{murphyb2}\right)^k \\
+&= \psi_{n-1}(\widetilde{P}_k) \otimes \id_1  + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&= \left( \langle \widetilde{P}_k \rangle \id_{n-1} + (s^k - s^{-k}) \sum_{i=2}^{n-1} v^{-k} M_{n-1,i}^k - v^k M_{n-1,i}^{-k} \right) \otimes \id_1 \\
+&\quad\,\, + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&= \langle \widetilde{P}_k \rangle \id_{n-1} \otimes \id_1 + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n-1,i}^k \otimes \id_1 - v^k M_{n-1,i}^{-k}\otimes \id_1 \right) \\
+&\quad\,\, + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^{-k} M_{n,n}^{-k}) \\
+&= \langle \widetilde{P}_k \id_n + (s^k - s^{-k}) \sum_{i=2}^{n-1} \left( v^{-k} M_{n,i}^k - v^k M_{n,i}^{-k} \right) + (s^k - s^{-k}) (v^{-k}M_{n,n}^k - v^k M_{n,n}^{-k}) \\
+&=  \langle \widetilde{P}_k \rangle \id_n + (s^k - s^{-k}) \sum_{i=2}^n v^{-k} M_{n, i}^k - v^k M_{n, i}^{-k}
+\end{align*}
+\end{proof}
+
+For a minimal idempotent $\tilde{y}_\lambda \in BMW_n$, let $\widetilde{P}_k \cdot \tilde{y}_\lambda := \psi_n(\widetilde{P}_k) \tilde{y}_\lambda$, which is essentially a meridian threaded by $\widetilde{P}_k$ wrapped around $\tilde{y}_\lambda$. The next proposition shows that $\tilde{y}_\lambda$ is an eigenvector with respect to the assignment $\tilde{y}_\lambda \mapsto \widetilde{P}_k \cdot \tilde{y}_\lambda$. Note that all the eigenvalues are distinct from each other. The annular closure of these eigenvalue equations generalize the result found in \cite{LZ02}, which they show for $k=1$. 
+\begin{proposition} \label{prop:zlgeneralization}
+In $BMW_n$, we have that 
+\[
+\widetilde{P}_k \cdot \tilde{y}_\lambda = \left( \langle \widetilde{P}_k \rangle + (s^k - s^{-k})\sum_{\square \in \lambda} \left(  v^{-k} s^{2k \cn(\square)} - v^k s^{-2k \cn(\square)} \right) \right) \tilde{y}_\lambda
+\]
+where $\cn(\square)$ is the content of the cell $\square$ in the Young diagram of $\lambda$. 
+\end{proposition}
+\begin{proof}
+We will prove the formula by inducting on the size of $\lambda$. For $|\lambda| = 1$, we have that $\tilde{y}_\lambda = \id_1$, so simply apply Proposition \ref{prop:murphy} and verify that the fomulas coincide. Now proceed assuming the induction hypothesis. Let $\mu$ be the partition obtained by removing a choice of cell $\square$ from the Young diagram of $\lambda$. First apply the branching formula (see Corollary 5.3 in \cite{BB01}). Then apply Theorem \ref{thm:powersumcommutator} to move $\widetilde{P}_k$ past the $n^{\mathrm{th}}$ strand and apply framing relations.
+\begin{align*}
+&\quad\,\, \pic[2.4]{ylambdameridianpk.eps} \\
+&= \pic[2.4]{ylambdameridianpkbranch.eps} \\
+&= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbrancha1.eps} - (s^k - s^{-k}) \pic[2.4]{ylambdameridianpkbranchb1.eps} \\
+&= \pic[2.4]{ylambdameridianpkbranchpass.eps} + (s^k - s^{-k}) v^{-k} \pic[2.4]{ylambdameridianpkbrancha2.eps} - (s^k - s^{-k}) v^k \pic[2.4]{ylambdameridianpkbranchb2.eps}
+\end{align*}
+The first diagram is equal to $ \left( \langle \widetilde{P}_k \rangle+ (s^k - s^{-k})\sum_{\square \in \mu} \left(  v^{-k} s^{2k \cn(\square)} - v^k s^{-2k \cn(\square)} \right) \right) \tilde{y}_\lambda$ by the induction hypothesis. The second diagram is equal to $s^{2k \cn(\square)} \tilde{y}_\lambda$, which may be shown by repeating the main computation found in the proof of Theorem 5.5 of \cite{AM98} $k$ times. The third diagram is is mirror map applied to the second diagram, so it is equal to $s^{-2k \cn(\square)} \tilde{y}_\lambda$. This completes the proof.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

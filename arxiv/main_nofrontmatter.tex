@@ -1,0 +1,194 @@
+\documentclass{ucrthesis-1chair}
+
+
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{svg}
+\include{svg.dtx}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[noadjust]{cite}
+\usepackage{epsfig}
+\usepackage{tikz-cd}
+\usepackage{float}
+\allowdisplaybreaks
+
+\newtheorem{theoremintro}{Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{rmk}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}[theorem]{Question}
+
+\let\nc\newcommand
+\let\rnc\renewcommand
+\nc{\la}{\label}
+\def\bg{\begin}
+\nc{\End}{{\rm{End}}}
+\nc{\Hom}{{\rm{Hom}}}
+\newcommand{\id}{{\rm{id}}}
+\newcommand{\Tr}{{\rm{Tr}}}
+\newcommand{\tr}{{\rm{tr}}}
+\newcommand{\cn}{\mathrm{cn}}
+\newcommand{\cl}{\mathrm{cl}}
+\newcommand{\Ker}{{\rm{Ker}}}
+\newcommand{\ev}{{\rm{ev}}}
+\newcommand{\im}{{\rm{Im}}}
+\newcommand{\interior}{{\rm{int}}}
+\newcommand{{\scrc}}{\mathscr{C}}
+\newcommand{{\sfc}}{\mathsf{C}}
+\newcommand{{\sfr}}{\mathsf{R}}
+\newcommand{{\sfskein}}{\mathsf{Skein}}
+\newcommand{{\sft}}{\mathsf{T}}
+\newcommand{{\sfd}}{\mathsf{D}}
+\newcommand{{\sfh}}{\mathsf{H}}
+\newcommand{{\cs}}{\mathcal{S}}
+\newcommand{{\cc}}{\mathcal{C}}
+\newcommand{{\ct}}{\mathcal{T}}
+\newcommand{{\ca}}{\mathcal{A}}
+\newcommand{{\ck}} {\mathcal{K}}
+\newcommand{{\cd}} {\mathcal{D}}
+\newcommand{{\ch}} {\mathcal{H}}
+\newcommand{\ci}{\mathcal{I}}
+\newcommand{\xx}{{\mathbf{x}}}
+\newcommand{\yy}{{\mathbf{y}}}
+\newcommand{\zz}{{\mathbf{z}}}
+\newcommand{\aab}{{\mathbf{a}}}
+\newcommand{\bb}{{\mathbf{b}}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\HH}{\mathrm{HH}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{{\Z}}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\sk}{\mathrm{Sk}}
+\newcommand{\fg}{\mathfrak{g}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\AP}[1]{{\color{blue} * #1}}
+\newcommand{\pic}[2][3]{{\,\vcenter{\hbox{\includegraphics[width= #1 cm]{#2}}}}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Uncomment ONE of the following two lines.  These control how the tags
+% for citations are formatted (either numerical or alphabetical tag).
+% Refer to the amsrefs documentation for more options.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[numeric]{amsrefs}
+\usepackage[alphabetic]{amsrefs}
+
+\usepackage{microtype}				% improves spacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% METADATA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Dubrovnik Skein Theory and Power Sum Elements}
+\author{Alexander T. Pokorny}
+\degreemonth{June}			% the month name is spelled out
+\degreeyear{2021}
+\degreesemester{Spring}			% term is fall, winter, spring, etc.
+\degree{Doctor of Philosophy}
+\chair{Dr. Peter Samuelson}
+\othermembers{%
+	Dr. Jacob Greenstein \\
+	Dr. Stefano Vidussi
+}
+\numberofmembers{2}					% number of NONCHAIR members
+\field{Mathematics}
+\campus{Riverside}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+%\copyrightpage{}
+
+%\approvalpage{}
+\cleardoublepage
+
+% FRONTMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frontmatter}
+	\setcounter{secnumdepth}{3}
+	\setcounter{tocdepth}{3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMMENT the following two lines to omit acknowledgements.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	\input{frontmatter/acknowledgements}
+%	\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMMENT the following two lines to omit a dedication.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	\input{frontmatter/dedication}
+%	\cleardoublepage
+
+	\input{frontmatter/abstract}
+	\cleardoublepage
+
+	\tableofcontents
+	\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMMENT the following two lines to omit a list of figures.  The list
+% must be included if there is more than one figure.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	\listoffigures
+%	\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMMENT the following two lines to omit a list of tables.  The list
+% must be included if there is more than one table.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	\listoftables
+%	\cleardoublepage
+
+\end{frontmatter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THESIS BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{chapters/ch1_Introduction}
+\input{chapters/ch2_BackgroundTheory}
+\input{chapters/ch3_KauffmanSkeinAlgOfTorus}
+\input{chapters/ch4_ClosuresOfMinimalIdempotents}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRPAHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\bibname}{References}
+
+\addcontentsline{toc}{chapter}{\bibname}
+
+
+\bibliographystyle{plain}
+\bibliography{somerefs}
+
+
+\end{document}

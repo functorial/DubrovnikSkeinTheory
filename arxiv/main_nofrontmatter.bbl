@@ -1,0 +1,623 @@
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{Abr08}{incollection}{
+      author={Abramsky, Samson},
+       title={Temperley-{L}ieb algebra: from knot theory to logic and
+  computation via quantum mechanics},
+        date={2008},
+   booktitle={Mathematics of quantum computation and quantum technology},
+      series={Chapman \& Hall/CRC Appl. Math. Nonlinear Sci. Ser.},
+   publisher={Chapman \& Hall/CRC, Boca Raton, FL},
+       pages={515\ndash 558},
+      review={\MR{2422231}},
+}
+
+\bib{Ale28}{article}{
+      author={Alexander, J.~W.},
+       title={Topological invariants of knots and links},
+        date={1928},
+        ISSN={0002-9947},
+     journal={Trans. Amer. Math. Soc.},
+      volume={30},
+      number={2},
+       pages={275\ndash 306},
+         url={https://doi.org/10.2307/1989123},
+      review={\MR{1501429}},
+}
+
+\bib{AM98}{article}{
+      author={Aiston, A.~K.},
+      author={Morton, H.~R.},
+       title={Idempotents of {H}ecke algebras of type {$A$}},
+        date={1998},
+        ISSN={0218-2165},
+     journal={J. Knot Theory Ramifications},
+      volume={7},
+      number={4},
+       pages={463\ndash 487},
+         url={http://dx.doi.org/10.1142/S0218216598000243},
+      review={\MR{1633027 (99h:57002)}},
+}
+
+\bib{APS04}{article}{
+      author={Asaeda, Marta~M.},
+      author={Przytycki, J\'{o}zef~H.},
+      author={Sikora, Adam~S.},
+       title={Categorification of the {K}auffman bracket skein module of
+  {$I$}-bundles over surfaces},
+        date={2004},
+        ISSN={1472-2747},
+     journal={Algebr. Geom. Topol.},
+      volume={4},
+       pages={1177\ndash 1210},
+         url={https://doi.org/10.2140/agt.2004.4.1177},
+      review={\MR{2113902}},
+}
+
+\bib{BB01}{article}{
+      author={Beliakova, Anna},
+      author={Blanchet, Christian},
+       title={Skein construction of idempotents in {B}irman-{M}urakami-{W}enzl
+  algebras},
+        date={2001},
+        ISSN={0025-5831},
+     journal={Math. Ann.},
+      volume={321},
+      number={2},
+       pages={347\ndash 373},
+         url={http://dx.doi.org/10.1007/s002080100233},
+      review={\MR{1866492 (2002h:57018)}},
+}
+
+\bib{BFK99}{article}{
+      author={Bullock, Doug},
+      author={Frohman, Charles},
+      author={Kania-Bartoszy\'{n}ska, Joanna},
+       title={Understanding the {K}auffman bracket skein module},
+        date={1999},
+        ISSN={0218-2165},
+     journal={J. Knot Theory Ramifications},
+      volume={8},
+      number={3},
+       pages={265\ndash 277},
+         url={https://doi.org/10.1142/S0218216599000183},
+      review={\MR{1691437}},
+}
+
+\bib{BP00}{article}{
+      author={Bullock, Doug},
+      author={Przytycki, J{\'o}zef~H.},
+       title={Multiplicative structure of {K}auffman bracket skein module
+  quantizations},
+        date={2000},
+        ISSN={0002-9939},
+     journal={Proc. Amer. Math. Soc.},
+      volume={128},
+      number={3},
+       pages={923\ndash 931},
+         url={http://dx.doi.org/10.1090/S0002-9939-99-05043-1},
+      review={\MR{1625701 (2000e:57007)}},
+}
+
+\bib{BS12}{article}{
+      author={Burban, Igor},
+      author={Schiffmann, Olivier},
+       title={On the {H}all algebra of an elliptic curve, {I}},
+        date={2012},
+        ISSN={0012-7094},
+     journal={Duke Math. J.},
+      volume={161},
+      number={7},
+       pages={1171\ndash 1231},
+         url={http://dx.doi.org/10.1215/00127094-1593263},
+      review={\MR{2922373}},
+}
+
+\bib{BW16}{article}{
+      author={Bonahon, Francis},
+      author={Wong, Helen},
+       title={Representations of the {K}auffman bracket skein algebra {I}:
+  invariants and miraculous cancellations},
+        date={2016},
+        ISSN={0020-9910},
+     journal={Invent. Math.},
+      volume={204},
+      number={1},
+       pages={195\ndash 243},
+         url={https://doi.org/10.1007/s00222-015-0611-y},
+      review={\MR{3480556}},
+}
+
+\bib{Con70}{inproceedings}{
+      author={Conway, J.~H.},
+       title={An enumeration of knots and links, and some of their algebraic
+  properties},
+        date={1970},
+   booktitle={Computational {P}roblems in {A}bstract {A}lgebra ({P}roc.
+  {C}onf., {O}xford, 1967)},
+   publisher={Pergamon, Oxford},
+       pages={329\ndash 358},
+      review={\MR{0258014}},
+}
+
+\bib{CP94}{book}{
+      author={Chari, Vyjayanthi},
+      author={Pressley, Andrew},
+       title={A guide to quantum groups},
+   publisher={Cambridge University Press, Cambridge},
+        date={1994},
+        ISBN={0-521-43305-3},
+      review={\MR{1300632}},
+}
+
+\bib{FG00}{article}{
+      author={Frohman, Charles},
+      author={Gelca, R{\u{a}}zvan},
+       title={Skein modules and the noncommutative torus},
+        date={2000},
+        ISSN={0002-9947},
+     journal={Trans. Amer. Math. Soc.},
+      volume={352},
+      number={10},
+       pages={4877\ndash 4888},
+         url={http://dx.doi.org/10.1090/S0002-9947-00-02512-5},
+      review={\MR{MR1675190 (2001b:57014)}},
+}
+
+\bib{FHLMOY85}{article}{
+      author={Freyd, P.},
+      author={Yetter, D.},
+      author={Hoste, J.},
+      author={Lickorish, W. B.~R.},
+      author={Millett, K.},
+      author={Ocneanu, A.},
+       title={A new polynomial invariant of knots and links},
+        date={1985},
+        ISSN={0273-0979},
+     journal={Bull. Amer. Math. Soc. (N.S.)},
+      volume={12},
+      number={2},
+       pages={239\ndash 246},
+         url={https://doi.org/10.1090/S0273-0979-1985-15361-3},
+      review={\MR{776477}},
+}
+
+\bib{Hik07}{article}{
+      author={Hikami, Kazuhiro},
+       title={Generalized volume conjecture and the {$A$}-polynomials: the
+  {N}eumann-{Z}agier potential function as a classical limit of the partition
+  function},
+        date={2007},
+        ISSN={0393-0440},
+     journal={J. Geom. Phys.},
+      volume={57},
+      number={9},
+       pages={1895\ndash 1940},
+         url={https://doi.org/10.1016/j.geomphys.2007.03.008},
+      review={\MR{2330673}},
+}
+
+\bib{IMO14}{article}{
+      author={Isaev, A.~P.},
+      author={Molev, A.~I.},
+      author={Ogievetsky, O.~V.},
+       title={Idempotents for {B}irman-{M}urakami-{W}enzl algebras and
+  reflection equation},
+        date={2014},
+        ISSN={1095-0761},
+     journal={Adv. Theor. Math. Phys.},
+      volume={18},
+      number={1},
+       pages={1\ndash 25},
+         url={http://projecteuclid.org/euclid.atmp/1412953897},
+      review={\MR{3268233}},
+}
+
+\bib{Jim86}{article}{
+      author={Jimbo, Michio},
+       title={A {$q$}-analogue of {$U({\germ g}{\germ l}(N+1))$}, {H}ecke
+  algebra, and the {Y}ang-{B}axter equation},
+        date={1986},
+        ISSN={0377-9017},
+     journal={Lett. Math. Phys.},
+      volume={11},
+      number={3},
+       pages={247\ndash 252},
+         url={https://doi.org/10.1007/BF00400222},
+      review={\MR{841713}},
+}
+
+\bib{Jon85}{article}{
+      author={Jones, Vaughan F.~R.},
+       title={A polynomial invariant for knots via von {N}eumann algebras},
+        date={1985},
+        ISSN={0273-0979},
+     journal={Bull. Amer. Math. Soc. (N.S.)},
+      volume={12},
+      number={1},
+       pages={103\ndash 111},
+         url={https://doi.org/10.1090/S0273-0979-1985-15304-2},
+      review={\MR{766964}},
+}
+
+\bib{Kau87}{article}{
+      author={Kauffman, Louis~H.},
+       title={State models and the {J}ones polynomial},
+        date={1987},
+        ISSN={0040-9383},
+     journal={Topology},
+      volume={26},
+      number={3},
+       pages={395\ndash 407},
+         url={https://doi.org/10.1016/0040-9383(87)90009-7},
+      review={\MR{899057}},
+}
+
+\bib{Kau90}{article}{
+      author={Kauffman, Louis~H.},
+       title={An invariant of regular isotopy},
+        date={1990},
+        ISSN={0002-9947},
+     journal={Trans. Amer. Math. Soc.},
+      volume={318},
+      number={2},
+       pages={417\ndash 471},
+         url={https://doi.org/10.2307/2001315},
+      review={\MR{958895}},
+}
+
+\bib{Kho00}{article}{
+      author={Khovanov, Mikhail},
+       title={A categorification of the {J}ones polynomial},
+        date={2000},
+        ISSN={0012-7094},
+     journal={Duke Math. J.},
+      volume={101},
+      number={3},
+       pages={359\ndash 426},
+         url={http://dx.doi.org/10.1215/S0012-7094-00-10131-7},
+      review={\MR{MR1740682 (2002j:57025)}},
+}
+
+\bib{KM11}{article}{
+      author={Kronheimer, P.~B.},
+      author={Mrowka, T.~S.},
+       title={Khovanov homology is an unknot-detector},
+        date={2011},
+        ISSN={0073-8301},
+     journal={Publ. Math. Inst. Hautes \'{E}tudes Sci.},
+      number={113},
+       pages={97\ndash 208},
+         url={https://doi.org/10.1007/s10240-010-0030-y},
+      review={\MR{2805599}},
+}
+
+\bib{Koi89}{article}{
+      author={Koike, Kazuhiko},
+       title={On the decomposition of tensor products of the representations of
+  the classical groups: by means of the universal characters},
+        date={1989},
+        ISSN={0001-8708},
+     journal={Adv. Math.},
+      volume={74},
+      number={1},
+       pages={57\ndash 86},
+         url={https://doi.org/10.1016/0001-8708(89)90004-2},
+      review={\MR{991410}},
+}
+
+\bib{KR08}{article}{
+      author={Khovanov, Mikhail},
+      author={Rozansky, Lev},
+       title={Matrix factorizations and link homology},
+        date={2008},
+        ISSN={0016-2736},
+     journal={Fund. Math.},
+      volume={199},
+      number={1},
+       pages={1\ndash 91},
+         url={https://doi.org/10.4064/fm199-1-1},
+      review={\MR{2391017}},
+}
+
+\bib{KT00}{article}{
+      author={Kashaev, R.~M.},
+      author={Tirkkonen, O.},
+       title={A proof of the volume conjecture on torus knots},
+        date={2000},
+        ISSN={0373-2703},
+     journal={Zap. Nauchn. Sem. S.-Peterburg. Otdel. Mat. Inst. Steklov.
+  (POMI)},
+      volume={269},
+      number={Vopr. Kvant. Teor. Polya i Stat. Fiz. 16},
+       pages={262\ndash 268, 370},
+         url={https://doi.org/10.1023/A:1022608131142},
+      review={\MR{1805865}},
+}
+
+\bib{KT87}{article}{
+      author={Koike, Kazuhiko},
+      author={Terada, Itaru},
+       title={Young-diagrammatic methods for the representation theory of the
+  classical groups of type {$B\sb n,\;C\sb n,\;D\sb n$}},
+        date={1987},
+        ISSN={0021-8693},
+     journal={J. Algebra},
+      volume={107},
+      number={2},
+       pages={466\ndash 511},
+         url={http://dx.doi.org/10.1016/0021-8693(87)90099-8},
+      review={\MR{885807 (88i:22035)}},
+}
+
+\bib{Le15}{article}{
+      author={L\^{e}, Thang T.~Q.},
+       title={On {K}auffman bracket skein modules at roots of unity},
+        date={2015},
+        ISSN={1472-2747},
+     journal={Algebr. Geom. Topol.},
+      volume={15},
+      number={2},
+       pages={1093\ndash 1117},
+         url={https://doi.org/10.2140/agt.2015.15.1093},
+      review={\MR{3342686}},
+}
+
+\bib{LP19}{article}{
+      author={L\^{e}, Thang T.~Q.},
+      author={Paprocki, Jonathan},
+       title={On {K}auffman bracket skein modules of marked 3-manifolds and the
+  {C}hebyshev-{F}robenius homomorphism},
+        date={2019},
+        ISSN={1472-2747},
+     journal={Algebr. Geom. Topol.},
+      volume={19},
+      number={7},
+       pages={3453\ndash 3509},
+         url={https://doi.org/10.2140/agt.2019.19.3453},
+      review={\MR{4045358}},
+}
+
+\bib{Luk05}{article}{
+      author={Lukac, Sascha~G.},
+       title={Idempotents of the {H}ecke algebra become {S}chur functions in
+  the skein of the annulus},
+        date={2005},
+        ISSN={0305-0041},
+     journal={Math. Proc. Cambridge Philos. Soc.},
+      volume={138},
+      number={1},
+       pages={79\ndash 96},
+         url={https://doi.org/10.1017/S0305004104007984},
+      review={\MR{2127229}},
+}
+
+\bib{LZ02}{article}{
+      author={Lu, Bin},
+      author={Zhong, Jianyuan~K.},
+       title={The {K}auffman polynomials of generalized {H}opf links},
+        date={2002},
+        ISSN={0218-2165},
+     journal={J. Knot Theory Ramifications},
+      volume={11},
+      number={8},
+       pages={1291\ndash 1306},
+         url={https://doi.org/10.1142/S0218216502002244},
+      review={\MR{1949780}},
+}
+
+\bib{MM08}{article}{
+      author={Morton, H.~R.},
+      author={Manch{\'o}n, P. M.~G.},
+       title={Geometrical relations and plethysms in the {H}omfly skein of the
+  annulus},
+        date={2008},
+        ISSN={0024-6107},
+     journal={J. Lond. Math. Soc. (2)},
+      volume={78},
+      number={2},
+       pages={305\ndash 328},
+         url={http://dx.doi.org/10.1112/jlms/jdn026},
+      review={\MR{2439627 (2009h:57021)}},
+}
+
+\bib{Mor02b}{article}{
+      author={Morton, Hugh~R.},
+       title={Skein theory and the {M}urphy operators},
+        date={2002},
+        ISSN={0218-2165},
+     journal={J. Knot Theory Ramifications},
+      volume={11},
+      number={4},
+       pages={475\ndash 492},
+         url={http://dx.doi.org/10.1142/S0218216502001767},
+        note={Knots 2000 Korea, Vol. 2 (Yongpyong)},
+      review={\MR{1915490 (2003f:20013)}},
+}
+
+\bib{Mor10}{article}{
+      author={{Morton}, H.~R.},
+       title={{A basis for the Birman-Wenzl algebra}},
+        date={2010-12},
+     journal={arXiv e-prints},
+       pages={arXiv:1012.3116},
+      eprint={1012.3116},
+}
+
+\bib{Mor17}{inproceedings}{
+      author={Morrison, Scott},
+       title={A formula for the {J}ones-{W}enzl projections},
+        date={2017},
+   booktitle={Proceedings of the 2014 {M}aui and 2015 {Q}inhuangdao conferences
+  in honour of {V}aughan {F}. {R}. {J}ones' 60th birthday},
+      series={Proc. Centre Math. Appl. Austral. Nat. Univ.},
+      volume={46},
+   publisher={Austral. Nat. Univ., Canberra},
+       pages={367\ndash 378},
+      review={\MR{3635675}},
+}
+
+\bib{MPS19}{article}{
+      author={{Morton}, Hugh},
+      author={{Pokorny}, Alexander},
+      author={{Samuelson}, Peter},
+       title={{The Kauffman skein algebra of the torus}},
+        date={2019-09},
+     journal={arXiv e-prints},
+       pages={arXiv:1909.11208},
+      eprint={1909.11208},
+}
+
+\bib{MS17}{article}{
+      author={Morton, Hugh},
+      author={Samuelson, Peter},
+       title={The {HOMFLYPT} skein algebra of the torus and the elliptic {H}all
+  algebra},
+        date={2017},
+        ISSN={0012-7094},
+     journal={Duke Math. J.},
+      volume={166},
+      number={5},
+       pages={801\ndash 854},
+         url={https://doi.org/10.1215/00127094-3718881},
+      review={\MR{3626565}},
+}
+
+\bib{MS19}{article}{
+      author={{Morton}, Hugh},
+      author={{Samuelson}, Peter},
+       title={{DAHAs and skein theory}},
+        date={2019-09},
+     journal={arXiv e-prints},
+       pages={arXiv:1909.11247},
+      eprint={1909.11247},
+}
+
+\bib{Mul16}{article}{
+      author={Muller, Greg},
+       title={Skein and cluster algebras of marked surfaces},
+        date={2016},
+        ISSN={1663-487X},
+     journal={Quantum Topol.},
+      volume={7},
+      number={3},
+       pages={435\ndash 503},
+         url={https://doi.org/10.4171/QT/79},
+      review={\MR{3551171}},
+}
+
+\bib{PT88}{article}{
+      author={Przytycki, J\'{o}zef~H.},
+      author={Traczyk, Pawe\l},
+       title={Invariants of links of {C}onway type},
+        date={1988},
+        ISSN={0289-9051},
+     journal={Kobe J. Math.},
+      volume={4},
+      number={2},
+       pages={115\ndash 139},
+      review={\MR{945888}},
+}
+
+\bib{RT90}{article}{
+      author={Reshetikhin, N.~Yu.},
+      author={Turaev, V.~G.},
+       title={Ribbon graphs and their invariants derived from quantum groups},
+        date={1990},
+        ISSN={0010-3616},
+     journal={Comm. Math. Phys.},
+      volume={127},
+      number={1},
+       pages={1\ndash 26},
+         url={http://projecteuclid.org/getRecord?id=euclid.cmp/1104180037},
+      review={\MR{1036112 (91c:57016)}},
+}
+
+\bib{She16}{article}{
+      author={Shelly, Thomas},
+       title={Skein theory and algebraic geometry for the two-variable
+  {K}auffman invariant of links},
+        date={2016},
+     journal={Doctoral Dissertation},
+         url={https://scholarworks.umass.edu/dissertations_2/804},
+}
+
+\bib{Thi88}{article}{
+      author={Thistlethwaite, Morwen~B.},
+       title={Kauffman's polynomial and alternating links},
+        date={1988},
+        ISSN={0040-9383},
+     journal={Topology},
+      volume={27},
+      number={3},
+       pages={311\ndash 318},
+         url={https://doi.org/10.1016/0040-9383(88)90012-2},
+      review={\MR{963633}},
+}
+
+\bib{Tur90}{article}{
+      author={Turaev, Vladimir~G},
+       title={Conway and kauffman modules of a solid torus},
+        date={1990},
+     journal={Journal of Mathematical Sciences},
+      volume={52},
+      number={1},
+       pages={2799\ndash 2805},
+}
+
+\bib{Tur91}{article}{
+      author={Turaev, Vladimir~G.},
+       title={Skein quantization of {P}oisson algebras of loops on surfaces},
+        date={1991},
+        ISSN={0012-9593},
+     journal={Ann. Sci. \'{E}cole Norm. Sup. (4)},
+      volume={24},
+      number={6},
+       pages={635\ndash 704},
+         url={http://www.numdam.org/item?id=ASENS_1991_4_24_6_635_0},
+      review={\MR{1142906}},
+}
+
+\bib{Web17}{article}{
+      author={Webster, Ben},
+       title={Knot invariants and higher representation theory},
+        date={2017},
+        ISSN={0065-9266},
+     journal={Mem. Amer. Math. Soc.},
+      volume={250},
+      number={1191},
+       pages={v+141},
+         url={https://doi.org/10.1090/memo/1191},
+      review={\MR{3709726}},
+}
+
+\bib{Wit12}{inproceedings}{
+      author={Witten, Edward},
+       title={Khovanov homology and gauge theory},
+        date={2012},
+   booktitle={Proceedings of the {F}reedman {F}est},
+      series={Geom. Topol. Monogr.},
+      volume={18},
+   publisher={Geom. Topol. Publ., Coventry},
+       pages={291\ndash 308},
+         url={https://doi.org/10.2140/gtm.2012.18.291},
+      review={\MR{3084242}},
+}
+
+\bib{Wit89}{article}{
+      author={Witten, Edward},
+       title={Quantum field theory and the {J}ones polynomial},
+        date={1989},
+        ISSN={0010-3616},
+     journal={Comm. Math. Phys.},
+      volume={121},
+      number={3},
+       pages={351\ndash 399},
+         url={http://projecteuclid.org/euclid.cmp/1104178138},
+      review={\MR{990772}},
+}
+
+\end{biblist}
+\end{bibdiv}
